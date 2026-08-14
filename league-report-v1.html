@@ -1,0 +1,561 @@
+<!doctype html><html><head><meta charset='utf-8'>
+<title>The Major League - Report v1</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#0f1216;--panel:#171c22;--line:#252c35;--ink:#e6edf3;--dim:#8b97a5;
+--pos:#3fb950;--neg:#f85149;--accent:#58a6ff;--warn:#d29922}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:48px 24px 96px}
+h1{font-size:34px;margin:0 0 4px;letter-spacing:-.5px}
+h2{font-size:22px;margin:52px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:26px 0 8px}
+.sub{color:var(--dim);margin:0 0 8px}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+th{text-align:left;color:var(--dim);font-weight:600;padding:8px 10px;
+border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid #1d232b}
+tr:hover td{background:#1b2129}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.pos{color:var(--pos)} .neg{color:var(--neg)} .dim{color:var(--dim)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+padding:18px 20px;margin:14px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kpi .v{font-size:26px;font-weight:700;letter-spacing:-.5px}
+.kpi .l{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:.6px}
+.note{border-left:3px solid var(--warn);background:#1d1a12;padding:12px 16px;
+margin:14px 0;border-radius:0 8px 8px 0;font-size:14px}
+.callout{border-left:3px solid var(--accent);background:#101c2c;padding:14px 18px;
+margin:16px 0;border-radius:0 8px 8px 0}
+.bar{height:6px;background:#222932;border-radius:3px;overflow:hidden;min-width:70px}
+.bar>i{display:block;height:100%;background:var(--accent)}
+.tag{display:inline-block;font-size:11px;padding:2px 7px;border-radius:20px;
+background:#222b36;color:var(--dim);margin-right:4px}
+footer{margin-top:70px;color:var(--dim);font-size:13px;
+border-top:1px solid var(--line);padding-top:18px}
+.mchart{width:100%;height:auto;display:block;margin:10px 0 4px}
+.mchart .grid{stroke:#252c35;stroke-width:1}
+.mchart .ax{fill:#6d7885;font-size:10px}
+.mchart .ax.fin{fill:var(--warn)}
+.mchart .bar{fill:#2d4a6b}
+.mchart .bar.champ{fill:var(--accent)}
+.mchart .fline{fill:none;stroke:var(--warn);stroke-width:1.6;opacity:.85}
+.mchart .fdot{fill:var(--warn)}
+.mchart .fdot.win{fill:#f0c674;stroke:#fff;stroke-width:1.5;r:4.5}
+.legend{color:var(--dim);font-size:12px;margin:2px 0 10px}
+.legend b{color:#2d4a6b}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:10px;margin-top:12px}
+.mini{background:#12171d;border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.mini .l{color:var(--dim);font-size:11px;text-transform:uppercase;
+letter-spacing:.5px;margin-bottom:3px}
+.mini .v{font-size:13px;line-height:1.45}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.toplink{font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 28px}
+</style></head><body><div class='wrap'>
+<p class='toplink'><a href='index.html'>&larr; The Franchise</a></p>
+<h1>The Major League</h1>
+<p class='sub'>Fifteen seasons, 2011&ndash;2025 &middot; 10 teams &middot; 1&nbsp;pt PPR snake redraft &middot; report v1</p>
+<div class='grid'>
+<div class='kpi'><div class='v'>15</div><div class='l'>Seasons</div></div>
+<div class='kpi'><div class='v'>2,370</div><div class='l'>Draft picks</div></div>
+<div class='kpi'><div class='v'>12</div><div class='l'>Managers</div></div>
+<div class='kpi'><div class='v'>2,449</div><div class='l'>Team-weeks analysed</div></div>
+</div>
+<h2>What actually decides a season</h2>
+<p class='sub'>Spearman rank correlation with final standing, computed within each season then averaged across all fifteen. Positive means more of it helps you finish higher. Significance from a 10,000-shuffle permutation test.</p>
+<table><tr><th>Factor</th><th class='num'>rho</th><th class='num'>p</th><th>Verdict</th><th></th></tr>
+<tr><td>Draft value (VOR)</td><td class='num pos'>+0.372</td><td class='num dim'>0.0001</td><td><span class='pos'>real effect</span></td><td><div class='bar'><i style='width:89.28%'></i></div></td></tr>
+<tr><td>Lineup efficiency</td><td class='num pos'>+0.353</td><td class='num dim'>&mdash;</td><td><span class='pos'>real effect</span></td><td><div class='bar'><i style='width:84.72%'></i></div></td></tr>
+<tr><td>In-season moves</td><td class='num pos'>+0.278</td><td class='num dim'>0.0013</td><td><span class='pos'>real effect</span></td><td><div class='bar'><i style='width:66.72%'></i></div></td></tr>
+<tr><td>Early-round bust rate</td><td class='num neg'>-0.189</td><td class='num dim'>0.029</td><td><span class='pos'>real effect</span></td><td><div class='bar'><i style='width:45.36%'></i></div></td></tr>
+<tr><td>Draft slot</td><td class='num neg'>-0.109</td><td class='num dim'>0.204</td><td><span class='dim'>indistinguishable from noise</span></td><td><div class='bar'><i style='width:26.16%'></i></div></td></tr>
+<tr><td>Number of WRs drafted</td><td class='num pos'>+0.094</td><td class='num dim'>0.272</td><td><span class='dim'>indistinguishable from noise</span></td><td><div class='bar'><i style='width:22.56%'></i></div></td></tr>
+<tr><td>Bargains vs reaches</td><td class='num neg'>-0.074</td><td class='num dim'>0.386</td><td><span class='dim'>indistinguishable from noise</span></td><td><div class='bar'><i style='width:17.759999999999998%'></i></div></td></tr>
+<tr><td>Number of RBs drafted</td><td class='num neg'>-0.008</td><td class='num dim'>0.925</td><td><span class='dim'>indistinguishable from noise</span></td><td><div class='bar'><i style='width:1.92%'></i></div></td></tr>
+</table>
+<div class='callout'><strong>Four things don't matter.</strong> How many running backs or receivers you draft has no measurable relationship to where you finish. Neither does reaching versus waiting for value, and neither does your draft slot &mdash; which is the good news, because it means the snake is fair. Roster construction is not where this league is won.</div>
+<h2>Career standings</h2>
+<table><tr><th>Manager</th><th class='num'>Seasons</th><th class='num'>Titles</th><th class='num'>Podiums</th><th class='num'>Avg finish</th><th class='num'>Best</th><th class='num'>Worst</th><th class='num'>Draft value/yr</th><th class='num'>Lineup eff.</th><th class='num'>Moves/yr</th></tr>
+<tr><td><strong>KulpCommissioner</strong></td><td class='num'>15</td><td class='num'>3</td><td class='num dim'>7</td><td class='num'>4.07</td><td class='num dim'>1</td><td class='num dim'>9</td><td class='num pos'>+114</td><td class='num'>90.0%</td><td class='num'>32.5</td></tr>
+<tr><td><strong>9ofalltrades</strong></td><td class='num'>15</td><td class='num'>1</td><td class='num dim'>8</td><td class='num'>4.13</td><td class='num dim'>1</td><td class='num dim'>9</td><td class='num pos'>+78</td><td class='num'>88.1%</td><td class='num'>34.5</td></tr>
+<tr><td><strong>Just Haefner</strong></td><td class='num'>15</td><td class='num'>2</td><td class='num dim'>5</td><td class='num'>4.73</td><td class='num dim'>1</td><td class='num dim'>10</td><td class='num pos'>+88</td><td class='num'>89.7%</td><td class='num'>30.3</td></tr>
+<tr><td><strong>Mike</strong></td><td class='num'>15</td><td class='num'>2</td><td class='num dim'>5</td><td class='num'>5.07</td><td class='num dim'>1</td><td class='num dim'>9</td><td class='num pos'>+159</td><td class='num'>89.9%</td><td class='num'>14.5</td></tr>
+<tr><td><strong>Michaeopteryx</strong></td><td class='num'>14</td><td class='num'>2</td><td class='num dim'>4</td><td class='num'>5.29</td><td class='num dim'>1</td><td class='num dim'>10</td><td class='num pos'>+33</td><td class='num'>87.5%</td><td class='num'>18.5</td></tr>
+<tr><td><strong>pat kulp</strong></td><td class='num'>15</td><td class='num'>2</td><td class='num dim'>4</td><td class='num'>5.40</td><td class='num dim'>1</td><td class='num dim'>10</td><td class='num neg'>-48</td><td class='num'>89.4%</td><td class='num'>14.5</td></tr>
+<tr><td><strong>Kevin</strong></td><td class='num'>15</td><td class='num'>1</td><td class='num dim'>5</td><td class='num'>5.93</td><td class='num dim'>1</td><td class='num dim'>10</td><td class='num pos'>+157</td><td class='num'>88.6%</td><td class='num'>14.1</td></tr>
+<tr><td><strong>Natalie Fullerton</strong></td><td class='num'>15</td><td class='num'>1</td><td class='num dim'>3</td><td class='num'>6.33</td><td class='num dim'>1</td><td class='num dim'>10</td><td class='num pos'>+26</td><td class='num'>88.4%</td><td class='num'>7.1</td></tr>
+<tr><td><strong>Ryan</strong></td><td class='num'>6</td><td class='num'>1</td><td class='num dim'>1</td><td class='num'>6.33</td><td class='num dim'>1</td><td class='num dim'>10</td><td class='num pos'>+26</td><td class='num'>89.8%</td><td class='num'>13.5</td></tr>
+<tr><td><strong>Al</strong></td><td class='num'>15</td><td class='num'></td><td class='num dim'>3</td><td class='num'>6.80</td><td class='num dim'>2</td><td class='num dim'>10</td><td class='num pos'>+39</td><td class='num'>88.5%</td><td class='num'>23.9</td></tr>
+<tr><td><strong>senftiva</strong></td><td class='num'>9</td><td class='num'></td><td class='num dim'>0</td><td class='num'>7.56</td><td class='num dim'>4</td><td class='num dim'>10</td><td class='num pos'>+173</td><td class='num'>84.8%</td><td class='num'>12.6</td></tr>
+</table>
+<h2>Champions</h2><table><tr><th>Season</th><th>Team</th><th>Manager</th><th>Runner-up</th><th>Third</th></tr>
+<tr><td>2011</td><td>CadillacKulpDeville</td><td><strong>KulpCommissioner</strong></td><td class='dim'>Jumpinfck</td><td class='dim'>The Holy Herb</td></tr>
+<tr><td>2012</td><td>kulp</td><td><strong>pat kulp</strong></td><td class='dim'>The Hot Peads</td><td class='dim'>ALl-stars</td></tr>
+<tr><td>2013</td><td>Human Psentipede</td><td><strong>Michaeopteryx</strong></td><td class='dim'>OJ no Kulp</td><td class='dim'>Jacquizz In My Pants</td></tr>
+<tr><td>2014</td><td>CadillacKulpDeville</td><td><strong>KulpCommissioner</strong></td><td class='dim'>ALbatross</td><td class='dim'>OJ no Kulp</td></tr>
+<tr><td>2015</td><td>Medina Sod</td><td><strong>Just Haefner</strong></td><td class='dim'>APs Switch Hitters</td><td class='dim'>Blue Green</td></tr>
+<tr><td>2016</td><td>Medina Sod</td><td><strong>Just Haefner</strong></td><td class='dim'>CadillacKulpDeville</td><td class='dim'>EveryDayImRussell'n</td></tr>
+<tr><td>2017</td><td>WhoseHungry?</td><td><strong>Mike</strong></td><td class='dim'>CadillacKulpDeville</td><td class='dim'>Medina Sod</td></tr>
+<tr><td>2018</td><td>Human Psentipede</td><td><strong>Michaeopteryx</strong></td><td class='dim'>Medina Sod</td><td class='dim'>WhoseHungry?</td></tr>
+<tr><td>2019</td><td>Blue Green</td><td><strong>Kevin</strong></td><td class='dim'>Human Psentipede</td><td class='dim'>MaKamaracaGreatAgain</td></tr>
+<tr><td>2020</td><td>GooNads</td><td><strong>Natalie Fullerton</strong></td><td class='dim'>royALty</td><td class='dim'>Blue Green</td></tr>
+<tr><td>2021</td><td>Van Tine</td><td><strong>Ryan</strong></td><td class='dim'>WhoseHungry?</td><td class='dim'>Human Psentipede</td></tr>
+<tr><td>2022</td><td>OJ no Kulp</td><td><strong>pat kulp</strong></td><td class='dim'>Blue Green</td><td class='dim'>CadillacKulpDeville</td></tr>
+<tr><td>2023</td><td>CadillacKulpDeville</td><td><strong>KulpCommissioner</strong></td><td class='dim'>GooNads</td><td class='dim'>Charged By AI</td></tr>
+<tr><td>2024</td><td>Aichane 2.0</td><td><strong>9ofalltrades</strong></td><td class='dim'>CadillacKulpDeville</td><td class='dim'>Blue Green</td></tr>
+<tr><td>2025</td><td>WhoseHungry?</td><td><strong>Mike</strong></td><td class='dim'>GooNads</td><td class='dim'>LaddGPT</td></tr>
+</table>
+<h2>The senftiva paradox</h2>
+<div class='callout'><strong>The best drafter in league history never made a podium.</strong> senftiva averaged +98 draft value against the room &mdash; the highest mark anyone has posted &mdash; across nine seasons, and finished with an average placing of 7.56. No titles. No podiums.</div>
+<table><tr><th>Season</th><th class='num'>Draft value</th><th class='num'>vs room</th><th class='num'>Lineup eff.</th><th class='num'>Left on bench</th><th class='num'>Finish</th></tr>
+<tr><td>2011</td><td class='num'>-18.9</td><td class='num neg'>-55</td><td class='num'>82.6</td><td class='num neg'>335.7</td><td class='num'><strong>6</strong></td></tr>
+<tr><td>2012</td><td class='num'>306.5</td><td class='num pos'>+237</td><td class='num'>84.22</td><td class='num neg'>302.1</td><td class='num'><strong>8</strong></td></tr>
+<tr><td>2013</td><td class='num'>192.7</td><td class='num pos'>+208</td><td class='num'>87.0</td><td class='num neg'>279.6</td><td class='num'><strong>9</strong></td></tr>
+<tr><td>2014</td><td class='num'>-288.7</td><td class='num neg'>-421</td><td class='num'>82.24</td><td class='num neg'>365.8</td><td class='num'><strong>10</strong></td></tr>
+<tr><td>2015</td><td class='num'>71.6</td><td class='num pos'>+99</td><td class='num'>88.06</td><td class='num neg'>294.5</td><td class='num'><strong>4</strong></td></tr>
+<tr><td>2016</td><td class='num'>141.2</td><td class='num pos'>+165</td><td class='num'>84.19</td><td class='num neg'>371.7</td><td class='num'><strong>9</strong></td></tr>
+<tr><td>2017</td><td class='num'>70.2</td><td class='num neg'>-17</td><td class='num'>81.65</td><td class='num neg'>435.0</td><td class='num'><strong>9</strong></td></tr>
+<tr><td>2018</td><td class='num'>671.1</td><td class='num pos'>+412</td><td class='num'>89.48</td><td class='num neg'>275.0</td><td class='num'><strong>6</strong></td></tr>
+<tr><td>2019</td><td class='num'>408.1</td><td class='num pos'>+254</td><td class='num'>83.65</td><td class='num neg'>380.6</td><td class='num'><strong>7</strong></td></tr>
+</table>
+<p class='sub'>He has the worst lineup efficiency in the league at 85.2%, leaving 20.4 points on his bench every week &mdash; roughly 326 points a season, which is more than a full extra starter's worth of production. He drafted the rosters. He just didn't start them.</p>
+<h2>Lineup efficiency</h2>
+<p class='sub'>Points actually started as a share of the best legal lineup available from the same roster that week. 2,137 complete team-weeks.</p>
+<table><tr><th>Manager</th><th class='num'>Seasons</th><th class='num'>Efficiency</th><th class='num'>Left/week</th><th class='num'>Left/season</th><th class='num'>Avg finish</th><th></th></tr>
+<tr><td><strong>KulpCommissioner</strong></td><td class='num'>15</td><td class='num'>90.02%</td><td class='num neg'>15.1</td><td class='num neg'>246</td><td class='num'>4.07</td><td><div class='bar'><i style='width:100%'></i></div></td></tr>
+<tr><td><strong>Mike</strong></td><td class='num'>15</td><td class='num'>89.85%</td><td class='num neg'>14.8</td><td class='num neg'>241</td><td class='num'>5.07</td><td><div class='bar'><i style='width:97%'></i></div></td></tr>
+<tr><td><strong>Ryan</strong></td><td class='num'>6</td><td class='num'>89.77%</td><td class='num neg'>14.9</td><td class='num neg'>251</td><td class='num'>6.33</td><td><div class='bar'><i style='width:96%'></i></div></td></tr>
+<tr><td><strong>Just Haefner</strong></td><td class='num'>15</td><td class='num'>89.71%</td><td class='num neg'>15.1</td><td class='num neg'>246</td><td class='num'>4.73</td><td><div class='bar'><i style='width:95%'></i></div></td></tr>
+<tr><td><strong>pat kulp</strong></td><td class='num'>15</td><td class='num'>89.42%</td><td class='num neg'>15.1</td><td class='num neg'>247</td><td class='num'>5.40</td><td><div class='bar'><i style='width:90%'></i></div></td></tr>
+<tr><td><strong>Kevin</strong></td><td class='num'>15</td><td class='num'>88.59%</td><td class='num neg'>16.5</td><td class='num neg'>269</td><td class='num'>5.93</td><td><div class='bar'><i style='width:77%'></i></div></td></tr>
+<tr><td><strong>Al</strong></td><td class='num'>15</td><td class='num'>88.48%</td><td class='num neg'>16.0</td><td class='num neg'>263</td><td class='num'>6.80</td><td><div class='bar'><i style='width:75%'></i></div></td></tr>
+<tr><td><strong>Natalie Fullerton</strong></td><td class='num'>15</td><td class='num'>88.36%</td><td class='num neg'>15.6</td><td class='num neg'>256</td><td class='num'>6.33</td><td><div class='bar'><i style='width:73%'></i></div></td></tr>
+<tr><td><strong>9ofalltrades</strong></td><td class='num'>15</td><td class='num'>88.12%</td><td class='num neg'>17.6</td><td class='num neg'>287</td><td class='num'>4.13</td><td><div class='bar'><i style='width:70%'></i></div></td></tr>
+<tr><td><strong>Michaeopteryx</strong></td><td class='num'>14</td><td class='num'>87.48%</td><td class='num neg'>18.5</td><td class='num neg'>302</td><td class='num'>5.29</td><td><div class='bar'><i style='width:59%'></i></div></td></tr>
+<tr><td><strong>senftiva</strong></td><td class='num'>9</td><td class='num'>84.79%</td><td class='num neg'>21.1</td><td class='num neg'>338</td><td class='num'>7.56</td><td><div class='bar'><i style='width:16%'></i></div></td></tr>
+</table>
+<div class='note'><strong>A bug worth recording.</strong> The first version of this table had 9ofalltrades at 98%, three standard deviations clear of the league. It was wrong. Yahoo renders your own team page with 19 columns and every other team's with 20 &mdash; the extra one being &quot;Action&quot;, the add/drop control you only get on your own roster. The parser read a fixed column index, so for one manager across all fifteen seasons it was reading <em>projected</em> points as actual. Projections are smooth, so the optimal lineup and the started lineup agreed almost perfectly and the number looked like genius. The parser now finds the column by header name, that manager's data was refetched, and the corrected figure is 88.12%.</div>
+<h2>Manager profiles</h2>
+<p class='sub'>Every tendency below is a deviation from what the rest of the room did that same season. Raw numbers are meaningless here &mdash; the league takes its first quarterback in round 6.1 on average, so "drafts a QB in round 6" says nothing.</p>
+<div class='card'>
+<h3>KulpCommissioner <span class='tag'>15 seasons</span><span class='tag'>3 titles</span><span class='tag'>avg finish 4.07</span><span class='tag'>lineup eff 90.0%</span></h3>
+<svg viewBox='0 0 760 190' class='mchart'><line x1='34' y1='117.1' x2='726' y2='117.1' class='grid'/><text x='28' y='120.1' class='ax' text-anchor='end'>85%</text><line x1='34' y1='70.2' x2='726' y2='70.2' class='grid'/><text x='28' y='73.2' class='ax' text-anchor='end'>90%</text><line x1='34' y1='23.4' x2='726' y2='23.4' class='grid'/><text x='28' y='26.4' class='ax' text-anchor='end'>95%</text><rect x='42.3' y='65.7' width='29.5' height='98.3' class='bar champ'><title>2011: 90.5% efficiency</title></rect><rect x='88.4' y='45.7' width='29.5' height='118.3' class='bar'><title>2012: 92.6% efficiency</title></rect><rect x='134.6' y='48.5' width='29.5' height='115.5' class='bar'><title>2013: 92.3% efficiency</title></rect><rect x='180.7' y='81.5' width='29.5' height='82.5' class='bar champ'><title>2014: 88.8% efficiency</title></rect><rect x='226.8' y='81.7' width='29.5' height='82.3' class='bar'><title>2015: 88.8% efficiency</title></rect><rect x='273.0' y='76.4' width='29.5' height='87.6' class='bar'><title>2016: 89.3% efficiency</title></rect><rect x='319.1' y='72.8' width='29.5' height='91.2' class='bar'><title>2017: 89.7% efficiency</title></rect><rect x='365.2' y='53.6' width='29.5' height='110.4' class='bar'><title>2018: 91.8% efficiency</title></rect><rect x='411.4' y='73.6' width='29.5' height='90.4' class='bar'><title>2019: 89.6% efficiency</title></rect><rect x='457.5' y='116.5' width='29.5' height='47.5' class='bar'><title>2020: 85.1% efficiency</title></rect><rect x='503.6' y='56.8' width='29.5' height='107.2' class='bar'><title>2021: 91.4% efficiency</title></rect><rect x='549.8' y='74.5' width='29.5' height='89.5' class='bar'><title>2022: 89.5% efficiency</title></rect><rect x='595.9' y='70.5' width='29.5' height='93.5' class='bar champ'><title>2023: 90.0% efficiency</title></rect><rect x='642.0' y='59.7' width='29.5' height='104.3' class='bar'><title>2024: 91.1% efficiency</title></rect><rect x='688.2' y='73.0' width='29.5' height='91.0' class='bar'><title>2025: 89.7% efficiency</title></rect><path d='M57.1,14.0 L103.2,80.7 L149.3,114.0 L195.5,14.0 L241.6,147.3 L287.7,30.7 L333.9,30.7 L380.0,64.0 L426.1,80.7 L472.3,147.3 L518.4,80.7 L564.5,47.3 L610.7,14.0 L656.8,30.7 L702.9,80.7' class='fline'/><circle cx='57.1' cy='14.0' r='3.4' class='fdot win'><title>2011: finished 1</title></circle><circle cx='103.2' cy='80.7' r='3.4' class='fdot'><title>2012: finished 5</title></circle><circle cx='149.3' cy='114.0' r='3.4' class='fdot'><title>2013: finished 7</title></circle><circle cx='195.5' cy='14.0' r='3.4' class='fdot win'><title>2014: finished 1</title></circle><circle cx='241.6' cy='147.3' r='3.4' class='fdot'><title>2015: finished 9</title></circle><circle cx='287.7' cy='30.7' r='3.4' class='fdot'><title>2016: finished 2</title></circle><circle cx='333.9' cy='30.7' r='3.4' class='fdot'><title>2017: finished 2</title></circle><circle cx='380.0' cy='64.0' r='3.4' class='fdot'><title>2018: finished 4</title></circle><circle cx='426.1' cy='80.7' r='3.4' class='fdot'><title>2019: finished 5</title></circle><circle cx='472.3' cy='147.3' r='3.4' class='fdot'><title>2020: finished 9</title></circle><circle cx='518.4' cy='80.7' r='3.4' class='fdot'><title>2021: finished 5</title></circle><circle cx='564.5' cy='47.3' r='3.4' class='fdot'><title>2022: finished 3</title></circle><circle cx='610.7' cy='14.0' r='3.4' class='fdot win'><title>2023: finished 1</title></circle><circle cx='656.8' cy='30.7' r='3.4' class='fdot'><title>2024: finished 2</title></circle><circle cx='702.9' cy='80.7' r='3.4' class='fdot'><title>2025: finished 5</title></circle><text x='732' y='17.0' class='ax fin'>1</text><text x='732' y='83.7' class='ax fin'>5</text><text x='732' y='167.0' class='ax fin'>10</text><text x='57.1' y='182' class='ax' text-anchor='middle'>11</text><text x='149.3' y='182' class='ax' text-anchor='middle'>13</text><text x='241.6' y='182' class='ax' text-anchor='middle'>15</text><text x='333.9' y='182' class='ax' text-anchor='middle'>17</text><text x='426.1' y='182' class='ax' text-anchor='middle'>19</text><text x='518.4' y='182' class='ax' text-anchor='middle'>21</text><text x='610.7' y='182' class='ax' text-anchor='middle'>23</text><text x='702.9' y='182' class='ax' text-anchor='middle'>25</text></svg>
+<div class='legend'>Bars: lineup efficiency by season (<b>&#9632;</b> blue = championship year). <span style='color:#d29922'>Gold line</span>: final placing, 1 at the top.</div>
+<ul style='margin:6px 0 0;padding-left:20px'>
+<li>takes his first QB <strong>1.6 rounds later</strong> than the room</li>
+<li>takes his first TE <strong>1.4 rounds later</strong> than the room</li>
+<li>makes <strong>12 more in-season moves</strong> than average</li>
+<li>lineup efficiency 90.0%</li>
+<li>has never once changed his team name</li>
+</ul>
+<div class='mgrid'>
+<div class='mini'><div class='l'>Best pick ever</div><div class='v'><strong>Devonta Freeman</strong> &middot; 2015 R10 &middot; finished RB1 &middot; <span class='pos'>+176</span></div></div>
+<div class='mini'><div class='l'>Worst pick ever</div><div class='v'><strong>Eddie Lacy</strong> &middot; 2015 R1 &middot; finished RB32 &middot; <span class='neg'>-97</span></div></div>
+<div class='mini'><div class='l'>Worst lineup call</div><div class='v'>benched <strong>De'Von Achane</strong> (51.3) for Kyren Williams (8.5) &middot; 2023 wk3 &middot; <span class='neg'>&minus;42.8</span></div></div>
+<div class='mini'><div class='l'>Best draft</div><div class='v'><strong>2015</strong> &middot; 446 VOR &middot; finished 9</div></div>
+</div>
+</div>
+<div class='card'>
+<h3>9ofalltrades <span class='tag'>15 seasons</span><span class='tag'>1 titles</span><span class='tag'>avg finish 4.13</span><span class='tag'>lineup eff 88.1%</span></h3>
+<svg viewBox='0 0 760 190' class='mchart'><line x1='34' y1='117.1' x2='726' y2='117.1' class='grid'/><text x='28' y='120.1' class='ax' text-anchor='end'>85%</text><line x1='34' y1='70.2' x2='726' y2='70.2' class='grid'/><text x='28' y='73.2' class='ax' text-anchor='end'>90%</text><line x1='34' y1='23.4' x2='726' y2='23.4' class='grid'/><text x='28' y='26.4' class='ax' text-anchor='end'>95%</text><rect x='42.3' y='117.6' width='29.5' height='46.4' class='bar'><title>2011: 85.0% efficiency</title></rect><rect x='88.4' y='92.9' width='29.5' height='71.1' class='bar'><title>2012: 87.6% efficiency</title></rect><rect x='134.6' y='101.0' width='29.5' height='63.0' class='bar'><title>2013: 86.7% efficiency</title></rect><rect x='180.7' y='60.4' width='29.5' height='103.6' class='bar'><title>2014: 91.0% efficiency</title></rect><rect x='226.8' y='100.6' width='29.5' height='63.4' class='bar'><title>2015: 86.8% efficiency</title></rect><rect x='273.0' y='109.9' width='29.5' height='54.1' class='bar'><title>2016: 85.8% efficiency</title></rect><rect x='319.1' y='101.8' width='29.5' height='62.2' class='bar'><title>2017: 86.6% efficiency</title></rect><rect x='365.2' y='79.1' width='29.5' height='84.9' class='bar'><title>2018: 89.1% efficiency</title></rect><rect x='411.4' y='105.0' width='29.5' height='59.0' class='bar'><title>2019: 86.3% efficiency</title></rect><rect x='457.5' y='64.6' width='29.5' height='99.4' class='bar'><title>2020: 90.6% efficiency</title></rect><rect x='503.6' y='96.5' width='29.5' height='67.5' class='bar'><title>2021: 87.2% efficiency</title></rect><rect x='549.8' y='75.5' width='29.5' height='88.5' class='bar'><title>2022: 89.4% efficiency</title></rect><rect x='595.9' y='77.2' width='29.5' height='86.8' class='bar'><title>2023: 89.3% efficiency</title></rect><rect x='642.0' y='75.5' width='29.5' height='88.5' class='bar champ'><title>2024: 89.4% efficiency</title></rect><rect x='688.2' y='60.3' width='29.5' height='103.7' class='bar'><title>2025: 91.1% efficiency</title></rect><path d='M57.1,147.3 L103.2,30.7 L149.3,47.3 L195.5,80.7 L241.6,30.7 L287.7,47.3 L333.9,80.7 L380.0,114.0 L426.1,47.3 L472.3,80.7 L518.4,97.3 L564.5,80.7 L610.7,47.3 L656.8,14.0 L702.9,47.3' class='fline'/><circle cx='57.1' cy='147.3' r='3.4' class='fdot'><title>2011: finished 9</title></circle><circle cx='103.2' cy='30.7' r='3.4' class='fdot'><title>2012: finished 2</title></circle><circle cx='149.3' cy='47.3' r='3.4' class='fdot'><title>2013: finished 3</title></circle><circle cx='195.5' cy='80.7' r='3.4' class='fdot'><title>2014: finished 5</title></circle><circle cx='241.6' cy='30.7' r='3.4' class='fdot'><title>2015: finished 2</title></circle><circle cx='287.7' cy='47.3' r='3.4' class='fdot'><title>2016: finished 3</title></circle><circle cx='333.9' cy='80.7' r='3.4' class='fdot'><title>2017: finished 5</title></circle><circle cx='380.0' cy='114.0' r='3.4' class='fdot'><title>2018: finished 7</title></circle><circle cx='426.1' cy='47.3' r='3.4' class='fdot'><title>2019: finished 3</title></circle><circle cx='472.3' cy='80.7' r='3.4' class='fdot'><title>2020: finished 5</title></circle><circle cx='518.4' cy='97.3' r='3.4' class='fdot'><title>2021: finished 6</title></circle><circle cx='564.5' cy='80.7' r='3.4' class='fdot'><title>2022: finished 5</title></circle><circle cx='610.7' cy='47.3' r='3.4' class='fdot'><title>2023: finished 3</title></circle><circle cx='656.8' cy='14.0' r='3.4' class='fdot win'><title>2024: finished 1</title></circle><circle cx='702.9' cy='47.3' r='3.4' class='fdot'><title>2025: finished 3</title></circle><text x='732' y='17.0' class='ax fin'>1</text><text x='732' y='83.7' class='ax fin'>5</text><text x='732' y='167.0' class='ax fin'>10</text><text x='57.1' y='182' class='ax' text-anchor='middle'>11</text><text x='149.3' y='182' class='ax' text-anchor='middle'>13</text><text x='241.6' y='182' class='ax' text-anchor='middle'>15</text><text x='333.9' y='182' class='ax' text-anchor='middle'>17</text><text x='426.1' y='182' class='ax' text-anchor='middle'>19</text><text x='518.4' y='182' class='ax' text-anchor='middle'>21</text><text x='610.7' y='182' class='ax' text-anchor='middle'>23</text><text x='702.9' y='182' class='ax' text-anchor='middle'>25</text></svg>
+<div class='legend'>Bars: lineup efficiency by season (<b>&#9632;</b> blue = championship year). <span style='color:#d29922'>Gold line</span>: final placing, 1 at the top.</div>
+<ul style='margin:6px 0 0;padding-left:20px'>
+<li>takes his first QB <strong>0.7 rounds earlier</strong> than the room</li>
+<li>takes his first TE <strong>0.9 rounds later</strong> than the room</li>
+<li>makes <strong>14 more in-season moves</strong> than average</li>
+<li>RB-even in 60% of his drafts</li>
+<li>lineup efficiency 88.1%</li>
+<li>has used <strong>13 different team names</strong></li>
+</ul>
+<div class='mgrid'>
+<div class='mini'><div class='l'>Best pick ever</div><div class='v'><strong>CeeDee Lamb</strong> &middot; 2023 R2 &middot; finished WR1 &middot; <span class='pos'>+171</span></div></div>
+<div class='mini'><div class='l'>Worst pick ever</div><div class='v'><strong>David Johnson</strong> &middot; 2017 R1 &middot; never cracked the top-N &middot; <span class='neg'>-112</span></div></div>
+<div class='mini'><div class='l'>Worst lineup call</div><div class='v'>benched <strong>Josh Gordon</strong> (43.7) for Vincent Jackson (8.1) &middot; 2013 wk12 &middot; <span class='neg'>&minus;35.6</span></div></div>
+<div class='mini'><div class='l'>Best draft</div><div class='v'><strong>2019</strong> &middot; 368 VOR &middot; finished 3</div></div>
+</div>
+</div>
+<div class='card'>
+<h3>Just Haefner <span class='tag'>15 seasons</span><span class='tag'>2 titles</span><span class='tag'>avg finish 4.73</span><span class='tag'>lineup eff 89.7%</span></h3>
+<svg viewBox='0 0 760 190' class='mchart'><line x1='34' y1='117.1' x2='726' y2='117.1' class='grid'/><text x='28' y='120.1' class='ax' text-anchor='end'>85%</text><line x1='34' y1='70.2' x2='726' y2='70.2' class='grid'/><text x='28' y='73.2' class='ax' text-anchor='end'>90%</text><line x1='34' y1='23.4' x2='726' y2='23.4' class='grid'/><text x='28' y='26.4' class='ax' text-anchor='end'>95%</text><rect x='42.3' y='84.4' width='29.5' height='79.6' class='bar'><title>2011: 88.5% efficiency</title></rect><rect x='88.4' y='143.8' width='29.5' height='20.2' class='bar'><title>2012: 82.2% efficiency</title></rect><rect x='134.6' y='99.3' width='29.5' height='64.7' class='bar'><title>2013: 86.9% efficiency</title></rect><rect x='180.7' y='74.2' width='29.5' height='89.8' class='bar'><title>2014: 89.6% efficiency</title></rect><rect x='226.8' y='75.9' width='29.5' height='88.1' class='bar champ'><title>2015: 89.4% efficiency</title></rect><rect x='273.0' y='91.1' width='29.5' height='72.9' class='bar champ'><title>2016: 87.8% efficiency</title></rect><rect x='319.1' y='76.3' width='29.5' height='87.7' class='bar'><title>2017: 89.3% efficiency</title></rect><rect x='365.2' y='36.0' width='29.5' height='128.0' class='bar'><title>2018: 93.7% efficiency</title></rect><rect x='411.4' y='52.2' width='29.5' height='111.8' class='bar'><title>2019: 91.9% efficiency</title></rect><rect x='457.5' y='55.4' width='29.5' height='108.6' class='bar'><title>2020: 91.6% efficiency</title></rect><rect x='503.6' y='61.5' width='29.5' height='102.5' class='bar'><title>2021: 90.9% efficiency</title></rect><rect x='549.8' y='44.0' width='29.5' height='120.0' class='bar'><title>2022: 92.8% efficiency</title></rect><rect x='595.9' y='83.4' width='29.5' height='80.6' class='bar'><title>2023: 88.6% efficiency</title></rect><rect x='642.0' y='54.3' width='29.5' height='109.7' class='bar'><title>2024: 91.7% efficiency</title></rect><rect x='688.2' y='62.5' width='29.5' height='101.5' class='bar'><title>2025: 90.8% efficiency</title></rect><path d='M57.1,30.7 L103.2,97.3 L149.3,164.0 L195.5,130.7 L241.6,14.0 L287.7,14.0 L333.9,47.3 L380.0,30.7 L426.1,64.0 L472.3,64.0 L518.4,114.0 L564.5,97.3 L610.7,64.0 L656.8,97.3 L702.9,114.0' class='fline'/><circle cx='57.1' cy='30.7' r='3.4' class='fdot'><title>2011: finished 2</title></circle><circle cx='103.2' cy='97.3' r='3.4' class='fdot'><title>2012: finished 6</title></circle><circle cx='149.3' cy='164.0' r='3.4' class='fdot'><title>2013: finished 10</title></circle><circle cx='195.5' cy='130.7' r='3.4' class='fdot'><title>2014: finished 8</title></circle><circle cx='241.6' cy='14.0' r='3.4' class='fdot win'><title>2015: finished 1</title></circle><circle cx='287.7' cy='14.0' r='3.4' class='fdot win'><title>2016: finished 1</title></circle><circle cx='333.9' cy='47.3' r='3.4' class='fdot'><title>2017: finished 3</title></circle><circle cx='380.0' cy='30.7' r='3.4' class='fdot'><title>2018: finished 2</title></circle><circle cx='426.1' cy='64.0' r='3.4' class='fdot'><title>2019: finished 4</title></circle><circle cx='472.3' cy='64.0' r='3.4' class='fdot'><title>2020: finished 4</title></circle><circle cx='518.4' cy='114.0' r='3.4' class='fdot'><title>2021: finished 7</title></circle><circle cx='564.5' cy='97.3' r='3.4' class='fdot'><title>2022: finished 6</title></circle><circle cx='610.7' cy='64.0' r='3.4' class='fdot'><title>2023: finished 4</title></circle><circle cx='656.8' cy='97.3' r='3.4' class='fdot'><title>2024: finished 6</title></circle><circle cx='702.9' cy='114.0' r='3.4' class='fdot'><title>2025: finished 7</title></circle><text x='732' y='17.0' class='ax fin'>1</text><text x='732' y='83.7' class='ax fin'>5</text><text x='732' y='167.0' class='ax fin'>10</text><text x='57.1' y='182' class='ax' text-anchor='middle'>11</text><text x='149.3' y='182' class='ax' text-anchor='middle'>13</text><text x='241.6' y='182' class='ax' text-anchor='middle'>15</text><text x='333.9' y='182' class='ax' text-anchor='middle'>17</text><text x='426.1' y='182' class='ax' text-anchor='middle'>19</text><text x='518.4' y='182' class='ax' text-anchor='middle'>21</text><text x='610.7' y='182' class='ax' text-anchor='middle'>23</text><text x='702.9' y='182' class='ax' text-anchor='middle'>25</text></svg>
+<div class='legend'>Bars: lineup efficiency by season (<b>&#9632;</b> blue = championship year). <span style='color:#d29922'>Gold line</span>: final placing, 1 at the top.</div>
+<ul style='margin:6px 0 0;padding-left:20px'>
+<li>takes his first QB <strong>0.9 rounds earlier</strong> than the room</li>
+<li>takes his first TE <strong>0.8 rounds later</strong> than the room</li>
+<li>makes <strong>10 more in-season moves</strong> than average</li>
+<li>RB-even in 60% of his drafts</li>
+<li>lineup efficiency 89.7%</li>
+</ul>
+<div class='mgrid'>
+<div class='mini'><div class='l'>Best pick ever</div><div class='v'><strong>Austin Ekeler</strong> &middot; 2019 R8 &middot; finished RB4 &middot; <span class='pos'>+163</span></div></div>
+<div class='mini'><div class='l'>Worst pick ever</div><div class='v'><strong>Dez Bryant</strong> &middot; 2015 R1 &middot; finished WR81 &middot; <span class='neg'>-82</span></div></div>
+<div class='mini'><div class='l'>Worst lineup call</div><div class='v'>benched <strong>Devonta Freeman</strong> (42.3) for Jonathan Stewart (5.2) &middot; 2015 wk3 &middot; <span class='neg'>&minus;37.1</span></div></div>
+<div class='mini'><div class='l'>Best draft</div><div class='v'><strong>2017</strong> &middot; 356 VOR &middot; finished 3</div></div>
+</div>
+</div>
+<div class='card'>
+<h3>Mike <span class='tag'>15 seasons</span><span class='tag'>2 titles</span><span class='tag'>avg finish 5.07</span><span class='tag'>lineup eff 89.9%</span></h3>
+<svg viewBox='0 0 760 190' class='mchart'><line x1='34' y1='117.1' x2='726' y2='117.1' class='grid'/><text x='28' y='120.1' class='ax' text-anchor='end'>85%</text><line x1='34' y1='70.2' x2='726' y2='70.2' class='grid'/><text x='28' y='73.2' class='ax' text-anchor='end'>90%</text><line x1='34' y1='23.4' x2='726' y2='23.4' class='grid'/><text x='28' y='26.4' class='ax' text-anchor='end'>95%</text><rect x='42.3' y='74.1' width='29.5' height='89.9' class='bar'><title>2011: 89.6% efficiency</title></rect><rect x='88.4' y='81.2' width='29.5' height='82.8' class='bar'><title>2012: 88.8% efficiency</title></rect><rect x='134.6' y='97.0' width='29.5' height='67.0' class='bar'><title>2013: 87.2% efficiency</title></rect><rect x='180.7' y='101.2' width='29.5' height='62.8' class='bar'><title>2014: 86.7% efficiency</title></rect><rect x='226.8' y='106.1' width='29.5' height='57.9' class='bar'><title>2015: 86.2% efficiency</title></rect><rect x='273.0' y='76.3' width='29.5' height='87.7' class='bar'><title>2016: 89.3% efficiency</title></rect><rect x='319.1' y='55.1' width='29.5' height='108.9' class='bar champ'><title>2017: 91.6% efficiency</title></rect><rect x='365.2' y='49.4' width='29.5' height='114.6' class='bar'><title>2018: 92.2% efficiency</title></rect><rect x='411.4' y='48.5' width='29.5' height='115.5' class='bar'><title>2019: 92.3% efficiency</title></rect><rect x='457.5' y='87.0' width='29.5' height='77.0' class='bar'><title>2020: 88.2% efficiency</title></rect><rect x='503.6' y='27.8' width='29.5' height='136.2' class='bar'><title>2021: 94.5% efficiency</title></rect><rect x='549.8' y='95.5' width='29.5' height='68.5' class='bar'><title>2022: 87.3% efficiency</title></rect><rect x='595.9' y='62.3' width='29.5' height='101.7' class='bar'><title>2023: 90.8% efficiency</title></rect><rect x='642.0' y='61.3' width='29.5' height='102.7' class='bar'><title>2024: 91.0% efficiency</title></rect><rect x='688.2' y='52.1' width='29.5' height='111.9' class='bar champ'><title>2025: 91.9% efficiency</title></rect><path d='M57.1,47.3 L103.2,114.0 L149.3,80.7 L195.5,147.3 L241.6,114.0 L287.7,64.0 L333.9,14.0 L380.0,47.3 L426.1,97.3 L472.3,130.7 L518.4,30.7 L564.5,147.3 L610.7,97.3 L656.8,80.7 L702.9,14.0' class='fline'/><circle cx='57.1' cy='47.3' r='3.4' class='fdot'><title>2011: finished 3</title></circle><circle cx='103.2' cy='114.0' r='3.4' class='fdot'><title>2012: finished 7</title></circle><circle cx='149.3' cy='80.7' r='3.4' class='fdot'><title>2013: finished 5</title></circle><circle cx='195.5' cy='147.3' r='3.4' class='fdot'><title>2014: finished 9</title></circle><circle cx='241.6' cy='114.0' r='3.4' class='fdot'><title>2015: finished 7</title></circle><circle cx='287.7' cy='64.0' r='3.4' class='fdot'><title>2016: finished 4</title></circle><circle cx='333.9' cy='14.0' r='3.4' class='fdot win'><title>2017: finished 1</title></circle><circle cx='380.0' cy='47.3' r='3.4' class='fdot'><title>2018: finished 3</title></circle><circle cx='426.1' cy='97.3' r='3.4' class='fdot'><title>2019: finished 6</title></circle><circle cx='472.3' cy='130.7' r='3.4' class='fdot'><title>2020: finished 8</title></circle><circle cx='518.4' cy='30.7' r='3.4' class='fdot'><title>2021: finished 2</title></circle><circle cx='564.5' cy='147.3' r='3.4' class='fdot'><title>2022: finished 9</title></circle><circle cx='610.7' cy='97.3' r='3.4' class='fdot'><title>2023: finished 6</title></circle><circle cx='656.8' cy='80.7' r='3.4' class='fdot'><title>2024: finished 5</title></circle><circle cx='702.9' cy='14.0' r='3.4' class='fdot win'><title>2025: finished 1</title></circle><text x='732' y='17.0' class='ax fin'>1</text><text x='732' y='83.7' class='ax fin'>5</text><text x='732' y='167.0' class='ax fin'>10</text><text x='57.1' y='182' class='ax' text-anchor='middle'>11</text><text x='149.3' y='182' class='ax' text-anchor='middle'>13</text><text x='241.6' y='182' class='ax' text-anchor='middle'>15</text><text x='333.9' y='182' class='ax' text-anchor='middle'>17</text><text x='426.1' y='182' class='ax' text-anchor='middle'>19</text><text x='518.4' y='182' class='ax' text-anchor='middle'>21</text><text x='610.7' y='182' class='ax' text-anchor='middle'>23</text><text x='702.9' y='182' class='ax' text-anchor='middle'>25</text></svg>
+<div class='legend'>Bars: lineup efficiency by season (<b>&#9632;</b> blue = championship year). <span style='color:#d29922'>Gold line</span>: final placing, 1 at the top.</div>
+<ul style='margin:6px 0 0;padding-left:20px'>
+<li>takes his first QB <strong>0.9 rounds later</strong> than the room</li>
+<li>takes his first TE <strong>1.2 rounds later</strong> than the room</li>
+<li>makes <strong>6 fewer in-season moves</strong> than average</li>
+<li>lineup efficiency 89.9%</li>
+</ul>
+<div class='mgrid'>
+<div class='mini'><div class='l'>Best pick ever</div><div class='v'><strong>Cooper Kupp</strong> &middot; 2021 R5 &middot; finished WR1 &middot; <span class='pos'>+254</span></div></div>
+<div class='mini'><div class='l'>Worst pick ever</div><div class='v'><strong>Jonathan Taylor</strong> &middot; 2022 R1 &middot; finished RB33 &middot; <span class='neg'>-112</span></div></div>
+<div class='mini'><div class='l'>Worst lineup call</div><div class='v'>benched <strong>Kenyan Drake</strong> (39.6) for David Montgomery (5.9) &middot; 2019 wk15 &middot; <span class='neg'>&minus;33.7</span></div></div>
+<div class='mini'><div class='l'>Best draft</div><div class='v'><strong>2021</strong> &middot; 803 VOR &middot; finished 2</div></div>
+</div>
+</div>
+<div class='card'>
+<h3>Michaeopteryx <span class='tag'>14 seasons</span><span class='tag'>2 titles</span><span class='tag'>avg finish 5.29</span><span class='tag'>lineup eff 87.5%</span></h3>
+<svg viewBox='0 0 760 190' class='mchart'><line x1='34' y1='117.1' x2='726' y2='117.1' class='grid'/><text x='28' y='120.1' class='ax' text-anchor='end'>85%</text><line x1='34' y1='70.2' x2='726' y2='70.2' class='grid'/><text x='28' y='73.2' class='ax' text-anchor='end'>90%</text><line x1='34' y1='23.4' x2='726' y2='23.4' class='grid'/><text x='28' y='26.4' class='ax' text-anchor='end'>95%</text><rect x='88.4' y='68.6' width='29.5' height='95.4' class='bar'><title>2012: 90.2% efficiency</title></rect><rect x='134.6' y='111.3' width='29.5' height='52.7' class='bar champ'><title>2013: 85.6% efficiency</title></rect><rect x='180.7' y='85.9' width='29.5' height='78.1' class='bar'><title>2014: 88.3% efficiency</title></rect><rect x='226.8' y='91.2' width='29.5' height='72.8' class='bar'><title>2015: 87.8% efficiency</title></rect><rect x='273.0' y='109.8' width='29.5' height='54.2' class='bar'><title>2016: 85.8% efficiency</title></rect><rect x='319.1' y='105.4' width='29.5' height='58.6' class='bar'><title>2017: 86.2% efficiency</title></rect><rect x='365.2' y='85.2' width='29.5' height='78.8' class='bar champ'><title>2018: 88.4% efficiency</title></rect><rect x='411.4' y='82.2' width='29.5' height='81.8' class='bar'><title>2019: 88.7% efficiency</title></rect><rect x='457.5' y='113.6' width='29.5' height='50.4' class='bar'><title>2020: 85.4% efficiency</title></rect><rect x='503.6' y='91.5' width='29.5' height='72.5' class='bar'><title>2021: 87.7% efficiency</title></rect><rect x='549.8' y='54.5' width='29.5' height='109.5' class='bar'><title>2022: 91.7% efficiency</title></rect><rect x='595.9' y='102.4' width='29.5' height='61.6' class='bar'><title>2023: 86.6% efficiency</title></rect><rect x='642.0' y='119.9' width='29.5' height='44.1' class='bar'><title>2024: 84.7% efficiency</title></rect><rect x='688.2' y='92.3' width='29.5' height='71.7' class='bar'><title>2025: 87.7% efficiency</title></rect><path d='M103.2,147.3 L149.3,14.0 L195.5,64.0 L241.6,97.3 L287.7,164.0 L333.9,130.7 L380.0,14.0 L426.1,30.7 L472.3,97.3 L518.4,47.3 L564.5,64.0 L610.7,114.0 L656.8,114.0 L702.9,97.3' class='fline'/><circle cx='103.2' cy='147.3' r='3.4' class='fdot'><title>2012: finished 9</title></circle><circle cx='149.3' cy='14.0' r='3.4' class='fdot win'><title>2013: finished 1</title></circle><circle cx='195.5' cy='64.0' r='3.4' class='fdot'><title>2014: finished 4</title></circle><circle cx='241.6' cy='97.3' r='3.4' class='fdot'><title>2015: finished 6</title></circle><circle cx='287.7' cy='164.0' r='3.4' class='fdot'><title>2016: finished 10</title></circle><circle cx='333.9' cy='130.7' r='3.4' class='fdot'><title>2017: finished 8</title></circle><circle cx='380.0' cy='14.0' r='3.4' class='fdot win'><title>2018: finished 1</title></circle><circle cx='426.1' cy='30.7' r='3.4' class='fdot'><title>2019: finished 2</title></circle><circle cx='472.3' cy='97.3' r='3.4' class='fdot'><title>2020: finished 6</title></circle><circle cx='518.4' cy='47.3' r='3.4' class='fdot'><title>2021: finished 3</title></circle><circle cx='564.5' cy='64.0' r='3.4' class='fdot'><title>2022: finished 4</title></circle><circle cx='610.7' cy='114.0' r='3.4' class='fdot'><title>2023: finished 7</title></circle><circle cx='656.8' cy='114.0' r='3.4' class='fdot'><title>2024: finished 7</title></circle><circle cx='702.9' cy='97.3' r='3.4' class='fdot'><title>2025: finished 6</title></circle><text x='732' y='17.0' class='ax fin'>1</text><text x='732' y='83.7' class='ax fin'>5</text><text x='732' y='167.0' class='ax fin'>10</text><text x='57.1' y='182' class='ax' text-anchor='middle'>11</text><text x='149.3' y='182' class='ax' text-anchor='middle'>13</text><text x='241.6' y='182' class='ax' text-anchor='middle'>15</text><text x='333.9' y='182' class='ax' text-anchor='middle'>17</text><text x='426.1' y='182' class='ax' text-anchor='middle'>19</text><text x='518.4' y='182' class='ax' text-anchor='middle'>21</text><text x='610.7' y='182' class='ax' text-anchor='middle'>23</text><text x='702.9' y='182' class='ax' text-anchor='middle'>25</text></svg>
+<div class='legend'>Bars: lineup efficiency by season (<b>&#9632;</b> blue = championship year). <span style='color:#d29922'>Gold line</span>: final placing, 1 at the top.</div>
+<ul style='margin:6px 0 0;padding-left:20px'>
+<li>takes his first TE <strong>3.1 rounds earlier</strong> than the room</li>
+<li>lineup efficiency 87.5%</li>
+<li>has never once changed his team name</li>
+</ul>
+<div class='mgrid'>
+<div class='mini'><div class='l'>Best pick ever</div><div class='v'><strong>Stefon Diggs</strong> &middot; 2020 R6 &middot; finished WR3 &middot; <span class='pos'>+146</span></div></div>
+<div class='mini'><div class='l'>Worst pick ever</div><div class='v'><strong>Marshawn Lynch</strong> &middot; 2015 R1 &middot; finished RB61 &middot; <span class='neg'>-97</span></div></div>
+<div class='mini'><div class='l'>Worst lineup call</div><div class='v'>benched <strong>Danny Woodhead</strong> (36.0) for Spencer Ware (0.0) &middot; 2015 wk15 &middot; <span class='neg'>&minus;36.0</span></div></div>
+<div class='mini'><div class='l'>Best draft</div><div class='v'><strong>2019</strong> &middot; 376 VOR &middot; finished 2</div></div>
+</div>
+</div>
+<div class='card'>
+<h3>pat kulp <span class='tag'>15 seasons</span><span class='tag'>2 titles</span><span class='tag'>avg finish 5.40</span><span class='tag'>lineup eff 89.4%</span></h3>
+<svg viewBox='0 0 760 190' class='mchart'><line x1='34' y1='117.1' x2='726' y2='117.1' class='grid'/><text x='28' y='120.1' class='ax' text-anchor='end'>85%</text><line x1='34' y1='70.2' x2='726' y2='70.2' class='grid'/><text x='28' y='73.2' class='ax' text-anchor='end'>90%</text><line x1='34' y1='23.4' x2='726' y2='23.4' class='grid'/><text x='28' y='26.4' class='ax' text-anchor='end'>95%</text><rect x='42.3' y='62.8' width='29.5' height='101.2' class='bar'><title>2011: 90.8% efficiency</title></rect><rect x='88.4' y='76.4' width='29.5' height='87.6' class='bar champ'><title>2012: 89.3% efficiency</title></rect><rect x='134.6' y='58.2' width='29.5' height='105.8' class='bar'><title>2013: 91.3% efficiency</title></rect><rect x='180.7' y='73.8' width='29.5' height='90.2' class='bar'><title>2014: 89.6% efficiency</title></rect><rect x='226.8' y='103.2' width='29.5' height='60.8' class='bar'><title>2015: 86.5% efficiency</title></rect><rect x='273.0' y='63.7' width='29.5' height='100.3' class='bar'><title>2016: 90.7% efficiency</title></rect><rect x='319.1' y='77.3' width='29.5' height='86.7' class='bar'><title>2017: 89.2% efficiency</title></rect><rect x='365.2' y='61.9' width='29.5' height='102.1' class='bar'><title>2018: 90.9% efficiency</title></rect><rect x='411.4' y='52.6' width='29.5' height='111.4' class='bar'><title>2019: 91.9% efficiency</title></rect><rect x='457.5' y='88.6' width='29.5' height='75.4' class='bar'><title>2020: 88.0% efficiency</title></rect><rect x='503.6' y='72.3' width='29.5' height='91.7' class='bar'><title>2021: 89.8% efficiency</title></rect><rect x='549.8' y='104.2' width='29.5' height='59.8' class='bar champ'><title>2022: 86.4% efficiency</title></rect><rect x='595.9' y='91.0' width='29.5' height='73.0' class='bar'><title>2023: 87.8% efficiency</title></rect><rect x='642.0' y='84.0' width='29.5' height='80.0' class='bar'><title>2024: 88.5% efficiency</title></rect><rect x='688.2' y='65.6' width='29.5' height='98.4' class='bar'><title>2025: 90.5% efficiency</title></rect><path d='M57.1,64.0 L103.2,14.0 L149.3,30.7 L195.5,47.3 L241.6,80.7 L287.7,130.7 L333.9,97.3 L380.0,164.0 L426.1,130.7 L472.3,114.0 L518.4,64.0 L564.5,14.0 L610.7,80.7 L656.8,130.7 L702.9,147.3' class='fline'/><circle cx='57.1' cy='64.0' r='3.4' class='fdot'><title>2011: finished 4</title></circle><circle cx='103.2' cy='14.0' r='3.4' class='fdot win'><title>2012: finished 1</title></circle><circle cx='149.3' cy='30.7' r='3.4' class='fdot'><title>2013: finished 2</title></circle><circle cx='195.5' cy='47.3' r='3.4' class='fdot'><title>2014: finished 3</title></circle><circle cx='241.6' cy='80.7' r='3.4' class='fdot'><title>2015: finished 5</title></circle><circle cx='287.7' cy='130.7' r='3.4' class='fdot'><title>2016: finished 8</title></circle><circle cx='333.9' cy='97.3' r='3.4' class='fdot'><title>2017: finished 6</title></circle><circle cx='380.0' cy='164.0' r='3.4' class='fdot'><title>2018: finished 10</title></circle><circle cx='426.1' cy='130.7' r='3.4' class='fdot'><title>2019: finished 8</title></circle><circle cx='472.3' cy='114.0' r='3.4' class='fdot'><title>2020: finished 7</title></circle><circle cx='518.4' cy='64.0' r='3.4' class='fdot'><title>2021: finished 4</title></circle><circle cx='564.5' cy='14.0' r='3.4' class='fdot win'><title>2022: finished 1</title></circle><circle cx='610.7' cy='80.7' r='3.4' class='fdot'><title>2023: finished 5</title></circle><circle cx='656.8' cy='130.7' r='3.4' class='fdot'><title>2024: finished 8</title></circle><circle cx='702.9' cy='147.3' r='3.4' class='fdot'><title>2025: finished 9</title></circle><text x='732' y='17.0' class='ax fin'>1</text><text x='732' y='83.7' class='ax fin'>5</text><text x='732' y='167.0' class='ax fin'>10</text><text x='57.1' y='182' class='ax' text-anchor='middle'>11</text><text x='149.3' y='182' class='ax' text-anchor='middle'>13</text><text x='241.6' y='182' class='ax' text-anchor='middle'>15</text><text x='333.9' y='182' class='ax' text-anchor='middle'>17</text><text x='426.1' y='182' class='ax' text-anchor='middle'>19</text><text x='518.4' y='182' class='ax' text-anchor='middle'>21</text><text x='610.7' y='182' class='ax' text-anchor='middle'>23</text><text x='702.9' y='182' class='ax' text-anchor='middle'>25</text></svg>
+<div class='legend'>Bars: lineup efficiency by season (<b>&#9632;</b> blue = championship year). <span style='color:#d29922'>Gold line</span>: final placing, 1 at the top.</div>
+<ul style='margin:6px 0 0;padding-left:20px'>
+<li>takes his first TE <strong>0.7 rounds later</strong> than the room</li>
+<li>makes <strong>6 fewer in-season moves</strong> than average</li>
+<li>RB-even in 73% of his drafts</li>
+<li>lineup efficiency 89.4%</li>
+</ul>
+<div class='mgrid'>
+<div class='mini'><div class='l'>Best pick ever</div><div class='v'><strong>Christian McCaffrey</strong> &middot; 2019 R1 &middot; finished RB1 &middot; <span class='pos'>+207</span></div></div>
+<div class='mini'><div class='l'>Worst pick ever</div><div class='v'><strong>Christian McCaffrey</strong> &middot; 2024 R1 &middot; finished RB69 &middot; <span class='neg'>-97</span></div></div>
+<div class='mini'><div class='l'>Worst lineup call</div><div class='v'>benched <strong>Eli Manning</strong> (38.0) for Ryan Fitzpatrick (3.0) &middot; 2015 wk8 &middot; <span class='neg'>&minus;35.0</span></div></div>
+<div class='mini'><div class='l'>Best draft</div><div class='v'><strong>2014</strong> &middot; 383 VOR &middot; finished 3</div></div>
+</div>
+</div>
+<div class='card'>
+<h3>Kevin <span class='tag'>15 seasons</span><span class='tag'>1 titles</span><span class='tag'>avg finish 5.93</span><span class='tag'>lineup eff 88.6%</span></h3>
+<svg viewBox='0 0 760 190' class='mchart'><line x1='34' y1='117.1' x2='726' y2='117.1' class='grid'/><text x='28' y='120.1' class='ax' text-anchor='end'>85%</text><line x1='34' y1='70.2' x2='726' y2='70.2' class='grid'/><text x='28' y='73.2' class='ax' text-anchor='end'>90%</text><line x1='34' y1='23.4' x2='726' y2='23.4' class='grid'/><text x='28' y='26.4' class='ax' text-anchor='end'>95%</text><rect x='42.3' y='88.3' width='29.5' height='75.7' class='bar'><title>2011: 88.1% efficiency</title></rect><rect x='88.4' y='88.9' width='29.5' height='75.1' class='bar'><title>2012: 88.0% efficiency</title></rect><rect x='134.6' y='90.2' width='29.5' height='73.8' class='bar'><title>2013: 87.9% efficiency</title></rect><rect x='180.7' y='68.6' width='29.5' height='95.4' class='bar'><title>2014: 90.2% efficiency</title></rect><rect x='226.8' y='83.8' width='29.5' height='80.2' class='bar'><title>2015: 88.5% efficiency</title></rect><rect x='273.0' y='102.6' width='29.5' height='61.4' class='bar'><title>2016: 86.5% efficiency</title></rect><rect x='319.1' y='144.9' width='29.5' height='19.1' class='bar'><title>2017: 82.0% efficiency</title></rect><rect x='365.2' y='66.1' width='29.5' height='97.9' class='bar'><title>2018: 90.4% efficiency</title></rect><rect x='411.4' y='116.4' width='29.5' height='47.6' class='bar champ'><title>2019: 85.1% efficiency</title></rect><rect x='457.5' y='77.2' width='29.5' height='86.8' class='bar'><title>2020: 89.3% efficiency</title></rect><rect x='503.6' y='56.9' width='29.5' height='107.1' class='bar'><title>2021: 91.4% efficiency</title></rect><rect x='549.8' y='79.3' width='29.5' height='84.7' class='bar'><title>2022: 89.0% efficiency</title></rect><rect x='595.9' y='58.5' width='29.5' height='105.5' class='bar'><title>2023: 91.2% efficiency</title></rect><rect x='642.0' y='65.6' width='29.5' height='98.4' class='bar'><title>2024: 90.5% efficiency</title></rect><rect x='688.2' y='65.2' width='29.5' height='98.8' class='bar'><title>2025: 90.5% efficiency</title></rect><path d='M57.1,114.0 L103.2,164.0 L149.3,97.3 L195.5,97.3 L241.6,47.3 L287.7,114.0 L333.9,164.0 L380.0,147.3 L426.1,14.0 L472.3,47.3 L518.4,130.7 L564.5,30.7 L610.7,164.0 L656.8,47.3 L702.9,64.0' class='fline'/><circle cx='57.1' cy='114.0' r='3.4' class='fdot'><title>2011: finished 7</title></circle><circle cx='103.2' cy='164.0' r='3.4' class='fdot'><title>2012: finished 10</title></circle><circle cx='149.3' cy='97.3' r='3.4' class='fdot'><title>2013: finished 6</title></circle><circle cx='195.5' cy='97.3' r='3.4' class='fdot'><title>2014: finished 6</title></circle><circle cx='241.6' cy='47.3' r='3.4' class='fdot'><title>2015: finished 3</title></circle><circle cx='287.7' cy='114.0' r='3.4' class='fdot'><title>2016: finished 7</title></circle><circle cx='333.9' cy='164.0' r='3.4' class='fdot'><title>2017: finished 10</title></circle><circle cx='380.0' cy='147.3' r='3.4' class='fdot'><title>2018: finished 9</title></circle><circle cx='426.1' cy='14.0' r='3.4' class='fdot win'><title>2019: finished 1</title></circle><circle cx='472.3' cy='47.3' r='3.4' class='fdot'><title>2020: finished 3</title></circle><circle cx='518.4' cy='130.7' r='3.4' class='fdot'><title>2021: finished 8</title></circle><circle cx='564.5' cy='30.7' r='3.4' class='fdot'><title>2022: finished 2</title></circle><circle cx='610.7' cy='164.0' r='3.4' class='fdot'><title>2023: finished 10</title></circle><circle cx='656.8' cy='47.3' r='3.4' class='fdot'><title>2024: finished 3</title></circle><circle cx='702.9' cy='64.0' r='3.4' class='fdot'><title>2025: finished 4</title></circle><text x='732' y='17.0' class='ax fin'>1</text><text x='732' y='83.7' class='ax fin'>5</text><text x='732' y='167.0' class='ax fin'>10</text><text x='57.1' y='182' class='ax' text-anchor='middle'>11</text><text x='149.3' y='182' class='ax' text-anchor='middle'>13</text><text x='241.6' y='182' class='ax' text-anchor='middle'>15</text><text x='333.9' y='182' class='ax' text-anchor='middle'>17</text><text x='426.1' y='182' class='ax' text-anchor='middle'>19</text><text x='518.4' y='182' class='ax' text-anchor='middle'>21</text><text x='610.7' y='182' class='ax' text-anchor='middle'>23</text><text x='702.9' y='182' class='ax' text-anchor='middle'>25</text></svg>
+<div class='legend'>Bars: lineup efficiency by season (<b>&#9632;</b> blue = championship year). <span style='color:#d29922'>Gold line</span>: final placing, 1 at the top.</div>
+<ul style='margin:6px 0 0;padding-left:20px'>
+<li>makes <strong>6 fewer in-season moves</strong> than average</li>
+<li>RB-light in 60% of his drafts</li>
+<li>lineup efficiency 88.6%</li>
+</ul>
+<div class='mgrid'>
+<div class='mini'><div class='l'>Best pick ever</div><div class='v'><strong>David Johnson</strong> &middot; 2016 R1 &middot; finished RB1 &middot; <span class='pos'>+139</span></div></div>
+<div class='mini'><div class='l'>Worst pick ever</div><div class='v'><strong>Doug Martin</strong> &middot; 2013 R1 &middot; finished RB57 &middot; <span class='neg'>-100</span></div></div>
+<div class='mini'><div class='l'>Worst lineup call</div><div class='v'>benched <strong>Tyler Lockett</strong> (53.0) for Chase Claypool (0.8) &middot; 2020 wk7 &middot; <span class='neg'>&minus;52.2</span></div></div>
+<div class='mini'><div class='l'>Best draft</div><div class='v'><strong>2019</strong> &middot; 446 VOR &middot; finished 1</div></div>
+</div>
+</div>
+<div class='card'>
+<h3>Natalie Fullerton <span class='tag'>15 seasons</span><span class='tag'>1 titles</span><span class='tag'>avg finish 6.33</span><span class='tag'>lineup eff 88.4%</span></h3>
+<svg viewBox='0 0 760 190' class='mchart'><line x1='34' y1='117.1' x2='726' y2='117.1' class='grid'/><text x='28' y='120.1' class='ax' text-anchor='end'>85%</text><line x1='34' y1='70.2' x2='726' y2='70.2' class='grid'/><text x='28' y='73.2' class='ax' text-anchor='end'>90%</text><line x1='34' y1='23.4' x2='726' y2='23.4' class='grid'/><text x='28' y='26.4' class='ax' text-anchor='end'>95%</text><rect x='42.3' y='99.7' width='29.5' height='64.3' class='bar'><title>2011: 86.9% efficiency</title></rect><rect x='88.4' y='82.7' width='29.5' height='81.3' class='bar'><title>2012: 88.7% efficiency</title></rect><rect x='134.6' y='56.6' width='29.5' height='107.4' class='bar'><title>2013: 91.5% efficiency</title></rect><rect x='180.7' y='90.4' width='29.5' height='73.6' class='bar'><title>2014: 87.8% efficiency</title></rect><rect x='226.8' y='94.2' width='29.5' height='69.8' class='bar'><title>2015: 87.5% efficiency</title></rect><rect x='273.0' y='94.4' width='29.5' height='69.6' class='bar'><title>2016: 87.4% efficiency</title></rect><rect x='319.1' y='55.8' width='29.5' height='108.2' class='bar'><title>2017: 91.5% efficiency</title></rect><rect x='365.2' y='72.7' width='29.5' height='91.3' class='bar'><title>2018: 89.7% efficiency</title></rect><rect x='411.4' y='113.8' width='29.5' height='50.2' class='bar'><title>2019: 85.3% efficiency</title></rect><rect x='457.5' y='26.6' width='29.5' height='137.4' class='bar champ'><title>2020: 94.7% efficiency</title></rect><rect x='503.6' y='127.8' width='29.5' height='36.2' class='bar'><title>2021: 83.9% efficiency</title></rect><rect x='549.8' y='113.3' width='29.5' height='50.7' class='bar'><title>2022: 85.4% efficiency</title></rect><rect x='595.9' y='85.7' width='29.5' height='78.3' class='bar'><title>2023: 88.3% efficiency</title></rect><rect x='642.0' y='112.3' width='29.5' height='51.7' class='bar'><title>2024: 85.5% efficiency</title></rect><rect x='688.2' y='58.6' width='29.5' height='105.4' class='bar'><title>2025: 91.2% efficiency</title></rect><path d='M57.1,164.0 L103.2,64.0 L149.3,64.0 L195.5,114.0 L241.6,130.7 L287.7,97.3 L333.9,64.0 L380.0,130.7 L426.1,164.0 L472.3,14.0 L518.4,164.0 L564.5,164.0 L610.7,30.7 L656.8,147.3 L702.9,30.7' class='fline'/><circle cx='57.1' cy='164.0' r='3.4' class='fdot'><title>2011: finished 10</title></circle><circle cx='103.2' cy='64.0' r='3.4' class='fdot'><title>2012: finished 4</title></circle><circle cx='149.3' cy='64.0' r='3.4' class='fdot'><title>2013: finished 4</title></circle><circle cx='195.5' cy='114.0' r='3.4' class='fdot'><title>2014: finished 7</title></circle><circle cx='241.6' cy='130.7' r='3.4' class='fdot'><title>2015: finished 8</title></circle><circle cx='287.7' cy='97.3' r='3.4' class='fdot'><title>2016: finished 6</title></circle><circle cx='333.9' cy='64.0' r='3.4' class='fdot'><title>2017: finished 4</title></circle><circle cx='380.0' cy='130.7' r='3.4' class='fdot'><title>2018: finished 8</title></circle><circle cx='426.1' cy='164.0' r='3.4' class='fdot'><title>2019: finished 10</title></circle><circle cx='472.3' cy='14.0' r='3.4' class='fdot win'><title>2020: finished 1</title></circle><circle cx='518.4' cy='164.0' r='3.4' class='fdot'><title>2021: finished 10</title></circle><circle cx='564.5' cy='164.0' r='3.4' class='fdot'><title>2022: finished 10</title></circle><circle cx='610.7' cy='30.7' r='3.4' class='fdot'><title>2023: finished 2</title></circle><circle cx='656.8' cy='147.3' r='3.4' class='fdot'><title>2024: finished 9</title></circle><circle cx='702.9' cy='30.7' r='3.4' class='fdot'><title>2025: finished 2</title></circle><text x='732' y='17.0' class='ax fin'>1</text><text x='732' y='83.7' class='ax fin'>5</text><text x='732' y='167.0' class='ax fin'>10</text><text x='57.1' y='182' class='ax' text-anchor='middle'>11</text><text x='149.3' y='182' class='ax' text-anchor='middle'>13</text><text x='241.6' y='182' class='ax' text-anchor='middle'>15</text><text x='333.9' y='182' class='ax' text-anchor='middle'>17</text><text x='426.1' y='182' class='ax' text-anchor='middle'>19</text><text x='518.4' y='182' class='ax' text-anchor='middle'>21</text><text x='610.7' y='182' class='ax' text-anchor='middle'>23</text><text x='702.9' y='182' class='ax' text-anchor='middle'>25</text></svg>
+<div class='legend'>Bars: lineup efficiency by season (<b>&#9632;</b> blue = championship year). <span style='color:#d29922'>Gold line</span>: final placing, 1 at the top.</div>
+<ul style='margin:6px 0 0;padding-left:20px'>
+<li>makes <strong>13 fewer in-season moves</strong> than average</li>
+<li>RB-even in 73% of his drafts</li>
+<li>lineup efficiency 88.4%</li>
+<li>has never once changed his team name</li>
+</ul>
+<div class='mgrid'>
+<div class='mini'><div class='l'>Best pick ever</div><div class='v'><strong>Todd Gurley</strong> &middot; 2017 R2 &middot; finished RB1 &middot; <span class='pos'>+176</span></div></div>
+<div class='mini'><div class='l'>Worst pick ever</div><div class='v'><strong>James Conner</strong> &middot; 2019 R1 &middot; finished RB34 &middot; <span class='neg'>-87</span></div></div>
+<div class='mini'><div class='l'>Worst lineup call</div><div class='v'>benched <strong>Steve Smith</strong> (43.6) for Anquan Boldin (3.6) &middot; 2015 wk3 &middot; <span class='neg'>&minus;40.0</span></div></div>
+<div class='mini'><div class='l'>Best draft</div><div class='v'><strong>2025</strong> &middot; 488 VOR &middot; finished 2</div></div>
+</div>
+</div>
+<div class='card'>
+<h3>Ryan <span class='tag'>6 seasons</span><span class='tag'>1 titles</span><span class='tag'>avg finish 6.33</span><span class='tag'>lineup eff 89.8%</span></h3>
+<svg viewBox='0 0 760 190' class='mchart'><line x1='34' y1='117.1' x2='726' y2='117.1' class='grid'/><text x='28' y='120.1' class='ax' text-anchor='end'>85%</text><line x1='34' y1='70.2' x2='726' y2='70.2' class='grid'/><text x='28' y='73.2' class='ax' text-anchor='end'>90%</text><line x1='34' y1='23.4' x2='726' y2='23.4' class='grid'/><text x='28' y='26.4' class='ax' text-anchor='end'>95%</text><rect x='457.5' y='58.1' width='29.5' height='105.9' class='bar'><title>2020: 91.3% efficiency</title></rect><rect x='503.6' y='56.3' width='29.5' height='107.7' class='bar champ'><title>2021: 91.5% efficiency</title></rect><rect x='549.8' y='65.8' width='29.5' height='98.2' class='bar'><title>2022: 90.5% efficiency</title></rect><rect x='595.9' y='86.8' width='29.5' height='77.2' class='bar'><title>2023: 88.2% efficiency</title></rect><rect x='642.0' y='66.2' width='29.5' height='97.8' class='bar'><title>2024: 90.4% efficiency</title></rect><rect x='688.2' y='101.4' width='29.5' height='62.6' class='bar'><title>2025: 86.7% efficiency</title></rect><path d='M472.3,164.0 L518.4,14.0 L564.5,114.0 L610.7,130.7 L656.8,64.0 L702.9,130.7' class='fline'/><circle cx='472.3' cy='164.0' r='3.4' class='fdot'><title>2020: finished 10</title></circle><circle cx='518.4' cy='14.0' r='3.4' class='fdot win'><title>2021: finished 1</title></circle><circle cx='564.5' cy='114.0' r='3.4' class='fdot'><title>2022: finished 7</title></circle><circle cx='610.7' cy='130.7' r='3.4' class='fdot'><title>2023: finished 8</title></circle><circle cx='656.8' cy='64.0' r='3.4' class='fdot'><title>2024: finished 4</title></circle><circle cx='702.9' cy='130.7' r='3.4' class='fdot'><title>2025: finished 8</title></circle><text x='732' y='17.0' class='ax fin'>1</text><text x='732' y='83.7' class='ax fin'>5</text><text x='732' y='167.0' class='ax fin'>10</text><text x='57.1' y='182' class='ax' text-anchor='middle'>11</text><text x='149.3' y='182' class='ax' text-anchor='middle'>13</text><text x='241.6' y='182' class='ax' text-anchor='middle'>15</text><text x='333.9' y='182' class='ax' text-anchor='middle'>17</text><text x='426.1' y='182' class='ax' text-anchor='middle'>19</text><text x='518.4' y='182' class='ax' text-anchor='middle'>21</text><text x='610.7' y='182' class='ax' text-anchor='middle'>23</text><text x='702.9' y='182' class='ax' text-anchor='middle'>25</text></svg>
+<div class='legend'>Bars: lineup efficiency by season (<b>&#9632;</b> blue = championship year). <span style='color:#d29922'>Gold line</span>: final placing, 1 at the top.</div>
+<ul style='margin:6px 0 0;padding-left:20px'>
+<li>takes his first QB <strong>0.6 rounds earlier</strong> than the room</li>
+<li>takes his first TE <strong>1.8 rounds earlier</strong> than the room</li>
+<li>makes <strong>7 fewer in-season moves</strong> than average</li>
+<li>RB-even in 83% of his drafts</li>
+<li>lineup efficiency 89.8%</li>
+<li>has never once changed his team name</li>
+</ul>
+<div class='mgrid'>
+<div class='mini'><div class='l'>Best pick ever</div><div class='v'><strong>Deebo Samuel Sr.</strong> &middot; 2021 R8 &middot; finished WR3 &middot; <span class='pos'>+179</span></div></div>
+<div class='mini'><div class='l'>Worst pick ever</div><div class='v'><strong>Christian McCaffrey</strong> &middot; 2021 R1 &middot; finished RB38 &middot; <span class='neg'>-112</span></div></div>
+<div class='mini'><div class='l'>Worst lineup call</div><div class='v'>benched <strong>Jordan Addison</strong> (30.2) for Brian Robinson (0.0) &middot; 2024 wk12 &middot; <span class='neg'>&minus;30.2</span></div></div>
+<div class='mini'><div class='l'>Best draft</div><div class='v'><strong>2021</strong> &middot; 276 VOR &middot; finished 1</div></div>
+</div>
+</div>
+<div class='card'>
+<h3>Al <span class='tag'>15 seasons</span><span class='tag'>0 titles</span><span class='tag'>avg finish 6.80</span><span class='tag'>lineup eff 88.5%</span></h3>
+<svg viewBox='0 0 760 190' class='mchart'><line x1='34' y1='117.1' x2='726' y2='117.1' class='grid'/><text x='28' y='120.1' class='ax' text-anchor='end'>85%</text><line x1='34' y1='70.2' x2='726' y2='70.2' class='grid'/><text x='28' y='73.2' class='ax' text-anchor='end'>90%</text><line x1='34' y1='23.4' x2='726' y2='23.4' class='grid'/><text x='28' y='26.4' class='ax' text-anchor='end'>95%</text><rect x='42.3' y='103.5' width='29.5' height='60.5' class='bar'><title>2011: 86.5% efficiency</title></rect><rect x='88.4' y='40.0' width='29.5' height='124.0' class='bar'><title>2012: 93.2% efficiency</title></rect><rect x='134.6' y='104.4' width='29.5' height='59.6' class='bar'><title>2013: 86.4% efficiency</title></rect><rect x='180.7' y='102.9' width='29.5' height='61.1' class='bar'><title>2014: 86.5% efficiency</title></rect><rect x='226.8' y='84.4' width='29.5' height='79.6' class='bar'><title>2015: 88.5% efficiency</title></rect><rect x='273.0' y='61.7' width='29.5' height='102.3' class='bar'><title>2016: 90.9% efficiency</title></rect><rect x='319.1' y='74.4' width='29.5' height='89.6' class='bar'><title>2017: 89.6% efficiency</title></rect><rect x='365.2' y='46.2' width='29.5' height='117.8' class='bar'><title>2018: 92.6% efficiency</title></rect><rect x='411.4' y='63.9' width='29.5' height='100.1' class='bar'><title>2019: 90.7% efficiency</title></rect><rect x='457.5' y='50.2' width='29.5' height='113.8' class='bar'><title>2020: 92.1% efficiency</title></rect><rect x='503.6' y='51.1' width='29.5' height='112.9' class='bar'><title>2021: 92.0% efficiency</title></rect><rect x='549.8' y='91.1' width='29.5' height='72.9' class='bar'><title>2022: 87.8% efficiency</title></rect><rect x='595.9' y='92.3' width='29.5' height='71.7' class='bar'><title>2023: 87.7% efficiency</title></rect><rect x='642.0' y='150.9' width='29.5' height='13.1' class='bar'><title>2024: 81.4% efficiency</title></rect><rect x='688.2' y='151.0' width='29.5' height='13.0' class='bar'><title>2025: 81.4% efficiency</title></rect><path d='M57.1,80.7 L103.2,47.3 L149.3,130.7 L195.5,30.7 L241.6,164.0 L287.7,80.7 L333.9,114.0 L380.0,80.7 L426.1,147.3 L472.3,30.7 L518.4,147.3 L564.5,130.7 L610.7,147.3 L656.8,164.0 L702.9,164.0' class='fline'/><circle cx='57.1' cy='80.7' r='3.4' class='fdot'><title>2011: finished 5</title></circle><circle cx='103.2' cy='47.3' r='3.4' class='fdot'><title>2012: finished 3</title></circle><circle cx='149.3' cy='130.7' r='3.4' class='fdot'><title>2013: finished 8</title></circle><circle cx='195.5' cy='30.7' r='3.4' class='fdot'><title>2014: finished 2</title></circle><circle cx='241.6' cy='164.0' r='3.4' class='fdot'><title>2015: finished 10</title></circle><circle cx='287.7' cy='80.7' r='3.4' class='fdot'><title>2016: finished 5</title></circle><circle cx='333.9' cy='114.0' r='3.4' class='fdot'><title>2017: finished 7</title></circle><circle cx='380.0' cy='80.7' r='3.4' class='fdot'><title>2018: finished 5</title></circle><circle cx='426.1' cy='147.3' r='3.4' class='fdot'><title>2019: finished 9</title></circle><circle cx='472.3' cy='30.7' r='3.4' class='fdot'><title>2020: finished 2</title></circle><circle cx='518.4' cy='147.3' r='3.4' class='fdot'><title>2021: finished 9</title></circle><circle cx='564.5' cy='130.7' r='3.4' class='fdot'><title>2022: finished 8</title></circle><circle cx='610.7' cy='147.3' r='3.4' class='fdot'><title>2023: finished 9</title></circle><circle cx='656.8' cy='164.0' r='3.4' class='fdot'><title>2024: finished 10</title></circle><circle cx='702.9' cy='164.0' r='3.4' class='fdot'><title>2025: finished 10</title></circle><text x='732' y='17.0' class='ax fin'>1</text><text x='732' y='83.7' class='ax fin'>5</text><text x='732' y='167.0' class='ax fin'>10</text><text x='57.1' y='182' class='ax' text-anchor='middle'>11</text><text x='149.3' y='182' class='ax' text-anchor='middle'>13</text><text x='241.6' y='182' class='ax' text-anchor='middle'>15</text><text x='333.9' y='182' class='ax' text-anchor='middle'>17</text><text x='426.1' y='182' class='ax' text-anchor='middle'>19</text><text x='518.4' y='182' class='ax' text-anchor='middle'>21</text><text x='610.7' y='182' class='ax' text-anchor='middle'>23</text><text x='702.9' y='182' class='ax' text-anchor='middle'>25</text></svg>
+<div class='legend'>Bars: lineup efficiency by season (<b>&#9632;</b> blue = championship year). <span style='color:#d29922'>Gold line</span>: final placing, 1 at the top.</div>
+<ul style='margin:6px 0 0;padding-left:20px'>
+<li>RB-even in 60% of his drafts</li>
+<li>lineup efficiency 88.5%</li>
+<li>has used <strong>15 different team names</strong></li>
+</ul>
+<div class='mgrid'>
+<div class='mini'><div class='l'>Best pick ever</div><div class='v'><strong>Christian McCaffrey</strong> &middot; 2018 R3 &middot; finished RB1 &middot; <span class='pos'>+178</span></div></div>
+<div class='mini'><div class='l'>Worst pick ever</div><div class='v'><strong>Le'Veon Bell</strong> &middot; 2015 R1 &middot; finished RB48 &middot; <span class='neg'>-112</span></div></div>
+<div class='mini'><div class='l'>Worst lineup call</div><div class='v'>benched <strong>Anquan Boldin</strong> (39.8) for Dez Bryant (6.2) &middot; 2013 wk1 &middot; <span class='neg'>&minus;33.6</span></div></div>
+<div class='mini'><div class='l'>Best draft</div><div class='v'><strong>2014</strong> &middot; 550 VOR &middot; finished 2</div></div>
+</div>
+</div>
+<div class='card'>
+<h3>senftiva <span class='tag'>9 seasons</span><span class='tag'>0 titles</span><span class='tag'>avg finish 7.56</span><span class='tag'>lineup eff 84.8%</span></h3>
+<svg viewBox='0 0 760 190' class='mchart'><line x1='34' y1='117.1' x2='726' y2='117.1' class='grid'/><text x='28' y='120.1' class='ax' text-anchor='end'>85%</text><line x1='34' y1='70.2' x2='726' y2='70.2' class='grid'/><text x='28' y='73.2' class='ax' text-anchor='end'>90%</text><line x1='34' y1='23.4' x2='726' y2='23.4' class='grid'/><text x='28' y='26.4' class='ax' text-anchor='end'>95%</text><rect x='42.3' y='139.6' width='29.5' height='24.4' class='bar'><title>2011: 82.6% efficiency</title></rect><rect x='88.4' y='124.4' width='29.5' height='39.6' class='bar'><title>2012: 84.2% efficiency</title></rect><rect x='134.6' y='98.4' width='29.5' height='65.6' class='bar'><title>2013: 87.0% efficiency</title></rect><rect x='180.7' y='143.0' width='29.5' height='21.0' class='bar'><title>2014: 82.2% efficiency</title></rect><rect x='226.8' y='88.4' width='29.5' height='75.6' class='bar'><title>2015: 88.1% efficiency</title></rect><rect x='273.0' y='124.7' width='29.5' height='39.3' class='bar'><title>2016: 84.2% efficiency</title></rect><rect x='319.1' y='148.5' width='29.5' height='15.5' class='bar'><title>2017: 81.7% efficiency</title></rect><rect x='365.2' y='75.1' width='29.5' height='88.9' class='bar'><title>2018: 89.5% efficiency</title></rect><rect x='411.4' y='129.8' width='29.5' height='34.2' class='bar'><title>2019: 83.7% efficiency</title></rect><path d='M57.1,97.3 L103.2,130.7 L149.3,147.3 L195.5,164.0 L241.6,64.0 L287.7,147.3 L333.9,147.3 L380.0,97.3 L426.1,114.0' class='fline'/><circle cx='57.1' cy='97.3' r='3.4' class='fdot'><title>2011: finished 6</title></circle><circle cx='103.2' cy='130.7' r='3.4' class='fdot'><title>2012: finished 8</title></circle><circle cx='149.3' cy='147.3' r='3.4' class='fdot'><title>2013: finished 9</title></circle><circle cx='195.5' cy='164.0' r='3.4' class='fdot'><title>2014: finished 10</title></circle><circle cx='241.6' cy='64.0' r='3.4' class='fdot'><title>2015: finished 4</title></circle><circle cx='287.7' cy='147.3' r='3.4' class='fdot'><title>2016: finished 9</title></circle><circle cx='333.9' cy='147.3' r='3.4' class='fdot'><title>2017: finished 9</title></circle><circle cx='380.0' cy='97.3' r='3.4' class='fdot'><title>2018: finished 6</title></circle><circle cx='426.1' cy='114.0' r='3.4' class='fdot'><title>2019: finished 7</title></circle><text x='732' y='17.0' class='ax fin'>1</text><text x='732' y='83.7' class='ax fin'>5</text><text x='732' y='167.0' class='ax fin'>10</text><text x='57.1' y='182' class='ax' text-anchor='middle'>11</text><text x='149.3' y='182' class='ax' text-anchor='middle'>13</text><text x='241.6' y='182' class='ax' text-anchor='middle'>15</text><text x='333.9' y='182' class='ax' text-anchor='middle'>17</text><text x='426.1' y='182' class='ax' text-anchor='middle'>19</text><text x='518.4' y='182' class='ax' text-anchor='middle'>21</text><text x='610.7' y='182' class='ax' text-anchor='middle'>23</text><text x='702.9' y='182' class='ax' text-anchor='middle'>25</text></svg>
+<div class='legend'>Bars: lineup efficiency by season (<b>&#9632;</b> blue = championship year). <span style='color:#d29922'>Gold line</span>: final placing, 1 at the top.</div>
+<ul style='margin:6px 0 0;padding-left:20px'>
+<li>makes <strong>7 fewer in-season moves</strong> than average</li>
+<li>RB-even in 67% of his drafts</li>
+<li>lineup efficiency 84.8%</li>
+<li>has never once changed his team name</li>
+</ul>
+<div class='mgrid'>
+<div class='mini'><div class='l'>Best pick ever</div><div class='v'><strong>Brandon Marshall</strong> &middot; 2015 R5 &middot; finished WR3 &middot; <span class='pos'>+162</span></div></div>
+<div class='mini'><div class='l'>Worst pick ever</div><div class='v'><strong>Adrian Peterson</strong> &middot; 2014 R1 &middot; never cracked the top-N &middot; <span class='neg'>-97</span></div></div>
+<div class='mini'><div class='l'>Worst lineup call</div><div class='v'>benched <strong>Steve Smith</strong> (33.8) for Jeremy Maclin (2.5) &middot; 2011 wk1 &middot; <span class='neg'>&minus;31.3</span></div></div>
+<div class='mini'><div class='l'>Best draft</div><div class='v'><strong>2018</strong> &middot; 671 VOR &middot; finished 6</div></div>
+</div>
+</div>
+<h2>How the room has changed</h2>
+<table><tr><th>Era</th><th>Starting lineup</th></tr>
+<tr><td>2011&ndash;2013</td><td class='dim'>QB, WR, WR, RB, RB, TE, W/R, K, DEF, BN, BN, BN, BN, BN, BN</td></tr>
+<tr><td>2014&ndash;2019</td><td class='dim'>QB, WR, WR, WR, RB, RB, TE, W/R/T, K, DEF, BN, BN, BN, BN, BN, BN</td></tr>
+<tr><td>2020&ndash;2025</td><td class='dim'>QB, WR, WR, WR, RB, RB, TE, W/R/T, K, DEF, BN, BN, BN, BN, BN, BN, IR</td></tr>
+</table>
+<h3>RB commitment in the first five picks</h3><table><tr><th>Season</th><th class='num'>Zero-RB</th><th class='num'>RB-light</th><th class='num'>RB-even</th><th class='num'>RB-heavy</th></tr>
+<tr><td>2011</td><td class='num'></td><td class='num'>1</td><td class='num'>8</td><td class='num'>1</td></tr>
+<tr><td>2012</td><td class='num'></td><td class='num'>1</td><td class='num'>6</td><td class='num'>3</td></tr>
+<tr><td>2013</td><td class='num'></td><td class='num'></td><td class='num'>8</td><td class='num'>2</td></tr>
+<tr><td>2014</td><td class='num'></td><td class='num'>2</td><td class='num'>6</td><td class='num'>2</td></tr>
+<tr><td>2015</td><td class='num'></td><td class='num'>1</td><td class='num'>7</td><td class='num'>2</td></tr>
+<tr><td>2016</td><td class='num'>2</td><td class='num'>3</td><td class='num'>4</td><td class='num'>1</td></tr>
+<tr><td>2017</td><td class='num'></td><td class='num'>3</td><td class='num'>5</td><td class='num'>2</td></tr>
+<tr><td>2018</td><td class='num'></td><td class='num'>4</td><td class='num'>6</td><td class='num'></td></tr>
+<tr><td>2019</td><td class='num'>1</td><td class='num'>1</td><td class='num'>3</td><td class='num'>5</td></tr>
+<tr><td>2020</td><td class='num'></td><td class='num'>3</td><td class='num'>4</td><td class='num'>3</td></tr>
+<tr><td>2021</td><td class='num'></td><td class='num'>2</td><td class='num'>7</td><td class='num'>1</td></tr>
+<tr><td>2022</td><td class='num'></td><td class='num'>2</td><td class='num'>6</td><td class='num'>2</td></tr>
+<tr><td>2023</td><td class='num'>1</td><td class='num'>2</td><td class='num'>6</td><td class='num'>1</td></tr>
+<tr><td>2024</td><td class='num'>1</td><td class='num'>3</td><td class='num'>5</td><td class='num'>1</td></tr>
+<tr><td>2025</td><td class='num'></td><td class='num'>3</td><td class='num'>7</td><td class='num'></td></tr>
+</table>
+<h2>The curse of the first overall pick</h2>
+<div class='callout'><strong>11 of 15 first overall picks have lost value against what the slot is worth.</strong> Between 2017 and 2022 the 1.01 failed six years in a row, three of those times returning less than nothing. The average finish for the team holding it is 4.73 &mdash; better than mid, but nowhere near what the best pick in the draft should buy.</div>
+<table><tr><th>Season</th><th>Player</th><th>Pos</th><th class='num'>Finished</th><th class='num'>Surplus</th><th>Manager</th><th class='num'>Finish</th></tr>
+<tr><td>2011</td><td>Arian Foster</td><td class='dim'>RB</td><td class='num'>RB4</td><td class='num pos'>+11</td><td>Just Haefner</td><td class='num'>2</td></tr>
+<tr><td>2012</td><td>Ray Rice</td><td class='dim'>RB</td><td class='num'>RB5</td><td class='num pos'>+2</td><td>KulpCommissioner</td><td class='num'>5</td></tr>
+<tr><td>2013</td><td>Adrian Peterson</td><td class='dim'>RB</td><td class='num'>RB10</td><td class='num neg'>-59</td><td>Just Haefner</td><td class='num'>10</td></tr>
+<tr><td>2014</td><td>LeSean McCoy</td><td class='dim'>RB</td><td class='num'>RB12</td><td class='num neg'>-70</td><td>Natalie Fullerton</td><td class='num'>7</td></tr>
+<tr><td>2015</td><td>Le'Veon Bell</td><td class='dim'>RB</td><td class='num'>RB48</td><td class='num neg'>-112</td><td>Al</td><td class='num'>10</td></tr>
+<tr><td>2016</td><td>Antonio Brown</td><td class='dim'>WR</td><td class='num'>WR1</td><td class='num pos'>+15</td><td>KulpCommissioner</td><td class='num'>2</td></tr>
+<tr><td>2017</td><td>David Johnson</td><td class='dim'>?</td><td class='num'><span class='dim'>outside top-N</span></td><td class='num neg'>-112</td><td>9ofalltrades</td><td class='num'>5</td></tr>
+<tr><td>2018</td><td>Le'Veon Bell</td><td class='dim'>?</td><td class='num'><span class='dim'>outside top-N</span></td><td class='num neg'>-112</td><td>Al</td><td class='num'>5</td></tr>
+<tr><td>2019</td><td>Saquon Barkley</td><td class='dim'>RB</td><td class='num'>RB11</td><td class='num neg'>-36</td><td>Mike</td><td class='num'>6</td></tr>
+<tr><td>2020</td><td>Christian McCaffrey</td><td class='dim'>RB</td><td class='num'>RB54</td><td class='num neg'>-112</td><td>Al</td><td class='num'>2</td></tr>
+<tr><td>2021</td><td>Christian McCaffrey</td><td class='dim'>RB</td><td class='num'>RB38</td><td class='num neg'>-112</td><td>Ryan</td><td class='num'>1</td></tr>
+<tr><td>2022</td><td>Jonathan Taylor</td><td class='dim'>RB</td><td class='num'>RB33</td><td class='num neg'>-112</td><td>Mike</td><td class='num'>9</td></tr>
+<tr><td>2023</td><td>Justin Jefferson</td><td class='dim'>WR</td><td class='num'>WR32</td><td class='num neg'>-83</td><td>KulpCommissioner</td><td class='num'>1</td></tr>
+<tr><td>2024</td><td>CeeDee Lamb</td><td class='dim'>WR</td><td class='num'>WR8</td><td class='num neg'>-31</td><td>KulpCommissioner</td><td class='num'>2</td></tr>
+<tr><td>2025</td><td>Ja'Marr Chase</td><td class='dim'>WR</td><td class='num'>WR4</td><td class='num pos'>+31</td><td>Kevin</td><td class='num'>4</td></tr>
+</table>
+<h2>The best picks ever made</h2>
+<p class='sub'>Surplus is value above what that draft slot historically returns, so a tenth-round hit outranks a first-round one that merely did its job.</p>
+<table><tr><th>Season</th><th class='num'>Pick</th><th>Player</th><th class='num'>Finished</th><th class='num'>Surplus</th><th>Manager</th></tr>
+<tr><td>2021</td><td class='num dim'>50 (R5)</td><td><strong>Cooper Kupp</strong></td><td class='num'>WR1</td><td class='num pos'>+254</td><td>Mike</td></tr>
+<tr><td>2019</td><td class='num dim'>3 (R1)</td><td><strong>Christian McCaffrey</strong></td><td class='num'>RB1</td><td class='num pos'>+207</td><td>pat kulp</td></tr>
+<tr><td>2021</td><td class='num dim'>80 (R8)</td><td><strong>Deebo Samuel Sr.</strong></td><td class='num'>WR3</td><td class='num pos'>+179</td><td>Ryan</td></tr>
+<tr><td>2018</td><td class='num dim'>21 (R3)</td><td><strong>Christian McCaffrey</strong></td><td class='num'>RB1</td><td class='num pos'>+178</td><td>Al</td></tr>
+<tr><td>2015</td><td class='num dim'>96 (R10)</td><td><strong>Devonta Freeman</strong></td><td class='num'>RB1</td><td class='num pos'>+176</td><td>KulpCommissioner</td></tr>
+<tr><td>2017</td><td class='num dim'>18 (R2)</td><td><strong>Todd Gurley</strong></td><td class='num'>RB1</td><td class='num pos'>+176</td><td>Natalie Fullerton</td></tr>
+<tr><td>2014</td><td class='num dim'>23 (R3)</td><td><strong>Le'Veon Bell</strong></td><td class='num'>RB1</td><td class='num pos'>+172</td><td>pat kulp</td></tr>
+<tr><td>2023</td><td class='num dim'>17 (R2)</td><td><strong>CeeDee Lamb</strong></td><td class='num'>WR1</td><td class='num pos'>+171</td><td>9ofalltrades</td></tr>
+<tr><td>2021</td><td class='num dim'>97 (R10)</td><td><strong>Ja'Marr Chase</strong></td><td class='num'>WR5</td><td class='num pos'>+170</td><td>Natalie Fullerton</td></tr>
+<tr><td>2014</td><td class='num dim'>18 (R2)</td><td><strong>Antonio Brown</strong></td><td class='num'>WR1</td><td class='num pos'>+168</td><td>pat kulp</td></tr>
+</table>
+<h2>Premium picks that vanished</h2>
+<p class='sub'>21 picks inside the first three rounds failed to finish inside the top 50 QB / 75 RB / 100 WR / 50 TE &mdash; they returned nothing at all.</p>
+<table><tr><th>Season</th><th>Pick</th><th>Player</th><th>Manager</th></tr>
+<tr><td>2025</td><td class='dim'>R2.5</td><td>Malik Nabers</td><td>Al</td></tr>
+<tr><td>2025</td><td class='dim'>R3.10</td><td>Tyreek Hill</td><td>Michaeopteryx</td></tr>
+<tr><td>2024</td><td class='dim'>R3.10</td><td>Brandon Aiyuk</td><td>Natalie Fullerton</td></tr>
+<tr><td>2023</td><td class='dim'>R2.2</td><td>Nick Chubb</td><td>pat kulp</td></tr>
+<tr><td>2022</td><td class='dim'>R2.10</td><td>Javonte Williams</td><td>Mike</td></tr>
+<tr><td>2021</td><td class='dim'>R2.2</td><td>Calvin Ridley</td><td>Michaeopteryx</td></tr>
+<tr><td>2020</td><td class='dim'>R1.2</td><td>Saquon Barkley</td><td>9ofalltrades</td></tr>
+<tr><td>2020</td><td class='dim'>R3.7</td><td>Kenny Golladay</td><td>Ryan</td></tr>
+<tr><td>2019</td><td class='dim'>R3.1</td><td>Antonio Brown</td><td>Mike</td></tr>
+<tr><td>2018</td><td class='dim'>R1.1</td><td>Le'Veon Bell</td><td>Al</td></tr>
+<tr><td>2018</td><td class='dim'>R3.4</td><td>Devonta Freeman</td><td>pat kulp</td></tr>
+<tr><td>2017</td><td class='dim'>R1.1</td><td>David Johnson</td><td>9ofalltrades</td></tr>
+</table>
+<h2>The worst bench decisions ever recorded</h2>
+<table><tr><th>Season</th><th class='num'>Wk</th><th>Left on the bench</th><th class='num'>Pts</th><th>Started instead</th><th class='num'>Pts</th><th class='num'>Gap</th><th>Manager</th></tr>
+<tr><td>2020</td><td class='num dim'>7</td><td><strong>Tyler Lockett</strong></td><td class='num pos'>53.0</td><td class='dim'>Chase Claypool</td><td class='num neg'>0.8</td><td class='num'>52.2</td><td>Kevin</td></tr>
+<tr><td>2023</td><td class='num dim'>3</td><td><strong>De'Von Achane</strong></td><td class='num pos'>51.3</td><td class='dim'>Kyren Williams</td><td class='num neg'>8.5</td><td class='num'>42.8</td><td>KulpCommissioner</td></tr>
+<tr><td>2019</td><td class='num dim'>6</td><td><strong>Stefon Diggs</strong></td><td class='num pos'>43.5</td><td class='dim'>Emmanuel Sanders</td><td class='num neg'>1.0</td><td class='num'>42.5</td><td>Kevin</td></tr>
+<tr><td>2019</td><td class='num dim'>1</td><td><strong>Sammy Watkins</strong></td><td class='num pos'>46.8</td><td class='dim'>Stefon Diggs</td><td class='num neg'>5.7</td><td class='num'>41.1</td><td>Kevin</td></tr>
+<tr><td>2015</td><td class='num dim'>3</td><td><strong>Steve Smith</strong></td><td class='num pos'>43.6</td><td class='dim'>Anquan Boldin</td><td class='num neg'>3.6</td><td class='num'>40.0</td><td>Natalie Fullerton</td></tr>
+<tr><td>2015</td><td class='num dim'>3</td><td><strong>Devonta Freeman</strong></td><td class='num pos'>42.3</td><td class='dim'>Jonathan Stewart</td><td class='num neg'>5.2</td><td class='num'>37.1</td><td>Just Haefner</td></tr>
+<tr><td>2015</td><td class='num dim'>15</td><td><strong>Danny Woodhead</strong></td><td class='num pos'>36.0</td><td class='dim'>Spencer Ware</td><td class='num neg'>0.0</td><td class='num'>36.0</td><td>Michaeopteryx</td></tr>
+<tr><td>2013</td><td class='num dim'>12</td><td><strong>Josh Gordon</strong></td><td class='num pos'>43.7</td><td class='dim'>Vincent Jackson</td><td class='num neg'>8.1</td><td class='num'>35.6</td><td>9ofalltrades</td></tr>
+<tr><td>2015</td><td class='num dim'>8</td><td><strong>Eli Manning</strong></td><td class='num pos'>38.0</td><td class='dim'>Ryan Fitzpatrick</td><td class='num neg'>3.0</td><td class='num'>35.0</td><td>pat kulp</td></tr>
+<tr><td>2019</td><td class='num dim'>13</td><td><strong>DeVante Parker</strong></td><td class='num pos'>34.9</td><td class='dim'>Tyler Lockett</td><td class='num neg'>0.0</td><td class='num'>34.9</td><td>KulpCommissioner</td></tr>
+<tr><td>2019</td><td class='num dim'>7</td><td><strong>Marvin Jones Jr.</strong></td><td class='num pos'>43.3</td><td class='dim'>Mike Williams</td><td class='num neg'>8.7</td><td class='num'>34.6</td><td>Natalie Fullerton</td></tr>
+<tr><td>2015</td><td class='num dim'>12</td><td><strong>Doug Baldwin</strong></td><td class='num pos'>38.5</td><td class='dim'>Demaryius Thomas</td><td class='num neg'>4.6</td><td class='num'>33.9</td><td>Kevin</td></tr>
+</table>
+<h2>Repeat customers</h2>
+<p class='sub'>Managers who keep going back to the same player, draft after draft.</p>
+<table><tr><th>Manager</th><th>Player</th><th class='num'>Times</th><th>Seasons</th></tr>
+<tr><td>Mike</td><td><strong>A.J. Green</strong></td><td class='num'>6</td><td class='dim'>2013, 2015, 2017, 2018, 2019, 2020</td></tr>
+<tr><td>Just Haefner</td><td><strong>Julio Jones</strong></td><td class='num'>5</td><td class='dim'>2012, 2013, 2014, 2015, 2017</td></tr>
+<tr><td>Michaeopteryx</td><td><strong>Greg Olsen</strong></td><td class='num'>5</td><td class='dim'>2013, 2016, 2017, 2019, 2020</td></tr>
+<tr><td>Michaeopteryx</td><td><strong>Derrick Henry</strong></td><td class='num'>5</td><td class='dim'>2019, 2020, 2022, 2023, 2024</td></tr>
+<tr><td>Kevin</td><td><strong>Larry Fitzgerald</strong></td><td class='num'>4</td><td class='dim'>2011, 2013, 2015, 2018</td></tr>
+<tr><td>Just Haefner</td><td><strong>Dez Bryant</strong></td><td class='num'>4</td><td class='dim'>2011, 2014, 2015, 2018</td></tr>
+<tr><td>Michaeopteryx</td><td><strong>Tom Brady</strong></td><td class='num'>4</td><td class='dim'>2013, 2014, 2015, 2019</td></tr>
+<tr><td>Just Haefner</td><td><strong>Justin Tucker</strong></td><td class='num'>4</td><td class='dim'>2013, 2020, 2021, 2024</td></tr>
+<tr><td>Kevin</td><td><strong>Zach Ertz</strong></td><td class='num'>4</td><td class='dim'>2014, 2017, 2019, 2020</td></tr>
+<tr><td>pat kulp</td><td><strong>Mike Evans</strong></td><td class='num'>4</td><td class='dim'>2015, 2023, 2024, 2025</td></tr>
+<tr><td>Kevin</td><td><strong>Tevin Coleman</strong></td><td class='num'>4</td><td class='dim'>2016, 2017, 2018, 2019</td></tr>
+<tr><td>Just Haefner</td><td><strong>Adam Thielen</strong></td><td class='num'>4</td><td class='dim'>2017, 2019, 2021, 2023</td></tr>
+</table>
+<h2>Positional timing fingerprints</h2>
+<p class='sub'>Rounds earlier (&minus;) or later (+) than the rest of the room took its first player at that position.</p>
+<table><tr><th>Manager</th><th class='num'>QB</th><th class='num'>RB</th><th class='num'>WR</th><th class='num'>TE</th><th class='num'>K</th><th class='num'>DEF</th></tr>
+<tr><td><strong>Just Haefner</strong></td><td class='num pos'>-0.91</td><td class='num neg'>+0.53</td><td class='num pos'>-0.52</td><td class='num neg'>+0.75</td><td class='num dim'>+0.20</td><td class='num pos'>-0.71</td></tr>
+<tr><td><strong>9ofalltrades</strong></td><td class='num pos'>-0.71</td><td class='num dim'>-0.01</td><td class='num dim'>+0.08</td><td class='num neg'>+0.92</td><td class='num dim'>-0.18</td><td class='num neg'>+0.69</td></tr>
+<tr><td><strong>Ryan</strong></td><td class='num pos'>-0.62</td><td class='num pos'>-0.52</td><td class='num dim'>+0.48</td><td class='num pos'>-1.75</td><td class='num dim'>+0.31</td><td class='num pos'>-0.53</td></tr>
+<tr><td><strong>Kevin</strong></td><td class='num dim'>-0.38</td><td class='num dim'>+0.33</td><td class='num pos'>-0.65</td><td class='num pos'>-0.55</td><td class='num dim'>-0.40</td><td class='num dim'>+0.49</td></tr>
+<tr><td><strong>Al</strong></td><td class='num dim'>-0.31</td><td class='num dim'>+0.19</td><td class='num dim'>-0.19</td><td class='num pos'>-0.55</td><td class='num pos'>-1.07</td><td class='num dim'>+0.22</td></tr>
+<tr><td><strong>Natalie Fullerton</strong></td><td class='num dim'>-0.11</td><td class='num dim'>-0.14</td><td class='num dim'>-0.45</td><td class='num dim'>+0.45</td><td class='num dim'>+0.32</td><td class='num pos'>-0.83</td></tr>
+<tr><td><strong>senftiva</strong></td><td class='num dim'>-0.11</td><td class='num dim'>-0.33</td><td class='num neg'>+0.70</td><td class='num dim'>-0.30</td><td class='num pos'>-1.10</td><td class='num pos'>-0.61</td></tr>
+<tr><td><strong>Michaeopteryx</strong></td><td class='num dim'>+0.12</td><td class='num dim'>-0.19</td><td class='num neg'>+1.09</td><td class='num pos'>-3.09</td><td class='num dim'>-0.39</td><td class='num pos'>-1.45</td></tr>
+<tr><td><strong>pat kulp</strong></td><td class='num dim'>+0.42</td><td class='num dim'>-0.34</td><td class='num dim'>+0.01</td><td class='num neg'>+0.65</td><td class='num neg'>+1.07</td><td class='num dim'>+0.49</td></tr>
+<tr><td><strong>Mike</strong></td><td class='num neg'>+0.89</td><td class='num dim'>-0.27</td><td class='num dim'>+0.21</td><td class='num neg'>+1.19</td><td class='num neg'>+0.93</td><td class='num neg'>+0.71</td></tr>
+<tr><td><strong>KulpCommissioner</strong></td><td class='num neg'>+1.55</td><td class='num dim'>+0.26</td><td class='num dim'>-0.19</td><td class='num neg'>+1.41</td><td class='num neg'>+0.58</td><td class='num neg'>+1.26</td></tr>
+</table>
+<h2>Who follows the crowd</h2>
+<p class='sub'>Share of picks made while a run was on at that position &mdash; three or more of the previous five picks. High means you join runs; low means you zag while the room zigs.</p>
+<table><tr><th>Manager</th><th class='num'>In-run picks</th><th class='num'>Rate</th><th class='num'>vs league</th></tr>
+<tr><td>Mike</td><td class='num dim'>39 of 208</td><td class='num'>18.8%</td><td class='num neg'>+4.1</td></tr>
+<tr><td>Natalie Fullerton</td><td class='num dim'>37 of 208</td><td class='num'>17.8%</td><td class='num neg'>+3.1</td></tr>
+<tr><td>KulpCommissioner</td><td class='num dim'>36 of 206</td><td class='num'>17.5%</td><td class='num neg'>+2.8</td></tr>
+<tr><td>Just Haefner</td><td class='num dim'>31 of 204</td><td class='num'>15.2%</td><td class='num neg'>+0.5</td></tr>
+<tr><td>Michaeopteryx</td><td class='num dim'>27 of 201</td><td class='num'>13.4%</td><td class='num pos'>-1.2</td></tr>
+<tr><td>pat kulp</td><td class='num dim'>28 of 213</td><td class='num'>13.1%</td><td class='num pos'>-1.5</td></tr>
+<tr><td>Kevin</td><td class='num dim'>28 of 214</td><td class='num'>13.1%</td><td class='num pos'>-1.6</td></tr>
+<tr><td>9ofalltrades</td><td class='num dim'>27 of 208</td><td class='num'>13.0%</td><td class='num pos'>-1.7</td></tr>
+<tr><td>senftiva</td><td class='num dim'>16 of 129</td><td class='num'>12.4%</td><td class='num pos'>-2.3</td></tr>
+<tr><td>Al</td><td class='num dim'>26 of 210</td><td class='num'>12.4%</td><td class='num pos'>-2.3</td></tr>
+</table>
+<h2>Draft slot record</h2>
+<table><tr><th class='num'>Slot</th><th class='num'>Drafts</th><th class='num'>Avg finish</th><th class='num'>Titles</th></tr>
+<tr><td class='num'>1</td><td class='num dim'>15</td><td class='num'>4.73</td><td class='num'>2</td></tr>
+<tr><td class='num'>2</td><td class='num dim'>15</td><td class='num'>4</td><td class='num'>1</td></tr>
+<tr><td class='num'>3</td><td class='num dim'>15</td><td class='num'>5.27</td><td class='num'>1</td></tr>
+<tr><td class='num'>4</td><td class='num dim'>15</td><td class='num'>5.47</td><td class='num'></td></tr>
+<tr><td class='num'>5</td><td class='num dim'>15</td><td class='num'>6.73</td><td class='num'>1</td></tr>
+<tr><td class='num'>6</td><td class='num dim'>15</td><td class='num'>6.27</td><td class='num'>2</td></tr>
+<tr><td class='num'>7</td><td class='num dim'>15</td><td class='num'>6.33</td><td class='num'>1</td></tr>
+<tr><td class='num'>8</td><td class='num dim'>15</td><td class='num'>5.6</td><td class='num'>1</td></tr>
+<tr><td class='num'>9</td><td class='num dim'>15</td><td class='num'>5.33</td><td class='num'>4</td></tr>
+<tr><td class='num'>10</td><td class='num dim'>15</td><td class='num'>5.27</td><td class='num'>2</td></tr>
+</table>
+<p class='sub'>Slot 9 has produced four championships and slot 4 has produced none, but with only 15 drafts per slot that is well inside what chance alone would throw up &mdash; the formal test above puts draft slot at p = 0.204.</p>
+<h2>Weekly extremes</h2><div class='grid'>
+<div class='card'><h3>Highest scores</h3><table>
+<tr><td class='dim'>2021 wk11</td><td class='num'><strong>252.7</strong></td><td>Mike</td></tr>
+<tr><td class='dim'>2019 wk5</td><td class='num'><strong>230.7</strong></td><td>pat kulp</td></tr>
+<tr><td class='dim'>2015 wk15</td><td class='num'><strong>227.2</strong></td><td>Just Haefner</td></tr>
+<tr><td class='dim'>2023 wk10</td><td class='num'><strong>227.1</strong></td><td>9ofalltrades</td></tr>
+<tr><td class='dim'>2015 wk3</td><td class='num'><strong>215.5</strong></td><td>Just Haefner</td></tr>
+</table></div><div class='card'><h3>Lowest scores</h3><table>
+<tr><td class='dim'>2019 wk7</td><td class='num'><strong>49.3</strong></td><td>pat kulp</td></tr>
+<tr><td class='dim'>2024 wk6</td><td class='num'><strong>48.9</strong></td><td>Natalie Fullerton</td></tr>
+<tr><td class='dim'>2011 wk8</td><td class='num'><strong>47.7</strong></td><td>--hidden--</td></tr>
+<tr><td class='dim'>2021 wk15</td><td class='num'><strong>44.1</strong></td><td>Natalie Fullerton</td></tr>
+<tr><td class='dim'>2022 wk14</td><td class='num'><strong>37.9</strong></td><td>Natalie Fullerton</td></tr>
+</table></div></div>
+<h2>Skill versus schedule</h2>
+<p class='sub'>1000 regular-season games, 20 of them decided by under a single point. <strong>All-play</strong> scores each manager against all nine opponents every week, not just the one the schedule gave him &mdash; it is what the record should have been. <strong>Luck</strong> is the gap between the two.</p>
+<table><tr><th>Manager</th><th class='num'>W&ndash;L</th><th class='num'>Win%</th><th class='num'>All-play%</th><th class='num'>Luck</th><th class='num'>Avg finish</th><th></th></tr>
+<tr><td><strong>KulpCommissioner</strong></td><td class='num dim'>116&ndash;84</td><td class='num'>58.0%</td><td class='num'>57.7%</td><td class='num pos'>+0.3</td><td class='num'>4.07</td><td><div class='bar'><i style='width:7%;background:#3fb950'></i></div></td></tr>
+<tr><td><strong>9ofalltrades</strong></td><td class='num dim'>114&ndash;86</td><td class='num'>57.0%</td><td class='num'>53.8%</td><td class='num pos'>+3.2</td><td class='num'>4.13</td><td><div class='bar'><i style='width:70%;background:#3fb950'></i></div></td></tr>
+<tr><td><strong>Just Haefner</strong></td><td class='num dim'>109&ndash;91</td><td class='num'>54.5%</td><td class='num'>55.7%</td><td class='num neg'>-1.2</td><td class='num'>4.73</td><td><div class='bar'><i style='width:26%;background:#f85149'></i></div></td></tr>
+<tr><td><strong>Mike</strong></td><td class='num dim'>105&ndash;95</td><td class='num'>52.5%</td><td class='num'>55.6%</td><td class='num neg'>-3.1</td><td class='num'>5.07</td><td><div class='bar'><i style='width:68%;background:#f85149'></i></div></td></tr>
+<tr><td><strong>Michaeopteryx</strong></td><td class='num dim'>97&ndash;90</td><td class='num'>51.9%</td><td class='num'>49.4%</td><td class='num pos'>+2.5</td><td class='num'>5.29</td><td><div class='bar'><i style='width:55%;background:#3fb950'></i></div></td></tr>
+<tr><td><strong>pat kulp</strong></td><td class='num dim'>98&ndash;102</td><td class='num'>49.0%</td><td class='num'>47.6%</td><td class='num pos'>+1.4</td><td class='num'>5.4</td><td><div class='bar'><i style='width:31%;background:#3fb950'></i></div></td></tr>
+<tr><td><strong>Kevin</strong></td><td class='num dim'>95&ndash;105</td><td class='num'>47.5%</td><td class='num'>48.4%</td><td class='num neg'>-0.9</td><td class='num'>5.93</td><td><div class='bar'><i style='width:20%;background:#f85149'></i></div></td></tr>
+<tr><td><strong>Al</strong></td><td class='num dim'>92&ndash;108</td><td class='num'>46.0%</td><td class='num'>46.8%</td><td class='num neg'>-0.8</td><td class='num'>6.8</td><td><div class='bar'><i style='width:18%;background:#f85149'></i></div></td></tr>
+<tr><td><strong>senftiva</strong></td><td class='num dim'>52&ndash;65</td><td class='num'>44.4%</td><td class='num'>41.0%</td><td class='num pos'>+3.4</td><td class='num'>7.56</td><td><div class='bar'><i style='width:75%;background:#3fb950'></i></div></td></tr>
+<tr><td><strong>Ryan</strong></td><td class='num dim'>36&ndash;47</td><td class='num'>43.4%</td><td class='num'>47.2%</td><td class='num neg'>-3.8</td><td class='num'>6.33</td><td><div class='bar'><i style='width:84%;background:#f85149'></i></div></td></tr>
+<tr><td><strong>Natalie Fullerton</strong></td><td class='num dim'>82&ndash;118</td><td class='num'>41.0%</td><td class='num'>42.1%</td><td class='num neg'>-1.1</td><td class='num'>6.33</td><td><div class='bar'><i style='width:24%;background:#f85149'></i></div></td></tr>
+</table>
+<div class='callout'><strong>The schedule is not what sank senftiva.</strong> He won 44.4% of his games against an all-play mark of 41.0% &mdash; the schedule actually did him a <em>favour</em>, worth +3.4 points of win rate, and he still finished 7.56 on average. The best drafts in league history, a kind schedule, and nothing to show for it. Everything points back at the lineup card.</div>
+<h3>Rivalries</h3>
+<table><tr><th>Matchup</th><th class='num'>Record</th><th class='num'>Games</th></tr>
+<tr><td>Kevin <span class='dim'>vs</span> KulpCommissioner</td><td class='num'>13&ndash;14</td><td class='num dim'>27</td></tr>
+<tr><td>Natalie Fullerton <span class='dim'>vs</span> pat kulp</td><td class='num'>8&ndash;19</td><td class='num dim'>27</td></tr>
+<tr><td>Mike <span class='dim'>vs</span> 9ofalltrades</td><td class='num'>13&ndash;13</td><td class='num dim'>26</td></tr>
+<tr><td>KulpCommissioner <span class='dim'>vs</span> Al</td><td class='num'>17&ndash;9</td><td class='num dim'>26</td></tr>
+<tr><td>Just Haefner <span class='dim'>vs</span> Mike</td><td class='num'>16&ndash;10</td><td class='num dim'>26</td></tr>
+<tr><td>Kevin <span class='dim'>vs</span> 9ofalltrades</td><td class='num'>14&ndash;11</td><td class='num dim'>25</td></tr>
+<tr><td>Mike <span class='dim'>vs</span> Michaeopteryx</td><td class='num'>14&ndash;11</td><td class='num dim'>25</td></tr>
+<tr><td>Kevin <span class='dim'>vs</span> pat kulp</td><td class='num'>14&ndash;10</td><td class='num dim'>24</td></tr>
+<tr><td>Natalie Fullerton <span class='dim'>vs</span> Just Haefner</td><td class='num'>6&ndash;18</td><td class='num dim'>24</td></tr>
+<tr><td>Al <span class='dim'>vs</span> 9ofalltrades</td><td class='num'>9&ndash;15</td><td class='num dim'>24</td></tr>
+<tr><td>KulpCommissioner <span class='dim'>vs</span> Just Haefner</td><td class='num'>16&ndash;7</td><td class='num dim'>23</td></tr>
+<tr><td>Al <span class='dim'>vs</span> Mike</td><td class='num'>12&ndash;11</td><td class='num dim'>23</td></tr>
+</table>
+<h3>Robbed and gifted</h3>
+<p class='sub'>Single seasons where the actual record most disagreed with the all-play record.</p><div class='grid'>
+<div class='card'><h3>Robbed</h3><table><tr><th>Season</th><th>Manager</th><th class='num'>Actual</th><th class='num'>Deserved</th><th class='num'>Finish</th></tr>
+<tr><td class='dim'>2022</td><td>Ryan</td><td class='num'>3-11</td><td class='num neg'>6.1</td><td class='num'>7</td></tr>
+<tr><td class='dim'>2020</td><td>Just Haefner</td><td class='num'>5-8</td><td class='num neg'>7.8</td><td class='num'>4</td></tr>
+<tr><td class='dim'>2014</td><td>Mike</td><td class='num'>2-11</td><td class='num neg'>4.8</td><td class='num'>9</td></tr>
+<tr><td class='dim'>2024</td><td>Ryan</td><td class='num'>7-7</td><td class='num neg'>9.4</td><td class='num'>4</td></tr>
+<tr><td class='dim'>2019</td><td>Kevin</td><td class='num'>6-7</td><td class='num neg'>8.3</td><td class='num'>1</td></tr>
+<tr><td class='dim'>2021</td><td>Mike</td><td class='num'>10-4</td><td class='num neg'>12.1</td><td class='num'>2</td></tr>
+</table></div><div class='card'><h3>Gifted</h3><table><tr><th>Season</th><th>Manager</th><th class='num'>Actual</th><th class='num'>Deserved</th><th class='num'>Finish</th></tr>
+<tr><td class='dim'>2020</td><td>Kevin</td><td class='num'>10-3</td><td class='num pos'>7.0</td><td class='num'>3</td></tr>
+<tr><td class='dim'>2020</td><td>Al</td><td class='num'>11-2</td><td class='num pos'>8.2</td><td class='num'>2</td></tr>
+<tr><td class='dim'>2021</td><td>Ryan</td><td class='num'>10-4</td><td class='num pos'>7.2</td><td class='num'>1</td></tr>
+<tr><td class='dim'>2022</td><td>KulpCommissioner</td><td class='num'>12-2</td><td class='num pos'>9.3</td><td class='num'>3</td></tr>
+<tr><td class='dim'>2018</td><td>KulpCommissioner</td><td class='num'>10-3</td><td class='num pos'>7.3</td><td class='num'>4</td></tr>
+<tr><td class='dim'>2024</td><td>pat kulp</td><td class='num'>7-7</td><td class='num pos'>4.3</td><td class='num'>8</td></tr>
+</table></div></div>
+<h3>The unluckiest and luckiest weeks</h3><div class='grid'>
+<div class='card'><h3>Lost while scoring big</h3><table>
+<tr><td class='dim'>2023 wk13</td><td>Natalie Fullerton</td><td class='num'>164.4</td><td class='num dim'>lost to 172.8</td></tr>
+<tr><td class='dim'>2011 wk12</td><td>Al</td><td class='num'>151.1</td><td class='num dim'>lost to 156.9</td></tr>
+<tr><td class='dim'>2014 wk12</td><td>Kevin</td><td class='num'>171.7</td><td class='num dim'>lost to 195.9</td></tr>
+<tr><td class='dim'>2021 wk13</td><td>Just Haefner</td><td class='num'>164.1</td><td class='num dim'>lost to 171.3</td></tr>
+<tr><td class='dim'>2018 wk4</td><td>senftiva</td><td class='num'>192.1</td><td class='num dim'>lost to 197.3</td></tr>
+<tr><td class='dim'>2019 wk1</td><td>KulpCommissioner</td><td class='num'>174.0</td><td class='num dim'>lost to 178.0</td></tr>
+</table></div><div class='card'><h3>Won while scoring small</h3><table>
+<tr><td class='dim'>2017 wk8</td><td>pat kulp</td><td class='num'>91.2</td><td class='num dim'>beat 89.3</td></tr>
+<tr><td class='dim'>2024 wk3</td><td>Al</td><td class='num'>92.2</td><td class='num dim'>beat 82.9</td></tr>
+<tr><td class='dim'>2016 wk1</td><td>senftiva</td><td class='num'>111.8</td><td class='num dim'>beat 109.6</td></tr>
+<tr><td class='dim'>2012 wk6</td><td>senftiva</td><td class='num'>82.9</td><td class='num dim'>beat 70.8</td></tr>
+<tr><td class='dim'>2018 wk5</td><td>pat kulp</td><td class='num'>117.7</td><td class='num dim'>beat 98.3</td></tr>
+<tr><td class='dim'>2021 wk13</td><td>KulpCommissioner</td><td class='num'>98.8</td><td class='num dim'>beat 98.1</td></tr>
+</table></div></div>
+<h2>What this report can't tell you yet</h2>
+<div class='note'><p><strong>313 of 2,450 weekly roster fetches were lost</strong> to Yahoo rate limiting. Nothing was invented to fill them &mdash; those team-weeks are simply absent, which is why some managers show fewer seasons of lineup data than seasons played.</p><p><strong>Draft value credits production, not possession.</strong> If a manager drafted a player, dropped him, and that player then scored elsewhere, VOR still credits the draft pick. This inflates the drafting reputation of anyone with heavy roster churn.</p><p><strong>Weekly points are verified, season aggregates drift slightly.</strong> Our weekly totals reproduce Yahoo's official season points to 0.00% for 2011&ndash;2021. For 2022&ndash;2025 they run under by 0.9&ndash;3.3%, even though spot-checks of individual weeks match the rendered page exactly &mdash; so Yahoo aggregates the season on a slightly different basis than summing started players. Games decided by under a point should be treated with care in those four seasons.</p><p><strong>2011 &quot;kool aid&quot; is unidentified.</strong> The account carries TJ's email in Yahoo's export but was a different person, cause unknown.</p></div>
+<footer>Generated by report.py from data extracted directly from Yahoo Fantasy. Every figure traces to a parsed page; no values are estimated or interpolated. Rerun report.py after any data refresh. &middot; <a href='index.html'>The Franchise</a></footer>
+</div></body></html>
