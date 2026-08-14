@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07090E">
+<title>The Major League · Fifteen Years, Fully Documented</title>
+<style>
+:root{
+ --ink:#07090E; --p1:#0D1119; --p2:#141A25; --p3:#1D2534; --line:#2A3446;
+ --edge:#28324399; --text:#EDF1F8; --dim:#93A3B9; --faint:#61728A;
+ --rb:#F0894D; --wr:#3FC7AE; --qb:#B07EF0; --te:#F2C94C;
+ --gold:#E8B44A; --good:#3DDC97; --bad:#FF6B6B; --hot:#FF8355;
+ --serif:ui-serif,'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+ --sans:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+ --s1:8px;--s2:16px;--s3:26px;--s4:44px;--s5:76px;--s6:120px;
+ --sh1:0 1px 2px rgba(2,5,10,.55),0 3px 10px rgba(2,5,10,.4);
+ --sh2:0 3px 8px rgba(2,5,10,.6),0 16px 40px rgba(2,5,10,.5);
+ --sh3:0 6px 16px rgba(2,5,10,.65),0 32px 80px rgba(232,180,74,.07);
+ --pad:clamp(16px,4vw,26px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.75;
+ -webkit-font-smoothing:antialiased;overflow-x:hidden;
+ background-image:
+  radial-gradient(1100px 620px at 8% -6%,rgba(232,180,74,.10),transparent 62%),
+  radial-gradient(900px 560px at 96% 12%,rgba(63,199,174,.07),transparent 60%),
+  radial-gradient(900px 700px at 40% 62%,rgba(240,137,77,.06),transparent 64%),
+  radial-gradient(800px 600px at 70% 100%,rgba(176,126,240,.05),transparent 62%);
+ background-attachment:fixed;}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:1;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--pad);position:relative;z-index:2}
+.narrow{max-width:720px;margin:0 auto}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:-.035em;line-height:.98;
+ font-size:clamp(34px,10vw,96px)}
+h2{font-family:var(--serif);font-weight:600;letter-spacing:-.03em;line-height:1.08;
+ font-size:clamp(26px,5.2vw,52px)}
+h3{font-family:var(--serif);font-size:clamp(19px,2.6vw,27px);letter-spacing:-.02em;font-weight:600}
+.kicker{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+p{font-size:clamp(16px,2.4vw,17.5px);color:var(--dim);margin-top:var(--s2)}
+p strong,li strong{color:var(--text);font-weight:600}
+em{color:var(--text);font-style:italic}
+section{padding:clamp(56px,12vw,120px) 0;position:relative}
+.act{border-top:1px solid var(--edge)}
+.reveal{opacity:0;transform:translateY(22px);
+ transition:opacity .85s cubic-bezier(.16,.8,.3,1),transform .85s cubic-bezier(.16,.8,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+ padding:clamp(40px,8vw,76px) 0 clamp(56px,10vw,76px)}
+.hero h1{margin:var(--s3) 0}
+.hero .lede{font-size:clamp(17px,2.6vw,21px);color:var(--dim);max-width:60ch}
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,4vw,44px);margin-top:var(--s4)}
+.fig .v{font-family:var(--serif);font-size:clamp(28px,6vw,46px);line-height:1;letter-spacing:-.03em;color:var(--gold)}
+.fig .l{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:8px}
+.scrollcue{margin-top:var(--s4);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.scrollcue span{display:inline-block;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+.spine{margin:var(--s4) 0}
+.spinechart{display:flex;flex-direction:column;gap:7px;padding:var(--s2) 0}
+.row{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center}
+.row .yl{font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums;text-align:right}
+.row .track{position:relative;height:40px;background:#111825;border-radius:8px;overflow:hidden;
+ border:1px solid #1D2634}
+.row .fill{position:absolute;inset:0 auto 0 0;border-radius:7px;transform-origin:left;transform:scaleX(0);
+ background:linear-gradient(90deg,rgba(240,137,77,.85),rgba(240,137,77,.32));
+ transition:transform 1s cubic-bezier(.18,.85,.32,1.02)}
+.in .row .fill{transform:scaleX(1)}
+.row.hit .fill{background:linear-gradient(90deg,var(--good),rgba(61,220,151,.28))}
+.row.bust .fill{background:linear-gradient(90deg,var(--bad),rgba(255,107,107,.28))}
+.row.dead .fill{background:linear-gradient(90deg,#ff6b6b,rgba(255,107,107,.18))}
+.row .lab{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;
+ padding:0 12px;font-size:13px;z-index:2;pointer-events:none;gap:8px}
+.row .lab .who{color:var(--text);font-weight:600;letter-spacing:-.01em;
+ text-shadow:0 1px 3px rgba(0,0,0,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.row .lab .who small{color:var(--dim);font-weight:400;margin-left:6px;font-size:11px}
+.row .lab .amt{color:var(--text);font-weight:700;font-variant-numeric:tabular-nums;
+ text-shadow:0 1px 3px rgba(0,0,0,.75);flex:none}
+.row.hit .lab .amt{color:var(--good)}
+.row.bust .lab .amt,.row.dead .lab .amt{color:var(--bad)}
+.spinenote{display:flex;justify-content:space-between;font-size:12.5px;color:var(--faint);
+ border-top:1px solid var(--edge);padding-top:10px;flex-wrap:wrap;gap:10px}
+
+.pull{font-family:var(--serif);font-size:clamp(22px,4vw,40px);line-height:1.25;letter-spacing:-.02em;
+ color:var(--text);border-left:2px solid var(--gold);padding-left:clamp(14px,3vw,26px);margin:var(--s4) 0}
+.pull .src{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.14em;
+ text-transform:uppercase;color:var(--faint);margin-top:var(--s2)}
+
+.primer{background:linear-gradient(170deg,#16202E,#101823);border:1px solid var(--edge);
+ border-left:2px solid var(--wr);border-radius:14px;padding:clamp(18px,3vw,26px) clamp(16px,3vw,36px);
+ margin:var(--s3) 0;box-shadow:var(--sh2)}
+.primer h3{font-family:var(--serif);font-size:clamp(20px,3vw,23px);margin-bottom:var(--s1)}
+.primer p{font-size:16px;margin-top:var(--s2)}
+.eq{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:var(--s3) 0;font-size:15px}
+.eq b{background:#1D2634;border:1px solid var(--edge);border-radius:8px;padding:7px 13px;
+ color:var(--text);font-weight:600}
+.eq i{color:var(--faint);font-style:normal;font-size:19px}
+
+.keystat{background:linear-gradient(170deg,#1B2432,#131A26);border:1px solid var(--edge);
+ border-left:2px solid var(--gold);border-radius:11px;padding:var(--s2) var(--s3);margin:var(--s3) 0;
+ font-size:clamp(14.5px,2.2vw,15.5px);color:var(--dim)}
+.keystat b{color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-size:11.5px;
+ display:block;margin-bottom:5px}
+
+.panel{background:linear-gradient(170deg,var(--p2),var(--p1));border:1px solid var(--edge);
+ border-radius:17px;padding:clamp(14px,3vw,26px);box-shadow:var(--sh2);margin-top:var(--s3);
+ overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+th{text-align:right;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);
+ font-weight:600;padding:8px 10px;border-bottom:1px solid var(--edge);white-space:nowrap}
+td{text-align:right;padding:9px 10px;border-bottom:1px solid #161E2B;font-variant-numeric:tabular-nums}
+th.l,td.l{text-align:left}
+tbody tr:hover{background:#18202Ecc}
+.good{color:var(--good)} .bad{color:var(--bad)} .gold{color:var(--gold)}
+
+.megagrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:var(--s2);margin-top:var(--s3)}
+.mb{background:linear-gradient(165deg,var(--p3),var(--p1));border:1px solid var(--edge);
+ border-radius:15px;padding:var(--s3);box-shadow:var(--sh1);position:relative;overflow:hidden}
+.mb::after{content:'';position:absolute;left:0;right:0;bottom:0;height:3px}
+.mb.HIT::after{background:linear-gradient(90deg,var(--good),transparent)}
+.mb.BUST::after{background:linear-gradient(90deg,var(--bad),transparent)}
+.mb .cost{font-family:var(--serif);font-size:clamp(28px,5vw,36px);line-height:1;letter-spacing:-.03em}
+.mb.HIT .cost{color:var(--good)} .mb.BUST .cost{color:var(--bad)}
+.mb .who{font-size:12px;color:var(--faint);letter-spacing:.1em;text-transform:uppercase;margin-top:10px}
+.mb .pl{font-size:17px;color:var(--text);font-weight:600;margin-top:5px;letter-spacing:-.01em}
+.mb .res{font-size:13.5px;color:var(--dim);margin-top:10px}
+
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:var(--s2);margin-top:var(--s3)}
+.pc{background:linear-gradient(165deg,var(--p3),var(--p1));border:1px solid var(--edge);border-radius:16px;
+ padding:var(--s3);box-shadow:var(--sh2);position:relative;overflow:hidden}
+.pc::before{content:'';position:absolute;inset:0 0 auto 0;height:2px;
+ background:linear-gradient(90deg,var(--gold),transparent 70%)}
+.pc .aw{font-family:var(--serif);font-size:clamp(21px,3vw,25px);letter-spacing:-.02em;color:var(--gold)}
+.pc .who2{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:4px}
+.pc .blurb{font-size:14.5px;color:var(--dim);margin-top:var(--s2);line-height:1.6}
+.pc .stat3{display:flex;flex-wrap:wrap;gap:18px;margin-top:var(--s3);padding-top:var(--s2);border-top:1px solid var(--edge)}
+.pc .stat3 .v3{font-family:var(--serif);font-size:22px;line-height:1}
+.pc .stat3 .l3{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);margin-top:5px}
+.tend{display:flex;flex-wrap:wrap;gap:5px;margin-top:var(--s2)}
+.tend span{font-size:10.5px;padding:3px 9px;border-radius:20px;background:#1B2432;border:1px solid var(--edge);color:var(--dim)}
+.picks3{margin-top:var(--s2);font-size:13px}
+.picks3 div{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-top:1px solid #1A2331}
+.picks3 .lab3{color:var(--faint);font-size:11px;letter-spacing:.1em;text-transform:uppercase;flex:none}
+.picks3 .val3{color:var(--dim);text-align:right}
+.picks3 .val3 b{color:var(--text);font-weight:600}
+
+.sig{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:17px;margin-top:var(--s4);
+ padding-top:var(--s2);border-top:1px solid var(--edge)}
+footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(--faint);font-size:13.5px}
+a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(232,180,74,.3)}
+a:hover{border-bottom-color:var(--gold)}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+@media(max-width:720px){
+ .figs{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+ .hero{min-height:0}
+ .row{grid-template-columns:38px 1fr;gap:8px}
+ .row .track{height:46px}
+ .row .lab{font-size:12px;padding:0 10px}
+ .row .lab .who small{display:none}
+ table{font-size:12.5px;min-width:520px}
+ th,td{padding:8px 7px}
+ .pc .stat3{gap:14px}
+}
+@media(max-width:420px){
+ .figs{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="wrap">
+<header class="hero">
+  <div class="kicker">The Major League · 2011–2025 · By Mohn Jadden</div>
+  <h1>Fifteen Years<br>Of Sitting<br>The Wrong Guy</h1>
+  <p class="lede">This is a 10-team, 1-point PPR snake redraft. No keepers. No auction. No excuses.
+  2,370 draft picks. 2,449 team-weeks. Every start/sit crime is still in the log, and I have
+  finally got the math to prove what I have been yelling about since 2011.</p>
+  <div class="figs">
+    <div class="fig"><div class="v">15</div><div class="l">Seasons</div></div>
+    <div class="fig"><div class="v">2,370</div><div class="l">Picks</div></div>
+    <div class="fig"><div class="v">12</div><div class="l">Managers</div></div>
+    <div class="fig"><div class="v">2,449</div><div class="l">Team-weeks</div></div>
+  </div>
+  <div class="scrollcue"><span>↓ Let's begin</span></div>
+</header>
+</div>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">Exhibit A</div>
+    <h2>What the first overall pick has actually done</h2>
+    <p>One chart. Fifteen years. Green means the 1.01 returned more than the slot is worth.
+    Red means it didn't. The years that go all the way across returned <em>nothing</em> —
+    the player never even cracked the startable pool.</p>
+  </div>
+  <div class="spine reveal"><div class="spinechart" id="spine"></div>
+    <div class="spinenote">
+      <span>Surplus vs what the 1.01 historically returns</span>
+      <span>11 of 15 first overalls lost value</span>
+    </div>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap narrow reveal">
+  <div class="kicker">One Piece Of Math, I'll Be Quick</div>
+  <h2>What VOR means, for those of you who skipped it</h2>
+  <div class="primer">
+    <h3>Here's the lie</h3>
+    <p>Raw points make every quarterback look like a genius and every tenth-round running back
+    look like a mistake. A 280-point quarterback can be replacement-level. A 180-point receiver
+    can win you a week. If you grade a draft on points, you will congratulate yourselves for
+    drafting the position that scores the most, which is how half of this league has been
+    evaluating itself since Arian Foster.</p>
+    <div class="eq">
+      <b>What he scored</b><i>−</i>
+      <b>What the last startable guy at his position scored</b><i>=</i>
+      <b>VOR</b>
+    </div>
+    <p>The bar moves with the roster. 2011–2013 you started two receivers. 2014 you started three
+    and added a flex. 2020 you got an IR slot. We measure every pick against <em>this</em> league's
+    own replacement level, not some magazine's.</p>
+    <p><strong>What it doesn't do.</strong> VOR grades the pick, not whether you started him.
+    If you drafted a league-winner and sat him, the draft still gets credit and you still get
+    roasted in a different section. Kickers and defenses are thrown out of the value math —
+    one of each gets drafted per team, so "replacement" becomes whoever finished last and
+    suddenly every kicker looks like a masterstroke.</p>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap narrow reveal">
+  <div class="kicker">Act I · 2011–2014</div>
+  <h2>When the commissioner taught you how this works</h2>
+  <p>Year one, Kulp takes CadillacKulpDeville to a title from <strong>draft slot 9</strong>
+  with the <strong>seventh-best draft in the room</strong> and <strong>negative</strong> draft
+  value. Minus 53 VOR. The snake handed him the worst corner of the board and he still won,
+  because this league has never been decided on draft night and the rest of you spent fourteen
+  years refusing to believe it.</p>
+  <p>pat kulp won it in 2012. Michaeopteryx showed up in year two, named the team Human
+  Psentipede, never changed it, and took 2013. Kulp went back-to-back-adjacent in 2014 —
+  again with a below-average draft, again with 45 in-season moves, which is the part you
+  should have written down.</p>
+  <p>The name never changed. CadillacKulpDeville. Fifteen seasons. One string of characters.
+  Some of you have used that as a personality. He used it as a filing system.</p>
+  <div class="keystat"><b>Key Stat</b>
+    Two of the first four champions won with a draft that finished seventh or eighth in a
+    ten-team league. The commissioner did it twice.
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap narrow reveal">
+  <div class="kicker">Act II · 2015–2016</div>
+  <h2>Haefner repeats, and Kulp drafts a title he doesn't win</h2>
+  <p>2015 is the year the tape gets cruel. Kulp posts <strong>445.9 draft VOR</strong> —
+  the best board in the league that season, still one of the four best drafts anyone has
+  ever turned in here. Devonta Freeman in the tenth round, finished RB1, <strong>+176 surplus</strong>.
+  Then he takes Eddie Lacy first overall-adjacent in round 1 and watches him finish RB32
+  at <strong>−97</strong>.</p>
+  <p>He finishes ninth.</p>
+  <p>Haefner wins the thing with <strong>−59 draft VOR</strong>, the sixth-best board in a
+  ten-team league, and then he does it again in 2016 from slot 9 with the actual best draft
+  of that year. Back-to-back. Medina Sod. The only repeat in league history.</p>
+  <p>Kulp had the receipts in August and lost them by December. That is not a draft problem.
+  That is the whole sport, in one season, with the commissioner's name on it.</p>
+  <div class="keystat"><b>Key Stat</b>
+    Best draft of 2015: 445.9 VOR, finished 9th. Championship draft of 2015: −59 VOR.
+    The gap between those two sentences is why I still have a job.
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap narrow reveal">
+  <div class="kicker">Act III · The Exhibit They Will Hate</div>
+  <h2>The best drafter in league history never made a podium</h2>
+  <p>senftiva lasted nine seasons. He averaged <strong>+173 draft VOR per year</strong>,
+  the highest mark on the board. In 2018 he posted <strong>671 VOR</strong> — the second-best
+  single draft ever recorded in this league — and finished sixth. In 2012 he was +237 against
+  the room and finished eighth. In 2013, +208, ninth.</p>
+  <p>Zero titles. Zero podiums. Average finish: <strong>7.56</strong>.</p>
+  <p>And before anyone starts in about the schedule: he won 44.4% of his games against an
+  all-play mark of 41.0%. The schedule did him a <em>favor</em>, worth +3.4 points of win
+  rate, and he still never sniffed the trophy. Everything points at the lineup card.</p>
+  <p>Worst lineup efficiency in the league at <strong>84.8%</strong>. He left 21.1 points
+  on the bench every week — roughly 338 a season, which is more than a full extra starter.
+  He drafted the rosters. He just didn't start them.</p>
+  <div class="pull">He had the best drafts in the room and the worst lineup in the league.
+    That is not a paradox. That is a choice, repeated every Sunday.
+    <span class="src">Nine seasons · 0 podiums · 84.8% efficiency</span>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap narrow reveal">
+  <div class="kicker">Act IV · 2017–2022</div>
+  <h2>Then the 1.01 started killing people</h2>
+  <p>From 2017 through 2022 the first overall pick failed six years in a row. Four of those
+  six returned less than nothing — David Johnson, Le'Veon Bell, Christian McCaffrey twice,
+  Jonathan Taylor. The player you burned the first name in the draft on never even finished
+  inside the startable pool.</p>
+  <p>Al did it twice. Bell in 2015, Bell again in 2018. Then he took McCaffrey 1.01 in 2020
+  and watched him finish RB54, and somehow still came in second, which tells you everything
+  about how little the first pick is worth and how much of Al's career has been surviving
+  his own first round.</p>
+  <p>2019 is Kevin's year, and it is the funniest championship in the file. Best draft in
+  the league: <strong>445.6 VOR</strong>. Worst lineup efficiency of any champion:
+  <strong>85.08%</strong>, with <strong>405.7 points left on the bench</strong>. He went
+  6–7 in the regular season against an all-play mark of 8.3 wins. He still won the trophy.
+  He also owns the worst start/sit decision in league history, which we will get to, and
+  which he will never hear the end of.</p>
+  <p>Natalie won 2020 the other way: <strong>94.66% lineup efficiency</strong>, 132.9 points
+  left on the bench all year, seven waiver moves. GooNads. Same name, every season, since
+  2011. Then she finished last, last, and last-adjacent for two years after, because this
+  league does not let anyone have a clean narrative.</p>
+  <p>2021 is the one I would put in a museum. Mike posts <strong>803 draft VOR</strong> —
+  the best draft anyone has ever had here, Cooper Kupp in the fifth round at +254, the
+  single most valuable pick in league history — and finishes second. Ryan, in his second
+  season, takes McCaffrey 1.01, gets <strong>−112</strong>, and wins the championship
+  anyway. Deebo Samuel in the eighth, +179. The schedule gifted him a 10–4 record against
+  7.2 wins deserved. Mike had the best board ever recorded. Ryan had the trophy. There is
+  no version of this story where that is fair, and it happened anyway.</p>
+  <div class="keystat"><b>Key Stat</b>
+    Nine of fifteen champions had a bottom-half draft. Two had the best draft in the league.
+    The weakest board ever to win it: Michaeopteryx, 2018, ninth of ten.
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap narrow reveal">
+  <div class="kicker">Act V · 2023–2025</div>
+  <h2>Thirteen years of almost, then the chair in the corner</h2>
+  <p>Kulp takes Justin Jefferson 1.01 in 2023. Jefferson finishes WR32, <strong>−83 surplus</strong>.
+  Kulp wins the championship anyway, from the cursed chair, with the sixth-best draft,
+  40 waiver moves, 90% lineup efficiency. Third ring. Same team name. The man has not
+  learned a new trick because he has not needed one.</p>
+  <p>2024 is when 9ofalltrades finally cashed it. Eight podium finishes. One title.
+  Thirteen team names. The luckiest regular in the league at <strong>+3.2 win rate</strong>
+  over all-play, which is a polite way of saying the schedule has been on his side for
+  a decade and it still took him until year fourteen. Aichane 2.0. Sixth-best draft.
+  Slot 2. You do not get to call it destiny when you had eight chances to end this sooner.</p>
+  <p>2025: Mike, slot 9, seventh-best draft, second ring, eight years after the first.
+  Same chair Kulp won from in 2011 and Haefner won from in 2016 and pat kulp won from
+  in 2022. Four championships from slot 9. Zero from slot 4. The formal test says that's
+  noise — p = 0.204 — and I believe the test. I also believe four trophies from the same
+  seat is a bit, and I am not going to be the one who kills it.</p>
+  <div class="keystat"><b>Key Stat</b>
+    9ofalltrades: 8 podiums, 1 title, 13 names, 15 seasons. The most consistent almost
+    in the history of this league.
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Record</div>
+    <h2>Every champion, and what their draft actually looked like</h2>
+    <p>"Draft rank" is where that board finished among the ten teams that year. Read it
+    and decide whether August still matters to you.</p>
+  </div>
+  <div class="panel reveal">
+    <table>
+      <thead>
+        <tr>
+          <th class="l">Year</th><th class="l">Champion</th><th class="l">Team</th>
+          <th>Slot</th><th>Draft VOR</th><th>Draft rank</th><th>Lineup</th>
+        </tr>
+      </thead>
+      <tbody id="champs"></tbody>
+    </table>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Bench</div>
+    <h2>The start/sit crimes this league will not be allowed to forget</h2>
+    <p>Lineup efficiency is the second-strongest thing we can measure against final standing,
+    rho +0.353, right behind draft value. Across 150 team-seasons you collectively left
+    <strong>39,917 points</strong> on the bench. That is not a rounding error. That is a
+    lifestyle.</p>
+  </div>
+  <div class="megagrid reveal" id="crimes"></div>
+  <div class="keystat reveal"><b>Key Stat</b>
+    Kevin owns three of the twelve worst bench decisions ever recorded, including the
+    record: Tyler Lockett 53.0, Chase Claypool 0.8, week 7 of 2020. A 52.2-point gap.
+    He won a championship the year before. The two facts are related only in that they
+    happened to the same person.
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Defendants</div>
+    <h2>Eleven managers, eleven problems</h2>
+    <p>Average finish is the career grade. Everything else is the explanation. I didn't
+    make these up. You did, in public, over fifteen years.</p>
+  </div>
+  <div class="pgrid reveal" id="profiles"></div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Ledger</div>
+    <h2>Steals and disappearances</h2>
+    <p>Surplus is value above what that draft slot historically returns, so a tenth-round
+    hit outranks a first-round pick that merely did its job. The other list is 21 picks
+    inside the first three rounds that never even finished inside the startable pool.</p>
+  </div>
+  <div class="panel reveal">
+    <h3 style="margin-bottom:16px">The best picks ever made</h3>
+    <table>
+      <thead><tr><th class="l">Year</th><th>Pick</th><th class="l">Player</th><th>Finished</th><th>Surplus</th><th class="l">Manager</th></tr></thead>
+      <tbody>
+        <tr><td class="l">2021</td><td>50 (R5)</td><td class="l">Cooper Kupp</td><td>WR1</td><td class="good">+254</td><td class="l">Mike</td></tr>
+        <tr><td class="l">2019</td><td>3 (R1)</td><td class="l">Christian McCaffrey</td><td>RB1</td><td class="good">+207</td><td class="l">pat kulp</td></tr>
+        <tr><td class="l">2021</td><td>80 (R8)</td><td class="l">Deebo Samuel Sr.</td><td>WR3</td><td class="good">+179</td><td class="l">Ryan</td></tr>
+        <tr><td class="l">2018</td><td>21 (R3)</td><td class="l">Christian McCaffrey</td><td>RB1</td><td class="good">+178</td><td class="l">Al</td></tr>
+        <tr><td class="l">2015</td><td>96 (R10)</td><td class="l">Devonta Freeman</td><td>RB1</td><td class="good">+176</td><td class="l">Kulp</td></tr>
+        <tr><td class="l">2017</td><td>18 (R2)</td><td class="l">Todd Gurley</td><td>RB1</td><td class="good">+176</td><td class="l">Natalie</td></tr>
+        <tr><td class="l">2014</td><td>23 (R3)</td><td class="l">Le'Veon Bell</td><td>RB1</td><td class="good">+172</td><td class="l">pat kulp</td></tr>
+        <tr><td class="l">2023</td><td>17 (R2)</td><td class="l">CeeDee Lamb</td><td>WR1</td><td class="good">+171</td><td class="l">9ofalltrades</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="panel reveal">
+    <h3 style="margin-bottom:16px">Premium picks that vanished</h3>
+    <table>
+      <thead><tr><th class="l">Year</th><th class="l">Pick</th><th class="l">Player</th><th class="l">Manager</th></tr></thead>
+      <tbody>
+        <tr><td class="l">2025</td><td class="l">R2.5</td><td class="l">Malik Nabers</td><td class="l">Al</td></tr>
+        <tr><td class="l">2025</td><td class="l">R3.10</td><td class="l">Tyreek Hill</td><td class="l">Michaeopteryx</td></tr>
+        <tr><td class="l">2024</td><td class="l">R3.10</td><td class="l">Brandon Aiyuk</td><td class="l">Natalie</td></tr>
+        <tr><td class="l">2023</td><td class="l">R2.2</td><td class="l">Nick Chubb</td><td class="l">pat kulp</td></tr>
+        <tr><td class="l">2022</td><td class="l">R2.10</td><td class="l">Javonte Williams</td><td class="l">Mike</td></tr>
+        <tr><td class="l">2021</td><td class="l">R2.2</td><td class="l">Calvin Ridley</td><td class="l">Michaeopteryx</td></tr>
+        <tr><td class="l">2020</td><td class="l">R1.2</td><td class="l">Saquon Barkley</td><td class="l">9ofalltrades</td></tr>
+        <tr><td class="l">2018</td><td class="l">R1.1</td><td class="l">Le'Veon Bell</td><td class="l">Al</td></tr>
+        <tr><td class="l">2017</td><td class="l">R1.1</td><td class="l">David Johnson</td><td class="l">9ofalltrades</td></tr>
+        <tr><td class="l">2015</td><td class="l">R1.1</td><td class="l">Le'Veon Bell</td><td class="l">Al</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">What Actually Decides A Season</div>
+    <h2>Four things don't matter. Three things do.</h2>
+    <p>Spearman rank correlation with final standing, computed within each season, then
+    averaged across all fifteen. Positive means more of it helps you finish higher.
+    Significance from a 10,000-shuffle permutation test.</p>
+  </div>
+  <div class="panel reveal">
+    <table>
+      <thead><tr><th class="l">Factor</th><th>rho</th><th>p</th><th class="l">Verdict</th></tr></thead>
+      <tbody>
+        <tr><td class="l">Draft value (VOR)</td><td class="good">+0.372</td><td>0.0001</td><td class="l">real effect</td></tr>
+        <tr><td class="l">Lineup efficiency</td><td class="good">+0.353</td><td>—</td><td class="l">real effect</td></tr>
+        <tr><td class="l">In-season moves</td><td class="good">+0.278</td><td>0.0013</td><td class="l">real effect</td></tr>
+        <tr><td class="l">Early-round bust rate</td><td class="bad">−0.189</td><td>0.029</td><td class="l">real effect</td></tr>
+        <tr><td class="l">Draft slot</td><td>−0.109</td><td>0.204</td><td class="l">noise</td></tr>
+        <tr><td class="l">Number of WRs drafted</td><td>+0.094</td><td>0.272</td><td class="l">noise</td></tr>
+        <tr><td class="l">Bargains vs reaches</td><td>−0.074</td><td>0.386</td><td class="l">noise</td></tr>
+        <tr><td class="l">Number of RBs drafted</td><td>−0.008</td><td>0.925</td><td class="l">noise</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="narrow reveal">
+    <p>How many running backs you take in the first five is indistinguishable from a coin
+    flip. Reaching versus waiting is a coin flip. Your draft slot is a coin flip, which is
+    the good news, because it means the snake is fair. Roster construction is not where
+    this league is won. Who you got, whether you started them, and whether you used the
+    waiver wire — that's the whole sport.</p>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap narrow reveal">
+  <div class="kicker">Closing Argument</div>
+  <h2>What fifteen years actually proved</h2>
+  <p><strong>Draft night is a head start, not a verdict.</strong> Two champions had the
+  best draft in the league. Nine had a draft in the bottom half. Michaeopteryx won it
+  from ninth on the board. Kulp won it from seventh with negative value. If your season
+  died in November, August is not the reason and you know it.</p>
+  <p><strong>The lineup card is the murder weapon.</strong> senftiva drafted like a
+  professional and started like a man checking his phone at halftime. Kevin won a title
+  with 405 points on the bench. Across this league you have left 39,917 points sitting.
+  Kulp's 90.0% efficiency is the career leader and also the career leader in titles.
+  That is not a coincidence I invented. That is the correlation.</p>
+  <p><strong>Moves are the third rail and most of you won't touch it.</strong> Natalie
+  averages 7.1 a year and has one ring to show for the discipline. Kulp averages 32.5
+  and has three. 9ofalltrades averages 34.5 and needed fourteen seasons to cash one.
+  Activity is not a personality. It is a lever, and the people who pull it finish higher.</p>
+  <p><strong>The 1.01 is a trap with a chair.</strong> Eleven of fifteen first overalls
+  lost value. Six straight years it failed. Four times it returned nothing. Ryan won a
+  title with a dead McCaffrey. Kulp won a title with a dead Jefferson. Stop treating
+  the first name on the card like a birthright.</p>
+  <p>See you in September. Set your lineup.</p>
+  <p class="sig">Mohn Jadden — Keeping it real since 2011</p>
+</div></section>
+
+<div class="wrap"><footer>
+  Compiled from 2,370 snake-draft picks and 2,449 team-weeks across 15 seasons of The Major League,
+  10-team 1pt PPR redraft. Value over replacement uses this league's own scoring and roster
+  settings, with the bar scaled when the starting lineup changed (two WR through 2013, three WR
+  plus a flex from 2014, IR slot from 2020). Kickers and defenses excluded from VOR.
+  313 of 2,450 weekly roster fetches were lost to Yahoo rate limiting and were not invented to
+  fill the gap. Weekly totals match Yahoo's official season points to 0.00% for 2011–2021;
+  2022–2025 run 0.9–3.3% under, so games decided by under a point in those four seasons should
+  be treated with care. The 2011 account "kool aid" is unidentified. Managers tracked by account,
+  because half of you change your team names constantly and Al has used fifteen of them.
+</footer></div>
+
+<script>
+const firsts=[
+  {y:2011,player:"Arian Foster",pos:"RB",fin:"RB4",sur:11,mgr:"Haefner",place:2},
+  {y:2012,player:"Ray Rice",pos:"RB",fin:"RB5",sur:2,mgr:"Kulp",place:5},
+  {y:2013,player:"Adrian Peterson",pos:"RB",fin:"RB10",sur:-59,mgr:"Haefner",place:10},
+  {y:2014,player:"LeSean McCoy",pos:"RB",fin:"RB12",sur:-70,mgr:"Natalie",place:7},
+  {y:2015,player:"Le'Veon Bell",pos:"RB",fin:"RB48",sur:-112,mgr:"Al",place:10},
+  {y:2016,player:"Antonio Brown",pos:"WR",fin:"WR1",sur:15,mgr:"Kulp",place:2},
+  {y:2017,player:"David Johnson",pos:"RB",fin:"outside",sur:-112,mgr:"9ofalltrades",place:5},
+  {y:2018,player:"Le'Veon Bell",pos:"RB",fin:"outside",sur:-112,mgr:"Al",place:5},
+  {y:2019,player:"Saquon Barkley",pos:"RB",fin:"RB11",sur:-36,mgr:"Mike",place:6},
+  {y:2020,player:"Christian McCaffrey",pos:"RB",fin:"RB54",sur:-112,mgr:"Al",place:2},
+  {y:2021,player:"Christian McCaffrey",pos:"RB",fin:"RB38",sur:-112,mgr:"Ryan",place:1},
+  {y:2022,player:"Jonathan Taylor",pos:"RB",fin:"RB33",sur:-112,mgr:"Mike",place:9},
+  {y:2023,player:"Justin Jefferson",pos:"WR",fin:"WR32",sur:-83,mgr:"Kulp",place:1},
+  {y:2024,player:"CeeDee Lamb",pos:"WR",fin:"WR8",sur:-31,mgr:"Kulp",place:2},
+  {y:2025,player:"Ja'Marr Chase",pos:"WR",fin:"WR4",sur:31,mgr:"Kevin",place:4}
+];
+const mx=112;
+document.getElementById('spine').innerHTML=firsts.map((t,i)=>{
+  const w=Math.max(8,Math.round(100*Math.abs(t.sur)/mx));
+  const cls=t.sur<=-112?' dead':(t.sur<0?' bust':' hit');
+  const sign=t.sur>0?'+':'';
+  return `<div class="row${cls}"><div class="yl">${t.y}</div><div class="track">
+    <div class="fill" style="width:${w}%;transition-delay:${i*55}ms"></div>
+    <div class="lab"><span class="who">${t.player}<small>${t.pos} · ${t.mgr}</small></span>
+    <span class="amt">${sign}${t.sur}</span></div></div></div>`;
+}).join('');
+
+const champs=[
+  {y:2011,mgr:"Kulp",team:"CadillacKulpDeville",slot:9,vor:-53.3,rank:7,eff:"90.5%"},
+  {y:2012,mgr:"pat kulp",team:"kulp",slot:5,vor:150.5,rank:5,eff:"89.3%"},
+  {y:2013,mgr:"Michaeopteryx",team:"Human Psentipede",slot:8,vor:264.4,rank:2,eff:"85.6%"},
+  {y:2014,mgr:"Kulp",team:"CadillacKulpDeville",slot:6,vor:-21.5,rank:8,eff:"88.8%"},
+  {y:2015,mgr:"Haefner",team:"Medina Sod",slot:7,vor:-59.1,rank:6,eff:"89.4%"},
+  {y:2016,mgr:"Haefner",team:"Medina Sod",slot:9,vor:219.0,rank:1,eff:"87.8%"},
+  {y:2017,mgr:"Mike",team:"WhoseHungry?",slot:10,vor:52.6,rank:7,eff:"91.6%"},
+  {y:2018,mgr:"Michaeopteryx",team:"Human Psentipede",slot:10,vor:46.1,rank:9,eff:"88.4%"},
+  {y:2019,mgr:"Kevin",team:"Blue Green",slot:6,vor:445.6,rank:1,eff:"85.1%"},
+  {y:2020,mgr:"Natalie",team:"GooNads",slot:3,vor:67.3,rank:5,eff:"94.7%"},
+  {y:2021,mgr:"Ryan",team:"Van Tine",slot:1,vor:275.6,rank:3,eff:"91.5%"},
+  {y:2022,mgr:"pat kulp",team:"OJ no Kulp",slot:9,vor:41.3,rank:6,eff:"86.4%"},
+  {y:2023,mgr:"Kulp",team:"CadillacKulpDeville",slot:1,vor:55.1,rank:6,eff:"90.0%"},
+  {y:2024,mgr:"9ofalltrades",team:"Aichane 2.0",slot:2,vor:114.6,rank:6,eff:"89.4%"},
+  {y:2025,mgr:"Mike",team:"WhoseHungry?",slot:9,vor:50.0,rank:7,eff:"91.9%"}
+];
+document.getElementById('champs').innerHTML=champs.map(c=>{
+  const rk=c.rank>=6?'bad':(c.rank===1?'good':'');
+  const vv=c.vor>=0?`+${c.vor.toFixed(0)}`:c.vor.toFixed(0);
+  const vc=c.vor>=0?'good':'bad';
+  return `<tr><td class="l">${c.y}</td><td class="l">${c.mgr}</td><td class="l">${c.team}</td>
+    <td>${c.slot}</td><td class="${vc}">${vv}</td><td class="${rk}">${c.rank}</td><td>${c.eff}</td></tr>`;
+}).join('');
+
+const crimes=[
+  {gap:52.2,bench:"Tyler Lockett",bp:53.0,start:"Chase Claypool",sp:0.8,mgr:"Kevin",when:"2020 · Wk 7"},
+  {gap:42.8,bench:"De'Von Achane",bp:51.3,start:"Kyren Williams",sp:8.5,mgr:"Kulp",when:"2023 · Wk 3"},
+  {gap:42.5,bench:"Stefon Diggs",bp:43.5,start:"Emmanuel Sanders",sp:1.0,mgr:"Kevin",when:"2019 · Wk 6"},
+  {gap:41.1,bench:"Sammy Watkins",bp:46.8,start:"Stefon Diggs",sp:5.7,mgr:"Kevin",when:"2019 · Wk 1"},
+  {gap:40.0,bench:"Steve Smith",bp:43.6,start:"Anquan Boldin",sp:3.6,mgr:"Natalie",when:"2015 · Wk 3"},
+  {gap:37.1,bench:"Devonta Freeman",bp:42.3,start:"Jonathan Stewart",sp:5.2,mgr:"Haefner",when:"2015 · Wk 3"}
+];
+document.getElementById('crimes').innerHTML=crimes.map(m=>`
+  <article class="mb BUST">
+    <div class="cost">−${m.gap}</div>
+    <div class="who">${m.when} · ${m.mgr}</div>
+    <div class="pl">${m.bench} on the bench</div>
+    <div class="res">${m.bp} points sitting. Started ${m.start} for ${m.sp}.</div>
+  </article>`).join('');
+
+const P=[
+  {mgr:"Kulp",aw:"Three Rings, One Name",n:"15 seasons · CadillacKulpDeville, forever",
+   fin:"4.07",titles:"3",eff:"90.0%",
+   blurb:"Career leader in average finish, titles, and lineup efficiency. Waits 1.6 rounds later than the room for a quarterback and 1.4 later for a tight end, then makes 12 more in-season moves than you do. Best pick: Devonta Freeman, 2015, tenth round, +176. Best draft of that same year, 445.9 VOR, finished ninth. The man can draft a title and still need the waiver wire to cash it. Has never once changed the team name, which in this league counts as a personality disorder in reverse."},
+  {mgr:"9ofalltrades",aw:"Eight Podiums, One Trophy",n:"15 seasons · 13 team names",
+   fin:"4.13",titles:"1",eff:"88.1%",
+   blurb:"Second in career finish, first in almosts. Eight podiums before the 2024 title, which arrived with the sixth-best draft of that year. Luckiest regular in the league at +3.2 win rate over all-play — the schedule has been doing him favors for a decade. 34.5 moves a year, most in the room. David Johnson 1.01 in 2017, −112. Saquon at 1.02 in 2020, vanished. CeeDee Lamb in 2023, +171. Thirteen names. The trophy case was a shelf until year fourteen."},
+  {mgr:"Haefner",aw:"The Only Repeat",n:"15 seasons · Jumpinfck, then Medina Sod",
+   fin:"4.73",titles:"2",eff:"89.7%",
+   blurb:"Back-to-back in 2015 and 2016. The 2015 board was −59 VOR, sixth in the room, and it still won, which is the most Haefner sentence I can write. Takes his first quarterback 0.9 rounds earlier than the field. 7–16 lifetime against Kulp, 18–6 against Natalie. Owns the sixth-worst bench decision ever recorded and two championships. The rest of you have been trying to catch a man who already left."},
+  {mgr:"Mike",aw:"Eight Hundred And Three",n:"15 seasons · WhoseHungry? when it counts",
+   fin:"5.07",titles:"2",eff:"89.9%",
+   blurb:"Best drafter among the lifer regulars at +159 VOR per year. In 2021 he posted 803 VOR — Cooper Kupp, fifth round, +254, the single most valuable pick in league history — and finished second to a second-year manager with a dead 1.01. Titles in 2017 and 2025, both with bottom-half drafts, the second one from slot 9. Six fewer waiver moves than average. Drafts like a professional and still had to wait eight years between rings because this league hates a clean story."},
+  {mgr:"Michaeopteryx",aw:"The Tight End Guy",n:"14 seasons · Human Psentipede, never once changed",
+   fin:"5.29",titles:"2",eff:"87.5%",
+   blurb:"Takes his first tight end 3.1 rounds earlier than the room. That is not a tendency. That is a religion. Greg Olsen five times. Derrick Henry five times. Tom Brady four. Won 2013 and 2018 — the 2018 board finished ninth of ten, the weakest draft ever to end in a championship. 85.6% lineup efficiency the first time he won, which is the other way to do it: be better than the room on Sunday even when the board says you shouldn't be."},
+  {mgr:"pat kulp",aw:"Negative Value, Two Rings",n:"15 seasons · kulp, then OJ no Kulp",
+   fin:"5.40",titles:"2",eff:"89.4%",
+   blurb:"The only lifer with negative career draft VOR, −48 a year, and he has as many titles as Mike, Haefner, and Michaeopteryx. Christian McCaffrey is both his best pick (2019, round 1, +207) and his worst (2024, round 1, −97). That is the entire drafter, in two cards. 19–8 lifetime against Natalie. Lowest score in a single week by a named manager: 49.3, 2019 week 7. Won from slot 9 in 2022 with the sixth-best draft. The board has been trying to get rid of him for fifteen years. It has not worked."},
+  {mgr:"Kevin",aw:"The Bench King",n:"15 seasons · Blue Green, mostly",
+   fin:"5.93",titles:"1",eff:"88.6%",
+   blurb:"Won 2019 with the best draft in the league (445.6 VOR) and the worst championship lineup efficiency (85.08%, 405.7 points sitting). Went 6–7 against 8.3 wins deserved and still took the trophy. Owns three of the twelve worst start/sit decisions ever recorded, including the record: Lockett 53, Claypool 0.8, a 52.2-point hole. Six fewer moves than average. The title is real. The Sundays are a crime scene."},
+  {mgr:"Natalie",aw:"Seven Moves A Year",n:"15 seasons · GooNads, never once changed",
+   fin:"6.33",titles:"1",eff:"88.4%",
+   blurb:"13 fewer in-season moves than the room. One name. One title, 2020, with 94.66% lineup efficiency — the cleanest championship card in the file, 132.9 points left on the bench all year. Then last place, last place. Lowest scores in league history live here: 37.9, 44.1, 48.9. 6–18 against Haefner. 8–19 against pat kulp. When she sets the lineup she can beat anyone. When she doesn't touch the wire for a decade, the league reminds her."},
+  {mgr:"Ryan",aw:"Year Two",n:"6 seasons · Van Tine",
+   fin:"6.33",titles:"1",eff:"89.8%",
+   blurb:"Arrived in 2020, finished last. Arrived in 2021, took McCaffrey 1.01, got −112, drafted Deebo in the eighth for +179, went 10–4 against 7.2 wins deserved, and won the championship. Unluckiest career luck mark in the league at −3.8, which makes that gifted title even funnier. Never changed the name. Takes tight ends 1.8 rounds early. Six seasons, one ring, and a first-overall bust on the mantle. Either a genius or an apology from the universe."},
+  {mgr:"Al",aw:"Fifteen Names, Zero Rings",n:"15 seasons · a new AL pun every August",
+   fin:"6.80",titles:"0",eff:"88.5%",
+   blurb:"Three podiums. Zero titles. Fifteen team names, which is a cry for help with a capital AL. Took Le'Veon Bell 1.01 in 2015 (−112, finished 10th) and again in 2018 (−112). Took McCaffrey 1.01 in 2020 (−112) and finished second anyway. Best draft of his life was 2014, 550 VOR, finished second. Last two seasons: last place, last place, 81.4% efficiency, the worst two lineup years in the entire file. The names keep changing. The finish does not."},
+  {mgr:"senftiva",aw:"The Best Drafter Who Never Showed Up",n:"9 seasons · one name, zero podiums",
+   fin:"7.56",titles:"0",eff:"84.8%",
+   blurb:"Highest draft value per year in league history, +173. Second-best single draft ever recorded, 671 VOR in 2018, finished sixth. Worst lineup efficiency in the league. Left 21.1 points on the bench every week. The schedule helped him (+3.4 luck) and he still averaged 7.56. He drafted the rosters. He just didn't start them. There is no version of this paragraph that is kind, and the numbers would make a liar of me if I tried."}
+];
+document.getElementById('profiles').innerHTML=P.map(p=>`
+  <article class="pc">
+    <div class="aw">${p.aw}</div>
+    <div class="who2">${p.mgr} · ${p.n}</div>
+    <p class="blurb">${p.blurb}</p>
+    <div class="stat3">
+      <div><div class="v3">${p.fin}</div><div class="l3">Avg finish</div></div>
+      <div><div class="v3">${p.titles}</div><div class="l3">Titles</div></div>
+      <div><div class="v3">${p.eff}</div><div class="l3">Lineup</div></div>
+    </div>
+  </article>`).join('');
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+</script>
+</body>
+</html>
