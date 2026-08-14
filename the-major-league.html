@@ -148,6 +148,36 @@ tbody tr:hover{background:#18202Ecc}
 .picks3 .val3{color:var(--dim);text-align:right}
 .picks3 .val3 b{color:var(--text);font-weight:600}
 
+.rivgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:var(--s2);margin-top:var(--s3)}
+.riv{background:linear-gradient(165deg,var(--p3),var(--p1));border:1px solid var(--edge);border-radius:16px;
+ padding:var(--s3);box-shadow:var(--sh1)}
+.riv .match{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.riv .sc{font-family:var(--serif);font-size:clamp(32px,6vw,44px);letter-spacing:-.03em;line-height:1;margin:10px 0 8px;color:var(--text)}
+.riv .sc b{color:var(--gold);font-weight:600}
+.riv .bl{font-size:14.5px;color:var(--dim);line-height:1.55}
+.riv.dead .sc b{color:var(--wr)}
+
+.yr{background:linear-gradient(170deg,var(--p2),var(--p1));border:1px solid var(--edge);border-radius:18px;
+ padding:clamp(18px,3vw,26px);box-shadow:var(--sh2);margin-top:var(--s3)}
+.yr .yh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:10px}
+.yr .yy{font-family:var(--serif);font-size:clamp(28px,5vw,36px);letter-spacing:-.03em}
+.yr .champ{font-size:15px;color:var(--gold)}
+.yr .final{font-family:var(--serif);font-size:clamp(18px,3vw,22px);color:var(--text);margin-top:8px;letter-spacing:-.02em}
+.yr .final span{color:var(--dim);font-family:var(--sans);font-size:14px}
+.yr h3{margin:18px 0 8px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-family:var(--sans);font-weight:600}
+.studs{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;padding:5px 9px;border-radius:8px;background:#161E2B;border:1px solid var(--edge);color:var(--dim)}
+.chip b{color:var(--text);font-weight:600}
+.chip.hit{border-color:rgba(61,220,151,.35);color:var(--good)}
+.chip.hit b{color:var(--good)}
+.chip.bust{border-color:rgba(255,107,107,.3);color:var(--bad)}
+.chip.bust b{color:var(--bad)}
+.stars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.star{background:#121925;border:1px solid var(--edge);border-radius:10px;padding:10px 12px}
+.star .pos{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.star .nm{font-size:15px;color:var(--text);font-weight:600;margin-top:2px}
+.star .own{font-size:12px;color:var(--dim);margin-top:2px}
+
 .sig{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:17px;margin-top:var(--s4);
  padding-top:var(--s2);border-top:1px solid var(--edge)}
 footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(--faint);font-size:13.5px}
@@ -168,6 +198,7 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 }
 @media(max-width:420px){
  .figs{grid-template-columns:1fr 1fr}
+ .stars{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -176,15 +207,15 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 <div class="wrap">
 <header class="hero">
   <div class="kicker">The Major League · 2011–2025 · By Mohn Jadden</div>
-  <h1>Fifteen Years<br>Of Sitting<br>The Wrong Guy</h1>
-  <p class="lede">This is a 10-team, 1-point PPR snake redraft. No keepers. No auction. No excuses.
-  2,370 draft picks. 2,449 team-weeks. Every start/sit crime is still in the log, and I have
-  finally got the math to prove what I have been yelling about since 2011.</p>
+  <h1>Fifteen Years<br>Of Unfinished<br>Business</h1>
+  <p class="lede">A 10-team, 1-point PPR snake. The boards you swore by in August.
+  The finals you still argue about in January. The rivalries none of you will let die.
+  I have been writing this league up since 2011. The receipts are in. The scouting report is not.</p>
   <div class="figs">
     <div class="fig"><div class="v">15</div><div class="l">Seasons</div></div>
-    <div class="fig"><div class="v">2,370</div><div class="l">Picks</div></div>
-    <div class="fig"><div class="v">12</div><div class="l">Managers</div></div>
-    <div class="fig"><div class="v">2,449</div><div class="l">Team-weeks</div></div>
+    <div class="fig"><div class="v">15</div><div class="l">Champions</div></div>
+    <div class="fig"><div class="v">11</div><div class="l">Defendants</div></div>
+    <div class="fig"><div class="v">1,000</div><div class="l">Regular-season games</div></div>
   </div>
   <div class="scrollcue"><span>↓ Let's begin</span></div>
 </header>
@@ -192,427 +223,244 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
 <section class="act"><div class="wrap">
   <div class="narrow reveal">
-    <div class="kicker">Exhibit A</div>
-    <h2>What the first overall pick has actually done</h2>
-    <p>One chart. Fifteen years. Green means the 1.01 returned more than the slot is worth.
-    Red means it didn't. The years that go all the way across returned <em>nothing</em> —
-    the player never even cracked the startable pool.</p>
+    <div class="kicker">The Blood Feuds</div>
+    <h2>Some of you have been playing the same person for fifteen years and it has not gotten kinder</h2>
+    <p>Regular season only. Playoffs are a different country. These are the games you actually
+    had to live through, week after week, while the group chat lied about being over it.</p>
   </div>
-  <div class="spine reveal"><div class="spinechart" id="spine"></div>
-    <div class="spinenote">
-      <span>Surplus vs what the 1.01 historically returns</span>
-      <span>11 of 15 first overalls lost value</span>
-    </div>
-  </div>
-</div></section>
-
-<section class="act"><div class="wrap narrow reveal">
-  <div class="kicker">One Piece Of Math, I'll Be Quick</div>
-  <h2>What VOR means, for those of you who skipped it</h2>
-  <div class="primer">
-    <h3>Here's the lie</h3>
-    <p>Raw points make every quarterback look like a genius and every tenth-round running back
-    look like a mistake. A 280-point quarterback can be replacement-level. A 180-point receiver
-    can win you a week. If you grade a draft on points, you will congratulate yourselves for
-    drafting the position that scores the most, which is how half of this league has been
-    evaluating itself since Arian Foster.</p>
-    <div class="eq">
-      <b>What he scored</b><i>−</i>
-      <b>What the last startable guy at his position scored</b><i>=</i>
-      <b>VOR</b>
-    </div>
-    <p>The bar moves with the roster. 2011–2013 you started two receivers. 2014 you started three
-    and added a flex. 2020 you got an IR slot. We measure every pick against <em>this</em> league's
-    own replacement level, not some magazine's.</p>
-    <p><strong>What it doesn't do.</strong> VOR grades the pick, not whether you started him.
-    If you drafted a league-winner and sat him, the draft still gets credit and you still get
-    roasted in a different section. Kickers and defenses are thrown out of the value math —
-    one of each gets drafted per team, so "replacement" becomes whoever finished last and
-    suddenly every kicker looks like a masterstroke.</p>
-  </div>
-</div></section>
-
-<section class="act"><div class="wrap narrow reveal">
-  <div class="kicker">Act I · 2011–2014</div>
-  <h2>When the commissioner taught you how this works</h2>
-  <p>Year one, Kulp takes CadillacKulpDeville to a title from <strong>draft slot 9</strong>
-  with the <strong>seventh-best draft in the room</strong> and <strong>negative</strong> draft
-  value. Minus 53 VOR. The snake handed him the worst corner of the board and he still won,
-  because this league has never been decided on draft night and the rest of you spent fourteen
-  years refusing to believe it.</p>
-  <p>pat kulp won it in 2012. Michaeopteryx showed up in year two, named the team Human
-  Psentipede, never changed it, and took 2013. Kulp went back-to-back-adjacent in 2014 —
-  again with a below-average draft, again with 45 in-season moves, which is the part you
-  should have written down.</p>
-  <p>The name never changed. CadillacKulpDeville. Fifteen seasons. One string of characters.
-  Some of you have used that as a personality. He used it as a filing system.</p>
-  <div class="keystat"><b>Key Stat</b>
-    Two of the first four champions won with a draft that finished seventh or eighth in a
-    ten-team league. The commissioner did it twice.
-  </div>
-</div></section>
-
-<section class="act"><div class="wrap narrow reveal">
-  <div class="kicker">Act II · 2015–2016</div>
-  <h2>Haefner repeats, and Kulp drafts a title he doesn't win</h2>
-  <p>2015 is the year the tape gets cruel. Kulp posts <strong>445.9 draft VOR</strong> —
-  the best board in the league that season, still one of the four best drafts anyone has
-  ever turned in here. Devonta Freeman in the tenth round, finished RB1, <strong>+176 surplus</strong>.
-  Then he takes Eddie Lacy first overall-adjacent in round 1 and watches him finish RB32
-  at <strong>−97</strong>.</p>
-  <p>He finishes ninth.</p>
-  <p>Haefner wins the thing with <strong>−59 draft VOR</strong>, the sixth-best board in a
-  ten-team league, and then he does it again in 2016 from slot 9 with the actual best draft
-  of that year. Back-to-back. Medina Sod. The only repeat in league history.</p>
-  <p>Kulp had the receipts in August and lost them by December. That is not a draft problem.
-  That is the whole sport, in one season, with the commissioner's name on it.</p>
-  <div class="keystat"><b>Key Stat</b>
-    Best draft of 2015: 445.9 VOR, finished 9th. Championship draft of 2015: −59 VOR.
-    The gap between those two sentences is why I still have a job.
+  <div class="rivgrid reveal">
+    <article class="riv dead">
+      <div class="match">Mike vs 9ofalltrades</div>
+      <div class="sc">13–<b>13</b></div>
+      <p class="bl">Twenty-six games. A dead heat. The only pairing in this league that has
+      refused to pick a side. Somebody is going to break this and it is going to ruin a friendship.</p>
+    </article>
+    <article class="riv">
+      <div class="match">pat kulp vs Natalie</div>
+      <div class="sc"><b>19</b>–8</div>
+      <p class="bl">Twenty-seven meetings. She has beaten him eight times. That is not a rivalry.
+      That is a landlord-tenant relationship, and the rent is always late.</p>
+    </article>
+    <article class="riv">
+      <div class="match">Haefner vs Natalie</div>
+      <div class="sc"><b>18</b>–6</div>
+      <p class="bl">The other man she cannot beat. Twenty-four games. If you are Natalie and you
+      see Medina Sod on the schedule, you already know how Sunday ends.</p>
+    </article>
+    <article class="riv">
+      <div class="match">Kulp vs Haefner</div>
+      <div class="sc"><b>16</b>–7</div>
+      <p class="bl">The commissioner and the only man who ever repeated. Twenty-three games.
+      Kulp has the series. Haefner has the back-to-back. Neither of them will let the other
+      have the last word.</p>
+    </article>
+    <article class="riv">
+      <div class="match">Kulp vs Al</div>
+      <div class="sc"><b>17</b>–9</div>
+      <p class="bl">Twenty-six games. Al has tried fifteen team names. Kulp has tried one.
+      The record looks like the names: one of them keeps starting over, the other one doesn't
+      have to.</p>
+    </article>
+    <article class="riv">
+      <div class="match">Kulp vs Natalie</div>
+      <div class="sc"><b>15</b>–7</div>
+      <p class="bl">CadillacKulpDeville vs GooNads, every year since the beginning, same two
+      names on the scoreboard. Twenty-two games. The office has her number.</p>
+    </article>
+    <article class="riv">
+      <div class="match">Haefner vs Mike</div>
+      <div class="sc"><b>16</b>–10</div>
+      <p class="bl">Two-time champs punching each other for a decade. Twenty-six games.
+      Haefner has the edge. Mike has the 2025 trophy. The next one is going to be ugly.</p>
+    </article>
+    <article class="riv dead">
+      <div class="match">Kevin vs Kulp</div>
+      <div class="sc">13–<b>14</b></div>
+      <p class="bl">The most-played pairing in league history. Twenty-seven games, decided by
+      a single win. Kevin took the 2019 title. Kulp has three. The series is basically a coin
+      that landed on the commissioner's face.</p>
+    </article>
   </div>
 </div></section>
 
 <section class="act"><div class="wrap narrow reveal">
-  <div class="kicker">Act III · The Exhibit They Will Hate</div>
-  <h2>The best drafter in league history never made a podium</h2>
-  <p>senftiva lasted nine seasons. He averaged <strong>+173 draft VOR per year</strong>,
-  the highest mark on the board. In 2018 he posted <strong>671 VOR</strong> — the second-best
-  single draft ever recorded in this league — and finished sixth. In 2012 he was +237 against
-  the room and finished eighth. In 2013, +208, ninth.</p>
-  <p>Zero titles. Zero podiums. Average finish: <strong>7.56</strong>.</p>
-  <p>And before anyone starts in about the schedule: he won 44.4% of his games against an
-  all-play mark of 41.0%. The schedule did him a <em>favor</em>, worth +3.4 points of win
-  rate, and he still never sniffed the trophy. Everything points at the lineup card.</p>
-  <p>Worst lineup efficiency in the league at <strong>84.8%</strong>. He left 21.1 points
-  on the bench every week — roughly 338 a season, which is more than a full extra starter.
-  He drafted the rosters. He just didn't start them.</p>
-  <div class="pull">He had the best drafts in the room and the worst lineup in the league.
-    That is not a paradox. That is a choice, repeated every Sunday.
-    <span class="src">Nine seasons · 0 podiums · 84.8% efficiency</span>
+  <div class="kicker">The Bits That Stuck</div>
+  <h2>What fifteen years actually left on the floor</h2>
+  <p>Kulp has three titles and one team name. CadillacKulpDeville, every August, like a threat.
+  Haefner is the only repeat in league history — Medina Sod, 2015 and 2016 — and then the rest
+  of you spent a decade trying to catch a man who already left.</p>
+  <p>9ofalltrades stood on eight podiums before he finally took one home in 2024. Thirteen
+  team names. The most consistent almost this league has ever produced. Mike needed eight
+  years between rings and then did it from the same chair Kulp won from in 2011.</p>
+  <p>Al has zero titles and fifteen names. senftiva lasted nine seasons, never made a podium,
+  and left. Natalie has one ring, one team name, and two men she has never been able to solve.
+  Ryan showed up in 2020, finished last, and won the whole thing the next year.</p>
+  <div class="pull">You'll never get closer than four tenths of a point.
+    <span class="src">2018 championship · Michaeopteryx 153.76, Haefner 153.36</span>
   </div>
-</div></section>
-
-<section class="act"><div class="wrap narrow reveal">
-  <div class="kicker">Act IV · 2017–2022</div>
-  <h2>Then the 1.01 started killing people</h2>
-  <p>From 2017 through 2022 the first overall pick failed six years in a row. Four of those
-  six returned less than nothing — David Johnson, Le'Veon Bell, Christian McCaffrey twice,
-  Jonathan Taylor. The player you burned the first name in the draft on never even finished
-  inside the startable pool.</p>
-  <p>Al did it twice. Bell in 2015, Bell again in 2018. Then he took McCaffrey 1.01 in 2020
-  and watched him finish RB54, and somehow still came in second, which tells you everything
-  about how little the first pick is worth and how much of Al's career has been surviving
-  his own first round.</p>
-  <p>2019 is Kevin's year, and it is the funniest championship in the file. Best draft in
-  the league: <strong>445.6 VOR</strong>. Worst lineup efficiency of any champion:
-  <strong>85.08%</strong>, with <strong>405.7 points left on the bench</strong>. He went
-  6–7 in the regular season against an all-play mark of 8.3 wins. He still won the trophy.
-  He also owns the worst start/sit decision in league history, which we will get to, and
-  which he will never hear the end of.</p>
-  <p>Natalie won 2020 the other way: <strong>94.66% lineup efficiency</strong>, 132.9 points
-  left on the bench all year, seven waiver moves. GooNads. Same name, every season, since
-  2011. Then she finished last, last, and last-adjacent for two years after, because this
-  league does not let anyone have a clean narrative.</p>
-  <p>2021 is the one I would put in a museum. Mike posts <strong>803 draft VOR</strong> —
-  the best draft anyone has ever had here, Cooper Kupp in the fifth round at +254, the
-  single most valuable pick in league history — and finishes second. Ryan, in his second
-  season, takes McCaffrey 1.01, gets <strong>−112</strong>, and wins the championship
-  anyway. Deebo Samuel in the eighth, +179. The schedule gifted him a 10–4 record against
-  7.2 wins deserved. Mike had the best board ever recorded. Ryan had the trophy. There is
-  no version of this story where that is fair, and it happened anyway.</p>
-  <div class="keystat"><b>Key Stat</b>
-    Nine of fifteen champions had a bottom-half draft. Two had the best draft in the league.
-    The weakest board ever to win it: Michaeopteryx, 2018, ninth of ten.
-  </div>
-</div></section>
-
-<section class="act"><div class="wrap narrow reveal">
-  <div class="kicker">Act V · 2023–2025</div>
-  <h2>Thirteen years of almost, then the chair in the corner</h2>
-  <p>Kulp takes Justin Jefferson 1.01 in 2023. Jefferson finishes WR32, <strong>−83 surplus</strong>.
-  Kulp wins the championship anyway, from the cursed chair, with the sixth-best draft,
-  40 waiver moves, 90% lineup efficiency. Third ring. Same team name. The man has not
-  learned a new trick because he has not needed one.</p>
-  <p>2024 is when 9ofalltrades finally cashed it. Eight podium finishes. One title.
-  Thirteen team names. The luckiest regular in the league at <strong>+3.2 win rate</strong>
-  over all-play, which is a polite way of saying the schedule has been on his side for
-  a decade and it still took him until year fourteen. Aichane 2.0. Sixth-best draft.
-  Slot 2. You do not get to call it destiny when you had eight chances to end this sooner.</p>
-  <p>2025: Mike, slot 9, seventh-best draft, second ring, eight years after the first.
-  Same chair Kulp won from in 2011 and Haefner won from in 2016 and pat kulp won from
-  in 2022. Four championships from slot 9. Zero from slot 4. The formal test says that's
-  noise — p = 0.204 — and I believe the test. I also believe four trophies from the same
-  seat is a bit, and I am not going to be the one who kills it.</p>
-  <div class="keystat"><b>Key Stat</b>
-    9ofalltrades: 8 podiums, 1 title, 13 names, 15 seasons. The most consistent almost
-    in the history of this league.
-  </div>
+  <p>That is still the closest final in the file. Human Psentipede over Medina Sod by the
+  width of a kicker. Haefner has not forgotten. Michaeopteryx has not stopped bringing it up.
+  I am not going to be the one who tells them to let it go.</p>
 </div></section>
 
 <section class="act"><div class="wrap">
   <div class="narrow reveal">
-    <div class="kicker">The Record</div>
-    <h2>Every champion, and what their draft actually looked like</h2>
-    <p>"Draft rank" is where that board finished among the ten teams that year. Read it
-    and decide whether August still matters to you.</p>
+    <div class="kicker">The Archives</div>
+    <h2>Every year, the board you remember, and who actually lifted it</h2>
+    <p>Round 1 is what you talked about in August. The scoring titles are who the year
+    actually belonged to. The final is the only number that went on the trophy.</p>
   </div>
-  <div class="panel reveal">
-    <table>
-      <thead>
-        <tr>
-          <th class="l">Year</th><th class="l">Champion</th><th class="l">Team</th>
-          <th>Slot</th><th>Draft VOR</th><th>Draft rank</th><th>Lineup</th>
-        </tr>
-      </thead>
-      <tbody id="champs"></tbody>
-    </table>
-  </div>
-</div></section>
-
-<section class="act"><div class="wrap">
-  <div class="narrow reveal">
-    <div class="kicker">The Bench</div>
-    <h2>The start/sit crimes this league will not be allowed to forget</h2>
-    <p>Lineup efficiency is the second-strongest thing we can measure against final standing,
-    rho +0.353, right behind draft value. Across 150 team-seasons you collectively left
-    <strong>39,917 points</strong> on the bench. That is not a rounding error. That is a
-    lifestyle.</p>
-  </div>
-  <div class="megagrid reveal" id="crimes"></div>
-  <div class="keystat reveal"><b>Key Stat</b>
-    Kevin owns three of the twelve worst bench decisions ever recorded, including the
-    record: Tyler Lockett 53.0, Chase Claypool 0.8, week 7 of 2020. A 52.2-point gap.
-    He won a championship the year before. The two facts are related only in that they
-    happened to the same person.
-  </div>
+  <div id="years"></div>
 </div></section>
 
 <section class="act"><div class="wrap">
   <div class="narrow reveal">
     <div class="kicker">The Defendants</div>
     <h2>Eleven managers, eleven problems</h2>
-    <p>Average finish is the career grade. Everything else is the explanation. I didn't
-    make these up. You did, in public, over fifteen years.</p>
+    <p>I didn't make these up. You did, in public, over fifteen years.</p>
   </div>
   <div class="pgrid reveal" id="profiles"></div>
 </div></section>
 
-<section class="act"><div class="wrap">
-  <div class="narrow reveal">
-    <div class="kicker">The Ledger</div>
-    <h2>Steals and disappearances</h2>
-    <p>Surplus is value above what that draft slot historically returns, so a tenth-round
-    hit outranks a first-round pick that merely did its job. The other list is 21 picks
-    inside the first three rounds that never even finished inside the startable pool.</p>
-  </div>
-  <div class="panel reveal">
-    <h3 style="margin-bottom:16px">The best picks ever made</h3>
-    <table>
-      <thead><tr><th class="l">Year</th><th>Pick</th><th class="l">Player</th><th>Finished</th><th>Surplus</th><th class="l">Manager</th></tr></thead>
-      <tbody>
-        <tr><td class="l">2021</td><td>50 (R5)</td><td class="l">Cooper Kupp</td><td>WR1</td><td class="good">+254</td><td class="l">Mike</td></tr>
-        <tr><td class="l">2019</td><td>3 (R1)</td><td class="l">Christian McCaffrey</td><td>RB1</td><td class="good">+207</td><td class="l">pat kulp</td></tr>
-        <tr><td class="l">2021</td><td>80 (R8)</td><td class="l">Deebo Samuel Sr.</td><td>WR3</td><td class="good">+179</td><td class="l">Ryan</td></tr>
-        <tr><td class="l">2018</td><td>21 (R3)</td><td class="l">Christian McCaffrey</td><td>RB1</td><td class="good">+178</td><td class="l">Al</td></tr>
-        <tr><td class="l">2015</td><td>96 (R10)</td><td class="l">Devonta Freeman</td><td>RB1</td><td class="good">+176</td><td class="l">Kulp</td></tr>
-        <tr><td class="l">2017</td><td>18 (R2)</td><td class="l">Todd Gurley</td><td>RB1</td><td class="good">+176</td><td class="l">Natalie</td></tr>
-        <tr><td class="l">2014</td><td>23 (R3)</td><td class="l">Le'Veon Bell</td><td>RB1</td><td class="good">+172</td><td class="l">pat kulp</td></tr>
-        <tr><td class="l">2023</td><td>17 (R2)</td><td class="l">CeeDee Lamb</td><td>WR1</td><td class="good">+171</td><td class="l">9ofalltrades</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="panel reveal">
-    <h3 style="margin-bottom:16px">Premium picks that vanished</h3>
-    <table>
-      <thead><tr><th class="l">Year</th><th class="l">Pick</th><th class="l">Player</th><th class="l">Manager</th></tr></thead>
-      <tbody>
-        <tr><td class="l">2025</td><td class="l">R2.5</td><td class="l">Malik Nabers</td><td class="l">Al</td></tr>
-        <tr><td class="l">2025</td><td class="l">R3.10</td><td class="l">Tyreek Hill</td><td class="l">Michaeopteryx</td></tr>
-        <tr><td class="l">2024</td><td class="l">R3.10</td><td class="l">Brandon Aiyuk</td><td class="l">Natalie</td></tr>
-        <tr><td class="l">2023</td><td class="l">R2.2</td><td class="l">Nick Chubb</td><td class="l">pat kulp</td></tr>
-        <tr><td class="l">2022</td><td class="l">R2.10</td><td class="l">Javonte Williams</td><td class="l">Mike</td></tr>
-        <tr><td class="l">2021</td><td class="l">R2.2</td><td class="l">Calvin Ridley</td><td class="l">Michaeopteryx</td></tr>
-        <tr><td class="l">2020</td><td class="l">R1.2</td><td class="l">Saquon Barkley</td><td class="l">9ofalltrades</td></tr>
-        <tr><td class="l">2018</td><td class="l">R1.1</td><td class="l">Le'Veon Bell</td><td class="l">Al</td></tr>
-        <tr><td class="l">2017</td><td class="l">R1.1</td><td class="l">David Johnson</td><td class="l">9ofalltrades</td></tr>
-        <tr><td class="l">2015</td><td class="l">R1.1</td><td class="l">Le'Veon Bell</td><td class="l">Al</td></tr>
-      </tbody>
-    </table>
-  </div>
-</div></section>
-
-<section class="act"><div class="wrap">
-  <div class="narrow reveal">
-    <div class="kicker">What Actually Decides A Season</div>
-    <h2>Four things don't matter. Three things do.</h2>
-    <p>Spearman rank correlation with final standing, computed within each season, then
-    averaged across all fifteen. Positive means more of it helps you finish higher.
-    Significance from a 10,000-shuffle permutation test.</p>
-  </div>
-  <div class="panel reveal">
-    <table>
-      <thead><tr><th class="l">Factor</th><th>rho</th><th>p</th><th class="l">Verdict</th></tr></thead>
-      <tbody>
-        <tr><td class="l">Draft value (VOR)</td><td class="good">+0.372</td><td>0.0001</td><td class="l">real effect</td></tr>
-        <tr><td class="l">Lineup efficiency</td><td class="good">+0.353</td><td>—</td><td class="l">real effect</td></tr>
-        <tr><td class="l">In-season moves</td><td class="good">+0.278</td><td>0.0013</td><td class="l">real effect</td></tr>
-        <tr><td class="l">Early-round bust rate</td><td class="bad">−0.189</td><td>0.029</td><td class="l">real effect</td></tr>
-        <tr><td class="l">Draft slot</td><td>−0.109</td><td>0.204</td><td class="l">noise</td></tr>
-        <tr><td class="l">Number of WRs drafted</td><td>+0.094</td><td>0.272</td><td class="l">noise</td></tr>
-        <tr><td class="l">Bargains vs reaches</td><td>−0.074</td><td>0.386</td><td class="l">noise</td></tr>
-        <tr><td class="l">Number of RBs drafted</td><td>−0.008</td><td>0.925</td><td class="l">noise</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="narrow reveal">
-    <p>How many running backs you take in the first five is indistinguishable from a coin
-    flip. Reaching versus waiting is a coin flip. Your draft slot is a coin flip, which is
-    the good news, because it means the snake is fair. Roster construction is not where
-    this league is won. Who you got, whether you started them, and whether you used the
-    waiver wire — that's the whole sport.</p>
-  </div>
-</div></section>
-
 <section class="act"><div class="wrap narrow reveal">
   <div class="kicker">Closing Argument</div>
-  <h2>What fifteen years actually proved</h2>
-  <p><strong>Draft night is a head start, not a verdict.</strong> Two champions had the
-  best draft in the league. Nine had a draft in the bottom half. Michaeopteryx won it
-  from ninth on the board. Kulp won it from seventh with negative value. If your season
-  died in November, August is not the reason and you know it.</p>
-  <p><strong>The lineup card is the murder weapon.</strong> senftiva drafted like a
-  professional and started like a man checking his phone at halftime. Kevin won a title
-  with 405 points on the bench. Across this league you have left 39,917 points sitting.
-  Kulp's 90.0% efficiency is the career leader and also the career leader in titles.
-  That is not a coincidence I invented. That is the correlation.</p>
-  <p><strong>Moves are the third rail and most of you won't touch it.</strong> Natalie
-  averages 7.1 a year and has one ring to show for the discipline. Kulp averages 32.5
-  and has three. 9ofalltrades averages 34.5 and needed fourteen seasons to cash one.
-  Activity is not a personality. It is a lever, and the people who pull it finish higher.</p>
-  <p><strong>The 1.01 is a trap with a chair.</strong> Eleven of fifteen first overalls
-  lost value. Six straight years it failed. Four times it returned nothing. Ryan won a
-  title with a dead McCaffrey. Kulp won a title with a dead Jefferson. Stop treating
-  the first name on the card like a birthright.</p>
-  <p>See you in September. Set your lineup.</p>
+  <h2>See you in September</h2>
+  <p>The names on the trophy are the names on the trophy. Kulp has three. Four of you have
+  two. Four of you have one. Al has a new pun every August and an empty case. senftiva had
+  nine years and nothing to show the room. That is the ledger. The rest is argument, and
+  you will have it again this year, in the same group chat, about the same people.</p>
+  <p>Mike and 9ofalltrades are still tied. Natalie still has to play pat kulp. Haefner still
+  has to look at 153.36. The commissioner still hasn't changed the team name. None of that
+  is getting resolved in this document.</p>
+  <p>Bring a board. Bring a grudge. Try not to sit the guy who scores 53.</p>
   <p class="sig">Mohn Jadden — Keeping it real since 2011</p>
 </div></section>
 
 <div class="wrap"><footer>
-  Compiled from 2,370 snake-draft picks and 2,449 team-weeks across 15 seasons of The Major League,
-  10-team 1pt PPR redraft. Value over replacement uses this league's own scoring and roster
-  settings, with the bar scaled when the starting lineup changed (two WR through 2013, three WR
-  plus a flex from 2014, IR slot from 2020). Kickers and defenses excluded from VOR.
-  313 of 2,450 weekly roster fetches were lost to Yahoo rate limiting and were not invented to
-  fill the gap. Weekly totals match Yahoo's official season points to 0.00% for 2011–2021;
-  2022–2025 run 0.9–3.3% under, so games decided by under a point in those four seasons should
-  be treated with care. The 2011 account "kool aid" is unidentified. Managers tracked by account,
-  because half of you change your team names constantly and Al has used fifteen of them.
+  Compiled from fifteen seasons of The Major League, 10-team 1pt PPR snake redraft, 2011–2025.
+  Championship scores are the championship-week matchup of the eventual #1 and #2 finishers,
+  reconstructed from weekly started-player totals. Those totals match Yahoo's official season
+  points to the hundredth for 2011–2021. 2022's championship week reconstruction disagrees with
+  the trophy, so that final is listed without a score rather than guessed. Round-1 boards and
+  scoring titles are from the league's own draft results and season stats. Regular-season
+  rivalries exclude playoff games. The 2011 account "kool aid" is unidentified.
 </footer></div>
 
 <script>
-const firsts=[
-  {y:2011,player:"Arian Foster",pos:"RB",fin:"RB4",sur:11,mgr:"Haefner",place:2},
-  {y:2012,player:"Ray Rice",pos:"RB",fin:"RB5",sur:2,mgr:"Kulp",place:5},
-  {y:2013,player:"Adrian Peterson",pos:"RB",fin:"RB10",sur:-59,mgr:"Haefner",place:10},
-  {y:2014,player:"LeSean McCoy",pos:"RB",fin:"RB12",sur:-70,mgr:"Natalie",place:7},
-  {y:2015,player:"Le'Veon Bell",pos:"RB",fin:"RB48",sur:-112,mgr:"Al",place:10},
-  {y:2016,player:"Antonio Brown",pos:"WR",fin:"WR1",sur:15,mgr:"Kulp",place:2},
-  {y:2017,player:"David Johnson",pos:"RB",fin:"outside",sur:-112,mgr:"9ofalltrades",place:5},
-  {y:2018,player:"Le'Veon Bell",pos:"RB",fin:"outside",sur:-112,mgr:"Al",place:5},
-  {y:2019,player:"Saquon Barkley",pos:"RB",fin:"RB11",sur:-36,mgr:"Mike",place:6},
-  {y:2020,player:"Christian McCaffrey",pos:"RB",fin:"RB54",sur:-112,mgr:"Al",place:2},
-  {y:2021,player:"Christian McCaffrey",pos:"RB",fin:"RB38",sur:-112,mgr:"Ryan",place:1},
-  {y:2022,player:"Jonathan Taylor",pos:"RB",fin:"RB33",sur:-112,mgr:"Mike",place:9},
-  {y:2023,player:"Justin Jefferson",pos:"WR",fin:"WR32",sur:-83,mgr:"Kulp",place:1},
-  {y:2024,player:"CeeDee Lamb",pos:"WR",fin:"WR8",sur:-31,mgr:"Kulp",place:2},
-  {y:2025,player:"Ja'Marr Chase",pos:"WR",fin:"WR4",sur:31,mgr:"Kevin",place:4}
+const YEARS=[
+{y:2011,champ:"Kulp",team:"CadillacKulpDeville",ru:"Haefner",ruTeam:"Jumpinfck",score:"130.0–125.4",wk:16,
+ note:"The first trophy. Four and a half points, week 16, and the commissioner has not been humble about it since.",
+ studs:[{n:"Arian Foster",f:"RB4",k:"hit"},{n:"Adrian Peterson",f:"RB13"},{n:"Jamaal Charles",f:"DNP",k:"bust"},{n:"Ray Rice",f:"RB1",k:"hit"},{n:"Aaron Rodgers",f:"QB2",k:"hit"},{n:"Michael Turner",f:"RB7"},{n:"Michael Vick",f:"QB11"},{n:"LeSean McCoy",f:"RB2",k:"hit"},{n:"Andre Johnson",f:"WR74",k:"bust"},{n:"Rashard Mendenhall",f:"RB22"}],
+ stars:[{p:"QB",n:"Drew Brees",o:"pat kulp",pts:"406.6"},{p:"RB",n:"Ray Rice",o:"Kevin",pts:"336.8"},{p:"WR",n:"Calvin Johnson",o:"Kulp",pts:"312.2"},{p:"TE",n:"Rob Gronkowski",o:"Mike",pts:"285.9"}]},
+{y:2012,champ:"pat kulp",team:"kulp",ru:"9ofalltrades",ruTeam:"The Hot Peads",score:"160.0–119.1",wk:16,
+ note:"pat kulp's first. 9ofalltrades gets the first of what will become a very long list of silver medals.",
+ studs:[{n:"Ray Rice",f:"RB5"},{n:"Arian Foster",f:"RB3",k:"hit"},{n:"LeSean McCoy",f:"RB18"},{n:"Calvin Johnson",f:"WR1",k:"hit"},{n:"Aaron Rodgers",f:"QB2",k:"hit"},{n:"Chris Johnson",f:"RB13"},{n:"Wes Welker",f:"WR7"},{n:"Tom Brady",f:"QB3",k:"hit"},{n:"Darren McFadden",f:"RB25",k:"bust"},{n:"Marshawn Lynch",f:"RB4",k:"hit"}],
+ stars:[{p:"QB",n:"Drew Brees",o:"Kevin",pts:"365.6"},{p:"RB",n:"Adrian Peterson",o:"Al",pts:"329.4"},{p:"WR",n:"Calvin Johnson",o:"Natalie",pts:"284.4"},{p:"TE",n:"Jimmy Graham",o:"Mike",pts:"194.7"}]},
+{y:2013,champ:"Michaeopteryx",team:"Human Psentipede",ru:"pat kulp",ruTeam:"OJ no Kulp",score:"137.3–126.4",wk:16,
+ note:"Year two for Human Psentipede. The name has not changed since. Jamaal Charles and Jimmy Graham both wore it.",
+ studs:[{n:"Adrian Peterson",f:"RB10"},{n:"Doug Martin",f:"RB57",k:"bust"},{n:"C.J. Spiller",f:"RB27",k:"bust"},{n:"Arian Foster",f:"RB45",k:"bust"},{n:"Calvin Johnson",f:"WR6"},{n:"Ray Rice",f:"RB22"},{n:"Marshawn Lynch",f:"RB5"},{n:"Jamaal Charles",f:"RB1",k:"hit"},{n:"Dez Bryant",f:"WR7"},{n:"LeSean McCoy",f:"RB3",k:"hit"}],
+ stars:[{p:"QB",n:"Peyton Manning",o:"Kevin",pts:"426.0"},{p:"RB",n:"Jamaal Charles",o:"Michaeopteryx",pts:"380.0"},{p:"WR",n:"Demaryius Thomas",o:"9ofalltrades",pts:"319.0"},{p:"TE",n:"Jimmy Graham",o:"Michaeopteryx",pts:"303.5"}]},
+{y:2014,champ:"Kulp",team:"CadillacKulpDeville",ru:"Al",ruTeam:"ALbatross",score:"139.6–96.5",wk:16,
+ note:"Kulp's second. Al's first real look, under the name ALbatross, and a 43-point hole in the final he has been trying to fill with puns ever since.",
+ studs:[{n:"LeSean McCoy",f:"RB12"},{n:"Jamaal Charles",f:"RB7"},{n:"Matt Forte",f:"RB3",k:"hit"},{n:"Calvin Johnson",f:"WR17"},{n:"Adrian Peterson",f:"DNP",k:"bust"},{n:"Eddie Lacy",f:"RB6"},{n:"Demaryius Thomas",f:"WR2",k:"hit"},{n:"Montee Ball",f:"DNP",k:"bust"},{n:"Dez Bryant",f:"WR4",k:"hit"},{n:"Jimmy Graham",f:"TE2",k:"hit"}],
+ stars:[{p:"QB",n:"Andrew Luck",o:"Al",pts:"373.7"},{p:"RB",n:"Le'Veon Bell",o:"pat kulp",pts:"370.5"},{p:"WR",n:"Antonio Brown",o:"pat kulp",pts:"388.9"},{p:"TE",n:"Rob Gronkowski",o:"Kulp",pts:"266.4"}]},
+{y:2015,champ:"Haefner",team:"Medina Sod",ru:"9ofalltrades",ruTeam:"APs Switch Hitters",score:"160.2–129.2",wk:16,
+ note:"The first of the repeat. Round 1 that year is a crime scene: Bell, Lynch, Lacy, Charles, Dez — the board ate itself. Cam Newton and Devonta Freeman wore Medina Sod anyway.",
+ studs:[{n:"Le'Veon Bell",f:"RB48",k:"bust"},{n:"Adrian Peterson",f:"RB2",k:"hit"},{n:"Antonio Brown",f:"WR1",k:"hit"},{n:"Marshawn Lynch",f:"RB61",k:"bust"},{n:"Eddie Lacy",f:"RB32",k:"bust"},{n:"Jamaal Charles",f:"RB51",k:"bust"},{n:"Dez Bryant",f:"WR81",k:"bust"},{n:"Odell Beckham Jr.",f:"WR5"},{n:"Rob Gronkowski",f:"TE1",k:"hit"},{n:"Calvin Johnson",f:"WR12"}],
+ stars:[{p:"QB",n:"Cam Newton",o:"Haefner",pts:"403.1"},{p:"RB",n:"Devonta Freeman",o:"Haefner",pts:"318.4"},{p:"WR",n:"Antonio Brown",o:"Natalie",pts:"390.2"},{p:"TE",n:"Rob Gronkowski",o:"pat kulp",pts:"255.6"}]},
+{y:2016,champ:"Haefner",team:"Medina Sod",ru:"Kulp",ruTeam:"CadillacKulpDeville",score:"175.8–149.6",wk:16,
+ note:"Back-to-back. The only repeat in league history. Haefner over the commissioner in the final, and Aaron Rodgers in a Medina Sod uniform. Nobody has done it since.",
+ studs:[{n:"Antonio Brown",f:"WR1",k:"hit"},{n:"Odell Beckham Jr.",f:"WR4",k:"hit"},{n:"David Johnson",f:"RB1",k:"hit"},{n:"Julio Jones",f:"WR6"},{n:"Ezekiel Elliott",f:"RB2",k:"hit"},{n:"DeAndre Hopkins",f:"WR28"},{n:"Todd Gurley",f:"RB15"},{n:"Rob Gronkowski",f:"TE26"},{n:"Le'Veon Bell",f:"RB3",k:"hit"},{n:"Lamar Miller",f:"RB19"}],
+ stars:[{p:"QB",n:"Aaron Rodgers",o:"Haefner",pts:"391.0"},{p:"RB",n:"David Johnson",o:"Kevin",pts:"410.8"},{p:"WR",n:"Antonio Brown",o:"Kulp",pts:"307.3"},{p:"TE",n:"Travis Kelce",o:"Al",pts:"223.0"}]},
+{y:2017,champ:"Mike",team:"WhoseHungry?",ru:"Kulp",ruTeam:"CadillacKulpDeville",score:"123.0–106.6",wk:16,
+ note:"Mike's first. The 1.01 was David Johnson, who never cracked the board. WhoseHungry? lifted it anyway. Kulp was on the other sideline. Again.",
+ studs:[{n:"David Johnson",f:"DNP",k:"bust"},{n:"Le'Veon Bell",f:"RB2",k:"hit"},{n:"Antonio Brown",f:"WR2",k:"hit"},{n:"Julio Jones",f:"WR7"},{n:"Odell Beckham Jr.",f:"WR84",k:"bust"},{n:"Mike Evans",f:"WR17"},{n:"LeSean McCoy",f:"RB7"},{n:"Devonta Freeman",f:"RB14"},{n:"Jay Ajayi",f:"RB36",k:"bust"},{n:"Melvin Gordon III",f:"RB5"}],
+ stars:[{p:"QB",n:"Russell Wilson",o:"Natalie",pts:"361.9"},{p:"RB",n:"Todd Gurley",o:"Natalie",pts:"385.3"},{p:"WR",n:"DeAndre Hopkins",o:"9ofalltrades",pts:"310.8"},{p:"TE",n:"Travis Kelce",o:"Haefner",pts:"234.5"}]},
+{y:2018,champ:"Michaeopteryx",team:"Human Psentipede",ru:"Haefner",ruTeam:"Medina Sod",score:"153.8–153.4",wk:16,
+ note:"Four tenths of a point. The closest championship in league history. Bell went 1.01 and never played. Mahomes exploded for pat kulp and it was not enough to be in this game.",
+ studs:[{n:"Le'Veon Bell",f:"DNP",k:"bust"},{n:"Todd Gurley",f:"RB3",k:"hit"},{n:"Alvin Kamara",f:"RB4",k:"hit"},{n:"David Johnson",f:"RB9"},{n:"Antonio Brown",f:"WR5"},{n:"Ezekiel Elliott",f:"RB5"},{n:"Saquon Barkley",f:"RB2",k:"hit"},{n:"Leonard Fournette",f:"RB41",k:"bust"},{n:"Julio Jones",f:"WR4",k:"hit"},{n:"Rob Gronkowski",f:"TE11"}],
+ stars:[{p:"QB",n:"Patrick Mahomes",o:"pat kulp",pts:"431.1"},{p:"RB",n:"Christian McCaffrey",o:"Al",pts:"386.5"},{p:"WR",n:"DeAndre Hopkins",o:"Natalie",pts:"335.5"},{p:"TE",n:"Travis Kelce",o:"Haefner",pts:"295.6"}]},
+{y:2019,champ:"Kevin",team:"Blue Green",ru:"Michaeopteryx",ruTeam:"Human Psentipede",score:"120.3–110.0",wk:16,
+ note:"Kevin's. Michael Thomas wore Blue Green and finished WR1. McCaffrey went third overall, finished RB1, and put up 471 for pat kulp, who watched the final from the couch.",
+ studs:[{n:"Saquon Barkley",f:"RB11"},{n:"Alvin Kamara",f:"RB9"},{n:"Christian McCaffrey",f:"RB1",k:"hit"},{n:"DeAndre Hopkins",f:"WR5"},{n:"Davante Adams",f:"WR23"},{n:"Michael Thomas",f:"WR1",k:"hit"},{n:"Ezekiel Elliott",f:"RB3",k:"hit"},{n:"David Johnson",f:"RB36",k:"bust"},{n:"James Conner",f:"RB34",k:"bust"},{n:"Nick Chubb",f:"RB8"}],
+ stars:[{p:"QB",n:"Lamar Jackson",o:"9ofalltrades",pts:"423.7"},{p:"RB",n:"Christian McCaffrey",o:"pat kulp",pts:"471.2"},{p:"WR",n:"Michael Thomas",o:"Kevin",pts:"374.6"},{p:"TE",n:"Travis Kelce",o:"Haefner",pts:"255.3"}]},
+{y:2020,champ:"Natalie",team:"GooNads",ru:"Al",ruTeam:"royALty",score:"176.1–148.6",wk:16,
+ note:"Natalie's. Same name as 2011. Kamara finished RB1 in a GooNads uniform. McCaffrey went 1.01 and finished RB54. Saquon went 1.02 and vanished. She beat Al in the final and has been reminding him.",
+ studs:[{n:"Christian McCaffrey",f:"RB54",k:"bust"},{n:"Saquon Barkley",f:"DNP",k:"bust"},{n:"Alvin Kamara",f:"RB1",k:"hit"},{n:"Ezekiel Elliott",f:"RB9"},{n:"Dalvin Cook",f:"RB2",k:"hit"},{n:"Clyde Edwards-Helaire",f:"RB22"},{n:"Michael Thomas",f:"WR95",k:"bust"},{n:"Tyreek Hill",f:"WR2",k:"hit"},{n:"Derrick Henry",f:"RB3",k:"hit"},{n:"Davante Adams",f:"WR1",k:"hit"}],
+ stars:[{p:"QB",n:"Josh Allen",o:"9ofalltrades",pts:"412.1"},{p:"RB",n:"Alvin Kamara",o:"Natalie",pts:"377.8"},{p:"WR",n:"Davante Adams",o:"Kevin",pts:"359.4"},{p:"TE",n:"Travis Kelce",o:"Al",pts:"313.8"}]},
+{y:2021,champ:"Ryan",team:"Van Tine",ru:"Mike",ruTeam:"WhoseHungry?",score:"161.3–133.5",wk:17,
+ note:"Year two. Finished last in 2020. Took the trophy in 2021. McCaffrey went 1.01 and finished RB38. Cooper Kupp put up 439.5 for Mike, who had to watch Van Tine lift it anyway. Mark Andrews wore the championship.",
+ studs:[{n:"Christian McCaffrey",f:"RB38",k:"bust"},{n:"Dalvin Cook",f:"RB16"},{n:"Alvin Kamara",f:"RB8"},{n:"Derrick Henry",f:"RB22"},{n:"Ezekiel Elliott",f:"RB7"},{n:"Aaron Jones Sr.",f:"RB11"},{n:"Nick Chubb",f:"RB13"},{n:"Davante Adams",f:"WR2",k:"hit"},{n:"Travis Kelce",f:"TE2",k:"hit"},{n:"Jonathan Taylor",f:"RB1",k:"hit"}],
+ stars:[{p:"QB",n:"Josh Allen",o:"9ofalltrades",pts:"420.6"},{p:"RB",n:"Jonathan Taylor",o:"Mike",pts:"375.1"},{p:"WR",n:"Cooper Kupp",o:"Mike",pts:"439.5"},{p:"TE",n:"Mark Andrews",o:"Ryan",pts:"301.1"}]},
+{y:2022,champ:"pat kulp",team:"OJ no Kulp",ru:"Kevin",ruTeam:"Blue Green",score:null,wk:17,
+ note:"pat kulp's second, ten years after the first. Justin Jefferson finished WR1 in an OJ no Kulp uniform. Jonathan Taylor went 1.01 and finished RB33. The championship-week tape we have does not match the trophy, so the score stays off this card. The name on the trophy does not.",
+ studs:[{n:"Jonathan Taylor",f:"RB33",k:"bust"},{n:"Christian McCaffrey",f:"RB2",k:"hit"},{n:"Derrick Henry",f:"RB4",k:"hit"},{n:"Austin Ekeler",f:"RB1",k:"hit"},{n:"Dalvin Cook",f:"RB10"},{n:"Cooper Kupp",f:"WR23"},{n:"Najee Harris",f:"RB13"},{n:"Ja'Marr Chase",f:"WR11"},{n:"Justin Jefferson",f:"WR1",k:"hit"},{n:"Stefon Diggs",f:"WR4",k:"hit"}],
+ stars:[{p:"QB",n:"Patrick Mahomes",o:"Kevin",pts:"429.4"},{p:"RB",n:"Austin Ekeler",o:"Haefner",pts:"378.7"},{p:"WR",n:"Justin Jefferson",o:"pat kulp",pts:"368.7"},{p:"TE",n:"Travis Kelce",o:"Michaeopteryx",pts:"318.3"}]},
+{y:2023,champ:"Kulp",team:"CadillacKulpDeville",ru:"Natalie",ruTeam:"GooNads",score:"194.4–120.7",wk:17,
+ note:"Third ring. Same name. Jefferson went 1.01 and finished WR32. CeeDee Lamb put up 405 for 9ofalltrades, who finished third. Kulp dropped 194 on Natalie in the final. The office is still the office.",
+ studs:[{n:"Justin Jefferson",f:"WR32",k:"bust"},{n:"Ja'Marr Chase",f:"WR11"},{n:"Christian McCaffrey",f:"RB1",k:"hit"},{n:"Austin Ekeler",f:"RB25"},{n:"Stefon Diggs",f:"WR9"},{n:"Bijan Robinson",f:"RB8"},{n:"Tyreek Hill",f:"WR2",k:"hit"},{n:"Travis Kelce",f:"TE3",k:"hit"},{n:"A.J. Brown",f:"WR5"},{n:"Patrick Mahomes",f:"QB8"}],
+ stars:[{p:"QB",n:"Josh Allen",o:"Kulp",pts:"414.6"},{p:"RB",n:"Christian McCaffrey",o:"Kevin",pts:"393.3"},{p:"WR",n:"CeeDee Lamb",o:"9ofalltrades",pts:"405.2"},{p:"TE",n:"Sam LaPorta",o:"Kulp",pts:"239.3"}]},
+{y:2024,champ:"9ofalltrades",team:"Aichane 2.0",ru:"Kulp",ruTeam:"CadillacKulpDeville",score:"190.9–161.3",wk:17,
+ note:"Fourteen years. Eight podiums. Then this. McCaffrey went fifth overall and finished RB69. Chase went sixth and finished WR1 for Mike. The trophy went to the thirteenth team name.",
+ studs:[{n:"CeeDee Lamb",f:"WR8"},{n:"Tyreek Hill",f:"WR18"},{n:"Amon-Ra St. Brown",f:"WR3",k:"hit"},{n:"Breece Hall",f:"RB16"},{n:"Christian McCaffrey",f:"RB69",k:"bust"},{n:"Ja'Marr Chase",f:"WR1",k:"hit"},{n:"Bijan Robinson",f:"RB3",k:"hit"},{n:"Travis Kelce",f:"TE5"},{n:"Garrett Wilson",f:"WR9"},{n:"Jonathan Taylor",f:"RB12"}],
+ stars:[{p:"QB",n:"Lamar Jackson",o:"Ryan",pts:"439.4"},{p:"RB",n:"Jahmyr Gibbs",o:"Ryan",pts:"363.9"},{p:"WR",n:"Ja'Marr Chase",o:"Mike",pts:"403.0"},{p:"TE",n:"Brock Bowers",o:"Kulp",pts:"262.7"}]},
+{y:2025,champ:"Mike",team:"WhoseHungry?",ru:"Natalie",ruTeam:"GooNads",score:"173.7–136.0",wk:17,
+ note:"Eight years after the first one. Puka Nacua finished WR1 in a WhoseHungry? uniform. McCaffrey went seventh and finished RB1 for Natalie, who had to play the final against the man who owned Puka. Same chair Kulp won from in 2011.",
+ studs:[{n:"Ja'Marr Chase",f:"WR4",k:"hit"},{n:"Bijan Robinson",f:"RB2",k:"hit"},{n:"Jahmyr Gibbs",f:"RB3",k:"hit"},{n:"CeeDee Lamb",f:"WR22"},{n:"Saquon Barkley",f:"RB14"},{n:"Justin Jefferson",f:"WR21"},{n:"Christian McCaffrey",f:"RB1",k:"hit"},{n:"Nico Collins",f:"WR8"},{n:"Puka Nacua",f:"WR1",k:"hit"},{n:"Josh Jacobs",f:"RB13"}],
+ stars:[{p:"QB",n:"Josh Allen",o:"Haefner",pts:"377.6"},{p:"RB",n:"Christian McCaffrey",o:"Natalie",pts:"416.6"},{p:"WR",n:"Puka Nacua",o:"Mike",pts:"376.0"},{p:"TE",n:"Trey McBride",o:"Kulp",pts:"315.9"}]}
 ];
-const mx=112;
-document.getElementById('spine').innerHTML=firsts.map((t,i)=>{
-  const w=Math.max(8,Math.round(100*Math.abs(t.sur)/mx));
-  const cls=t.sur<=-112?' dead':(t.sur<0?' bust':' hit');
-  const sign=t.sur>0?'+':'';
-  return `<div class="row${cls}"><div class="yl">${t.y}</div><div class="track">
-    <div class="fill" style="width:${w}%;transition-delay:${i*55}ms"></div>
-    <div class="lab"><span class="who">${t.player}<small>${t.pos} · ${t.mgr}</small></span>
-    <span class="amt">${sign}${t.sur}</span></div></div></div>`;
-}).join('');
 
-const champs=[
-  {y:2011,mgr:"Kulp",team:"CadillacKulpDeville",slot:9,vor:-53.3,rank:7,eff:"90.5%"},
-  {y:2012,mgr:"pat kulp",team:"kulp",slot:5,vor:150.5,rank:5,eff:"89.3%"},
-  {y:2013,mgr:"Michaeopteryx",team:"Human Psentipede",slot:8,vor:264.4,rank:2,eff:"85.6%"},
-  {y:2014,mgr:"Kulp",team:"CadillacKulpDeville",slot:6,vor:-21.5,rank:8,eff:"88.8%"},
-  {y:2015,mgr:"Haefner",team:"Medina Sod",slot:7,vor:-59.1,rank:6,eff:"89.4%"},
-  {y:2016,mgr:"Haefner",team:"Medina Sod",slot:9,vor:219.0,rank:1,eff:"87.8%"},
-  {y:2017,mgr:"Mike",team:"WhoseHungry?",slot:10,vor:52.6,rank:7,eff:"91.6%"},
-  {y:2018,mgr:"Michaeopteryx",team:"Human Psentipede",slot:10,vor:46.1,rank:9,eff:"88.4%"},
-  {y:2019,mgr:"Kevin",team:"Blue Green",slot:6,vor:445.6,rank:1,eff:"85.1%"},
-  {y:2020,mgr:"Natalie",team:"GooNads",slot:3,vor:67.3,rank:5,eff:"94.7%"},
-  {y:2021,mgr:"Ryan",team:"Van Tine",slot:1,vor:275.6,rank:3,eff:"91.5%"},
-  {y:2022,mgr:"pat kulp",team:"OJ no Kulp",slot:9,vor:41.3,rank:6,eff:"86.4%"},
-  {y:2023,mgr:"Kulp",team:"CadillacKulpDeville",slot:1,vor:55.1,rank:6,eff:"90.0%"},
-  {y:2024,mgr:"9ofalltrades",team:"Aichane 2.0",slot:2,vor:114.6,rank:6,eff:"89.4%"},
-  {y:2025,mgr:"Mike",team:"WhoseHungry?",slot:9,vor:50.0,rank:7,eff:"91.9%"}
-];
-document.getElementById('champs').innerHTML=champs.map(c=>{
-  const rk=c.rank>=6?'bad':(c.rank===1?'good':'');
-  const vv=c.vor>=0?`+${c.vor.toFixed(0)}`:c.vor.toFixed(0);
-  const vc=c.vor>=0?'good':'bad';
-  return `<tr><td class="l">${c.y}</td><td class="l">${c.mgr}</td><td class="l">${c.team}</td>
-    <td>${c.slot}</td><td class="${vc}">${vv}</td><td class="${rk}">${c.rank}</td><td>${c.eff}</td></tr>`;
+document.getElementById('years').innerHTML=YEARS.map(y=>{
+  const chips=y.studs.map((s,i)=>`<span class="chip ${s.k||''}"><b>${i+1}. ${s.n}</b> · ${s.f}</span>`).join('');
+  const stars=y.stars.map(s=>`<div class="star"><div class="pos">${s.p} · ${s.pts}</div><div class="nm">${s.n}</div><div class="own">${s.o}</div></div>`).join('');
+  const final=y.score
+    ? `<div class="final">${y.score} <span>championship week ${y.wk} · ${y.team} over ${y.ruTeam}</span></div>`
+    : `<div class="final">${y.team} over ${y.ruTeam} <span>championship week ${y.wk} · score withheld, tape didn't match the trophy</span></div>`;
+  return `<article class="yr reveal">
+    <div class="yh"><div class="yy">${y.y}</div><div class="champ">${y.champ} · ${y.ru} runner-up</div></div>
+    ${final}
+    <p>${y.note}</p>
+    <h3>The supposed studs</h3>
+    <div class="studs">${chips}</div>
+    <h3>Who the year actually belonged to</h3>
+    <div class="stars">${stars}</div>
+  </article>`;
 }).join('');
-
-const crimes=[
-  {gap:52.2,bench:"Tyler Lockett",bp:53.0,start:"Chase Claypool",sp:0.8,mgr:"Kevin",when:"2020 · Wk 7"},
-  {gap:42.8,bench:"De'Von Achane",bp:51.3,start:"Kyren Williams",sp:8.5,mgr:"Kulp",when:"2023 · Wk 3"},
-  {gap:42.5,bench:"Stefon Diggs",bp:43.5,start:"Emmanuel Sanders",sp:1.0,mgr:"Kevin",when:"2019 · Wk 6"},
-  {gap:41.1,bench:"Sammy Watkins",bp:46.8,start:"Stefon Diggs",sp:5.7,mgr:"Kevin",when:"2019 · Wk 1"},
-  {gap:40.0,bench:"Steve Smith",bp:43.6,start:"Anquan Boldin",sp:3.6,mgr:"Natalie",when:"2015 · Wk 3"},
-  {gap:37.1,bench:"Devonta Freeman",bp:42.3,start:"Jonathan Stewart",sp:5.2,mgr:"Haefner",when:"2015 · Wk 3"}
-];
-document.getElementById('crimes').innerHTML=crimes.map(m=>`
-  <article class="mb BUST">
-    <div class="cost">−${m.gap}</div>
-    <div class="who">${m.when} · ${m.mgr}</div>
-    <div class="pl">${m.bench} on the bench</div>
-    <div class="res">${m.bp} points sitting. Started ${m.start} for ${m.sp}.</div>
-  </article>`).join('');
 
 const P=[
   {mgr:"Kulp",aw:"Three Rings, One Name",n:"15 seasons · CadillacKulpDeville, forever",
-   fin:"4.07",titles:"3",eff:"90.0%",
-   blurb:"Career leader in average finish, titles, and lineup efficiency. Waits 1.6 rounds later than the room for a quarterback and 1.4 later for a tight end, then makes 12 more in-season moves than you do. Best pick: Devonta Freeman, 2015, tenth round, +176. Best draft of that same year, 445.9 VOR, finished ninth. The man can draft a title and still need the waiver wire to cash it. Has never once changed the team name, which in this league counts as a personality disorder in reverse."},
+   fin:"4.07",titles:"3",pod:"7",
+   blurb:"Career leader in average finish and titles. Has never once changed the team name, which in this league counts as a personality disorder in reverse. Owns Haefner 16–7, Al 17–9, Natalie 15–7. Lost the 2016 final to the only repeat in history, lost the 2024 final to a man on his thirteenth team name, and still has more trophies than both of them combined."},
   {mgr:"9ofalltrades",aw:"Eight Podiums, One Trophy",n:"15 seasons · 13 team names",
-   fin:"4.13",titles:"1",eff:"88.1%",
-   blurb:"Second in career finish, first in almosts. Eight podiums before the 2024 title, which arrived with the sixth-best draft of that year. Luckiest regular in the league at +3.2 win rate over all-play — the schedule has been doing him favors for a decade. 34.5 moves a year, most in the room. David Johnson 1.01 in 2017, −112. Saquon at 1.02 in 2020, vanished. CeeDee Lamb in 2023, +171. Thirteen names. The trophy case was a shelf until year fourteen."},
+   fin:"4.13",titles:"1",pod:"8",
+   blurb:"Second in career finish, first in almosts. Eight podiums before Aichane 2.0 finally cashed it in 2024. Tied 13–13 with Mike over 26 games, which is either poetry or a medical condition. 14–11 against Kevin. 15–9 against Al. The trophy case was a shelf until year fourteen."},
   {mgr:"Haefner",aw:"The Only Repeat",n:"15 seasons · Jumpinfck, then Medina Sod",
-   fin:"4.73",titles:"2",eff:"89.7%",
-   blurb:"Back-to-back in 2015 and 2016. The 2015 board was −59 VOR, sixth in the room, and it still won, which is the most Haefner sentence I can write. Takes his first quarterback 0.9 rounds earlier than the field. 7–16 lifetime against Kulp, 18–6 against Natalie. Owns the sixth-worst bench decision ever recorded and two championships. The rest of you have been trying to catch a man who already left."},
-  {mgr:"Mike",aw:"Eight Hundred And Three",n:"15 seasons · WhoseHungry? when it counts",
-   fin:"5.07",titles:"2",eff:"89.9%",
-   blurb:"Best drafter among the lifer regulars at +159 VOR per year. In 2021 he posted 803 VOR — Cooper Kupp, fifth round, +254, the single most valuable pick in league history — and finished second to a second-year manager with a dead 1.01. Titles in 2017 and 2025, both with bottom-half drafts, the second one from slot 9. Six fewer waiver moves than average. Drafts like a professional and still had to wait eight years between rings because this league hates a clean story."},
-  {mgr:"Michaeopteryx",aw:"The Tight End Guy",n:"14 seasons · Human Psentipede, never once changed",
-   fin:"5.29",titles:"2",eff:"87.5%",
-   blurb:"Takes his first tight end 3.1 rounds earlier than the room. That is not a tendency. That is a religion. Greg Olsen five times. Derrick Henry five times. Tom Brady four. Won 2013 and 2018 — the 2018 board finished ninth of ten, the weakest draft ever to end in a championship. 85.6% lineup efficiency the first time he won, which is the other way to do it: be better than the room on Sunday even when the board says you shouldn't be."},
-  {mgr:"pat kulp",aw:"Negative Value, Two Rings",n:"15 seasons · kulp, then OJ no Kulp",
-   fin:"5.40",titles:"2",eff:"89.4%",
-   blurb:"The only lifer with negative career draft VOR, −48 a year, and he has as many titles as Mike, Haefner, and Michaeopteryx. Christian McCaffrey is both his best pick (2019, round 1, +207) and his worst (2024, round 1, −97). That is the entire drafter, in two cards. 19–8 lifetime against Natalie. Lowest score in a single week by a named manager: 49.3, 2019 week 7. Won from slot 9 in 2022 with the sixth-best draft. The board has been trying to get rid of him for fifteen years. It has not worked."},
-  {mgr:"Kevin",aw:"The Bench King",n:"15 seasons · Blue Green, mostly",
-   fin:"5.93",titles:"1",eff:"88.6%",
-   blurb:"Won 2019 with the best draft in the league (445.6 VOR) and the worst championship lineup efficiency (85.08%, 405.7 points sitting). Went 6–7 against 8.3 wins deserved and still took the trophy. Owns three of the twelve worst start/sit decisions ever recorded, including the record: Lockett 53, Claypool 0.8, a 52.2-point hole. Six fewer moves than average. The title is real. The Sundays are a crime scene."},
-  {mgr:"Natalie",aw:"Seven Moves A Year",n:"15 seasons · GooNads, never once changed",
-   fin:"6.33",titles:"1",eff:"88.4%",
-   blurb:"13 fewer in-season moves than the room. One name. One title, 2020, with 94.66% lineup efficiency — the cleanest championship card in the file, 132.9 points left on the bench all year. Then last place, last place. Lowest scores in league history live here: 37.9, 44.1, 48.9. 6–18 against Haefner. 8–19 against pat kulp. When she sets the lineup she can beat anyone. When she doesn't touch the wire for a decade, the league reminds her."},
+   fin:"4.73",titles:"2",pod:"5",
+   blurb:"Back-to-back in 2015 and 2016. Nobody else has done it. 18–6 lifetime against Natalie, 16–10 against Mike, 7–16 against the commissioner. Lost the 2018 final by four tenths of a point and has been living in that decimal ever since. The rest of you have been trying to catch a man who already left."},
+  {mgr:"Mike",aw:"WhoseHungry?",n:"15 seasons · the name that keeps coming back",
+   fin:"5.07",titles:"2",pod:"5",
+   blurb:"Titles in 2017 and 2025, eight years apart. Tied with 9ofalltrades 13–13. 10–16 against Haefner. Lost the 2021 final to a second-year manager named Ryan and then had to watch Cooper Kupp's 439-point season walk out of the building without a ring. Came back in 2025 with Puka Nacua and made Natalie look at it."},
+  {mgr:"Michaeopteryx",aw:"Human Psentipede, Forever",n:"14 seasons · never once changed the name",
+   fin:"5.29",titles:"2",pod:"4",
+   blurb:"Showed up in 2012. Won in 2013. Won in 2018 by four tenths. Same name the entire time, which makes Al's fifteen look like a cry for help. Took Jamaal Charles and Jimmy Graham to a title in year two and has been drafting tight ends like they owe him money ever since. Lost the 2019 final to Kevin and has not gotten even."},
+  {mgr:"pat kulp",aw:"Ten Years Between Rings",n:"15 seasons · kulp, then OJ no Kulp",
+   fin:"5.40",titles:"2",pod:"4",
+   blurb:"Won in 2012. Won in 2022. Nineteen and eight against Natalie, which is the most one-sided long-term beating in the file. McCaffrey put up 471 for him in 2019 and he still watched Kevin lift it. Owns the 2013 runner-up and a 160–119 demolition of 9ofalltrades in the 2012 final. The board has been trying to get rid of him for fifteen years. It has not worked."},
+  {mgr:"Kevin",aw:"Blue Green",n:"15 seasons · the 2019 one",
+   fin:"5.93",titles:"1",pod:"5",
+   blurb:"One title, 2019, Michael Thomas in a Blue Green uniform. 13–14 against Kulp over 27 games, the most-played pairing in league history, decided by a single win. 14–11 against 9ofalltrades. 14–10 against pat kulp. Sat Tyler Lockett for Chase Claypool in 2020 week 7 and will hear about it until the sun burns out. The title is real. That Sunday is a crime scene."},
+  {mgr:"Natalie",aw:"GooNads, Since The Beginning",n:"15 seasons · one name, two men she cannot beat",
+   fin:"6.33",titles:"1",pod:"3",
+   blurb:"Same name since 2011. Won it in 2020 with Kamara. Eight and nineteen against pat kulp. Six and eighteen against Haefner. Those two series are a combined 14–37. Finished last, then last, then played Kulp in the 2023 final and Mike in the 2025 final and lost both. When the name on the other sideline is anyone else, she can beat them. When it isn't, she can't."},
   {mgr:"Ryan",aw:"Year Two",n:"6 seasons · Van Tine",
-   fin:"6.33",titles:"1",eff:"89.8%",
-   blurb:"Arrived in 2020, finished last. Arrived in 2021, took McCaffrey 1.01, got −112, drafted Deebo in the eighth for +179, went 10–4 against 7.2 wins deserved, and won the championship. Unluckiest career luck mark in the league at −3.8, which makes that gifted title even funnier. Never changed the name. Takes tight ends 1.8 rounds early. Six seasons, one ring, and a first-overall bust on the mantle. Either a genius or an apology from the universe."},
+   fin:"6.33",titles:"1",pod:"1",
+   blurb:"Arrived in 2020, finished last. Arrived in 2021, took the championship, Mark Andrews and all. Never changed the name. Six seasons, one ring, and a first-overall McCaffrey who finished RB38 sitting on the mantle next to the trophy. Either a genius or an apology from the universe."},
   {mgr:"Al",aw:"Fifteen Names, Zero Rings",n:"15 seasons · a new AL pun every August",
-   fin:"6.80",titles:"0",eff:"88.5%",
-   blurb:"Three podiums. Zero titles. Fifteen team names, which is a cry for help with a capital AL. Took Le'Veon Bell 1.01 in 2015 (−112, finished 10th) and again in 2018 (−112). Took McCaffrey 1.01 in 2020 (−112) and finished second anyway. Best draft of his life was 2014, 550 VOR, finished second. Last two seasons: last place, last place, 81.4% efficiency, the worst two lineup years in the entire file. The names keep changing. The finish does not."},
-  {mgr:"senftiva",aw:"The Best Drafter Who Never Showed Up",n:"9 seasons · one name, zero podiums",
-   fin:"7.56",titles:"0",eff:"84.8%",
-   blurb:"Highest draft value per year in league history, +173. Second-best single draft ever recorded, 671 VOR in 2018, finished sixth. Worst lineup efficiency in the league. Left 21.1 points on the bench every week. The schedule helped him (+3.4 luck) and he still averaged 7.56. He drafted the rosters. He just didn't start them. There is no version of this paragraph that is kind, and the numbers would make a liar of me if I tried."}
+   fin:"6.80",titles:"0",pod:"3",
+   blurb:"Three podiums. Zero titles. Fifteen team names. Took Bell 1.01 twice. Lost the 2014 final to Kulp 140–96 as ALbatross. Lost the 2020 final to Natalie as royALty. Last two seasons: last place, last place, ALBERTosaurus. The names keep changing. The finish does not."},
+  {mgr:"senftiva",aw:"Nine Seasons, No Dance",n:"9 seasons · one name, zero podiums",
+   fin:"7.56",titles:"0",pod:"0",
+   blurb:"Lasted through 2019. Never made a podium. Average finish 7.56. The boards looked like a professional's. January never did. He is the ghost in this document — the one who drafted the names you still remember and went home in ninth. There is no version of this paragraph that is kind."}
 ];
 document.getElementById('profiles').innerHTML=P.map(p=>`
   <article class="pc">
@@ -622,7 +470,7 @@ document.getElementById('profiles').innerHTML=P.map(p=>`
     <div class="stat3">
       <div><div class="v3">${p.fin}</div><div class="l3">Avg finish</div></div>
       <div><div class="v3">${p.titles}</div><div class="l3">Titles</div></div>
-      <div><div class="v3">${p.eff}</div><div class="l3">Lineup</div></div>
+      <div><div class="v3">${p.pod}</div><div class="l3">Podiums</div></div>
     </div>
   </article>`).join('');
 
