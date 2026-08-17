@@ -50,8 +50,9 @@ section{padding:var(--s6) 0;position:relative}
 .hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:var(--s5) 0}
 .hero h1{margin:var(--s3) 0}
 .hero .lede{font-size:21px;color:var(--dim);max-width:60ch}
-.figs{display:flex;gap:var(--s5);flex-wrap:wrap;margin-top:var(--s5)}
-.fig .v{font-family:var(--serif);font-size:46px;line-height:1;letter-spacing:-.03em;color:var(--gold)}
+.figs{display:grid;grid-template-columns:repeat(3,minmax(110px,1fr));gap:var(--s4) var(--s5);
+ max-width:640px;margin-top:var(--s5)}
+.fig .v{font-family:var(--serif);font-size:clamp(28px,5.2vw,44px);line-height:1;letter-spacing:-.03em;color:var(--gold)}
 .fig .l{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-top:8px}
 .scrollcue{margin-top:var(--s5);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
 .scrollcue span{display:inline-block;animation:bob 2.4s ease-in-out infinite}
@@ -387,8 +388,8 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
  .hero{min-height:0;padding:var(--s4) 0 var(--s3)}
  .hero .lede{font-size:17.5px}
  .kicker{letter-spacing:.18em}
- .figs{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2) var(--s3);max-width:280px}
- .fig .v{font-size:36px}
+ .figs{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2) var(--s3);max-width:none}
+ .fig .v{font-size:32px}
  .swipe{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--gold);margin:0 0 8px;opacity:.8}
  .scroll{box-shadow:inset -22px 0 16px -12px rgba(7,9,14,.92)}
@@ -471,6 +472,8 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
   <div class="figs">
     <div class="fig"><div class="v">12</div><div class="l">Seasons</div></div>
     <div class="fig"><div class="v">1,870</div><div class="l">Picks</div></div>
+    <div class="fig"><div class="v">$24,212</div><div class="l">Auction</div></div>
+    <div class="fig"><div class="v">$7,427</div><div class="l">FAAB spent</div></div>
     <div class="fig"><div class="v">2,782</div><div class="l">Adds</div></div>
     <div class="fig"><div class="v">969</div><div class="l">Games</div></div>
   </div>
@@ -1076,7 +1079,8 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 </div></section>
 
 <div class="wrap"><footer>
-  Compiled from 1,870 auction picks, 2,782 adds, and 969 games across 12 seasons of The Franchise.
+  Compiled from 1,870 auction picks ($24,212 spent of a $24,800 budget across 124 team-seasons),
+  $7,427 of FAAB, 2,782 adds, and 969 games across 12 seasons of The Franchise.
   Sources: leaguedata-final.txt (drafts, VOR, keepers), the_franchise_matchup_data_all.txt (Yahoo
   matchup-page optimal lineups), franchise-tx JSON and activity.txt (adds, FAAB, trades),
   franchise-rosters.txt (weekly ownership). Half-PPR (0.5 rec), 4-pt passing TD, $200 auction,
