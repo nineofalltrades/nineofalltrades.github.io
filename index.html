@@ -104,6 +104,7 @@ section{padding:var(--s6) 0;position:relative}
 .tag.HIT{background:rgba(61,220,151,.14);color:var(--good)}
 .tag.BUST{background:rgba(255,107,107,.14);color:var(--bad)}
 .tag.MEH{background:rgba(97,114,138,.18);color:var(--dim)}
+td .tag{margin-top:0}
 
 .panel{background:linear-gradient(170deg,var(--p2),var(--p1));border:1px solid var(--edge);
  border-radius:17px;padding:var(--s3);box-shadow:var(--sh2);margin-top:var(--s3)}
@@ -171,7 +172,8 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
  margin:0 calc(-1 * var(--s1));padding-bottom:2px}
 .scroll table{border-collapse:separate;border-spacing:0;min-width:540px;width:100%}
-.scroll.wide table{min-width:640px}
+.scroll.wide table,.scroll.vals table{min-width:680px}
+.scroll.vals td:first-child,.scroll.vals th:first-child{min-width:132px;max-width:46vw}
 .scroll th:first-child,.scroll td:first-child{position:sticky;left:0;z-index:2;
  background:var(--p2);box-shadow:1px 0 0 var(--edge)}
 .scroll.wide th:nth-child(-n+2),.scroll.wide td:nth-child(-n+2){position:sticky;z-index:2;
@@ -394,7 +396,7 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
   color:var(--gold);margin:0 0 8px;opacity:.8}
  .scroll{box-shadow:inset -22px 0 16px -12px rgba(7,9,14,.92)}
  .scroll table{min-width:500px}
- .scroll.wide table{min-width:580px}
+ .scroll.wide table,.scroll.vals table{min-width:640px}
  .scroll.wide th:nth-child(-n+2),.scroll.wide td:nth-child(-n+2){
   position:static;left:auto;box-shadow:none;background:transparent}
  .scroll.wide th:first-child,.scroll.wide td:first-child,
@@ -561,9 +563,6 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
   keepers arrived in 2015 and average top-three spending concentration fell from
   <strong>66% to 44%</strong> in a single year. With the stars locked up, draft night became a
   scrap fight. Some of you still have not recovered from that feeling.</p>
-  <p>From <strong>2016 through 2019</strong> the manager with the best draft won the championship.
-  Four years running. We have not managed a streak like it since, which is either growth or the
-  room getting worse at auctions. I have a guess.</p>
 </div></section>
 
 <section class="act"><div class="wrap narrow reveal">
@@ -595,13 +594,13 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
   <p>Then in 2021 Curtis looked at all that and decided it wasn't enough. <strong>$145 on Najee
   Harris.</strong> Seventy-two percent of his budget on one man, and then eleven of his last
   fourteen roster spots filled with dollar players. It worked. That is the infuriating part.</p></div>
-  <div class="megagrid reveal" id="mega"></div>
-  <div class="narrow reveal"><p style="margin-top:var(--s4)">Judge those by year one and they look
-  like coin flips. Judge them by the lease and it's a different story. Dao's $105 Saquon became
-  six seasons. His $103 Gibbs has already returned +481 across three.</p>
-  <p>Which makes the misses worse. <strong>TJ's $130 Edwards-Helaire got kept twice more</strong>
-  and finished three seasons and $150 in the hole at −76. Curtis paid $95 for Javonte Williams,
-  watched him tear a knee in week four, and <em>kept him anyway</em>.</p>
+  <div class="panel reveal"><h3 style="margin-bottom:var(--s2)">The $80 club · year one and the lease</h3>
+   <p class="note" style="margin-bottom:var(--s2)">Ten swings. Year-one VOR is the night. Lifetime is what you did after.</p>
+   <div class="scroll vals"><table><thead><tr>
+    <th class="l">Player</th><th>Paid</th><th>Y1 VOR</th><th>Lifetime</th>
+    <th class="l">Year one</th><th>Kept</th><th>Year</th><th class="l">Manager</th>
+   </tr></thead><tbody id="mega"></tbody></table></div></div>
+  <div class="narrow reveal">
   <div class="keystat"><b>Key Stat</b>Javonte Williams, 2022: $95, 40.7 points, <strong>−134 VOR</strong>.
   The worst pick in the recorded history of this league, and it belongs to a man with zero championships
   who then kept him anyway. Curtis, we have to talk.</div>
@@ -624,8 +623,7 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 <section class="act"><div class="wrap">
   <div class="narrow reveal"><div class="kicker">The Record</div>
   <h2>Every champion, and what their draft actually looked like</h2>
-  <p>Read it and weep, or gloat, depending. TJ’s 9th-of-10 is still down there at the bottom
-  like it is proud of itself.</p></div>
+  <p>Read it and weep, or gloat, depending.</p></div>
   <div class="panel reveal"><div class="scroll"><table class="stacktbl"><thead><tr><th class="l">Year</th><th class="l">Champion</th>
    <th class="l">Team</th><th>Draft VOR</th><th>Draft rank</th><th class="l">Runner-up</th>
    </tr></thead><tbody id="champs"></tbody></table></div></div>
@@ -662,26 +660,21 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 <section class="act"><div class="wrap">
   <div class="narrow reveal"><div class="kicker">The Stars</div>
   <h2>Every $50-and-up pick, judged on year one</h2>
-  <p>The mega-bid cards are the ten times somebody paid $80 or more. This is the rest of the
-  star chair: every skill player who cost <strong>$50 or more</strong>, that season only.
-  Keepers never reached $50. 2015 is blank because keepers arrived and the whole room topped
-  out at Odell for $42. That was a more innocent time. It lasted one year.</p>
+  <p>The $80 club is the lease. This is the rest of the star chair: every skill player who
+  cost <strong>$50 or more</strong>, that season only. Keepers never reached $50. 2015 is
+  blank because the room topped out at Odell for $42.</p>
   <p><strong>Sixty-five swings. 39 HIT, 17 FINE, 9 BUST.</strong> That is a 60% hit rate on
-  star money, which is better than the group chat remembers. The $80 club is meaner: ten
-  picks, five hits, two busts, and those two busts are Javonte Williams and Marvin Harrison Jr.
-  Dao went 7-for-9. Patrick went 0-for-3. Janice and Rob have three star-money picks each and
-  have not missed once. Small samples. Real numbers. I will still bring them up in September.</p>
-  <div class="keystat"><b>Key Stat</b>9 of 65 star-money picks finished at or below replacement.
-  Paying $50 does not make you a genius. It also does not make you a sucker as often as you
-  think. Unless you were Patrick.</div>
+  star money, which is better than the group chat remembers. Dao went 7-for-9. Patrick went
+  0-for-3. Janice and Rob have not missed. Small samples. I will still bring them up in
+  September.</p>
   </div>
   <div class="panel reveal"><h3 style="margin-bottom:var(--s2)">Hit rate on $50+ · by manager</h3>
-   <div class="scroll"><table class="stacktbl"><thead><tr><th class="l">Manager</th><th>Picks</th><th>HIT</th><th>FINE</th>
+   <div class="scroll"><table><thead><tr><th class="l">Manager</th><th>Picks</th><th>HIT</th><th>FINE</th>
    <th>BUST</th><th>Hit %</th></tr></thead><tbody id="star-mgr"></tbody></table></div></div>
   <div class="panel reveal"><h3 style="margin-bottom:var(--s2)">The $50 board</h3>
    <p class="note" style="margin-bottom:var(--s2)">Sorted by price. Year one only. You know the bar.</p>
-   <div class="scroll"><table class="stacktbl"><thead><tr><th class="l">Year</th><th class="l">Player</th><th class="l">Manager</th>
-   <th>Paid</th><th>Pts</th><th>VOR</th><th class="l">Year one</th></tr></thead>
+   <div class="scroll vals"><table><thead><tr><th class="l">Player</th><th>Paid</th><th>Pts</th><th>VOR</th>
+   <th class="l">Year one</th><th>Year</th><th class="l">Manager</th></tr></thead>
    <tbody id="stars"></tbody></table></div></div>
 </div></section>
 
@@ -692,16 +685,11 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
   Career capture <strong>72%</strong> — a bit more than a quarter of the value you paid for
   never saw the starting lineup. 2023 was the sloppiest waiver year at <strong>66%</strong>.
   2016 was the cleanest at <strong>76%</strong>.</p>
-  <p>Last three years: <strong>71.4%</strong>. Last five: <strong>71.7%</strong>. Career:
-  <strong>72%</strong>. The league did not suddenly get smarter. You just kept hitting the same
-  percentage and calling it growth. I have heard this speech in the group chat. It was not
-  growth then either.</p></div>
+  <p>Last three, last five, career: 71, 72, 72. You have not gotten smarter. You have gotten
+  consistent, and then called it growth.</p></div>
   <div class="spine stack reveal"><div class="spinechart" id="capspine"></div>
   <div class="spinenote"><span>Ownership points captured vs left on the bench</span>
    <span>Teal started · red sat</span></div></div>
-  <div class="panel reveal"><h3 style="margin-bottom:var(--s2)">Capture by year</h3>
-   <div class="scroll"><table><thead><tr><th class="l">Year</th><th>Adds</th><th>Own pts</th><th>Capture</th>
-   <th class="l">Sharpest that year</th></tr></thead><tbody id="capyear"></tbody></table></div></div>
   <div class="narrow reveal">
   <p style="margin-top:var(--s3)">Among the seven managers who have been here all twelve years:
   TJ created the most ownership points. Dao spent the most FAAB and made the most adds.
@@ -768,24 +756,13 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
    <div class="legend">Grouped leftover points per week. Gold = career · teal = last 5 · orange = last 3. Lower is better.</div></div>
   <div class="narrow reveal">
   <p style="margin-top:var(--s3)">Worst single leftover weeks below. Regular season only.
-  Consolation packed-it-in Sundays are off this list on purpose. 2018 week 4, Eric, gap of
-  <strong>75.8</strong> in a week he actually scored 106.3. That one counts. He still has four
-  rings. I am not asking you to feel sorry for him.</p></div>
+  Consolation empties are off this list. Eric, 2018 week 4: <strong>106.3</strong> on the card,
+  Yahoo wanted <strong>182.2</strong>, <strong>107.0</strong> on the bench. Gap of
+  <strong>75.8</strong>. Still the worst Sunday in the file. Four rings. Same guy.</p></div>
   <div class="panel reveal"><h3 style="margin-bottom:var(--s2)">Worst Yahoo leftover weeks · regular season</h3>
    <div class="scroll"><table><thead><tr><th class="l">When</th><th class="l">Manager</th><th>Actual</th>
-   <th>Yahoo opt</th><th>Gap</th></tr></thead>
+   <th>Yahoo opt</th><th>Gap</th><th>Bench</th></tr></thead>
    <tbody id="worst"></tbody></table></div></div>
-  <div class="narrow reveal" style="margin-top:var(--s4)">
-  <div class="kicker">Start / Sit</div>
-  <h2>The Sunday you are not allowed to forget</h2>
-  <p>Yahoo still will not name who sat. It will name the gap. These are the regular-season weeks
-  where the card you owned was at least fifty points better than the card you started. The bench
-  total is sitting right there.</p>
-  <p>Eric, 2018 week 4, is the exhibit. He put up <strong>106.3</strong>. Yahoo wanted
-  <strong>182.2</strong>. The gap is <strong>75.8</strong>, and there were <strong>107.0</strong>
-  points on the bench. That is not a start/sit debate. That is a crime scene, and it is still
-  the worst single leftover week in the file. Four rings. Same guy.</p></div>
-  <div class="crimegrid reveal" id="sundays"></div>
   <div class="narrow reveal" style="margin-top:var(--s4)">
   <h2>The trophy on the bench</h2>
   <p>Two titles in twelve years were sitting on the loser’s bench. A third almost was. I do not
@@ -840,8 +817,8 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
       </div>
     </article>
   </div>
-  <div class="keystat"><b>Key Stat</b>Patrick 9.1. Mike E 10.1 career / 8.2 last-three. TJ 16.1.
-  If you quote the old 8.2 as a twelve-year figure I will find you.</div>
+  <div class="keystat"><b>Key Stat</b>Mike E’s 8.2 is last-three. Career is 10.1. If you mix
+  those up I will find you.</div>
 </div></section>
 
 <section class="act"><div class="wrap">
@@ -863,8 +840,8 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
   the most gifted title in the file. Mike E in 2020: <strong>1-12 actual, 4.9 deserved</strong>.
   Curtis in 2025: 5-9 in the regular season, deserved 7.4, then made the final anyway. There's
   always next year, Curtis. Last year was supposed to be next year too.</p>
-  <div class="pull">Four rings. A schedule that hates him. Leftover of 15.4 a week. Eric is not
-  lucky. He is expensive, and he is still the standard.<span class="src">Skill versus schedule</span></div>
+  <div class="pull">Four rings. A schedule that hates him. Eric is not lucky. He is the
+  standard.<span class="src">Skill versus schedule</span></div>
   </div>
   <div class="panel reveal"><h3 style="margin-bottom:var(--s2)">Most robbed / most gifted regular seasons</h3>
    <div class="scroll"><table><thead><tr><th class="l">Year</th><th class="l">Manager</th><th class="l">Actual</th>
@@ -879,10 +856,8 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
   <div class="feudgrid" id="feuds"></div>
   <div class="narrow reveal">
   <p style="margin-top:var(--s3)">Eric has been in six championship games. Nobody else has more than
-  four. He and Mike E have played three of them. The closest trophy in the file is Chris over Rob
-  by <strong>0.86</strong> in 2024. The next-closest is cousins: TJ over Curtis by <strong>2.84</strong>
-  a year later. You'll never get those Sundays back. Some of you still have them in the group chat
-  like that helps.</p></div>
+  four. He and Mike E have played three of them. The two closest trophies in the file were last
+  year and the year before. You already sat through those Sundays.</p></div>
   <div class="panel reveal"><h3 style="margin-bottom:var(--s2)">The rest of the sheet</h3>
    <p class="note" style="margin-bottom:var(--s2)">Every regular-season pairing with 15 or more games.
    Leader listed first.</p>
@@ -944,12 +919,7 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
       </div>
     </article>
   </div>
-  <div class="narrow reveal" style="margin-top:var(--s4)">
-  <p>2015: Curtis 10–3 sat, and so did Eric at 8–5. Dao at 9–4 — the second-best record — played
-  round 1 and lost the semi to Eric, who then lifted it. 2017: Chad 11–2 sat, and TJ at 7–6 sat
-  with him. Dao at 9–4 played the wild card. The bye is a week off. It is not automatically the
-  two best records in the room.</p></div>
-  <div class="panel reveal"><h3 style="margin-bottom:var(--s2)">Regular season → championship</h3>
+  <div class="panel reveal" style="margin-top:var(--s4)"><h3 style="margin-bottom:var(--s2)">Regular season → championship</h3>
    <p class="note" style="margin-bottom:var(--s2)">Bye = did not play round 1. Confirmed against
    the champion and runner-up paths. Not always the two best records. You already knew 2015. I
    put it here anyway.</p>
@@ -971,8 +941,6 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
      <tr><td class="l" data-th="Year">2025</td><td class="l" data-th="#1 record">Chad 12–2</td><td data-th="#1 finish">3rd</td><td class="l gold" data-th="Champion">TJ</td><td data-th="Champ seed">5</td><td data-th="Champ W–L">8–6</td><td class="l" data-th="Sat round 1">Chad, Mike E</td></tr>
     </tbody>
    </table></div>
-  <div class="keystat"><b>Key Stat</b>8 of 12 champions sat round 1. The #1 seed won 3. Mike E
-  won from the 6th seed in 2014. The bye helps. It does not decide the room.</div>
 </div></section>
 
 <section class="act"><div class="wrap">
@@ -1017,7 +985,7 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
       <div class="s">Mike E 180.84, Andy 54.24. 2016 week 7. I left the consolation empties off this list on purpose.</div></article>
     <article class="rec"><div class="k">Closest trophy</div>
       <div class="v">0.86</div>
-      <div class="s">Chris over Rob, 2024. Then TJ over Curtis by 2.84 in 2025. Both trophies had leftover on the loser’s bench. You have read that exhibit.</div></article>
+      <div class="s">Chris over Rob, 2024. Then TJ over Curtis by 2.84 in 2025.</div></article>
   </div>
 </div></section>
 
@@ -1061,19 +1029,16 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 <section class="act"><div class="wrap narrow reveal">
   <div class="kicker">Closing Argument</div>
   <h2>See you in August</h2>
-  <p><strong>Draft night is a head start, not a verdict.</strong> Five champions had the best
-  draft. Five won from the bottom half, including a man who finished 9th of 10 and then lifted
-  it. If your season died in November, the auction is not the reason and you know it.</p>
-  <p><strong>Spend the FAAB.</strong> Rob made it optional for six seasons, spent $0, and it
-  shows. Chris barely uses the wire and won 2024 with Derrick Henry on a lease. That is the
-  exception that keeps the rest of you hoping. Do not be the exception. Do not be Rob.</p>
-  <p><strong>Start the people you already paid for.</strong> Patrick at 9.1. Mike E at 10.1.
-  TJ at 16.1. Seven points a week, every week, for years. Two trophies in twelve years were
+  <p><strong>Draft night is a head start, not a verdict.</strong> If your season died in
+  November, the auction is not the reason and you know it.</p>
+  <p><strong>Spend the FAAB.</strong> Rob made it optional for six seasons. Do not be Rob.
+  Chris barely uses the wire and won 2024 with Henry on a lease. That is the exception. Do
+  not be the exception either.</p>
+  <p><strong>Start the people you already paid for.</strong> Two trophies in twelve years were
   sitting on the loser’s bench. Curtis, that one is yours. There's always next year.</p>
-  <p><strong>The long holds still matter.</strong> Kelce for nine. Henry for eight. McCaffrey
-  for eight. Mahomes for six at a dollar a year plus change. Every trophy in this league has a
-  lease behind it. Identify a man early. Refuse to be talked out of him. The group chat will
-  try. The group chat is not in the playoffs.</p>
+  <p><strong>The long holds still matter.</strong> Kelce, Henry, McCaffrey, Mahomes. Identify
+  a man early. Refuse to be talked out of him. The group chat will try. The group chat is not
+  in the playoffs.</p>
   <p>Bring money. Spend the FAAB. Sit down on Sunday with the right card.</p>
   <p class="sig">Mohn Jadden — Keeping it real since 2014</p>
 </div></section>
@@ -1146,21 +1111,23 @@ const pct=n=>(n*100).toFixed(0)+'%';
  document.getElementById('stars').innerHTML=S.picks.map(s=>{
   const lab=s.tag==='FINE'?'FINE':s.tag;
   const vcls=s.vor>0?'good':s.vor<0?'bad':'';
-  return `<tr><td class="l" data-th="Year">${s.y}</td><td class="l" data-th="Player">${s.player} <span class="pos p${s.pos}">${s.pos}</span></td>
-   <td class="l" data-th="Manager">${s.mgr}</td><td data-th="Paid">$${s.cost}</td><td data-th="Pts">${s.pts}</td>
-   <td class="${vcls}" data-th="VOR">${s.vor>0?'+':''}${s.vor}</td>
-   <td class="l" data-th="Year one"><span class="tag ${s.tag==='FINE'?'MEH':s.tag}">${lab}</span></td></tr>`;
+  return `<tr><td class="l">${s.player} <span class="pos p${s.pos}">${s.pos}</span></td>
+   <td>$${s.cost}</td><td>${s.pts}</td>
+   <td class="${vcls}">${s.vor>0?'+':''}${s.vor}</td>
+   <td class="l"><span class="tag ${s.tag==='FINE'?'MEH':s.tag}">${lab}</span></td>
+   <td>${s.y}</td><td class="l">${s.mgr}</td></tr>`;
  }).join('');
 })();
 
-document.getElementById('mega').innerHTML=C.mega.map(m=>`
- <article class="mb ${m.verdict}"><div class="cost">$${m.cost}</div>
-  <div class="who">${m.y} · ${m.mgr}</div><div class="pl">${m.player}</div>
-  <div class="res">year one: <span class="${m.vor>0?'good':'bad'}">${sgn(m.vor)}</span></div>
-  <div class="res" style="border-top:1px solid var(--edge);margin-top:9px;padding-top:9px">
-   kept ${m.held} season${m.held>1?'s':''} · $${m.tcost} total<br>
-   <span class="${m.tvor>0?'good':'bad'}" style="font-weight:600">${sgn(m.tvor)} lifetime</span></div>
-  <span class="tag ${m.verdict}">${m.verdict==='MEH'?'FINE':m.verdict}</span></article>`).join('');
+document.getElementById('mega').innerHTML=C.mega.map(m=>{
+ const lab=m.verdict==='MEH'?'FINE':m.verdict;
+ return `<tr><td class="l">${m.player} <span class="pos p${m.pos}">${m.pos}</span></td>
+  <td>$${m.cost}</td>
+  <td class="${m.vor>0?'good':'bad'}">${sgn(m.vor)}</td>
+  <td class="${m.tvor>0?'good':'bad'}">${sgn(m.tvor)}</td>
+  <td class="l"><span class="tag ${m.verdict}">${lab}</span></td>
+  <td>${m.held}</td><td>${m.y}</td><td class="l">${m.mgr}</td></tr>`;
+}).join('');
 
 document.getElementById('dyn').innerHTML=C.dyn.map(c=>{
  const steps=c.seq.map(x=>`<span class="st ${x.k?'k':'a'}"><b>${String(x.y).slice(2)}</b>$${x.c}</span>`).join('');
@@ -1218,10 +1185,6 @@ document.getElementById('waste').innerHTML=C.waste.slice().sort((a,b)=>a.wastepc
    <div class="lab"><span class="who">${pct(t.cap)} captured<small>${t.adds} adds · ${t.own} own pts</small></span>
    <span class="amt">${inner}%</span></div></div></div>`;
  }).join('');
- document.getElementById('capyear').innerHTML=yrs.map(t=>`<tr>
-  <td class="l">${t.y}</td><td>${t.adds}</td><td>${t.own}</td>
-  <td class="${t.cap<=0.66?'bad':t.cap>=0.75?'good':''}">${pct(t.cap)}</td>
-  <td class="l">${t.best.replace('Thai/Dao','Dao')}</td></tr>`).join('');
 })();
 
 document.getElementById('wire12').innerHTML=F.woc.career_12yr.map(r=>`<tr>
@@ -1283,15 +1246,7 @@ document.getElementById('trades').innerHTML=F.woc.trades.map(t=>{
  document.getElementById('worst').innerHTML=G.worst_reg.map(w=>`<tr>
   <td class="l">${w.y} wk${w.wk}</td><td class="l">${w.mgr}</td>
   <td>${w.actual.toFixed(1)}</td><td>${w.opt.toFixed(1)}</td>
-  <td class="bad">${w.left.toFixed(1)}</td></tr>`).join('');
- const sun=document.getElementById('sundays');
- if(sun) sun.innerHTML=G.worst_reg.map(w=>`<article class="crime">
-  <div class="when">${w.y} · week ${w.wk}</div>
-  <div class="who">${w.mgr}</div>
-  <div class="gap">${w.left.toFixed(1)}<i>left on the card</i></div>
-  <div class="pair"><span>Started <b>${w.actual.toFixed(1)}</b></span><span>Yahoo opt <b>${w.opt.toFixed(1)}</b></span></div>
-  <div class="pair"><span>On the bench <b>${w.bench.toFixed(1)}</b></span><span>The gap is the exhibit</span></div>
- </article>`).join('');
+  <td class="bad">${w.left.toFixed(1)}</td><td>${w.bench.toFixed(1)}</td></tr>`).join('');
 })();
 
 document.getElementById('recs').innerHTML=F.career.slice().sort((a,b)=>b.winpct-a.winpct).map(r=>`<tr>
