@@ -2,31 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07090E">
-<title>The Franchise · 2026 Keepers Are Locked</title>
-<meta name="description" content="Ten teams. Twenty players. $681 of the league's $2,000 spent before a single bid. The 2026 keeper recap, by Mohn Jadden.">
-<meta property="og:title" content="The Franchise · 2026 Keepers Are Locked">
-<meta property="og:description" content="Ten teams. Twenty players. $681 of the league's $2,000 spent before a single bid.">
-<meta property="og:type" content="article">
+<title>The Franchise &mdash; 2026 Keepers Are Locked</title>
 <style>
 :root{
- --ink:#07090E; --p1:#0D1119; --p2:#141A25; --p3:#1D2534; --line:#2A3446;
+ --ink:#07090E; --p1:#0D1119; --p2:#141A25; --p3:#1D2534;
  --edge:#28324399; --text:#EDF1F8; --dim:#93A3B9; --faint:#61728A;
- --rb:#F0894D; --wr:#3FC7AE; --qb:#B07EF0; --te:#F2C94C;
- --gold:#E8B44A; --good:#3DDC97; --bad:#FF6B6B; --hot:#FF8355;
+ --gold:#E8B44A; --good:#3DDC97; --bad:#FF6B6B;
  --serif:ui-serif,'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
  --sans:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
  --s1:8px;--s2:16px;--s3:26px;--s4:44px;--s5:76px;--s6:120px;
- --sh1:0 1px 2px rgba(2,5,10,.55),0 3px 10px rgba(2,5,10,.4);
  --sh2:0 3px 8px rgba(2,5,10,.6),0 16px 40px rgba(2,5,10,.5);
- --sh3:0 6px 16px rgba(2,5,10,.65),0 32px 80px rgba(232,180,74,.07);
- --pad:clamp(16px,4vw,26px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%}
 body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.75;
- -webkit-font-smoothing:antialiased;overflow-x:hidden;
+ -webkit-font-smoothing:antialiased;
  background-image:
   radial-gradient(1100px 620px at 8% -6%,rgba(232,180,74,.10),transparent 62%),
   radial-gradient(900px 560px at 96% 12%,rgba(63,199,174,.07),transparent 60%),
@@ -35,529 +27,165 @@ body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height
  background-attachment:fixed;}
 .grain{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:1;
  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");}
-.wrap{max-width:1080px;margin:0 auto;padding:0 var(--pad);position:relative;z-index:2}
-.narrow{max-width:720px;margin:0 auto}
-h1{font-family:var(--serif);font-weight:600;letter-spacing:-.035em;line-height:.98;
- font-size:clamp(34px,9vw,88px)}
-h2{font-family:var(--serif);font-weight:600;letter-spacing:-.03em;line-height:1.08;
- font-size:clamp(26px,5.2vw,52px)}
-h3{font-family:var(--serif);font-size:clamp(19px,2.6vw,27px);letter-spacing:-.02em;font-weight:600}
-.kicker{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.wrap{max-width:720px;margin:0 auto;padding:clamp(40px,8vw,76px) clamp(16px,4vw,26px) var(--s6);position:relative;z-index:2}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:-.035em;line-height:1.05;
+ font-size:clamp(32px,7vw,56px);margin:var(--s3) 0 var(--s2)}
+h2{font-family:var(--serif);font-weight:600;letter-spacing:-.03em;line-height:1.15;
+ font-size:clamp(24px,4.2vw,36px);margin:var(--s5) 0 var(--s2);padding-top:var(--s4);
+ border-top:1px solid var(--edge)}
+h3{font-family:var(--serif);font-size:clamp(18px,2.4vw,22px);letter-spacing:-.02em;font-weight:600;margin:var(--s4) 0 var(--s1)}
+.dek{font-size:clamp(17px,2.6vw,20px);color:var(--dim);font-style:italic;margin:var(--s3) 0}
 p{font-size:clamp(16px,2.4vw,17.5px);color:var(--dim);margin-top:var(--s2)}
-p strong,li strong{color:var(--text);font-weight:600}
+p strong{color:var(--text);font-weight:600}
 em{color:var(--text);font-style:italic}
-section{padding:clamp(56px,12vw,120px) 0;position:relative}
-.act{border-top:1px solid var(--edge)}
-.reveal{opacity:0;transform:translateY(22px);
- transition:opacity .85s cubic-bezier(.16,.8,.3,1),transform .85s cubic-bezier(.16,.8,.3,1)}
-.reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
-
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
- padding:clamp(40px,8vw,76px) 0 clamp(56px,10vw,76px)}
-.hero h1{margin:var(--s3) 0}
-.hero .lede{font-size:clamp(17px,2.6vw,21px);color:var(--dim);max-width:62ch}
-.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,4vw,44px);margin-top:var(--s4)}
-.fig .v{font-family:var(--serif);font-size:clamp(28px,6vw,46px);line-height:1;letter-spacing:-.03em;color:var(--gold)}
-.fig .l{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:8px}
-.scrollcue{margin-top:var(--s4);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
-.scrollcue span{display:inline-block;animation:bob 2.4s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-
-.back{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:var(--s2)}
-.back a{color:var(--faint);border-bottom-color:transparent}
-.back a:hover{color:var(--gold);border-bottom-color:var(--gold)}
-
-.pull{font-family:var(--serif);font-size:clamp(22px,4vw,40px);line-height:1.25;letter-spacing:-.02em;
- color:var(--text);border-left:2px solid var(--gold);padding-left:clamp(14px,3vw,26px);margin:var(--s4) 0}
-
-.keystat{background:linear-gradient(170deg,#1B2432,#131A26);border:1px solid var(--edge);
- border-left:2px solid var(--gold);border-radius:11px;padding:var(--s2) var(--s3);margin:var(--s3) 0;
- font-size:clamp(14.5px,2.2vw,15.5px);color:var(--dim)}
-.keystat b{color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-size:11.5px;
- display:block;margin-bottom:5px}
-
+.kicker{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+hr{border:0;border-top:1px solid var(--edge);margin:var(--s4) 0}
+.entry{margin-top:var(--s4)}
+.entry .line{font-size:clamp(16px,2.4vw,17.5px);color:var(--text);line-height:1.55}
+.entry .line .cash{color:var(--gold);font-weight:700}
+.entry .verdict{margin-top:8px;font-size:clamp(15.5px,2.3vw,16.5px);color:var(--dim);font-style:italic}
+.entry .verdict strong{color:var(--text);font-style:normal;font-weight:600}
 .panel{background:linear-gradient(170deg,var(--p2),var(--p1));border:1px solid var(--edge);
- border-radius:17px;padding:clamp(14px,3vw,26px);box-shadow:var(--sh2);margin-top:var(--s3)}
-table{width:100%;border-collapse:collapse;font-size:14px}
+ border-radius:17px;padding:clamp(12px,3vw,22px);box-shadow:var(--sh2);margin-top:var(--s3)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:480px}
 th{text-align:right;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);
  font-weight:600;padding:8px 10px;border-bottom:1px solid var(--edge);white-space:nowrap}
-td{text-align:right;padding:9px 10px;border-bottom:1px solid #161E2B;font-variant-numeric:tabular-nums}
-th.l,td.l{text-align:left}
-tbody tr{transition:background .16s}
-.good{color:var(--good)} .bad{color:var(--bad)} .gold{color:var(--gold)}
-.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
-.scroll table{min-width:560px}
-
-.board{display:flex;flex-direction:column;gap:var(--s2);margin-top:var(--s3)}
-.kc{background:linear-gradient(165deg,var(--p3),var(--p1));border:1px solid var(--edge);border-radius:16px;
- padding:clamp(16px,3vw,26px);box-shadow:var(--sh2);position:relative;overflow:hidden}
-.kc::before{content:'';position:absolute;inset:0 0 auto 0;height:2px;
- background:linear-gradient(90deg,var(--gold),transparent 70%)}
-.kc.hot::before{background:linear-gradient(90deg,var(--bad),transparent 70%)}
-.kc.clean::before{background:linear-gradient(90deg,var(--good),transparent 70%)}
-.kc.light::before{background:linear-gradient(90deg,var(--wr),transparent 70%)}
-.kc .top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
-.kc .cost{font-family:var(--serif);font-size:clamp(36px,6vw,48px);line-height:1;letter-spacing:-.04em;color:var(--gold)}
-.kc.hot .cost{color:var(--bad)}
-.kc.clean .cost{color:var(--good)}
-.kc.light .cost{color:var(--wr)}
-.kc .who{min-width:0}
-.kc .team{font-family:var(--serif);font-size:clamp(20px,3vw,26px);letter-spacing:-.02em;line-height:1.15}
-.kc .mgr{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:4px}
-.keepers{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--s3)}
-.chip{display:inline-flex;align-items:baseline;gap:8px;padding:7px 11px;border-radius:9px;
- background:#161E2B;border:1px solid var(--edge);font-size:14px;color:var(--text)}
-.chip .pos{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
-.chip .amt{font-variant-numeric:tabular-nums;font-weight:700;color:var(--gold)}
-.pRB{color:var(--rb)} .pWR{color:var(--wr)} .pQB{color:var(--qb)} .pTE{color:var(--te)}
-.kc .verdict{font-size:14.5px;color:var(--dim);line-height:1.65;margin-top:var(--s2)}
-.kc .vl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
- font-weight:600;margin-top:var(--s3);display:block}
-
-.spine{margin:var(--s3) 0 0}
-.spinechart{display:flex;flex-direction:column;gap:7px}
-.row{display:grid;grid-template-columns:minmax(92px,140px) 1fr;gap:12px;align-items:center}
-.row .yl{font-size:12px;color:var(--faint);text-align:right;line-height:1.2}
-.row .track{position:relative;height:40px;background:#111825;border-radius:8px;overflow:hidden;
- border:1px solid #1D2634}
-.row .fill{position:absolute;inset:0 auto 0 0;border-radius:7px;transform-origin:left;transform:scaleX(0);
- background:linear-gradient(90deg,rgba(232,180,74,.85),rgba(232,180,74,.32));
- transition:transform 1s cubic-bezier(.18,.85,.32,1.02)}
-.in .row .fill{transform:scaleX(1)}
-.row.hot .fill{background:linear-gradient(90deg,var(--bad),rgba(255,107,107,.28))}
-.row.good .fill{background:linear-gradient(90deg,var(--good),rgba(61,220,151,.28))}
-.row .lab{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;
- padding:0 12px;font-size:13px;z-index:2;pointer-events:none;gap:8px}
-.row .lab .who{color:var(--text);font-weight:600;letter-spacing:-.01em;
- text-shadow:0 1px 3px rgba(0,0,0,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
-.row .lab .amt{color:var(--text);font-weight:700;font-variant-numeric:tabular-nums;
- text-shadow:0 1px 3px rgba(0,0,0,.75);flex:none}
-.spinenote{display:flex;justify-content:space-between;font-size:12.5px;color:var(--faint);
- border-top:1px solid var(--edge);padding-top:10px;margin-top:10px;flex-wrap:wrap;gap:10px}
-
-.recbook{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--s2);margin-top:var(--s3)}
-.rec{background:linear-gradient(165deg,#1E2A3C,var(--p1));border:1px solid rgba(232,180,74,.22);
- border-radius:14px;padding:16px 18px;position:relative;overflow:hidden}
-.rec::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
-.rec.bad::before{background:var(--bad)}
-.rec.teal::before{background:var(--wr)}
-.rec.rb::before{background:var(--rb)}
-.rec .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
-.rec.bad .k{color:var(--bad)}
-.rec.teal .k{color:var(--wr)}
-.rec.rb .k{color:var(--rb)}
-.rec .v{font-family:var(--serif);font-size:28px;line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
-.rec .s{font-size:13.5px;color:var(--dim);line-height:1.45}
-
-.auction{background:linear-gradient(170deg,#1B2432,#131A26);border:1px solid var(--edge);
- border-left:2px solid var(--gold);border-radius:14px;padding:clamp(18px,3vw,28px);margin-top:var(--s3)}
-.auction .when{font-family:var(--serif);font-size:clamp(22px,4vw,32px);letter-spacing:-.02em;line-height:1.15}
-.auction .pay{font-size:15.5px;color:var(--dim);margin-top:var(--s2)}
-
+td{text-align:right;padding:9px 10px;border-bottom:1px solid #161E2B;font-variant-numeric:tabular-nums;color:var(--dim)}
+th.l,td.l{text-align:left;color:var(--text)}
+.gold{color:var(--gold)} .good{color:var(--good)} .bad{color:var(--bad)}
+.keystat{background:linear-gradient(170deg,#1B2432,#131A26);border:1px solid var(--edge);
+ border-left:2px solid var(--gold);border-radius:11px;padding:var(--s2) var(--s3);margin:var(--s3) 0;
+ font-size:15.5px;color:var(--dim)}
+.keystat b{color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-size:11.5px;
+ display:block;margin-bottom:5px}
 .sig{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:17px;margin-top:var(--s4);
  padding-top:var(--s2);border-top:1px solid var(--edge)}
-footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(--faint);font-size:13.5px}
-a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(232,180,74,.3)}
-a:hover{border-bottom-color:var(--gold)}
-a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-
-@media(hover:hover) and (pointer:fine){
- tbody tr:hover{background:#18202Ecc}
-}
-@media(max-width:720px){
- .figs{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
- .hero{min-height:0}
- .row{grid-template-columns:1fr}
- .row .yl{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
- .row .track{height:46px}
- .kc .top{flex-direction:column-reverse;gap:8px}
- .kc .cost{font-size:40px}
- table{font-size:12.5px}
- .scroll{box-shadow:inset -22px 0 16px -12px rgba(7,9,14,.92)}
+@media(max-width:640px){
  body{background-attachment:scroll}
-}
-@media(max-width:420px){
- .figs{grid-template-columns:1fr 1fr}
+ table{font-size:12.5px}
 }
 </style>
 </head>
 <body>
 <div class="grain"></div>
-<div class="wrap">
+<article class="wrap">
 
-<header class="hero">
-  <div class="back"><a href="/">? The Franchise chronicle</a></div>
-  <div class="kicker">The Franchise · 2026 Preseason · By Mohn Jadden</div>
-  <h1>2026 Keepers<br>Are Locked.</h1>
-  <p class="lede">Ten teams. Twenty players. <strong>$681</strong> of the league’s <strong>$2,000</strong> spent before a single bid. Twenty players are off the board. Ten of them run the ball. One of you spent more than half your cap before a single bid was placed, on two men who share a bye week.</p>
-  <div class="figs">
-    <div class="fig"><div class="v">20</div><div class="l">Keepers</div></div>
-    <div class="fig"><div class="v">$681</div><div class="l">Cap committed</div></div>
-    <div class="fig"><div class="v">$80</div><div class="l">Dao’s max bid</div></div>
-    <div class="fig"><div class="v">10</div><div class="l">Running backs</div></div>
-  </div>
-  <div class="scrollcue"><span>? Read it as a ranking of nerve</span></div>
-</header>
+<div class="kicker">The Franchise &middot; 2026 Preseason &middot; By Mohn Jadden</div>
+<h1>&#128274; THE FRANCHISE &mdash; 2026 KEEPERS ARE LOCKED</h1>
+<p class="dek">Ten teams. Twenty players. $681 of the league&rsquo;s $2,000 spent before a single bid.</p>
+<p>Twenty players are off the board. Ten of them run the ball. One of you spent more than half your cap before a single bid was placed, on two men who share a bye week.</p>
+
+<hr>
+
+<h2>&#128184; THE BOARD</h2>
+<p><em>Ordered by cap committed. Read it as a ranking of nerve.</em></p>
+
+<div class="entry">
+  <p class="line"><strong>D-Unit (Dao)</strong> &mdash; Jahmyr Gibbs ($57), Ja&rsquo;Marr Chase ($50) &rarr; <span class="cash">$107</span></p>
+  <p class="verdict"><em>Verdict:</em> Fifty-four percent of his cap on two men &mdash; and <strong>Gibbs and Chase share a bye week.</strong> The genius who once leased $105 Saquon for six seasons goes dark in Week 6 with an $80 ceiling to fix it.</p>
 </div>
 
-<section class="act"><div class="wrap">
-  <div class="narrow reveal">
-    <div class="kicker">The Board</div>
-    <h2>Ordered by cap committed.</h2>
-    <p>Read it as a ranking of nerve. Ten of you looked at the same board and reached ten different conclusions.</p>
-  </div>
+<div class="entry">
+  <p class="line"><strong>The Annexation of PR (Curtis)</strong> &mdash; Puka Nacua ($53), Chase Brown ($34) &rarr; <span class="cash">$87</span></p>
+  <p class="verdict"><em>Verdict:</em> Curtis paying premium for a wide receiver is not a new film. He owns the worst purchase in league history &mdash; $95 of Javonte Williams, &minus;134 VOR &mdash; and then kept him. Nacua&rsquo;s worth every dollar. That&rsquo;s what makes it terrifying.</p>
+</div>
 
-  <div class="board">
-    <article class="kc hot reveal">
-      <div class="top">
-        <div class="who">
-          <div class="team">D-Unit</div>
-          <div class="mgr">Dao · 54% of the cap</div>
-        </div>
-        <div class="cost">$107</div>
-      </div>
-      <div class="keepers">
-        <span class="chip"><span class="pos pRB">RB</span> Jahmyr Gibbs <span class="amt">$57</span></span>
-        <span class="chip"><span class="pos pWR">WR</span> Ja'Marr Chase <span class="amt">$50</span></span>
-      </div>
-      <span class="vl">Verdict</span>
-      <p class="verdict">Fifty-four percent of his cap on two men — and <strong>Gibbs and Chase share a bye week.</strong> The genius who once leased $105 Saquon for six seasons goes dark in Week 6 with an $80 ceiling to fix it.</p>
-    </article>
+<div class="entry">
+  <p class="line"><strong>TEAM HoldMyCHUBBBA (Chad)</strong> &mdash; Jonathan Taylor ($45), James Cook III ($36) &rarr; <span class="cash">$81</span></p>
+  <p class="verdict"><em>Verdict:</em> The villain protects two running backs and keeps $119. This is a man who bought Drake Maye for $5, the single best pickup in twelve years of league history. He does not need the money. He will find another one anyway.</p>
+</div>
 
-    <article class="kc reveal">
-      <div class="top">
-        <div class="who">
-          <div class="team">The Annexation of PR</div>
-          <div class="mgr">Curtis</div>
-        </div>
-        <div class="cost">$87</div>
-      </div>
-      <div class="keepers">
-        <span class="chip"><span class="pos pWR">WR</span> Puka Nacua <span class="amt">$53</span></span>
-        <span class="chip"><span class="pos pRB">RB</span> Chase Brown <span class="amt">$34</span></span>
-      </div>
-      <span class="vl">Verdict</span>
-      <p class="verdict">Curtis paying premium for a wide receiver is not a new film. He owns the worst purchase in league history — $95 of Javonte Williams, ?134 VOR — and then kept him. Nacua’s worth every dollar. That’s what makes it terrifying.</p>
-    </article>
+<div class="entry">
+  <p class="line"><strong>The McClusterfucks (Eric)</strong> &mdash; Christian McCaffrey ($46), CeeDee Lamb ($30) &rarr; <span class="cash">$76</span></p>
+  <p class="verdict"><em>Verdict:</em> The commissioner spent $46 on a running back turning 30 and will spend Week 4 starting someone else instead. Four rings and four of the five worst sits ever recorded. Same guy. Same hands.</p>
+</div>
 
-    <article class="kc reveal">
-      <div class="top">
-        <div class="who">
-          <div class="team">TEAM HoldMyCHUBBBA</div>
-          <div class="mgr">Chad · The only two-RB keep</div>
-        </div>
-        <div class="cost">$81</div>
-      </div>
-      <div class="keepers">
-        <span class="chip"><span class="pos pRB">RB</span> Jonathan Taylor <span class="amt">$45</span></span>
-        <span class="chip"><span class="pos pRB">RB</span> James Cook III <span class="amt">$36</span></span>
-      </div>
-      <span class="vl">Verdict</span>
-      <p class="verdict">The villain protects two running backs and keeps $119. This is a man who bought Drake Maye for $5, the single best pickup in twelve years of league history. He does not need the money. He will find another one anyway.</p>
-    </article>
+<div class="entry">
+  <p class="line"><strong>Nico&rsquo;d &amp; Dimed (TJ)</strong> &mdash; Bijan Robinson ($52), Brock Bowers ($24) &rarr; <span class="cash">$76</span></p>
+  <p class="verdict"><em>Verdict:</em> The champ protected the two safest weekly floors in the sport, which is sensible, because his documented hobby is leaving them in the garage. Last year&rsquo;s ring came with 14.6 points a week on the bench and 27 points of Stafford watching from a folding chair.</p>
+</div>
 
-    <article class="kc reveal">
-      <div class="top">
-        <div class="who">
-          <div class="team">The McClusterfucks</div>
-          <div class="mgr">Eric · The commissioner</div>
-        </div>
-        <div class="cost">$76</div>
-      </div>
-      <div class="keepers">
-        <span class="chip"><span class="pos pRB">RB</span> Christian McCaffrey <span class="amt">$46</span></span>
-        <span class="chip"><span class="pos pWR">WR</span> CeeDee Lamb <span class="amt">$30</span></span>
-      </div>
-      <span class="vl">Verdict</span>
-      <p class="verdict">The commissioner spent $46 on a running back turning 30 and will spend Week 4 starting someone else instead. Four rings and four of the five worst sits ever recorded. Same guy. Same hands.</p>
-    </article>
+<div class="entry">
+  <p class="line"><strong>Sherlock (Mike E)</strong> &mdash; Jaxon Smith-Njigba ($48), Malik Nabers ($21) &rarr; <span class="cash">$69</span></p>
+  <p class="verdict"><em>Verdict:</em> Two receivers, zero running backs, and the cleanest lineup card this league has ever produced (93.6% efficiency) to run them through. The man you all accuse of never setting his flex is statistically the best starter among us. Keep saying it. It gets funnier every year.</p>
+</div>
 
-    <article class="kc reveal">
-      <div class="top">
-        <div class="who">
-          <div class="team">Nico'd &amp; Dimed</div>
-          <div class="mgr">TJ · The champ</div>
-        </div>
-        <div class="cost">$76</div>
-      </div>
-      <div class="keepers">
-        <span class="chip"><span class="pos pRB">RB</span> Bijan Robinson <span class="amt">$52</span></span>
-        <span class="chip"><span class="pos pTE">TE</span> Brock Bowers <span class="amt">$24</span></span>
-      </div>
-      <span class="vl">Verdict</span>
-      <p class="verdict">The champ protected the two safest weekly floors in the sport, which is sensible, because his documented hobby is leaving them in the garage. Last year’s ring came with 14.6 points a week on the bench and 27 points of Stafford watching from a folding chair.</p>
-    </article>
+<div class="entry">
+  <p class="line"><strong>Team KAS (Mike)</strong> &mdash; Justin Jefferson ($30), Ashton Jeanty ($30) &rarr; <span class="cash">$60</span></p>
+  <p class="verdict"><em>Verdict:</em> <strong>The cleanest keep on the board.</strong> Two top-20 players, thirty apiece, $140 left over. No drama, no overpay, no headline &mdash; just the most starting production per dollar in the league. Nobody&rsquo;s talking about it. They will Monday night.</p>
+</div>
 
-    <article class="kc reveal">
-      <div class="top">
-        <div class="who">
-          <div class="team">Sherlock</div>
-          <div class="mgr">Mike E · Zero running backs</div>
-        </div>
-        <div class="cost">$69</div>
-      </div>
-      <div class="keepers">
-        <span class="chip"><span class="pos pWR">WR</span> Jaxon Smith-Njigba <span class="amt">$48</span></span>
-        <span class="chip"><span class="pos pWR">WR</span> Malik Nabers <span class="amt">$21</span></span>
-      </div>
-      <span class="vl">Verdict</span>
-      <p class="verdict">Two receivers, zero running backs, and the cleanest lineup card this league has ever produced (93.6% efficiency) to run them through. The man you all accuse of never setting his flex is statistically the best starter among us. Keep saying it. It gets funnier every year.</p>
-    </article>
+<div class="entry">
+  <p class="line"><strong>Henrys Heros (Chris)</strong> &mdash; Derrick Henry ($39), Marvin Harrison Jr. ($7) &rarr; <span class="cash">$46</span></p>
+  <p class="verdict"><em>Verdict:</em> The longest lease in league history gets renewed again, and MHJ at <strong>seven dollars</strong> is the cheapest keeper anyone declared &mdash; a price that says the market has quietly filed him under &ldquo;we tried.&rdquo; Chris won a title in 2024 by 0.86 points without meaningfully touching the waiver wire. He does not care what the market thinks.</p>
+</div>
 
-    <article class="kc clean reveal">
-      <div class="top">
-        <div class="who">
-          <div class="team">Team KAS</div>
-          <div class="mgr">Mike · The cleanest keep on the board</div>
-        </div>
-        <div class="cost">$60</div>
-      </div>
-      <div class="keepers">
-        <span class="chip"><span class="pos pWR">WR</span> Justin Jefferson <span class="amt">$30</span></span>
-        <span class="chip"><span class="pos pRB">RB</span> Ashton Jeanty <span class="amt">$30</span></span>
-      </div>
-      <span class="vl">Verdict</span>
-      <p class="verdict"><strong>The cleanest keep on the board.</strong> Two top-20 players, thirty apiece, $140 left over. No drama, no overpay, no headline — just the most starting production per dollar in the league. Nobody’s talking about it. They will Monday night.</p>
-    </article>
+<div class="entry">
+  <p class="line"><strong>Ken You Not Pickett (Rob)</strong> &mdash; Saquon Barkley ($33), Lamar Jackson ($8) &rarr; <span class="cash">$41</span></p>
+  <p class="verdict"><em>Verdict:</em> Saquon and the reigning MVP for forty-one dollars total &mdash; less than Dao paid for his cheaper man.</p>
+</div>
 
-    <article class="kc reveal">
-      <div class="top">
-        <div class="who">
-          <div class="team">Henrys Heros</div>
-          <div class="mgr">Chris · Cheapest keeper on the board</div>
-        </div>
-        <div class="cost">$46</div>
-      </div>
-      <div class="keepers">
-        <span class="chip"><span class="pos pRB">RB</span> Derrick Henry <span class="amt">$39</span></span>
-        <span class="chip"><span class="pos pWR">WR</span> Marvin Harrison Jr. <span class="amt">$7</span></span>
-      </div>
-      <span class="vl">Verdict</span>
-      <p class="verdict">The longest lease in league history gets renewed again, and MHJ at <strong>seven dollars</strong> is the cheapest keeper anyone declared — a price that says the market has quietly filed him under “we tried.” Chris won a title in 2024 by 0.86 points without meaningfully touching the waiver wire. He does not care what the market thinks.</p>
-    </article>
+<div class="entry">
+  <p class="line"><strong>J Squad (Janice)</strong> &mdash; Kyren Williams ($28), DJ Moore ($10) &rarr; <span class="cash">$38</span></p>
+  <p class="verdict"><em>Verdict:</em> The lightest keeper bill and the biggest war chest &mdash; either the most disciplined move of the offseason or a quiet admission there was nothing else worth protecting. She went 12&ndash;2 in 2022 and still missed the final, so we all know exactly what a strong position is worth around here.</p>
+</div>
 
-    <article class="kc reveal">
-      <div class="top">
-        <div class="who">
-          <div class="team">Ken You Not Pickett</div>
-          <div class="mgr">Rob</div>
-        </div>
-        <div class="cost">$41</div>
-      </div>
-      <div class="keepers">
-        <span class="chip"><span class="pos pRB">RB</span> Saquon Barkley <span class="amt">$33</span></span>
-        <span class="chip"><span class="pos pQB">QB</span> Lamar Jackson <span class="amt">$8</span></span>
-      </div>
-      <span class="vl">Verdict</span>
-      <p class="verdict">Saquon and the reigning MVP for forty-one dollars total — less than Dao paid for his cheaper man.</p>
-    </article>
+<h2>&#128176; THE WAR CHESTS</h2>
+<p><em>Ten budgets, three philosophies: hoard it, blow it, or claim you&rsquo;ve found the middle &mdash; and all ten of you will abandon yours by the fourth nomination.</em></p>
 
-    <article class="kc light reveal">
-      <div class="top">
-        <div class="who">
-          <div class="team">J Squad</div>
-          <div class="mgr">Janice · Lightest bill, biggest war chest</div>
-        </div>
-        <div class="cost">$38</div>
-      </div>
-      <div class="keepers">
-        <span class="chip"><span class="pos pRB">RB</span> Kyren Williams <span class="amt">$28</span></span>
-        <span class="chip"><span class="pos pWR">WR</span> DJ Moore <span class="amt">$10</span></span>
-      </div>
-      <span class="vl">Verdict</span>
-      <p class="verdict">The lightest keeper bill and the biggest war chest — either the most disciplined move of the offseason or a quiet admission there was nothing else worth protecting. She went 12–2 in 2022 and still missed the final, so we all know exactly what a strong position is worth around here.</p>
-    </article>
-  </div>
-</div></section>
+<div class="panel">
+<div class="scroll">
+<table>
+<thead>
+<tr>
+  <th class="l">Team</th>
+  <th class="l">Mgr</th>
+  <th>Keepers</th>
+  <th>Remaining</th>
+  <th>Max Bid</th>
+</tr>
+</thead>
+<tbody>
+<tr><td class="l">J Squad</td><td class="l">Janice</td><td>$38</td><td class="good">$162</td><td class="gold"><strong>$149</strong></td></tr>
+<tr><td class="l">Ken You Not Pickett</td><td class="l">Rob</td><td>$41</td><td class="good">$159</td><td class="gold"><strong>$146</strong></td></tr>
+<tr><td class="l">Henrys Heros</td><td class="l">Chris</td><td>$46</td><td>$154</td><td class="gold"><strong>$141</strong></td></tr>
+<tr><td class="l">Team KAS</td><td class="l">Mike</td><td>$60</td><td>$140</td><td class="gold"><strong>$127</strong></td></tr>
+<tr><td class="l">Sherlock</td><td class="l">Mike E</td><td>$69</td><td>$131</td><td class="gold"><strong>$118</strong></td></tr>
+<tr><td class="l">The McClusterfucks</td><td class="l">Eric</td><td>$76</td><td>$124</td><td class="gold"><strong>$111</strong></td></tr>
+<tr><td class="l">Nico&rsquo;d &amp; Dimed</td><td class="l">TJ</td><td>$76</td><td>$124</td><td class="gold"><strong>$111</strong></td></tr>
+<tr><td class="l">TEAM HoldMyCHUBBBA</td><td class="l">Chad</td><td>$81</td><td>$119</td><td class="gold"><strong>$106</strong></td></tr>
+<tr><td class="l">The Annexation of PR</td><td class="l">Curtis</td><td>$87</td><td>$113</td><td class="gold"><strong>$100</strong></td></tr>
+<tr><td class="l">D-Unit</td><td class="l">Dao</td><td class="bad">$107</td><td class="bad">$93</td><td class="bad"><strong>$80</strong></td></tr>
+</tbody>
+</table>
+</div>
+</div>
 
-<section class="act"><div class="wrap">
-  <div class="narrow reveal">
-    <div class="kicker">The War Chests</div>
-    <h2>Ten budgets, three philosophies.</h2>
-    <p>Hoard it, blow it, or claim you’ve found the middle — and all ten of you will abandon yours by the fourth nomination.</p>
-  </div>
+<h2>&#129504; THE VERDICT</h2>
 
-  <div class="panel reveal">
-    <div class="spine">
-      <div class="spinechart" id="chests"></div>
-      <div class="spinenote"><span>Remaining budget, $200 cap</span><span>Gold bar = leftover · label = max bid</span></div>
-    </div>
-  </div>
+<h3>Best allocation</h3>
+<p>Team KAS. Two top-20 players at $30 each &mdash; the most starting production per dollar anyone bought, and the only manager who paid the same price twice.</p>
 
-  <div class="panel reveal">
-    <div class="scroll">
-      <table>
-        <thead>
-          <tr>
-            <th class="l">Team</th>
-            <th class="l">Mgr</th>
-            <th>Keepers</th>
-            <th>Remaining</th>
-            <th>Max Bid</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="l">J Squad</td>
-            <td class="l">Janice</td>
-            <td>$38</td>
-            <td class="good">$162</td>
-            <td class="gold"><strong>$149</strong></td>
-          </tr>
-          <tr>
-            <td class="l">Ken You Not Pickett</td>
-            <td class="l">Rob</td>
-            <td>$41</td>
-            <td class="good">$159</td>
-            <td class="gold"><strong>$146</strong></td>
-          </tr>
-          <tr>
-            <td class="l">Henrys Heros</td>
-            <td class="l">Chris</td>
-            <td>$46</td>
-            <td>$154</td>
-            <td class="gold"><strong>$141</strong></td>
-          </tr>
-          <tr>
-            <td class="l">Team KAS</td>
-            <td class="l">Mike</td>
-            <td>$60</td>
-            <td>$140</td>
-            <td class="gold"><strong>$127</strong></td>
-          </tr>
-          <tr>
-            <td class="l">Sherlock</td>
-            <td class="l">Mike E</td>
-            <td>$69</td>
-            <td>$131</td>
-            <td class="gold"><strong>$118</strong></td>
-          </tr>
-          <tr>
-            <td class="l">The McClusterfucks</td>
-            <td class="l">Eric</td>
-            <td>$76</td>
-            <td>$124</td>
-            <td class="gold"><strong>$111</strong></td>
-          </tr>
-          <tr>
-            <td class="l">Nico'd &amp; Dimed</td>
-            <td class="l">TJ</td>
-            <td>$76</td>
-            <td>$124</td>
-            <td class="gold"><strong>$111</strong></td>
-          </tr>
-          <tr>
-            <td class="l">TEAM HoldMyCHUBBBA</td>
-            <td class="l">Chad</td>
-            <td>$81</td>
-            <td>$119</td>
-            <td class="gold"><strong>$106</strong></td>
-          </tr>
-          <tr>
-            <td class="l">The Annexation of PR</td>
-            <td class="l">Curtis</td>
-            <td>$87</td>
-            <td>$113</td>
-            <td class="gold"><strong>$100</strong></td>
-          </tr>
-          <tr>
-            <td class="l">D-Unit</td>
-            <td class="l">Dao</td>
-            <td class="bad">$107</td>
-            <td class="bad">$93</td>
-            <td class="bad"><strong>$80</strong></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div></section>
+<h3>Four men, more than a franchise</h3>
+<p>Gibbs $57, Nacua $53, Bijan $52, Chase $50 &mdash; <strong>$212 combined.</strong> A full sixteen-man roster costs $200. Four players in this league now cost more than a team.</p>
 
-<section class="act"><div class="wrap">
-  <div class="narrow reveal">
-    <div class="kicker">The Verdict</div>
-    <h2>Nine of you are wrong.</h2>
-    <p>Ten of you looked at the same board and reached ten different conclusions.</p>
-  </div>
+<h3>Cheapest keep</h3>
+<p>Marvin Harrison Jr., $7. Chris&rsquo;s entire keeper bill is $46 &mdash; less than Puka Nacua by himself. Either the shrewdest offseason anyone had or a very expensive shrug.</p>
 
-  <div class="recbook reveal">
-    <article class="rec">
-      <div class="k">Best allocation</div>
-      <div class="v">Team KAS</div>
-      <div class="s">Two top-20 players at $30 each — the most starting production per dollar anyone bought, and the only manager who paid the same price twice.</div>
-    </article>
-    <article class="rec bad">
-      <div class="k">Four men, more than a franchise</div>
-      <div class="v">$212</div>
-      <div class="s">Gibbs $57, Nacua $53, Bijan $52, Chase $50. A full sixteen-man roster costs $200. Four players in this league now cost more than a team.</div>
-    </article>
-    <article class="rec teal">
-      <div class="k">Cheapest keep</div>
-      <div class="v">MHJ, $7</div>
-      <div class="s">Chris’s entire keeper bill is $46 — less than Puka Nacua by himself. Either the shrewdest offseason anyone had or a very expensive shrug.</div>
-    </article>
-    <article class="rec rb">
-      <div class="k">The position everyone bet on</div>
-      <div class="v">$400</div>
-      <div class="s">59% of the $681 spent went to running backs. Ten of twenty keepers carry the ball. Chad is the only manager who kept two. Mike E is the only one who kept none.</div>
-    </article>
-  </div>
+<h3>The position everyone bet on</h3>
+<p>$400 of the $681 spent &mdash; 59% &mdash; went to running backs. Ten of twenty keepers carry the ball. Chad is the only manager who kept two. Mike E is the only one who kept none.</p>
 
-  <div class="narrow reveal">
-    <div class="pull">Ten of you looked at the same board and reached ten different conclusions. Nine of you are wrong.</div>
-  </div>
-</div></section>
+<p>Ten of you looked at the same board and reached ten different conclusions. Nine of you are wrong.</p>
 
-<section class="act"><div class="wrap narrow reveal">
-  <div class="kicker">The Auction</div>
-  <h2>See you Monday.</h2>
-  <div class="auction">
-    <div class="when">Monday, September 7 · 9:00 PM EDT.</div>
-    <p class="pay">Send dues to <strong>Eric-Derr-1</strong> before we start. Unpaid managers may find their draft budget has quietly developed a leak, and nobody will be able to explain how.</p>
-  </div>
-  <div class="keystat"><b>The rest are for sale</b>Twenty men are safe. The rest are for sale, and half of you have already spent the rent.</div>
-  <p class="sig">Mohn Jadden — Keeping it real since 2014</p>
-</div></section>
+<h2>&#128197; THE AUCTION</h2>
+<p><strong>Monday, September 7 &middot; 9:00 PM EDT.</strong><br>
+Send dues to <strong>Eric-Derr-1</strong> before we start. Unpaid managers may find their draft budget has quietly developed a leak, and nobody will be able to explain how.</p>
 
-<div class="wrap"><footer>
-  The Franchise, 2026 preseason. $200 auction budget, two keepers. Remaining is $200 minus keeper cost. Max bid assumes fourteen remaining roster spots at $1 each after the keepers are already paid. The twelve-year chronicle lives at <a href="/">nineofalltrades.github.io</a>.
-</footer></div>
+<div class="keystat"><b>The rest are for sale</b>Twenty men are safe. The rest are for sale, and half of you have already spent the rent.</div>
 
-<script>
-const io=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
-}),{threshold:0,rootMargin:'0px 0px -8% 0px'});
+<p class="sig">&mdash; Mohn Jadden</p>
 
-const chests=[
-  {mgr:'Janice', left:162, max:149},
-  {mgr:'Rob',    left:159, max:146},
-  {mgr:'Chris',  left:154, max:141},
-  {mgr:'Mike',   left:140, max:127},
-  {mgr:'Mike E', left:131, max:118},
-  {mgr:'Eric',   left:124, max:111},
-  {mgr:'TJ',     left:124, max:111},
-  {mgr:'Chad',   left:119, max:106},
-  {mgr:'Curtis', left:113, max:100},
-  {mgr:'Dao',    left:93,  max:80, hot:true}
-];
-const mx=162;
-document.getElementById('chests').innerHTML=chests.map((t,i)=>{
-  const w=Math.round(100*t.left/mx);
-  const cls=t.hot?' hot':(t.left>=160?' good':'');
-  return `<div class="row${cls}"><div class="yl">${t.mgr}</div><div class="track">
-   <div class="fill" style="width:${w}%;transition-delay:${i*55}ms"></div>
-   <div class="lab"><span class="who">$${t.left} left</span>
-   <span class="amt">max $${t.max}</span></div></div></div>`;
-}).join('');
-
-document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
-const revealIn=()=>document.querySelectorAll('.reveal:not(.in)').forEach(e=>{
-  const r=e.getBoundingClientRect();
-  if(r.top<innerHeight*0.92 && r.bottom>0) e.classList.add('in');
-});
-revealIn();
-addEventListener('load',revealIn,{once:true});
-</script>
+</article>
 </body>
 </html>
