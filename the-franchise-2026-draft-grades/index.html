@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07090E">
+<title>The Franchise &mdash; 2026 Draft Grades</title>
+<meta name="description" content="Ten teams, one auction, one wildcard nobody can grade yet. The 2026 draft grades and auction recap.">
+<style>
+:root{
+ --ink:#07090E; --p1:#0D1119; --p2:#141A25; --p3:#1D2534; --line:#2A3446;
+ --edge:#28324399; --text:#EDF1F8; --dim:#93A3B9; --faint:#61728A;
+ --rb:#F0894D; --wr:#3FC7AE; --qb:#B07EF0; --te:#F2C94C;
+ --gold:#E8B44A; --good:#3DDC97; --bad:#FF6B6B; --hot:#FF8355;
+ --serif:ui-serif,'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+ --sans:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+ --s1:8px;--s2:16px;--s3:26px;--s4:44px;--s5:76px;--s6:120px;
+ --sh1:0 1px 2px rgba(2,5,10,.55),0 3px 10px rgba(2,5,10,.4);
+ --sh2:0 3px 8px rgba(2,5,10,.6),0 16px 40px rgba(2,5,10,.5);
+ --sh3:0 6px 16px rgba(2,5,10,.65),0 32px 80px rgba(232,180,74,.07);
+ --pad:clamp(16px,4vw,26px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.75;
+ -webkit-font-smoothing:antialiased;overflow-x:hidden;
+ background-image:
+  radial-gradient(1100px 620px at 8% -6%,rgba(232,180,74,.10),transparent 62%),
+  radial-gradient(900px 560px at 96% 12%,rgba(63,199,174,.07),transparent 60%),
+  radial-gradient(900px 700px at 40% 62%,rgba(240,137,77,.06),transparent 64%),
+  radial-gradient(800px 600px at 70% 100%,rgba(176,126,240,.05),transparent 62%);
+ background-attachment:fixed;}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:1;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--pad);position:relative;z-index:2}
+.narrow{max-width:720px;margin:0 auto}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:-.035em;line-height:.98;
+ font-size:clamp(34px,9vw,88px)}
+h2{font-family:var(--serif);font-weight:600;letter-spacing:-.03em;line-height:1.08;
+ font-size:clamp(26px,5.2vw,52px)}
+h3{font-family:var(--serif);font-size:clamp(19px,2.6vw,27px);letter-spacing:-.02em;font-weight:600}
+.kicker{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+p{font-size:clamp(16px,2.4vw,17.5px);color:var(--dim);margin-top:var(--s2)}
+p strong,li strong{color:var(--text);font-weight:600}
+em{color:var(--text);font-style:italic}
+section{padding:clamp(56px,12vw,120px) 0;position:relative}
+.act{border-top:1px solid var(--edge)}
+.reveal{opacity:0;transform:translateY(22px);
+ transition:opacity .85s cubic-bezier(.16,.8,.3,1),transform .85s cubic-bezier(.16,.8,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+ padding:clamp(40px,8vw,76px) 0 clamp(56px,10vw,76px)}
+.hero h1{margin:var(--s3) 0}
+.hero .lede{font-size:clamp(17px,2.6vw,21px);color:var(--dim);max-width:62ch}
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,4vw,44px);margin-top:var(--s4)}
+.fig .v{font-family:var(--serif);font-size:clamp(28px,6vw,46px);line-height:1;letter-spacing:-.03em;color:var(--gold)}
+.fig .l{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:8px}
+.scrollcue{margin-top:var(--s4);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.scrollcue span{display:inline-block;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+.pull{font-family:var(--serif);font-size:clamp(22px,4vw,40px);line-height:1.25;letter-spacing:-.02em;
+ color:var(--text);border-left:2px solid var(--gold);padding-left:clamp(14px,3vw,26px);margin:var(--s4) 0}
+
+.keystat{background:linear-gradient(170deg,#1B2432,#131A26);border:1px solid var(--edge);
+ border-left:2px solid var(--gold);border-radius:11px;padding:var(--s2) var(--s3);margin:var(--s3) 0;
+ font-size:clamp(14.5px,2.2vw,15.5px);color:var(--dim)}
+.keystat b{color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-size:11.5px;
+ display:block;margin-bottom:5px}
+.keystat.qb{border-left-color:var(--qb)} .keystat.qb b{color:var(--qb)}
+
+.panel{background:linear-gradient(170deg,var(--p2),var(--p1));border:1px solid var(--edge);
+ border-radius:17px;padding:clamp(14px,3vw,26px);box-shadow:var(--sh2);margin-top:var(--s3)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:right;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);
+ font-weight:600;padding:8px 10px;border-bottom:1px solid var(--edge);white-space:nowrap}
+td{text-align:right;padding:9px 10px;border-bottom:1px solid #161E2B;font-variant-numeric:tabular-nums}
+th.l,td.l{text-align:left}
+tbody tr{transition:background .16s}
+.good{color:var(--good)} .bad{color:var(--bad)} .gold{color:var(--gold)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.scroll table{min-width:640px}
+
+.board{display:flex;flex-direction:column;gap:var(--s2);margin-top:var(--s3)}
+.kc{background:linear-gradient(165deg,var(--p3),var(--p1));border:1px solid var(--edge);border-radius:16px;
+ padding:clamp(16px,3vw,26px);box-shadow:var(--sh2);position:relative;overflow:hidden}
+.kc::before{content:'';position:absolute;inset:0 0 auto 0;height:2px;
+ background:linear-gradient(90deg,var(--gold),transparent 70%)}
+.kc.hot::before{background:linear-gradient(90deg,var(--bad),transparent 70%)}
+.kc.clean::before{background:linear-gradient(90deg,var(--good),transparent 70%)}
+.kc.light::before{background:linear-gradient(90deg,var(--wr),transparent 70%)}
+.kc.champ{border-color:rgba(232,180,74,.5);box-shadow:var(--sh3)}
+.kc .top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.kc .cost{font-family:var(--serif);font-size:clamp(36px,6vw,48px);line-height:1;letter-spacing:-.04em;color:var(--gold)}
+.kc.hot .cost{color:var(--bad)}
+.kc.clean .cost{color:var(--good)}
+.kc.light .cost{color:var(--wr)}
+.kc .who{min-width:0}
+.kc .team{font-family:var(--serif);font-size:clamp(20px,3vw,26px);letter-spacing:-.02em;line-height:1.15}
+.kc .mgr{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:4px}
+.champ-tag{display:inline-block;margin-top:6px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+ color:var(--ink);background:var(--gold);padding:3px 8px;border-radius:5px;font-weight:700}
+.keepers{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--s3)}
+.chip{display:inline-flex;align-items:baseline;gap:8px;padding:7px 11px;border-radius:9px;
+ background:#161E2B;border:1px solid var(--edge);font-size:14px;color:var(--text)}
+.chip .pos{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.chip .amt{font-variant-numeric:tabular-nums;font-weight:700;color:var(--gold)}
+.pRB{color:var(--rb)} .pWR{color:var(--wr)} .pQB{color:var(--qb)} .pTE{color:var(--te)}
+.pGOOD{color:var(--good)} .pBAD{color:var(--bad)}
+.chip.val-good .amt{color:var(--good)} .chip.val-bad .amt{color:var(--bad)}
+.kc .verdict{font-size:14.5px;color:var(--dim);line-height:1.65;margin-top:var(--s2)}
+.kc .vl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+ font-weight:600;margin-top:var(--s3);display:block}
+.kc.hot .vl{color:var(--bad)} .kc.clean .vl{color:var(--good)} .kc.light .vl{color:var(--wr)}
+
+.spine{margin:var(--s3) 0 0}
+.spinechart{display:flex;flex-direction:column;gap:7px}
+.row{display:grid;grid-template-columns:minmax(92px,160px) 1fr;gap:12px;align-items:center}
+.row .yl{font-size:12px;color:var(--faint);text-align:right;line-height:1.2}
+.row .track{position:relative;height:40px;background:#111825;border-radius:8px;overflow:hidden;
+ border:1px solid #1D2634}
+.row .fill{position:absolute;inset:0 auto 0 0;border-radius:7px;transform-origin:left;transform:scaleX(0);
+ background:linear-gradient(90deg,rgba(232,180,74,.85),rgba(232,180,74,.32));
+ transition:transform 1s cubic-bezier(.18,.85,.32,1.02)}
+.in .row .fill{transform:scaleX(1)}
+.row.hot .fill{background:linear-gradient(90deg,var(--bad),rgba(255,107,107,.28))}
+.row.good .fill{background:linear-gradient(90deg,var(--good),rgba(61,220,151,.28))}
+.row .lab{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;
+ padding:0 12px;font-size:13px;z-index:2;pointer-events:none;gap:8px}
+.row .lab .who{color:var(--text);font-weight:600;letter-spacing:-.01em;
+ text-shadow:0 1px 3px rgba(0,0,0,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.row .lab .amt{color:var(--text);font-weight:700;font-variant-numeric:tabular-nums;
+ text-shadow:0 1px 3px rgba(0,0,0,.75);flex:none}
+.spinenote{display:flex;justify-content:space-between;font-size:12.5px;color:var(--faint);
+ border-top:1px solid var(--edge);padding-top:10px;margin-top:10px;flex-wrap:wrap;gap:10px}
+
+.recbook{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--s2);margin-top:var(--s3)}
+.rec{background:linear-gradient(165deg,#1E2A3C,var(--p1));border:1px solid rgba(232,180,74,.22);
+ border-radius:14px;padding:16px 18px;position:relative;overflow:hidden}
+.rec::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
+.rec.bad::before{background:var(--bad)}
+.rec.teal::before{background:var(--wr)}
+.rec.rb::before{background:var(--rb)}
+.rec.qb::before{background:var(--qb)}
+.rec .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.rec.bad .k{color:var(--bad)}
+.rec.teal .k{color:var(--wr)}
+.rec.rb .k{color:var(--rb)}
+.rec.qb .k{color:var(--qb)}
+.rec .v{font-family:var(--serif);font-size:26px;line-height:1.15;margin:8px 0 6px;letter-spacing:-.02em}
+.rec .s{font-size:13.5px;color:var(--dim);line-height:1.5}
+
+.sig{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:17px;margin-top:var(--s4);
+ padding-top:var(--s2);border-top:1px solid var(--edge)}
+footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(--faint);font-size:13.5px}
+
+@media(hover:hover) and (pointer:fine){
+ tbody tr:hover{background:#18202Ecc}
+}
+@media(max-width:720px){
+ .figs{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+ .hero{min-height:0}
+ .row{grid-template-columns:1fr}
+ .row .yl{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+ .row .track{height:46px}
+ .kc .top{flex-direction:column-reverse;gap:8px}
+ .kc .cost{font-size:40px}
+ table{font-size:12.5px}
+ .scroll{box-shadow:inset -22px 0 16px -12px rgba(7,9,14,.92)}
+ body{background-attachment:scroll}
+}
+@media(max-width:420px){
+ .figs{grid-template-columns:1fr 1fr}
+}
+.sitenav{display:flex;flex-wrap:wrap;align-items:center;padding:12px 0 0}
+.sitenav .brand{flex:1 1 auto;min-width:min(100%,160px);padding:10px 12px 10px 0;
+ font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;
+ text-decoration:none;border-bottom:none}
+.sitenav .links{display:flex;flex-wrap:wrap}
+.sitenav a{color:var(--faint);text-decoration:none;border-bottom:none;font-size:11.5px;letter-spacing:.12em;
+ text-transform:uppercase;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;
+ border-radius:8px}
+.sitenav a:hover{color:var(--gold);background:rgba(232,180,74,.08);border-bottom:none}
+.sitenav a.here{color:var(--gold)}
+@media(max-width:720px){
+ .sitenav .links{width:100%}
+ .sitenav a{flex:1 1 auto;justify-content:center;padding:12px 8px}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="wrap">
+<nav class="sitenav" aria-label="Site">
+  <a class="brand" href="/">Mohn Jadden</a>
+  <div class="links">
+    <a href="/">Home</a>
+    <a href="/the-franchise-2026-preseason/">Preseason</a>
+    <a href="/the-franchise-chronicle/">The Franchise</a>
+    <a class="here" href="/the-franchise-2026-draft-grades/">Draft Grades</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="kicker">The Franchise &middot; 2026 Draft Grades &middot; By Mohn Jadden</div>
+  <h1>The Bids Are In.<br>Some Of You Overpaid.</h1>
+  <p class="lede">Amon-Ra St. Brown went for <strong>$80</strong> &mdash; forty percent of a budget, on a man his own former owner let walk. Rob turned two dollars into a top-20 running back, except the running back might not play. TJ built the best starting lineup in the league using a position that costs everyone else seven cents on the dollar. Ten teams, one auction, one asterisk nobody can grade yet.</p>
+  <div class="figs">
+    <div class="fig"><div class="v">160</div><div class="l">Picks made</div></div>
+    <div class="fig"><div class="v">$1,995</div><div class="l">Of $2,000 spent</div></div>
+    <div class="fig"><div class="v">$80</div><div class="l">Top bid, Amon-Ra</div></div>
+    <div class="fig"><div class="v">1</div><div class="l">Wildcard, unpriced</div></div>
+  </div>
+  <div class="scrollcue"><span>&darr; Read it as a ranking of nerve, part two</span></div>
+</header>
+</div>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Method</div>
+    <h2>A projection, not a verdict.</h2>
+    <p>You cannot compute real value over replacement on draft night &mdash; that needs a full season of scoring. So these grades run on what we actually know the morning after: what you paid minus what the player is projected to be worth (value vs. market &mdash; negative is a bargain, positive is an overpay), and projected points over a replacement-level player at the position, scaled to this room&rsquo;s settings (ten teams, Half-PPR, two flex spots, which pushes the running back and receiver bar a full starter deeper). Keepers are priced at market this year &mdash; keeper cost is the projected auction value at selection, so there&rsquo;s no discount left to grade. New rule, new math.</p>
+    <p>Draft night is a head start, not a verdict. Five of our twelve champions had the best draft in the league. The reigning champ had the eighth. We grade the process now and settle the score in January.</p>
+    <div class="keystat qb"><b>One exclusion</b>Josh Jacobs is on the Commissioner&rsquo;s Exempt List after an offseason arrest, with a hearing that just moved up to Sept. 10. The model behind these numbers was built on projections scraped before any of that, so it still prices him like a healthy $25 workhorse. He gets the kicker treatment: his $2 still counts against Rob&rsquo;s cap, but he&rsquo;s excluded from every value and VOR number on this page until there&rsquo;s something real to grade him on.</div>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Board</div>
+    <h2>Ordered by grade.</h2>
+    <p>The at-a-glance scoreboard. Full breakdowns below for anyone who needs the receipts.</p>
+  </div>
+  <div class="panel reveal">
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th class="l">Team</th><th class="l">Mgr</th><th>Spent</th>
+            <th class="l">Top Buy</th><th class="l">Best Value</th><th class="l">Biggest Overpay</th><th>Grade</th>
+          </tr>
+        </thead>
+        <tbody id="board-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Defendants</div>
+    <h2>The reigning champ goes first.</h2>
+    <p>Everyone else, best to worst.</p>
+  </div>
+  <div class="board" id="defendants-body"></div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Verdict</div>
+    <h2>Seven awards nobody asked for.</h2>
+    <p>Superlatives, handed down with sourcing.</p>
+  </div>
+  <div class="recbook reveal" id="rec-body"></div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Power Rankings</div>
+    <h2>Who actually wins games.</h2>
+    <p>Ranked by projected <em>starting-lineup</em> value &mdash; best QB1, RB2, WR2, TE1, and the two best remaining flex bodies. Bench darts that never take the field don&rsquo;t move this number, which is why it doesn&rsquo;t match the Board above. That&rsquo;s the point of running both.</p>
+  </div>
+  <div class="panel reveal">
+    <div class="spine">
+      <div class="spinechart" id="power"></div>
+      <div class="spinenote"><span>Projected starting-lineup VOR</span><span>Inside bar: manager &middot; VOR</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap narrow reveal">
+  <div class="kicker">Closing Argument</div>
+  <div class="pull">Rob ran the best process in the room. TJ built the best lineup on the field. Janice did neither, twice, on purpose.</div>
+  <p>Every manager in this league currently believes they won the night. Somewhere in Green Bay, a two-dollar running back is about to decide whether that belief was correct for at least one of you. We&rsquo;ll find out about the rest in January &mdash; and about Jacobs, probably a lot sooner.</p>
+  <p class="sig">&mdash; Mohn Jadden</p>
+</div></section>
+
+<div class="wrap"><footer>
+  Sourced from the room&rsquo;s own auction valuation engine: 55% Yahoo projected $, 25% Yahoo live-market average $,
+  20% VOR-implied $, tilted for this league&rsquo;s two-flex format (RB &times;1.10, TE &times;1.08, QB &times;0.72).
+  Kickers and defenses excluded from value/VOR grading &mdash; one gets drafted per team, so replacement level
+  collapses and every kicker looks like a fake bargain. Josh Jacobs excluded pending his Sept. 10 hearing; see
+  The Method above. Grades weight full-roster value-vs-market and VOR-per-dollar; the Power Rankings weight
+  starting-lineup VOR only &mdash; the two measure different things and are not meant to agree. Managers tracked by
+  account, not by team name, which changes most years.
+</footer></div>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+}),{threshold:0,rootMargin:'0px 0px -8% 0px'});
+
+const board=[
+  {team:"Ken You Not Pickett", mgr:"Rob", spent:200, top:"De&rsquo;Von Achane $44", best:"Drake London +$8.5", overpay:"Jordan Mason &minus;$23.4", grade:"A"},
+  {team:"The McClusterfucks", mgr:"Eric", spent:200, top:"Christian McCaffrey $46", best:"Rashee Rice +$6.3", overpay:"TreVeyon Henderson &minus;$10.8", grade:"A-"},
+  {team:"D-Unit", mgr:"Dao", spent:195, top:"Jahmyr Gibbs $57", best:"Jalen Hurts +$5.2", overpay:"Jadarian Price &minus;$27.5", grade:"B+"},
+  {team:"Team KAS", mgr:"Mike S", spent:200, top:"Jeanty $30 / Jefferson $30", best:"Josh Allen +$13.6", overpay:"Ladd McConkey &minus;$15.1", grade:"B"},
+  {team:"Nico&rsquo;d &amp; Dimed", mgr:"TJ", spent:200, top:"Bijan Robinson $52", best:"Trey McBride +$5.0", overpay:"Bhayshul Tuten &minus;$8.2", grade:"B-"},
+  {team:"TEAM HoldMyCHUBBBA", mgr:"Chad", spent:200, top:"Jonathan Taylor $45", best:"Rico Dowdle +$2.9", overpay:"Trevor Lawrence &minus;$10.7", grade:"C+"},
+  {team:"Sherlock", mgr:"Mike E", spent:200, top:"Omarion Hampton $56", best:"Cam Skattebo +$7.9", overpay:"Omarion Hampton &minus;$16.1", grade:"C"},
+  {team:"Henrys Heros", mgr:"Chris", spent:200, top:"Derrick Henry $39", best:"Kyle Monangai +$1.7", overpay:"MarShawn Lloyd &minus;$9.2", grade:"C-"},
+  {team:"The Annexation of PR", mgr:"Curtis", spent:200, top:"Puka Nacua $53", best:"Breece Hall +$3.4", overpay:"Emeka Egbuka &minus;$15.2", grade:"D"},
+  {team:"J Squad", mgr:"Janice", spent:200, top:"Amon-Ra St. Brown $80", best:"Jordyn Tyson +$1.8", overpay:"Amon-Ra St. Brown &minus;$25.7", grade:"F"},
+];
+
+function gTone(g){
+  if(g[0]==='A') return 'clean';
+  if(g[0]==='B') return '';
+  if(g[0]==='C') return 'light';
+  return 'hot';
+}
+function gCell(g){
+  const t=gTone(g);
+  const cls=t==='clean'?'good':(t==='light'?'':(t==='hot'?'bad':'gold'));
+  return `<strong class="${cls}">${g}</strong>`;
+}
+
+document.getElementById('board-body').innerHTML=board.map(t=>`
+  <tr>
+    <td class="l"><strong>${t.team}</strong></td>
+    <td class="l">${t.mgr}</td>
+    <td>$${t.spent}</td>
+    <td class="l">${t.top}</td>
+    <td class="l good">${t.best}</td>
+    <td class="l bad">${t.overpay}</td>
+    <td>${gCell(t.grade)}</td>
+  </tr>
+`).join('');
+
+const defendants=[
+  {
+    team:"Nico&rsquo;d &amp; Dimed", mgr:"TJ", grade:"B-", champ:true,
+    spend:"The champ went all-in at tight end &mdash; <strong>23.5%</strong> of the $200 cap into Brock Bowers and Trey McBride, better than three times the league&rsquo;s 7.1% average. Everywhere else, thin: 37% RB, 37% WR, 1.5% QB.",
+    chips:[["BEST VALUE","Trey McBride +$5.0",'good'],["OVERPAY","Bhayshul Tuten &minus;$8.2",'bad'],["KEEPERS","Bijan $52 &middot; Bowers $24",'gold']],
+    verdict:"The reigning champ&rsquo;s documented hobby is leaving production in the garage &mdash; last year&rsquo;s ring came with 14.6 bench points a week. This year the garage is Jayden Reed, Romeo Doubs, Jalen Coker, and Khalil Shakir, four straight negative-VOR flags for four dollars combined. Full-roster VOR: <strong>360.9</strong>, only 6th of 10. Run the same math on just his starting nine and he&rsquo;s No. 1 in the league. Bench darts don&rsquo;t start. This might be the best team he&rsquo;s ever built."
+  },
+  {
+    team:"Ken You Not Pickett", mgr:"Rob", grade:"A",
+    spend:"Ran RB-heavy &mdash; <strong>60.5%</strong> of the cap against a 46.8% league average &mdash; almost entirely at a discount. Eight of sixteen picks cost $6 or less. Saquon and the reigning MVP cost him forty-one dollars total in keepers.",
+    chips:[["BEST VALUE","Drake London +$8.5",'good'],["OVERPAY","Jordan Mason &minus;$23.4",'bad'],["KEEPERS","Lamar $8 &middot; Saquon $33",'gold']],
+    verdict:"The Quarterback Whisperer never went above $8 at his signature position and instead ran the best-value draft in the league on running backs &mdash; <strong>2.46</strong> projected VOR per dollar spent, best in the room by a mile. The asterisk: his headline bargain, Josh Jacobs at $2, isn&rsquo;t graded at all. He&rsquo;s on the Commissioner&rsquo;s Exempt List, hearing moved up to Sept. 10. If Jacobs is back and full-time, this draft ages into an all-timer. If not, it&rsquo;s still an A on everything else."
+  },
+  {
+    team:"The McClusterfucks", mgr:"Eric", grade:"A-",
+    spend:"The commissioner bought two elite keepers light &mdash; CMC $46, Lamb $30, a combined <strong>+$31</strong> of surplus before a single live bid &mdash; then ran a clean, market-rate roster at 51% RB / 41% WR.",
+    chips:[["BEST VALUE","Rashee Rice +$6.3",'good'],["OVERPAY","TreVeyon Henderson &minus;$10.8",'bad'],["KEEPERS","CMC $46 &middot; Lamb $30",'gold']],
+    verdict:"Also closed out this year&rsquo;s Zero-Kicker Watch, grabbing Cameron Dicker with pick 125 &mdash; dead last kicker off the board. Four rings and four of the five worst bench sits in league history belong to the same guy. None of that showed up here. This is the No. 3 starting lineup in the league without a single reckless bid on it."
+  },
+  {
+    team:"D-Unit", mgr:"Dao", grade:"B+",
+    spend:"Total commitment to the Bell Cow identity &mdash; <strong>55%</strong> of the cap into running backs, anchored by a $57 rebuy of Jahmyr Gibbs, the single highest-VOR player rostered by anyone this year (195.6).",
+    chips:[["BEST VALUE","Jalen Hurts +$5.2",'good'],["OVERPAY","Jadarian Price &minus;$27.5",'bad'],["KEEPERS","Chase $50 &middot; Gibbs $57",'gold']],
+    verdict:"The genius who once leased a $105 running back for six seasons found a new one to overpay for &mdash; Jadarian Price at $35 against a $7.51 valuation is the Reach of the Draft, and it isn&rsquo;t close. Take Price off this roster and it&rsquo;s a top-two draft. Leave him on it and it&rsquo;s the same guy who once made $105 look reasonable, doing it again on a smaller stage."
+  },
+  {
+    team:"Team KAS", mgr:"Mike S", grade:"B",
+    spend:"Kept the cleanest pair on the preseason board &mdash; Jeanty $30, Jefferson $30, a combined <strong>+$28</strong> of surplus &mdash; then spent like the Big Swinger always does: five picks at $27 or more before he touched a bench spot.",
+    chips:[["BEST VALUE","Josh Allen +$13.6",'good'],["OVERPAY","Ladd McConkey &minus;$15.1",'bad'],["KEEPERS","Jeanty $30 &middot; Jefferson $30",'gold']],
+    verdict:"Nobody was talking about his offseason. Told you they would. The only real blemish on a clean $200 is the McConkey reach; the rest reads like the most starting production per dollar in the league, again."
+  },
+  {
+    team:"TEAM HoldMyCHUBBBA", mgr:"Chad", grade:"C+",
+    spend:"Let a $58 keeper-priced Amon-Ra St. Brown walk to lock in Cook and Taylor instead, then handed most of the savings right back on the back half of the roster.",
+    chips:[["BEST VALUE","Rico Dowdle +$2.9",'good'],["OVERPAY","Trevor Lawrence &minus;$10.7",'bad'],["KEEPERS","Cook $36 &middot; Taylor $45",'gold']],
+    verdict:"The Landlord collected rent on his two running backs &mdash; <strong>+$29</strong> of combined keeper surplus &mdash; and gave nearly all of it back on Kyle Pitts ($14 for a $4.11 valuation), Jonathon Brooks ($10 for $3.05), and a $13 Trevor Lawrence bid nobody in the room needed. Amon-Ra went to Janice for $80. He let that happen on purpose."
+  },
+  {
+    team:"Sherlock", mgr:"Mike E", grade:"C",
+    spend:"Kept zero running backs this preseason &mdash; the whole point of the JSN/Nabers build. Then spent $97 on Omarion Hampton and Jeremiyah Love live, the second-heaviest RB build in the league.",
+    chips:[["BEST VALUE","Cam Skattebo +$7.9",'good'],["OVERPAY","Omarion Hampton &minus;$16.1",'bad'],["KEEPERS","JSN $48 &middot; Nabers $21",'gold']],
+    verdict:"The Contrarian&rsquo;s whole brand is doing the opposite of the room. This year the room bought three running backs for $44, $54, and $56 in the first six picks, and three picks later, so did he. Even the league&rsquo;s most stubborn drafter isn&rsquo;t immune to peer pressure."
+  },
+  {
+    team:"Henrys Heros", mgr:"Chris", grade:"C-",
+    spend:"The Receiver Guy doubled down &mdash; <strong>52.5%</strong> of the cap into wide receivers, the heaviest build in the room &mdash; and bought five of them between $11 and $29 without landing one real bargain.",
+    chips:[["BEST VALUE","Kyle Monangai +$1.7",'good'],["OVERPAY","MarShawn Lloyd &minus;$9.2",'bad'],["KEEPERS","Henry $39 &middot; MHJ $7",'gold']],
+    verdict:"Won a title in 2024 by 0.86 points without meaningfully touching the waiver wire, so he knows a clean roster can be enough. This one is clean and unremarkable &mdash; and, worse, nobody in his starting nine can throw a football. Goff and Shough both grade below replacement. Fifth in full-roster VOR looks fine until you notice the QB spot is empty."
+  },
+  {
+    team:"The Annexation of PR", mgr:"Curtis", grade:"D",
+    spend:"Kept two real values &mdash; Nacua and Chase Brown, both under market &mdash; then reached hard on Emeka Egbuka and watched the bottom four picks all post double-digit negative VOR.",
+    chips:[["BEST VALUE","Breece Hall +$3.4",'good'],["OVERPAY","Emeka Egbuka &minus;$15.2",'bad'],["KEEPERS","Nacua $53 &middot; Chase Brown $34",'gold']],
+    verdict:"Owns the worst purchase in league history &mdash; $95 on Javonte Williams, &minus;134 VOR &mdash; so a $32 Egbuka reach is, by his own standard, restraint. The High Roller split the difference this year: a merely bad pick instead of a legendary one."
+  },
+  {
+    team:"J Squad", mgr:"Janice", grade:"F",
+    spend:"Came in with the lightest keeper bill and the biggest war chest in the league, then put <strong>$134</strong> of it into two players &mdash; Amon-Ra ($80) and Kenneth Walker ($54) &mdash; and both graded out as overpays.",
+    chips:[["BEST VALUE","Jordyn Tyson +$1.8",'good'],["OVERPAY","Amon-Ra St. Brown &minus;$25.7",'bad'],["KEEPERS","Kyren $28 &middot; DJ Moore $10",'gold']],
+    verdict:"The Set-and-Forget drafts better than almost anyone in this league &mdash; that&rsquo;s twelve years of receipts, not a compliment tonight. Amon-Ra at $80 is the single largest bid of the entire draft and the worst overpay in the league by dollar amount. The $1 bin didn&rsquo;t bail her out either: Tank Bigsby, Woody Marks, and Jakobi Meyers all graded below replacement. Ask again in Week 10."
+  },
+];
+
+document.getElementById('defendants-body').innerHTML=defendants.map(d=>{
+  const tone=gTone(d.grade);
+  const chips=d.chips.map(c=>`<span class="chip val-${c[2]}"><span class="pos p${c[2].toUpperCase()}">${c[0]}</span> ${c[1]}</span>`).join('');
+  return `<article class="kc ${tone} reveal${d.champ?' champ':''}">
+    <div class="top">
+      <div class="who">
+        <div class="team">${d.team}</div>
+        <div class="mgr">${d.mgr}${d.champ?'<br><span class="champ-tag">Reigning Champion</span>':''}</div>
+      </div>
+      <div class="cost">${d.grade}</div>
+    </div>
+    <p class="verdict" style="margin-top:14px">${d.spend}</p>
+    <div class="keepers">${chips}</div>
+    <span class="vl">Mohn&rsquo;s Verdict</span>
+    <p class="verdict">${d.verdict}</p>
+  </article>`;
+}).join('');
+
+const rec=[
+  {tone:'', k:'Steal of the Draft', v:'Josh Allen &middot; $15', s:'Mike S, Team KAS. Model value $28.57 (+$13.6). Best value on the board once Jacobs is pulled from grading &mdash; a real QB1 for less than half of what he&rsquo;s worth.'},
+  {tone:'bad', k:'Reach of the Draft', v:'Jadarian Price &middot; $35', s:'Dao, D-Unit. Model value $7.51. A 366% premium on a depth back &mdash; the worst dollar-for-value pick anyone made.'},
+  {tone:'teal', k:'Best Budget Management', v:'Rob', s:'Ken You Not Pickett. 2.46 projected VOR per dollar spent &mdash; best in the league, not particularly close (next: Dao at 2.18).'},
+  {tone:'bad', k:'War Crime Against the Cap', v:'Amon-Ra &middot; $80', s:'Janice, J Squad. The single largest bid of the night &mdash; 40% of her budget on one player, a 47% premium over model value.'},
+  {tone:'rb', k:'The Zero-Kicker Watch', v:'Moot this year', s:'All ten teams filled the slot. Last one off the board: Cameron Dicker to Eric, pick 125 &mdash; three picks from the end of the live auction.'},
+  {tone:'teal', k:'Best Build', v:'TJ, Nico&rsquo;d &amp; Dimed', s:'23.5% of the cap into tight ends against a 7.1% league average. Nobody else is within 12 points of that number.'},
+  {tone:'qb', k:'The Wildcard', v:'Josh Jacobs &middot; $2', s:'Rob, Ken You Not Pickett. Commissioner&rsquo;s Exempt List, hearing moved up to Sept. 10. The model says $25 workhorse; the room priced him like the contingency he is. If he&rsquo;s active by October, this was the actual Steal of the Draft. If not, Rob spent $2 to find out.'},
+];
+document.getElementById('rec-body').innerHTML=rec.map(r=>`
+  <article class="rec ${r.tone}">
+    <div class="k">${r.k}</div>
+    <div class="v">${r.v}</div>
+    <div class="s">${r.s}</div>
+  </article>
+`).join('');
+
+const power=[
+  {team:"Nico&rsquo;d &amp; Dimed", mgr:'TJ', vor:525.7, tone:'good'},
+  {team:"D-Unit", mgr:'Dao', vor:472.2, tone:''},
+  {team:"The McClusterfucks", mgr:'Eric', vor:470.8, tone:''},
+  {team:"Team KAS", mgr:'Mike S', vor:466.6, tone:''},
+  {team:"Ken You Not Pickett", mgr:'Rob', vor:448.7, tone:''},
+  {team:"TEAM HoldMyCHUBBBA", mgr:'Chad', vor:446.3, tone:''},
+  {team:"Sherlock", mgr:'Mike E', vor:434.7, tone:''},
+  {team:"The Annexation of PR", mgr:'Curtis', vor:402.4, tone:''},
+  {team:"J Squad", mgr:'Janice', vor:334.0, tone:''},
+  {team:"Henrys Heros", mgr:'Chris', vor:333.9, tone:'hot'},
+];
+const pmax=Math.max(...power.map(p=>p.vor));
+document.getElementById('power').innerHTML=power.map((p,i)=>{
+  const w=Math.round(100*p.vor/pmax);
+  return `<div class="row ${p.tone}"><div class="yl">${p.team}</div><div class="track">
+   <div class="fill" style="width:${w}%;transition-delay:${i*55}ms"></div>
+   <div class="lab"><span class="who">${p.mgr}</span>
+   <span class="amt">${p.vor.toFixed(1)} VOR</span></div></div></div>`;
+}).join('');
+
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+const revealIn=()=>document.querySelectorAll('.reveal:not(.in)').forEach(e=>{
+  const r=e.getBoundingClientRect();
+  if(r.top<innerHeight*0.92 && r.bottom>0) e.classList.add('in');
+});
+revealIn();
+addEventListener('load',revealIn,{once:true});
+</script>
+</body>
+</html>
