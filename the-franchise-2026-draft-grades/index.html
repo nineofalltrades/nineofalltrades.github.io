@@ -48,7 +48,10 @@ section{padding:clamp(56px,12vw,120px) 0;position:relative}
 .reveal{opacity:0;transform:translateY(22px);
  transition:opacity .85s cubic-bezier(.16,.8,.3,1),transform .85s cubic-bezier(.16,.8,.3,1)}
 .reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+@media(prefers-reduced-motion:reduce){
+ .reveal{opacity:1;transform:none;transition:none}
+ .swipe-hint .swipe-arrow,.swipe-edge span{animation:none}
+}
 
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
  padding:clamp(40px,8vw,76px) 0 clamp(56px,10vw,76px)}
@@ -80,8 +83,34 @@ td{text-align:right;padding:9px 10px;border-bottom:1px solid #161E2B;font-varian
 th.l,td.l{text-align:left}
 tbody tr{transition:background .16s}
 .good{color:var(--good)} .bad{color:var(--bad)} .gold{color:var(--gold)}
-.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:thin}
 .scroll table{min-width:640px}
+.scroll-wrap{position:relative}
+.swipe-hint{display:none;align-items:center;justify-content:flex-end;gap:8px;
+ margin:0 0 10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+ color:var(--faint);font-weight:600;transition:opacity .25s}
+.swipe-hint .swipe-arrow{display:inline-flex;align-items:center;color:var(--gold);
+ font-size:18px;line-height:1;letter-spacing:-.12em;
+ animation:nudge 1.35s ease-in-out infinite}
+.swipe-edge{display:none;position:absolute;top:8px;right:0;bottom:8px;width:42px;
+ pointer-events:none;z-index:4;align-items:center;justify-content:flex-end;
+ padding-right:6px;transition:opacity .25s;
+ background:linear-gradient(90deg,transparent,rgba(20,26,37,.55) 28%,rgba(20,26,37,.96))}
+.swipe-edge span{color:var(--gold);font-size:26px;line-height:1;font-weight:600;
+ animation:nudge 1.35s ease-in-out infinite}
+.panel.has-overflow .swipe-hint{display:flex}
+.panel.has-overflow .swipe-edge{display:flex}
+.panel.at-end .swipe-edge,.panel.at-end .swipe-hint{opacity:0}
+@keyframes nudge{0%,100%{transform:translateX(0);opacity:.45}50%{transform:translateX(6px);opacity:1}}
+th.grade,td.grade,th.pin,td.pin{position:sticky;left:0;z-index:2;text-align:left;white-space:nowrap;
+ background:var(--p2);box-shadow:8px 0 10px -8px rgba(2,5,10,.85);min-width:52px}
+th.grade,th.pin{z-index:3}
+td.grade strong,td.pin strong{font-size:15px;letter-spacing:.02em}
+.board-table,.standings-table{border-collapse:separate;border-spacing:0}
+.scroll .standings-table{min-width:500px}
+.sim-note{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.sim-note span{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);
+ border:1px solid var(--edge);border-radius:999px;padding:5px 10px}
 
 .board{display:flex;flex-direction:column;gap:var(--s2);margin-top:var(--s3)}
 .kc{background:linear-gradient(165deg,var(--p3),var(--p1));border:1px solid var(--edge);border-radius:16px;
@@ -158,6 +187,7 @@ footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(
 
 @media(hover:hover) and (pointer:fine){
  tbody tr:hover{background:#18202Ecc}
+ tbody tr:hover td.grade,tbody tr:hover td.pin{background:#18202E}
 }
 @media(max-width:720px){
  .figs{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
@@ -168,7 +198,7 @@ footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(
  .kc .top{flex-direction:column-reverse;gap:8px}
  .kc .cost{font-size:40px}
  table{font-size:12.5px}
- .scroll{box-shadow:inset -22px 0 16px -12px rgba(7,9,14,.92)}
+ td.grade strong,td.pin strong{font-size:16px}
  body{background-attachment:scroll}
 }
 @media(max-width:420px){
@@ -233,17 +263,25 @@ footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(
     <h2>Ordered by grade.</h2>
     <p>The at-a-glance scoreboard. Full breakdowns below for anyone who needs the receipts.</p>
   </div>
-  <div class="panel reveal">
-    <div class="scroll">
-      <table>
-        <thead>
-          <tr>
-            <th class="l">Team</th><th class="l">Mgr</th><th>Spent</th>
-            <th class="l">Top Buy</th><th class="l">Best Value</th><th class="l">Biggest Overpay</th><th>Grade</th>
-          </tr>
-        </thead>
-        <tbody id="board-body"></tbody>
-      </table>
+  <div class="panel reveal" data-scroll-hint>
+    <div class="swipe-hint" aria-hidden="true">
+      <span>Slide for more</span>
+      <span class="swipe-arrow">&rsaquo;&rsaquo;</span>
+    </div>
+    <div class="scroll-wrap">
+      <div class="scroll" tabindex="0" role="region" aria-label="Draft grades by team. Slide sideways for more columns.">
+        <table class="board-table">
+          <thead>
+            <tr>
+              <th class="grade">Grade</th>
+              <th class="l">Team</th><th class="l">Mgr</th><th>Spent</th>
+              <th class="l">Top Buy</th><th class="l">Best Value</th><th class="l">Biggest Overpay</th>
+            </tr>
+          </thead>
+          <tbody id="board-body"></tbody>
+        </table>
+      </div>
+      <div class="swipe-edge" aria-hidden="true"><span>&rsaquo;</span></div>
     </div>
   </div>
 </div></section>
@@ -270,12 +308,49 @@ footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(
   <div class="narrow reveal">
     <div class="kicker">The Power Rankings</div>
     <h2>Who actually wins games.</h2>
-    <p>Ranked by projected <em>starting-lineup</em> value &mdash; best QB1, RB2, WR2, TE1, and the two best remaining flex bodies. Bench darts that never take the field don&rsquo;t move this number, which is why it doesn&rsquo;t match the Board above. That&rsquo;s the point of running both.</p>
+    <p>Ranked by projected <em>starting-lineup</em> value &mdash; best QB1, RB2, WR2, TE1, and the two best remaining flex bodies. Bench darts that never take the field don&rsquo;t move this number, which is why it doesn&rsquo;t match the Board above. That&rsquo;s talent. The schedule is next.</p>
   </div>
   <div class="panel reveal">
     <div class="spine">
       <div class="spinechart" id="power"></div>
       <div class="spinenote"><span>Projected starting-lineup VOR</span><span>Inside bar: manager &middot; VOR</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Schedule &middot; Blackhat projections</div>
+    <h2>The room&rsquo;s actual calendar, 3,000 times.</h2>
+    <p>Blackhat projections: every remaining week randomized from each team&rsquo;s own scoring range and run against this league&rsquo;s real schedule. Doesn&rsquo;t model injuries, trades, or the wire &mdash; or Josh Jacobs&rsquo;s hearing. If Rob&rsquo;s two-dollar running back is a football player in October, his 68% is light. If not, it isn&rsquo;t.</p>
+    <div class="keystat"><b>The split the VOR board missed</b>Talent said Chris and Janice were a coin flip. The schedule does not care: <strong>27%</strong> vs <strong>15%</strong>.</div>
+  </div>
+  <div class="panel reveal" data-scroll-hint>
+    <div class="swipe-hint" aria-hidden="true">
+      <span>Slide for more</span>
+      <span class="swipe-arrow">&rsaquo;&rsaquo;</span>
+    </div>
+    <div class="scroll-wrap">
+      <div class="scroll" tabindex="0" role="region" aria-label="Blackhat projected standings. Slide sideways for more columns.">
+        <table class="standings-table">
+          <thead>
+            <tr>
+              <th class="pin">Odds</th>
+              <th class="l">Mgr</th>
+              <th>Proj. Record</th>
+              <th>Win Range</th>
+              <th>Proj. Seed</th>
+            </tr>
+          </thead>
+          <tbody id="standings-body"></tbody>
+        </table>
+      </div>
+      <div class="swipe-edge" aria-hidden="true"><span>&rsaquo;</span></div>
+    </div>
+    <div class="sim-note">
+      <span>Blackhat Fantasy</span>
+      <span>3,000 simulated seasons</span>
+      <span>Projected, not real</span>
     </div>
   </div>
 </div></section>
@@ -293,7 +368,9 @@ footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(
   Kickers and defenses excluded from value/VOR grading &mdash; one gets drafted per team, so replacement level
   collapses and every kicker looks like a fake bargain. Josh Jacobs excluded pending his Sept. 10 hearing; see
   The Method above. Grades weight full-roster value-vs-market and VOR-per-dollar; the Power Rankings weight
-  starting-lineup VOR only &mdash; the two measure different things and are not meant to agree. Managers tracked by
+  starting-lineup VOR only &mdash; the two measure different things and are not meant to agree. Projected
+  standings are Blackhat Fantasy simulations (3,000 seasons) against this league&rsquo;s actual schedule;
+  they still have Josh Jacobs on Rob&rsquo;s roster. Managers tracked by
   account, not by team name, which changes most years.
 </footer></div>
 
@@ -329,13 +406,13 @@ function gCell(g){
 
 document.getElementById('board-body').innerHTML=board.map(t=>`
   <tr>
+    <td class="grade">${gCell(t.grade)}</td>
     <td class="l"><strong>${t.team}</strong></td>
     <td class="l">${t.mgr}</td>
     <td>$${t.spent}</td>
     <td class="l">${t.top}</td>
     <td class="l good">${t.best}</td>
     <td class="l bad">${t.overpay}</td>
-    <td>${gCell(t.grade)}</td>
   </tr>
 `).join('');
 
@@ -458,6 +535,33 @@ document.getElementById('power').innerHTML=power.map((p,i)=>{
    <span class="amt">${p.vor.toFixed(1)} VOR</span></div></div></div>`;
 }).join('');
 
+const standings=[
+  {mgr:"TJ", rec:"8.8&ndash;5.2", range:"6&ndash;11", odds:91, seed:"3.0"},
+  {mgr:"Eric", rec:"8.0&ndash;6.0", range:"6&ndash;10", odds:82, seed:"4.0"},
+  {mgr:"Dao", rec:"7.9&ndash;6.1", range:"6&ndash;10", odds:80, seed:"4.1"},
+  {mgr:"Rob", rec:"7.4&ndash;6.6", range:"5&ndash;10", odds:68, seed:"5.1"},
+  {mgr:"Mike S", rec:"7.3&ndash;6.7", range:"5&ndash;10", odds:68, seed:"5.1"},
+  {mgr:"Chad", rec:"7.1&ndash;6.9", range:"5&ndash;9", odds:64, seed:"5.4"},
+  {mgr:"Mike E", rec:"6.9&ndash;7.1", range:"5&ndash;9", odds:59, seed:"5.7"},
+  {mgr:"Curtis", rec:"6.3&ndash;7.7", range:"4&ndash;9", odds:45, seed:"6.5"},
+  {mgr:"Chris", rec:"5.5&ndash;8.5", range:"3&ndash;8", odds:27, seed:"7.6"},
+  {mgr:"Janice", rec:"4.8&ndash;9.2", range:"3&ndash;7", odds:15, seed:"8.5"},
+];
+function oddsCls(p){
+  if(p>=50) return 'good';
+  if(p<=15) return 'bad';
+  return '';
+}
+document.getElementById('standings-body').innerHTML=standings.map(s=>`
+  <tr>
+    <td class="pin"><strong class="${oddsCls(s.odds)}">${s.odds}%</strong></td>
+    <td class="l"><strong>${s.mgr}</strong></td>
+    <td>${s.rec}</td>
+    <td>${s.range}</td>
+    <td>${s.seed}</td>
+  </tr>
+`).join('');
+
 document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
 const revealIn=()=>document.querySelectorAll('.reveal:not(.in)').forEach(e=>{
   const r=e.getBoundingClientRect();
@@ -465,6 +569,25 @@ const revealIn=()=>document.querySelectorAll('.reveal:not(.in)').forEach(e=>{
 });
 revealIn();
 addEventListener('load',revealIn,{once:true});
+
+function setupScrollHints(){
+  document.querySelectorAll('[data-scroll-hint]').forEach(panel=>{
+    const sc=panel.querySelector('.scroll');
+    if(!sc) return;
+    const update=()=>{
+      const overflow=sc.scrollWidth>sc.clientWidth+4;
+      const atEnd=sc.scrollLeft+sc.clientWidth>=sc.scrollWidth-8;
+      panel.classList.toggle('has-overflow',overflow);
+      panel.classList.toggle('at-end',atEnd||!overflow);
+    };
+    sc.addEventListener('scroll',update,{passive:true});
+    addEventListener('resize',update);
+    update();
+    requestAnimationFrame(update);
+  });
+}
+setupScrollHints();
+addEventListener('load',setupScrollHints,{once:true});
 </script>
 </body>
 </html>
