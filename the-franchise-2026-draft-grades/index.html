@@ -64,6 +64,27 @@ section{padding:clamp(56px,12vw,120px) 0;position:relative}
 .scrollcue span{display:inline-block;animation:bob 2.4s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 
+.pod{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:var(--s4);
+ padding:16px 18px;background:linear-gradient(165deg,#15241C,var(--p1));
+ border:1px solid rgba(29,185,84,.32);border-radius:16px;text-decoration:none;color:inherit;
+ box-shadow:var(--sh2);position:relative;overflow:hidden;min-height:44px;
+ transition:transform .3s cubic-bezier(.2,.9,.3,1.25),box-shadow .3s}
+.pod::before{content:'';position:absolute;inset:0 0 auto 0;height:2px;
+ background:linear-gradient(90deg,#1DB954,transparent 70%)}
+.pod-play{flex:none;width:52px;height:52px;border-radius:50%;background:#1DB954;color:#04110a;
+ display:grid;place-items:center;box-shadow:0 8px 20px rgba(29,185,84,.28)}
+.pod-play svg{width:22px;height:22px;margin-left:3px}
+.pod-copy{flex:1 1 200px;min-width:0}
+.pod-copy .k{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#1DB954;font-weight:600}
+.pod-copy strong{display:block;font-family:var(--serif);font-size:clamp(18px,2.8vw,24px);
+ letter-spacing:-.02em;line-height:1.2;margin:5px 0 4px;font-weight:600;color:var(--text)}
+.pod-copy .m{font-size:13.5px;color:var(--dim);line-height:1.45}
+.pod-go{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1DB954;font-weight:600}
+@media(hover:hover) and (pointer:fine){
+ .pod:hover{transform:translateY(-3px);box-shadow:var(--sh3)}
+}
+.pod:focus-visible{outline:2px solid #1DB954;outline-offset:3px}
+
 .pull{font-family:var(--serif);font-size:clamp(22px,4vw,40px);line-height:1.25;letter-spacing:-.02em;
  color:var(--text);border-left:2px solid var(--gold);padding-left:clamp(14px,3vw,26px);margin:var(--s4) 0}
 
@@ -199,6 +220,8 @@ footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(
  .kc .cost{font-size:40px}
  table{font-size:12.5px}
  td.grade strong,td.pin strong{font-size:16px}
+ .pod{padding:14px 14px 16px;align-items:flex-start}
+ .pod-go{width:100%}
  body{background-attachment:scroll}
 }
 @media(max-width:420px){
@@ -243,6 +266,17 @@ footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(
     <div class="fig"><div class="v">$80</div><div class="l">Top bid, Amon-Ra</div></div>
     <div class="fig"><div class="v">1</div><div class="l">Wildcard, unpriced</div></div>
   </div>
+  <a class="pod" href="https://open.spotify.com/episode/12dfKE7QvFmemea5rXIFFT" target="_blank" rel="noopener noreferrer">
+    <span class="pod-play" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72L19.06 12 8 5.14z"/></svg>
+    </span>
+    <span class="pod-copy">
+      <span class="k">Podcast version &middot; 20 min</span>
+      <strong>The Franchise &mdash; 2026 Post Draft Show</strong>
+      <span class="m">Prefer to hear it? Same recap, out loud, on Black Hat Fantasy Football: Mohn Jadden&rsquo;s Playbook.</span>
+    </span>
+    <span class="pod-go">Play on Spotify &rarr;</span>
+  </a>
   <div class="scrollcue"><span>&darr; Read it as a ranking of nerve, part two</span></div>
 </header>
 </div>
