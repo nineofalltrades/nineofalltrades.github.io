@@ -42,11 +42,16 @@ body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height
 .sitenav a.here{color:var(--gold)}
 .sitenav a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
-.hero{padding:clamp(28px,6vw,56px) 0 clamp(28px,5vw,40px)}
+.hero{padding:clamp(28px,6vw,56px) 0 clamp(20px,4vw,32px)}
 .kicker{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
 h1{font-family:var(--serif);font-weight:600;letter-spacing:-.035em;line-height:.98;
  font-size:clamp(36px,9vw,76px);margin:var(--s3) 0 var(--s2)}
 .lede{font-size:clamp(16.5px,2.5vw,20px);color:var(--dim);max-width:46ch}
+
+.cat{margin-top:clamp(28px,5vw,48px)}
+.cat-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px;
+ padding-bottom:14px;border-bottom:1px solid var(--edge);margin-bottom:16px}
+.cat-head .note{font-size:13.5px;color:var(--faint)}
 
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .card{display:flex;flex-direction:column;background:linear-gradient(165deg,var(--p3),var(--p1));
@@ -66,6 +71,7 @@ h1{font-family:var(--serif);font-weight:600;letter-spacing:-.035em;line-height:.
 .card .go{margin-top:18px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
 .card.span{grid-column:1/-1;min-height:0}
 .card.span p{max-width:62ch}
+.card.quiet{min-height:0}
 @media(hover:hover) and (pointer:fine){
  .card:hover{transform:translateY(-4px);box-shadow:var(--sh3)}
 }
@@ -77,6 +83,7 @@ footer{border-top:1px solid var(--edge);padding:var(--s4) 0 0;margin-top:var(--s
 @media(max-width:720px){
  .cards{grid-template-columns:1fr}
  .card{min-height:0}
+ .cat-head{flex-direction:column;align-items:flex-start;gap:4px}
  body{background-attachment:scroll}
  .sitenav .links{width:100%}
  .sitenav a{flex:1 1 auto;justify-content:center;padding:12px 8px}
@@ -99,40 +106,62 @@ footer{border-top:1px solid var(--edge);padding:var(--s4) 0 0;margin-top:var(--s
 </nav>
 
 <header class="hero">
-  <div class="kicker">The Franchise &middot; The receipts</div>
+  <div class="kicker">The Franchise &middot; 2026</div>
   <h1>Sit down.<br>I have notes.</h1>
-  <p class="lede">The Franchise, written up so nobody forgets by September. Pick a document.</p>
+  <p class="lede">The season is on. Start with this week&rsquo;s primer. Preseason is filed underneath, where it belongs.</p>
 </header>
 
-<div class="cards">
-  <a class="card span hot" href="/the-franchise-2026-primer/">
-    <div class="tag">The Franchise &middot; Week 1 &middot; New</div>
-    <h2>The Kelce Funeral.</h2>
-    <p>A legend gets cut for a dollar, A.J. Brown goes down, and Curtis is already twenty points underwater. Week 1 of The Franchise, before Sunday&rsquo;s kickoffs.</p>
-    <div class="go">Open the primer &rarr;</div>
-  </a>
+<section class="cat" aria-labelledby="this-week">
+  <div class="cat-head">
+    <div class="kicker" id="this-week">This week</div>
+    <div class="note">Week 1 primer</div>
+  </div>
+  <div class="cards">
+    <a class="card span hot" href="/the-franchise-2026-primer/">
+      <div class="tag">The Franchise &middot; Week 1 &middot; New</div>
+      <h2>The Kelce Funeral.</h2>
+      <p>A legend gets cut for a dollar, A.J. Brown goes down, and Curtis is already twenty points underwater. Week 1 of The Franchise, before Sunday&rsquo;s kickoffs.</p>
+      <div class="go">Open the primer &rarr;</div>
+    </a>
+  </div>
+</section>
 
-  <a class="card" href="/the-franchise-2026-draft-grades/">
-    <div class="tag">The Franchise &middot; 2026</div>
-    <h2>The Bids Are In. Some Of You Overpaid.</h2>
-    <p>160 picks, $1,995 spent, one $80 bid on a man his own team let walk. Full grades, the board, the defendants, and who actually built a starting lineup versus who just built a roster.</p>
-    <div class="go">Open the draft grades &rarr;</div>
-  </a>
+<section class="cat" aria-labelledby="preseason">
+  <div class="cat-head">
+    <div class="kicker" id="preseason">Preseason</div>
+    <div class="note">Keepers and the auction. Already in the books.</div>
+  </div>
+  <div class="cards">
+    <a class="card" href="/the-franchise-2026-draft-grades/">
+      <div class="tag">Draft night</div>
+      <h2>The Bids Are In. Some Of You Overpaid.</h2>
+      <p>160 picks, $1,995 spent, one $80 bid on a man his own team let walk. Full grades, the board, and who actually built a starting lineup.</p>
+      <div class="go">Open the draft grades &rarr;</div>
+    </a>
 
-  <a class="card" href="/the-franchise-2026-preseason/">
-    <div class="tag">The Franchise &middot; 2026</div>
-    <h2>2026 Keepers Are Locked</h2>
-    <p>Ten teams. Twenty players. $681 of the league&rsquo;s $2,000 spent before a single bid. Read it as a ranking of nerve.</p>
-    <div class="go">Open the preseason &rarr;</div>
-  </a>
+    <a class="card" href="/the-franchise-2026-preseason/">
+      <div class="tag">Keepers</div>
+      <h2>2026 Keepers Are Locked</h2>
+      <p>Ten teams. Twenty players. $681 of the league&rsquo;s $2,000 spent before a single bid. Read it as a ranking of nerve.</p>
+      <div class="go">Open the keepers &rarr;</div>
+    </a>
+  </div>
+</section>
 
-  <a class="card" href="/the-franchise-chronicle/">
-    <div class="tag">The Franchise &middot; 2014&ndash;2025</div>
-    <h2>Twelve Years, Now With The Wire</h2>
-    <p>The full chronicle. Drafts, keepers, FAAB, leftover, blood feuds, and every manager&rsquo;s documented problem.</p>
-    <div class="go">Open the chronicle &rarr;</div>
-  </a>
-</div>
+<section class="cat" aria-labelledby="the-record">
+  <div class="cat-head">
+    <div class="kicker" id="the-record">The Record</div>
+    <div class="note">2014&ndash;2025</div>
+  </div>
+  <div class="cards">
+    <a class="card span quiet" href="/the-franchise-chronicle/">
+      <div class="tag">The Franchise</div>
+      <h2>Twelve Years, Now With The Wire</h2>
+      <p>The full chronicle. Drafts, keepers, FAAB, leftover, blood feuds, and every manager&rsquo;s documented problem.</p>
+      <div class="go">Open the chronicle &rarr;</div>
+    </a>
+  </div>
+</section>
 
 <footer>Compiled by Mohn Jadden. Keeping it real since 2014.</footer>
 </div>
