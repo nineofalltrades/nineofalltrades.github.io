@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#07090E">
 <title>The Franchise &mdash; Week 1 Primer</title>
-<meta name="description" content="A legend gets cut, A.J. Brown goes down, and Curtis is already 20 points underwater. Week 1 of The Franchise.">
-<link rel="canonical" href="/the-franchise-2026-primer/week-1/">
+<meta name="description" content="The Rams' Thursday collapse touched five rosters, A.J. Brown's ankle cost HoldMyCHUBBBA a month, and D-Unit cut a future Hall of Famer for a dollar &mdash; before Sunday's even kicked off.">
 <style>
 :root{
  --ink:#07090E; --p1:#0D1119; --p2:#141A25; --p3:#1D2534; --line:#2A3446;
@@ -36,31 +35,33 @@ body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height
 .wrap{max-width:1080px;margin:0 auto;padding:0 var(--pad);position:relative;z-index:2}
 .narrow{max-width:720px;margin:0 auto}
 h1{font-family:var(--serif);font-weight:600;letter-spacing:-.035em;line-height:.98;
- font-size:clamp(34px,9vw,80px)}
+ font-size:clamp(34px,9vw,88px)}
 h2{font-family:var(--serif);font-weight:600;letter-spacing:-.03em;line-height:1.08;
- font-size:clamp(26px,5.2vw,46px)}
-h3{font-family:var(--serif);font-size:clamp(19px,2.6vw,25px);letter-spacing:-.02em;font-weight:600}
+ font-size:clamp(26px,5.2vw,52px)}
+h3{font-family:var(--serif);font-size:clamp(19px,2.6vw,27px);letter-spacing:-.02em;font-weight:600}
 .kicker{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
 p{font-size:clamp(16px,2.4vw,17.5px);color:var(--dim);margin-top:var(--s2)}
 p strong,li strong{color:var(--text);font-weight:600}
 em{color:var(--text);font-style:italic}
-section{padding:clamp(48px,10vw,96px) 0;position:relative}
+section{padding:clamp(56px,12vw,120px) 0;position:relative}
 .act{border-top:1px solid var(--edge)}
 .reveal{opacity:0;transform:translateY(22px);
  transition:opacity .85s cubic-bezier(.16,.8,.3,1),transform .85s cubic-bezier(.16,.8,.3,1)}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
-.hero{min-height:86svh;display:flex;flex-direction:column;justify-content:center;
- padding:clamp(32px,8vw,64px) 0 clamp(48px,10vw,64px)}
+.hero{min-height:92svh;display:flex;flex-direction:column;justify-content:center;
+ padding:clamp(40px,8vw,76px) 0 clamp(56px,10vw,76px)}
 .hero h1{margin:var(--s3) 0}
-.hero .lede{font-size:clamp(17px,2.6vw,21px);color:var(--dim);max-width:66ch}
-.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,4vw,32px);margin-top:var(--s4)}
-.fig .v{font-family:var(--serif);font-size:clamp(24px,5vw,38px);line-height:1;letter-spacing:-.03em;color:var(--gold)}
-.fig .v.bad{color:var(--bad)} .fig .v.good{color:var(--good)}
+.hero .lede{font-size:clamp(17px,2.6vw,21px);color:var(--dim);max-width:64ch}
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,4vw,44px);margin-top:var(--s4)}
+.fig .v{font-family:var(--serif);font-size:clamp(26px,5.6vw,42px);line-height:1;letter-spacing:-.03em;color:var(--gold)}
 .fig .l{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:8px}
+.scrollcue{margin-top:var(--s4);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.scrollcue span{display:inline-block;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 
-.pull{font-family:var(--serif);font-size:clamp(21px,3.6vw,34px);line-height:1.25;letter-spacing:-.02em;
+.pull{font-family:var(--serif);font-size:clamp(22px,4vw,40px);line-height:1.25;letter-spacing:-.02em;
  color:var(--text);border-left:2px solid var(--gold);padding-left:clamp(14px,3vw,26px);margin:var(--s4) 0}
 
 .keystat{background:linear-gradient(170deg,#1B2432,#131A26);border:1px solid var(--edge);
@@ -68,72 +69,69 @@ section{padding:clamp(48px,10vw,96px) 0;position:relative}
  font-size:clamp(14.5px,2.2vw,15.5px);color:var(--dim)}
 .keystat b{color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-size:11.5px;
  display:block;margin-bottom:5px}
-.keystat.bad{border-left-color:var(--bad)}
-.keystat.bad b{color:var(--bad)}
-.keystat.good{border-left-color:var(--good)}
-.keystat.good b{color:var(--good)}
+.keystat.bad{border-left-color:var(--bad)} .keystat.bad b{color:var(--bad)}
+.keystat.good{border-left-color:var(--good)} .keystat.good b{color:var(--good)}
 
 .panel{background:linear-gradient(170deg,var(--p2),var(--p1));border:1px solid var(--edge);
- border-radius:17px;padding:clamp(16px,3vw,28px);box-shadow:var(--sh2);margin-top:var(--s3)}
+ border-radius:17px;padding:clamp(14px,3vw,26px);box-shadow:var(--sh2);margin-top:var(--s3)}
+.good{color:var(--good)} .bad{color:var(--bad)} .gold{color:var(--gold)}
 
-.board{display:flex;flex-direction:column;gap:var(--s2);margin-top:var(--s3)}
-.matchup{background:linear-gradient(165deg,var(--p3),var(--p1));border:1px solid var(--edge);border-radius:16px;
- padding:clamp(16px,3vw,26px);box-shadow:var(--sh2);position:relative;overflow:hidden}
-.matchup::before{content:'';position:absolute;inset:0 0 auto 0;height:2px;
- background:linear-gradient(90deg,var(--gold),transparent 70%)}
-.matchup.feature::before{background:linear-gradient(90deg,var(--bad),transparent 70%)}
-.mrow{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(10px,3vw,22px)}
-.side{min-width:0}
-.side.right{text-align:right}
-.side .team{font-family:var(--serif);font-size:clamp(18px,2.8vw,23px);letter-spacing:-.02em;line-height:1.15}
-.side .mgr{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:3px}
-.side .score{font-family:var(--serif);font-size:clamp(26px,5vw,36px);letter-spacing:-.03em;margin-top:8px;color:var(--text)}
-.side .score.good{color:var(--good)} .side .score.bad{color:var(--faint)}
-.vs{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
-.matchup .verdict{font-size:14.5px;color:var(--dim);line-height:1.65;margin-top:var(--s3)}
-.matchup .vl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
- font-weight:600;margin-top:var(--s3);display:block}
-.matchup .pred{font-family:var(--serif);font-size:clamp(17px,2.6vw,21px);letter-spacing:-.01em;margin-top:6px;color:var(--text)}
-
-.statlines{display:flex;flex-direction:column;gap:8px;margin-top:var(--s2)}
-.statline{display:flex;align-items:center;justify-content:space-between;gap:14px;
- background:#141B27;border:1px solid var(--edge);border-radius:10px;padding:10px 14px}
-.statline .lbl{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;white-space:nowrap;color:var(--gold)}
-.statline .lbl.good{color:var(--good)}
-.statline .lbl.bad{color:var(--bad)}
-.statline .val{font-size:14px;color:var(--text);text-align:right;font-variant-numeric:tabular-nums}
-.statline .val .d{font-size:12.5px;margin-left:6px}
-.statline .val .d.good{color:var(--good)}
-.statline .val .d.bad{color:var(--bad)}
-@media(max-width:480px){
- .statline{flex-direction:column;align-items:flex-start;gap:2px}
- .statline .val{text-align:left}
-}
-
-.recbook{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:var(--s2);margin-top:var(--s3)}
+.recbook{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--s2);margin-top:var(--s3)}
 .rec{background:linear-gradient(165deg,#1E2A3C,var(--p1));border:1px solid rgba(232,180,74,.22);
  border-radius:14px;padding:16px 18px;position:relative;overflow:hidden}
 .rec::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
 .rec.bad::before{background:var(--bad)}
+.rec.teal::before{background:var(--wr)}
+.rec.rb::before{background:var(--rb)}
 .rec .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
 .rec.bad .k{color:var(--bad)}
-.rec .v{font-family:var(--serif);font-size:26px;line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
-.rec .s{font-size:13.5px;color:var(--dim);line-height:1.5}
+.rec.teal .k{color:var(--wr)}
+.rec.rb .k{color:var(--rb)}
+.rec .v{font-family:var(--serif);font-size:26px;line-height:1.1;margin:8px 0 6px;letter-spacing:-.02em}
+.rec .s{font-size:13.5px;color:var(--dim);line-height:1.45}
 
 .sig{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:17px;margin-top:var(--s4);
  padding-top:var(--s2);border-top:1px solid var(--edge)}
 footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(--faint);font-size:13.5px}
 
-@media(hover:hover) and (pointer:fine){
- .matchup:hover{box-shadow:var(--sh3)}
-}
+/* matchup cards */
+.matchup{background:linear-gradient(170deg,var(--p2),var(--p1));border:1px solid var(--edge);
+ border-radius:17px;padding:clamp(16px,3vw,28px);box-shadow:var(--sh2);margin-top:var(--s3)}
+.mrow{display:flex;align-items:center;gap:clamp(10px,3vw,22px)}
+.side{flex:1;min-width:0}
+.side.r{text-align:right}
+.side .team{font-family:var(--serif);font-size:clamp(18px,3vw,24px);letter-spacing:-.02em;line-height:1.15}
+.side .mgr{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:4px}
+.side .score{font-family:var(--serif);font-size:clamp(30px,5vw,42px);letter-spacing:-.03em;color:var(--text);margin-top:8px}
+.vs{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);flex:none;padding:0 4px}
+.matchup .verdict{font-size:14.5px;color:var(--dim);line-height:1.7;margin-top:var(--s3)}
+.pred{margin-top:var(--s2);font-size:13.5px;color:var(--text);padding-top:12px;border-top:1px solid var(--edge)}
+.pred b{color:var(--gold);text-transform:uppercase;letter-spacing:.1em;font-size:10.5px;margin-right:6px}
+.pred.alt{margin-top:6px;padding-top:0;border-top:none;color:var(--faint);font-size:12.5px}
+.pred.alt b{color:var(--faint)}
+.statlines{margin-top:var(--s2);display:flex;flex-direction:column;gap:8px}
+.statline{display:flex;align-items:baseline;gap:10px;font-size:13px;padding:8px 10px;
+ background:#141C29;border:1px solid #1B2432;border-radius:9px;flex-wrap:wrap}
+.statline .tag{font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+ padding:2px 6px;border-radius:5px;flex:none}
+.statline.good .tag{color:var(--good);background:rgba(61,220,151,.12)}
+.statline.bad .tag{color:var(--bad);background:rgba(255,107,107,.12)}
+.statline .who{color:var(--text);font-weight:600;flex:1;min-width:120px}
+.statline .ctx{color:var(--faint);font-size:12px}
+.statline .pts{font-variant-numeric:tabular-nums;font-weight:700;color:var(--text);flex:none}
+.statline .d{font-variant-numeric:tabular-nums;font-size:11.5px;flex:none}
+.statline.good .d{color:var(--good)} .statline.bad .d{color:var(--bad)}
+
 @media(max-width:720px){
- .figs{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+ .figs{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
  .hero{min-height:0}
- .mrow{grid-template-columns:1fr;text-align:left;gap:10px}
- .side.right{text-align:left}
- .vs{display:none}
  body{background-attachment:scroll}
+ .mrow{flex-wrap:wrap}
+ .side.r{text-align:left}
+ .vs{order:3;width:100%;text-align:left;padding:2px 0}
+}
+@media(max-width:420px){
+ .figs{grid-template-columns:1fr 1fr}
 }
 .sitenav{display:flex;flex-wrap:wrap;align-items:center;padding:12px 0 0}
 .sitenav .brand{flex:1 1 auto;min-width:min(100%,160px);padding:10px 12px 10px 0;
@@ -158,7 +156,7 @@ footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(
   <a class="brand" href="/">Mohn Jadden</a>
   <div class="links">
     <a href="/">Home</a>
-    <a class="here" href="/the-franchise-2026-primer/">Primer</a>
+    <a class="here" href="/the-franchise-2026-week-1-primer/">Week 1 Primer</a>
     <a href="/the-franchise-2026-preseason/">Preseason</a>
     <a href="/the-franchise-chronicle/">The Franchise</a>
     <a href="/the-franchise-2026-draft-grades/">Draft Grades</a>
@@ -167,181 +165,233 @@ footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(
 
 <header class="hero">
   <div class="kicker">The Franchise &middot; Week 1 &middot; By Mohn Jadden</div>
-  <h1>The Kelce<br>Funeral.</h1>
-  <p class="lede">Two games are already final, a Hall of Fame tight end got dropped for a dollar, and <strong>Curtis&rsquo;s</strong> entire early stack missed projection by more than twenty points before Sunday even started.</p>
+  <h1>Week One,<br>Already Wrong.</h1>
+  <p class="lede">Two games are in the books and the board is already lying to some of you. The Rams' 27&ndash;7 collapse in Australia reached into <strong>five different rosters</strong> before Sunday even started. A.J. Brown's ankle is going to cost somebody a month. And one manager looked at his $107 auction commitment and decided the move to make, two days before kickoff, was cutting a future Hall of Famer for a dollar.</p>
   <div class="figs">
-    <div class="fig"><div class="v">2</div><div class="l">Games Final</div></div>
-    <div class="fig"><div class="v gold">$1</div><div class="l">Kelce&rsquo;s Price Tag</div></div>
-    <div class="fig"><div class="v bad">&minus;20.2</div><div class="l">Curtis&rsquo;s Proj Miss</div></div>
-    <div class="fig"><div class="v bad">4 wk</div><div class="l">A.J. Brown, Out</div></div>
+    <div class="fig"><div class="v">5</div><div class="l">Rosters hit by the Rams' 7&ndash;27 loss</div></div>
+    <div class="fig"><div class="v">4+</div><div class="l">Weeks: A.J. Brown's ankle</div></div>
+    <div class="fig"><div class="v">$1</div><div class="l">D-Unit's price to cut Kelce loose</div></div>
+    <div class="fig"><div class="v">2 of 5</div><div class="l">Live leaders not actually favored</div></div>
   </div>
+  <div class="scrollcue"><span>&darr; nobody's record means anything yet</span></div>
 </header>
 </div>
 
 <section class="act"><div class="wrap">
   <div class="narrow reveal">
-    <div class="kicker">Early Games</div>
-    <h2>Wednesday and Thursday, in the books.</h2>
-    <p>Seahawks 13, Patriots 10 at Lumen Field. 49ers 27, Rams 7 in Melbourne. Both games are already shaping this week&rsquo;s matchups &mdash; some managers are playing with a cushion, some are already dug in a hole.</p>
+    <div class="kicker">Wednesday &amp; Thursday</div>
+    <h2>The Rams picked a bad week to be bad.</h2>
+    <p>Two games down, and one of them did more damage to this league than the other nine will combined.</p>
   </div>
 
   <div class="panel reveal">
-    <h3>Seahawks 13, Patriots 10 &middot; Wed 9/9</h3>
-    <p>Drew Lock was efficient (16/22, 187, a TD) but <strong>Jaxon Smith-Njigba</strong> was the story: 8 catches, 122 yards, a score. Drake Maye&rsquo;s regular-season debut was rough &mdash; 178 yards and a touchdown undone by three interceptions. Rhamondre Stevenson salvaged the day for New England (51 rush + 44 rec yards).</p>
+    <h3>Seahawks 13, Patriots 10 &middot; Wednesday</h3>
+    <p>Seattle needed a clean two-score night from its specialists to hold on, and got exactly that &mdash; Jason Myers made both his field-goal tries and the extra point, a tidy 7.00-point night that's currently the entire scoreboard for <strong>Nico'd &amp; Dimed</strong>. The other story from that building was Jaxon Smith-Njigba, who turned 8 catches into 122 yards and a touchdown, the single best fantasy performance turned in by anyone this week &mdash; and, as it happens, the entire live score currently sitting on <strong>Sherlock's</strong> side of the ledger (see below).</p>
+    <p>New England's night was worse than the final score suggests. Drake Maye was fine &mdash; 178 pass yards, 47 more on the ground, one touchdown &mdash; solid, unspectacular, the kind of floor that <strong>TEAM HoldMyCHUBBBA</strong> drafted him for. A.J. Brown's night ended early in the third quarter: his ankle got trapped awkwardly between the turf and a Seattle corner going for a low throw, and he didn't come back. Three catches, 26 yards, and a 34-yard pass interference draw is what Chad has to show for his WR1 for what's looking like the next month. More on that below.</p>
   </div>
 
   <div class="panel reveal">
-    <h3>49ers 27, Rams 7 &middot; Thu 9/10, Melbourne</h3>
-    <p>San Francisco made the season opener look easy in front of a sold-out crowd in Australia. <strong>Brock Purdy</strong> went 25/34 for 205 and three touchdowns to three different receivers, and the defense forced two turnovers for ten points off them. Quietly, rookie <strong>Kaelon Black</strong> (14 carries, 65 yards) nearly out-touched Christian McCaffrey (10 carries, 68 yards) in the same backfield &mdash; a workload split worth tracking past Week 1.</p>
-  </div>
-
-  <div class="keystat good reveal">
-    <b>Key Stat &mdash; Mike E</b>
-    Jaxon Smith-Njigba&rsquo;s 23.20 points beat his own projection by <strong>+6.79</strong> &mdash; and it&rsquo;s Sherlock&rsquo;s entire early lead in this week&rsquo;s biggest mismatch.
-  </div>
-  <div class="keystat bad reveal">
-    <b>Key Stat &mdash; Curtis</b>
-    Matthew Stafford (6.80 actual vs. 20.43 proj) and Puka Nacua (9.90 vs. 16.45) missed projection by a combined <strong>&minus;20.18 points</strong> in the same loss.
+    <h3>49ers 27, Rams 7 &middot; Thursday</h3>
+    <p>San Francisco didn't just win this one, it made Los Angeles look unprepared for the season to have started. Christian McCaffrey's workload never translated to production &mdash; 12.30 points, well off his own number, in a game his team won by 20. On the other side, the collapse was total. Matthew Stafford finished 155 yards and an interception before Sean McVay pulled him with the outcome decided; for what it's worth, that wasn't an injury, McVay just didn't need him anymore. Puka Nacua managed 74 yards on 5 catches and nothing to show in the end zone. The only Ram to beat his number was Kyren Williams, whose one late touchdown (41 rush yards, 24 more through the air) salvaged a mildly-positive day out of an otherwise dead building. The kicker and defense didn't even get that much &mdash; Harrison Mevis was limited to a single extra point, and the Rams defense allowed 27 while picking off one pass.</p>
+    <p>The fantasy math on that single football game is brutal: it directly touched <strong>five</strong> of this league's ten rosters &mdash; Stafford and Nacua for <strong>The Annexation of PR</strong>, McCaffrey for <strong>The McClusterfucks</strong>, both the kicker and the defense for <strong>Henrys Heros</strong>, and Davante Adams's quiet 3-catch, 26-yard day for <strong>Ken You Not Pickett</strong>. Kyren Williams, propping up <strong>J Squad</strong>, is the only manager who left that building with anything to be happy about.</p>
   </div>
 </div></section>
 
 <section class="act"><div class="wrap">
   <div class="narrow reveal">
-    <div class="kicker">Matchup Previews</div>
-    <h2>All five, before Sunday&rsquo;s kickoffs.</h2>
+    <div class="kicker">Week 1 Matchups</div>
+    <h2>The scoreboard and the truth aren't the same thing.</h2>
+    <p>Two of these five live leaders are currently favored on the actual scoreboard and nowhere else. Refresh all you want &mdash; here's where all five of these actually stand, and what's already happened to get there.</p>
   </div>
 
-  <div class="board">
-    <article class="matchup reveal">
-      <div class="mrow">
-        <div class="side"><div class="team">The McClusterfucks</div><div class="mgr">Eric</div><div class="score">12.30</div></div>
-        <div class="vs">vs</div>
-        <div class="side right"><div class="team">TEAM HoldMyCHUBBBA</div><div class="mgr">Chad</div><div class="score good">19.92</div></div>
+  <div class="matchup reveal">
+    <div class="mrow">
+      <div class="side">
+        <div class="team">Nico'd &amp; Dimed</div>
+        <div class="mgr">TJ</div>
+        <div class="score">7.00</div>
       </div>
-      <div class="statlines">
-        <div class="statline"><span class="lbl bad">Already Played</span><span class="val">Christian McCaffrey &middot; Eric<span class="d bad">12.30 (&minus;6.86)</span></span></div>
-        <div class="statline"><span class="lbl bad">Already Played</span><span class="val">Drake Maye &middot; Chad<span class="d bad">15.82 (&minus;5.35)</span></span></div>
-        <div class="statline"><span class="lbl bad">Already Played</span><span class="val">A.J. Brown &middot; Chad<span class="d bad">4.10 (injured, exited)</span></span></div>
+      <div class="vs">vs</div>
+      <div class="side r">
+        <div class="team">Team KAS</div>
+        <div class="mgr">Mike S</div>
+        <div class="score">0.00</div>
       </div>
-      <p class="verdict">Chad&rsquo;s Patriots stack got there despite Maye&rsquo;s three picks and an A.J. Brown injury that ends his month early. Eric&rsquo;s whole score is a modest McCaffrey day, but he&rsquo;s got Justin Herbert and a full McCaffrey Sunday slate left to close it.</p>
-      <span class="vl">Prediction</span>
-      <p class="pred">McClusterfucks, 124&ndash;116</p>
-    </article>
+    </div>
+    <div class="statlines">
+      <div class="statline bad"><span class="tag">Uneventful</span><span class="who">Jason Myers</span><span class="ctx">SEA K &middot; Nico'd &amp; Dimed</span><span class="pts">7.00</span><span class="d">proj 7.67 (&minus;0.67)</span></div>
+    </div>
+    <p class="verdict">Nobody on Team KAS has played a snap yet &mdash; Josh Allen, Justin Jefferson and the rest of that lineup are all sitting on Sunday's slate. The only action so far belongs to TJ's kicker, and a routine two-field-goal night wasn't enough to move a projection that was already close to even. Live Proj actually flips the live scoreboard: Team KAS, 125.06 to 122.95, essentially a coin flip that tips a hair toward Mike S.</p>
+    <div class="pred"><b>Yahoo</b>Team KAS by 2.1 (125.06&ndash;122.95)</div>
+    <div class="pred alt"><b>Blackhat</b>Team KAS by 6.1 (118.98&ndash;112.87)</div>
+  </div>
 
-    <article class="matchup reveal">
-      <div class="mrow">
-        <div class="side"><div class="team">D-Unit</div><div class="mgr">Dao</div><div class="score good">21.60</div></div>
-        <div class="vs">vs</div>
-        <div class="side right"><div class="team">J Squad</div><div class="mgr">Janice</div><div class="score">15.10</div></div>
+  <div class="matchup reveal">
+    <div class="mrow">
+      <div class="side">
+        <div class="team">The McClusterfucks</div>
+        <div class="mgr">Eric</div>
+        <div class="score">12.30</div>
       </div>
-      <div class="statlines">
-        <div class="statline"><span class="lbl bad">Already Played</span><span class="val">Jadarian Price &middot; Dao<span class="d bad">7.80 (&minus;4.20)</span></span></div>
-        <div class="statline"><span class="lbl bad">Already Played</span><span class="val">Rhamondre Stevenson &middot; Dao<span class="d bad">13.80 (&minus;1.51)</span></span></div>
-        <div class="statline"><span class="lbl good">Already Played</span><span class="val">Kyren Williams &middot; Janice<span class="d good">15.10 (+0.70)</span></span></div>
+      <div class="vs">vs</div>
+      <div class="side r">
+        <div class="team">TEAM HoldMyCHUBBBA</div>
+        <div class="mgr">Chad</div>
+        <div class="score">19.92</div>
       </div>
-      <p class="verdict">Dao&rsquo;s early cushion is the best start in the league, and he&rsquo;s still got Joe Burrow and Jahmyr Gibbs to add Sunday. Janice&rsquo;s lone scorer, Kyren Williams, actually beat his own projection (15.10 vs. 14.40) despite the Rams&rsquo; blowout &mdash; a small bright spot in a buried offense.</p>
-      <span class="vl">Prediction</span>
-      <p class="pred">D-Unit, 129&ndash;118</p>
-    </article>
+    </div>
+    <div class="statlines">
+      <div class="statline bad"><span class="tag">Bust</span><span class="who">Christian McCaffrey</span><span class="ctx">SF RB &middot; McClusterfucks</span><span class="pts">12.30</span><span class="d">proj 19.16 (&minus;6.86)</span></div>
+      <div class="statline bad"><span class="tag">Bust</span><span class="who">Drake Maye</span><span class="ctx">NE QB &middot; HoldMyCHUBBBA</span><span class="pts">15.82</span><span class="d">proj 21.17 (&minus;5.35)</span></div>
+      <div class="statline bad"><span class="tag">Hurt, done early</span><span class="who">A.J. Brown</span><span class="ctx">NE WR &middot; HoldMyCHUBBBA</span><span class="pts">4.10</span><span class="d">ankle, did not finish</span></div>
+    </div>
+    <p class="verdict">Eric's $46 keeper turned in one of the week's quieter lines for a player on a 20-point win, and Chad's quarterback missed his own number by more even while accounting for a passing score. None of it matters much yet &mdash; the raw scoreboard has Chad up almost 8, but Live Proj says the McClusterfucks are still very much in charge here, 121.00 to 111.11, once CeeDee Lamb, Zay Flowers and the rest of Sunday's names get involved. Blackhat's read is nearly identical: 117.08 to 106.77.</p>
+    <div class="pred"><b>Yahoo</b>McClusterfucks by 9.9 (121.00&ndash;111.11)</div>
+    <div class="pred alt"><b>Blackhat</b>McClusterfucks by 10.3 (117.08&ndash;106.77)</div>
+  </div>
 
-    <article class="matchup feature reveal">
-      <div class="mrow">
-        <div class="side"><div class="team">The Annexation of PR</div><div class="mgr">Curtis</div><div class="score bad">16.70</div></div>
-        <div class="vs">vs</div>
-        <div class="side right"><div class="team">Sherlock</div><div class="mgr">Mike E</div><div class="score good">23.20</div></div>
+  <div class="matchup reveal">
+    <div class="mrow">
+      <div class="side">
+        <div class="team">D-Unit</div>
+        <div class="mgr">Dao</div>
+        <div class="score">21.60</div>
       </div>
-      <div class="statlines">
-        <div class="statline"><span class="lbl bad">Already Played</span><span class="val">Matthew Stafford &middot; Curtis<span class="d bad">6.80 (&minus;13.63)</span></span></div>
-        <div class="statline"><span class="lbl bad">Already Played</span><span class="val">Puka Nacua &middot; Curtis<span class="d bad">9.90 (&minus;6.55)</span></span></div>
-        <div class="statline"><span class="lbl good">Already Played</span><span class="val">Jaxon Smith-Njigba &middot; Mike E<span class="d good">23.20 (+6.79)</span></span></div>
+      <div class="vs">vs</div>
+      <div class="side r">
+        <div class="team">J Squad</div>
+        <div class="mgr">Janice</div>
+        <div class="score">15.10</div>
       </div>
-      <p class="verdict">The week&rsquo;s most lopsided story. Mike E is already up 23.20&ndash;16.70 on JSN&rsquo;s monster night alone, and the projection has swung from a near-even preseason read to a blowout. Curtis needs Chase Brown and Breece Hall to go huge just to make this respectable.</p>
-      <span class="vl">Prediction</span>
-      <p class="pred">Sherlock, 131&ndash;112</p>
-    </article>
+    </div>
+    <div class="statlines">
+      <div class="statline bad"><span class="tag">Bust</span><span class="who">Jadarian Price</span><span class="ctx">SEA RB &middot; D-Unit</span><span class="pts">7.80</span><span class="d">proj 12.00 (&minus;4.20)</span></div>
+      <div class="statline bad"><span class="tag">Decent</span><span class="who">Rhamondre Stevenson</span><span class="ctx">NE RB &middot; D-Unit</span><span class="pts">13.80</span><span class="d">proj 15.31 (&minus;1.51)</span></div>
+      <div class="statline good"><span class="tag">Boom</span><span class="who">Kyren Williams</span><span class="ctx">LAR RB &middot; J Squad</span><span class="pts">15.10</span><span class="d">proj 14.40 (+0.70)</span></div>
+    </div>
+    <p class="verdict">Dao's two Thursday-adjacent pieces split the difference &mdash; Stevenson turned in a real workload (51 rush yards, 44 more receiving, 5 catches) just south of his number, while Jadarian Price got buried in a crowded Seattle backfield. Janice's only already-played piece, Kyren Williams, is the week's second real overperformance, a touchdown salvaged from an otherwise dead Rams building. None of it threatens the outcome: Live Proj has D-Unit comfortably ahead, 132.97 to 117.14, with Blackhat's independent consensus agreeing, 123.22 to 111.94. Dao's $107 investment in Jahmyr Gibbs and Ja'Marr Chase still hasn't taken a single snap.</p>
+    <div class="pred"><b>Yahoo</b>D-Unit by 15.8 (132.97&ndash;117.14)</div>
+    <div class="pred alt"><b>Blackhat</b>D-Unit by 11.3 (123.22&ndash;111.94)</div>
+  </div>
 
-    <article class="matchup reveal">
-      <div class="mrow">
-        <div class="side"><div class="team">Henrys Heros</div><div class="mgr">Chris</div><div class="score">3.00</div></div>
-        <div class="vs">vs</div>
-        <div class="side right"><div class="team">Ken You Not Pickett</div><div class="mgr">Rob</div><div class="score">4.10</div></div>
+  <div class="matchup reveal">
+    <div class="mrow">
+      <div class="side">
+        <div class="team">The Annexation of PR</div>
+        <div class="mgr">Curtis</div>
+        <div class="score">16.70</div>
       </div>
-      <div class="statlines">
-        <div class="statline"><span class="lbl">Already Played</span><span class="val">Harrison Mevis (K) &middot; Chris<span class="d">1.00</span></span></div>
-        <div class="statline"><span class="lbl">Already Played</span><span class="val">Rams DEF &middot; Chris<span class="d">2.00</span></span></div>
-        <div class="statline"><span class="lbl bad">Already Played</span><span class="val">Davante Adams &middot; Rob<span class="d bad">4.10 (&minus;6.77)</span></span></div>
+      <div class="vs">vs</div>
+      <div class="side r">
+        <div class="team">Sherlock</div>
+        <div class="mgr">Mike E</div>
+        <div class="score">23.20</div>
       </div>
-      <p class="verdict">The lowest-scoring pair in the league so far, decided for now by leftover Rams kicker/defense scraps and a quiet Davante Adams game (4.10 vs. a 10.87 projection). Rob&rsquo;s Lamar Jackson and Caleb Williams give him the better Sunday path.</p>
-      <span class="vl">Prediction</span>
-      <p class="pred">Ken You Not Pickett, 118&ndash;113</p>
-    </article>
+    </div>
+    <div class="statlines">
+      <div class="statline bad"><span class="tag">Bust</span><span class="who">Matthew Stafford</span><span class="ctx">LAR QB &middot; Annexation of PR</span><span class="pts">6.80</span><span class="d">proj 20.43 (&minus;13.63)</span></div>
+      <div class="statline bad"><span class="tag">Bust</span><span class="who">Puka Nacua</span><span class="ctx">LAR WR &middot; Annexation of PR</span><span class="pts">9.90</span><span class="d">proj 16.45 (&minus;6.55)</span></div>
+      <div class="statline good"><span class="tag">Boom</span><span class="who">Jaxon Smith-Njigba</span><span class="ctx">SEA WR &middot; Sherlock</span><span class="pts">23.20</span><span class="d">proj 16.41 (+6.79)</span></div>
+    </div>
+    <p class="verdict">This is the week's real story. Curtis's $53 keeper managed 74 yards and nothing else, and his quarterback got pulled by his own coach with the game out of hand &mdash; a 13.6-point miss that's the single worst outing anyone in this league turned in this week. Meanwhile Mike E needed exactly one player to flip his whole matchup: Jaxon Smith-Njigba's 122-yard, one-touchdown night is, right now, the entirety of Sherlock's live score. Live Proj had this one within twenty cents of even before kickoff, 127.30 to 127.50. It's now Sherlock in a laugher, 134.29 to 107.12 &mdash; and Blackhat's independent numbers back it up almost exactly, 124.37 to 100.83. The Rams ruined Curtis's week before it even started.</p>
+    <div class="pred"><b>Yahoo</b>Sherlock by 27.2 (134.29&ndash;107.12)</div>
+    <div class="pred alt"><b>Blackhat</b>Sherlock by 23.5 (124.37&ndash;100.83)</div>
+  </div>
 
-    <article class="matchup reveal">
-      <div class="mrow">
-        <div class="side"><div class="team">Nico&rsquo;d &amp; Dimed</div><div class="mgr">TJ</div><div class="score">7.00</div></div>
-        <div class="vs">vs</div>
-        <div class="side right"><div class="team">Team KAS</div><div class="mgr">Mike S</div><div class="score">0.00</div></div>
+  <div class="matchup reveal">
+    <div class="mrow">
+      <div class="side">
+        <div class="team">Henrys Heros</div>
+        <div class="mgr">Chris</div>
+        <div class="score">3.00</div>
       </div>
-      <div class="statlines">
-        <div class="statline"><span class="lbl">Already Played</span><span class="val">Jason Myers (K) &middot; TJ<span class="d">7.00 (&minus;0.67)</span></span></div>
+      <div class="vs">vs</div>
+      <div class="side r">
+        <div class="team">Ken You Not Pickett</div>
+        <div class="mgr">Rob</div>
+        <div class="score">4.10</div>
       </div>
-      <p class="verdict">TJ&rsquo;s lead is Jason Myers&rsquo; leg and nothing else; Mike S hasn&rsquo;t scored yet but still projects at 125.01 with Josh Allen anchoring Sunday. TJ counters with Jayden Daniels and Bijan Robinson against a soft Pittsburgh front.</p>
-      <span class="vl">Prediction</span>
-      <p class="pred">Nico&rsquo;d &amp; Dimed, 126&ndash;121</p>
-    </article>
+    </div>
+    <div class="statlines">
+      <div class="statline bad"><span class="tag">Bust</span><span class="who">Harrison Mevis</span><span class="ctx">LAR K &middot; Henrys Heros</span><span class="pts">1.00</span><span class="d">proj 7.82 (&minus;6.82)</span></div>
+      <div class="statline bad"><span class="tag">Bust</span><span class="who">Rams DEF</span><span class="ctx">LAR DEF &middot; Henrys Heros</span><span class="pts">2.00</span><span class="d">proj 6.04 (&minus;4.04)</span></div>
+      <div class="statline bad"><span class="tag">Bust</span><span class="who">Davante Adams</span><span class="ctx">LAR WR &middot; Ken You Not Pickett</span><span class="pts">4.10</span><span class="d">proj 10.87 (&minus;6.77)</span></div>
+    </div>
+    <p class="verdict">Both of these rosters had money on the Rams game, but only one of them doubled down. Chris started both the Rams' kicker and their defense, and got a combined 10.86 points fewer than projected for the trouble &mdash; a single extra point and a lone interception is what a 27-7 loss buys you. Rob's exposure was smaller but still real: Davante Adams's 3-catch, 26-yard day was well off his own number. Even so, Pickett comes out ahead on both counts: Yahoo has him up 121.64 to 111.55, and Blackhat agrees, 111.55 to 104.68.</p>
+    <div class="pred"><b>Yahoo</b>Ken You Not Pickett by 10.1 (121.64&ndash;111.55)</div>
+    <div class="pred alt"><b>Blackhat</b>Ken You Not Pickett by 6.9 (111.55&ndash;104.68)</div>
   </div>
 </div></section>
 
 <section class="act"><div class="wrap">
   <div class="narrow reveal">
     <div class="kicker">Waiver Wire</div>
-    <h2>One legend, gone for a dollar.</h2>
+    <h2>Dao made the boldest move of the week, and it cost him a dollar.</h2>
+    <p>Two days before kickoff, and one manager already blinked hard.</p>
   </div>
-  <div class="recbook">
-    <div class="rec reveal">
-      <div class="k">Waiver Shocker</div>
-      <div class="v">$1</div>
-      <div class="s"><strong>Dao (D-Unit)</strong> dropped Travis Kelce for Michael Mayer early Wednesday morning. No trade, no fanfare &mdash; just gone.</div>
-    </div>
-    <div class="rec reveal">
-      <div class="k">Busiest Manager</div>
-      <div class="v">3 moves</div>
-      <div class="s"><strong>Curtis</strong> churned his kicker, defense, and an IR&rsquo;d Ricky Pearsall on waivers Wednesday &mdash; a lot of activity for a team about to lose its matchup anyway.</div>
-    </div>
+
+  <div class="recbook reveal">
+    <article class="rec bad">
+      <div class="k">The stunner</div>
+      <div class="v">Kelce, $1</div>
+      <div class="s">D-Unit cut Travis Kelce loose entirely and spent a dollar on Michael Mayer instead &mdash; from the same manager who put 54% of his auction cap into Jahmyr Gibbs and Ja'Marr Chase this summer. Bold, or a man who knows something about a 37-year-old's snap count the rest of us don't.</div>
+    </article>
+    <article class="rec">
+      <div class="k">Full reshuffle</div>
+      <div class="v">Curtis, 3 moves</div>
+      <div class="s">The Annexation of PR dropped Ricky Pearsall (SF WR, on IR) for Tre Tucker, swapped the Bills defense for the Lions, and traded Wil Lutz for Tyler Loop at kicker &mdash; a full lineup reshuffle capping off a rough 48 hours that also included Stafford and Nacua both busting Thursday.</div>
+    </article>
+    <article class="rec teal">
+      <div class="k">Zero dollar fliers</div>
+      <div class="v">Eric &amp; Mike E</div>
+      <div class="s">The McClusterfucks grabbed Chris Rodriguez Jr. and Kaelon Black for nothing and flipped the Vikings defense for the Chargers; Sherlock added Tyjae Spears for the same price. Cheap depth, no real story yet.</div>
+    </article>
+    <article class="rec">
+      <div class="k">Last-minute</div>
+      <div class="v">D-Unit, today</div>
+      <div class="s">Dao also added the Titans defense and dropped De'Zhaun Stribling (questionable, SF WR) to waivers this afternoon &mdash; the same manager doing the most roster tinkering of anyone before a single Sunday snap.</div>
+    </article>
   </div>
 </div></section>
 
 <section class="act"><div class="wrap">
   <div class="narrow reveal">
     <div class="kicker">Injury Watch</div>
-    <h2>Two real ones this week.</h2>
+    <h2>One real problem, two to keep an eye on.</h2>
   </div>
-  <div class="recbook">
-    <div class="rec bad reveal">
-      <div class="k">A.J. Brown &middot; Chad&rsquo;s WR</div>
-      <div class="v">Out 4+ wks</div>
-      <div class="s">High ankle sprain, suffered in the second half of Wednesday&rsquo;s loss. Per Ian Rapoport, expected out at least four weeks &mdash; a real hit to Chad&rsquo;s receiving corps starting next week.</div>
-    </div>
-    <div class="rec bad reveal">
-      <div class="k">Brock Bowers &middot; TJ&rsquo;s $36 Keeper</div>
-      <div class="v">Out Wk 1</div>
-      <div class="s">Meniscus trim procedure Tuesday in Dallas, traced back to training camp. Expected back in one to two weeks. TJ already has Trey McBride starting in his place &mdash; no emergency, but worth tracking given what he paid.</div>
-    </div>
+
+  <div class="keystat bad reveal"><b>The real one</b>A.J. Brown (NE WR, HoldMyCHUBBBA) suffered a high ankle sprain in the third quarter against Seattle when his foot got trapped under a defender going for a low throw. X-rays came back negative for a fracture, but the expectation is at least four weeks out. Chad's WR1 is gone for essentially a month right as the season starts.</div>
+
+  <div class="panel reveal">
+    <p><strong>Malik Nabers</strong> (NYG WR, Sherlock &mdash; a $21 keeper) spent the week playing coy about his own availability for Sunday's game against Dallas. The latest reporting has him trending toward playing, but it's worth checking his status again before Mike E's flex spot is locked in.</p>
+    <p><strong>Jeremiyah Love</strong> (ARI RB, The Annexation of PR) is working back from a preseason ankle injury and is officially a game-time decision for Sunday's early game against the Chargers &mdash; worth a lineup check for Curtis before kickoff, on top of everything else that's gone wrong for him this week.</p>
+    <p>For the record: Matthew Stafford is not hurt. Sean McVay pulled him because the game was decided, not because of an injury. Small comfort for Curtis &mdash; the fantasy line doesn't care why.</p>
   </div>
 </div></section>
 
-<section class="act"><div class="wrap">
-  <div class="narrow reveal">
-    <p class="pull">Everyone&rsquo;s 0&ndash;0&ndash;0 on paper. Mike E and Dao are already playing with house money. Curtis is twenty points in the hole. And a Hall of Fame tight end just got let go for a dollar.</p>
-    <p class="sig">Mohn Jadden &mdash; Keeping it real since 2014.</p>
-  </div>
+<section class="act"><div class="wrap narrow reveal">
+  <div class="kicker">Final Word</div>
+  <h2>Two games down, eight to go.</h2>
+  <p class="pull">The Rams did more to this league in one Thursday night than most bye weeks manage all season &mdash; five rosters touched, one quarterback benched by his own coach, and a keeper WR held to single digits. Nobody's record means a thing yet, but the board's already telling two of you the wrong story about who's winning.</p>
+  <p>Sunday sorts out the rest of it. Set your lineups, check Nabers and Love one more time before kickoff, and enjoy the fact that somewhere in this league, a Hall of Fame tight end is sitting on waivers for a dollar and nobody's claimed him yet.</p>
+  <p class="sig">Mohn Jadden &mdash; Keeping it real since who knows?</p>
 </div></section>
 
-<div class="wrap"><footer>The Franchise &middot; Week 1, 2026 &middot; Compiled by Mohn Jadden.</footer></div>
+<div class="wrap"><footer>
+  The Franchise, 2026, Week 1. Live Proj and scores per Yahoo Fantasy Sports as of Friday, September 11. Blackhat numbers are BHF's independent six-source half-PPR consensus, using actual points for already-played players and BHF projections for the rest &mdash; same method as Yahoo's own Live Proj. All figures subject to Yahoo's stat corrections through Thursday, Sept 17.
+</footer></div>
 
 <script>
-const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+}),{threshold:0,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+const revealIn=()=>document.querySelectorAll('.reveal:not(.in)').forEach(e=>{
+  const r=e.getBoundingClientRect();
+  if(r.top<innerHeight*0.92 && r.bottom>0) e.classList.add('in');
+});
+revealIn();
+addEventListener('load',revealIn,{once:true});
 </script>
 </body>
 </html>
