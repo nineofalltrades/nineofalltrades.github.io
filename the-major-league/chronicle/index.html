@@ -258,8 +258,8 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .sitenav a:hover{color:var(--gold);background:rgba(232,180,74,.08);border-bottom:none}
 .sitenav a.here{color:var(--gold)}
 @media(max-width:720px){
- .sitenav .links{width:100%}
- .sitenav a{flex:1 1 auto;justify-content:center;padding:12px 8px}
+ .sitenav .links{width:100%;display:grid;grid-template-columns:1fr 1fr}
+ .sitenav a{justify-content:center;padding:12px 6px;white-space:nowrap;letter-spacing:.08em}
 }
 
 @media(max-width:720px){
@@ -291,6 +291,7 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
   <div class="links">
     <a href="/the-major-league/">Home</a>
     <a href="/the-major-league/recap/">Recap</a>
+    <a href="/the-major-league/draft-grades/">Draft Grades</a>
     <a class="here" href="/the-major-league/chronicle/">Chronicle</a>
   </div>
 </nav>

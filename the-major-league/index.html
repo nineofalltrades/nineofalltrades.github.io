@@ -84,8 +84,8 @@ footer{border-top:1px solid var(--edge);padding:var(--s4) 0 0;margin-top:var(--s
  .card{min-height:0}
  .cat-head{flex-direction:column;align-items:flex-start;gap:4px}
  body{background-attachment:scroll}
- .sitenav .links{width:100%}
- .sitenav a{flex:1 1 auto;justify-content:center;padding:12px 8px}
+ .sitenav .links{width:100%;display:grid;grid-template-columns:1fr 1fr}
+ .sitenav a{justify-content:center;padding:12px 6px;white-space:nowrap;letter-spacing:.08em}
 }
 </style>
 </head>
@@ -98,6 +98,7 @@ footer{border-top:1px solid var(--edge);padding:var(--s4) 0 0;margin-top:var(--s
   <div class="links">
     <a class="here" href="/the-major-league/">Home</a>
     <a href="/the-major-league/recap/">Recap</a>
+    <a href="/the-major-league/draft-grades/">Draft Grades</a>
     <a href="/the-major-league/chronicle/">Chronicle</a>
   </div>
 </nav>
@@ -105,7 +106,7 @@ footer{border-top:1px solid var(--edge);padding:var(--s4) 0 0;margin-top:var(--s
 <header class="hero">
   <div class="kicker">The Major League &middot; 2026</div>
   <h1>Sit down.<br>I have notes.</h1>
-  <p class="lede">Fifteen years of receipts, and Week 1 is already in the books. Start with the recap. The chronicle is filed underneath.</p>
+  <p class="lede">Fifteen years of receipts, Week 1 is already in the books, and the draft grades are in. Start with the recap. The snake is filed underneath.</p>
 </header>
 
 <section class="cat" aria-labelledby="this-week">
@@ -119,6 +120,21 @@ footer{border-top:1px solid var(--edge);padding:var(--s4) 0 0;margin-top:var(--s
       <h2>Seniority Rules.</h2>
       <p>CadillacKulpDeville opened the season by burying Human Psentipede by 85. Four of five favorites covered. The defending champ is already 0&ndash;1.</p>
       <div class="go">Open the recap &rarr;</div>
+    </a>
+  </div>
+</section>
+
+<section class="cat" aria-labelledby="draft-night">
+  <div class="cat-head">
+    <div class="kicker" id="draft-night">Draft night</div>
+    <div class="note">The snake, already graded.</div>
+  </div>
+  <div class="cards">
+    <a class="card span" href="/the-major-league/draft-grades/">
+      <div class="tag">Draft grades</div>
+      <h2>The Snake Is Over. Some Of You Reached.</h2>
+      <p>160 picks, one snake, and an algorithm that already made up its mind about Josh Jacobs. Ryan posted the A+. Just Haefner posted the D.</p>
+      <div class="go">Open the draft grades &rarr;</div>
     </a>
   </div>
 </section>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07090E">
+<title>The Major League &mdash; 2026 Draft Grades</title>
+<meta name="description" content="Ten teams, sixteen rounds, 160 snake picks. The 2026 Major League draft grades.">
+<link rel="canonical" href="/the-major-league/draft-grades/">
+<style>
+:root{
+ --ink:#07090E; --p1:#0D1119; --p2:#141A25; --p3:#1D2534; --line:#2A3446;
+ --edge:#28324399; --text:#EDF1F8; --dim:#93A3B9; --faint:#61728A;
+ --rb:#F0894D; --wr:#3FC7AE; --qb:#B07EF0; --te:#F2C94C;
+ --gold:#E8B44A; --good:#3DDC97; --bad:#FF6B6B; --hot:#FF8355;
+ --serif:ui-serif,'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+ --sans:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+ --s1:8px;--s2:16px;--s3:26px;--s4:44px;--s5:76px;--s6:120px;
+ --sh1:0 1px 2px rgba(2,5,10,.55),0 3px 10px rgba(2,5,10,.4);
+ --sh2:0 3px 8px rgba(2,5,10,.6),0 16px 40px rgba(2,5,10,.5);
+ --sh3:0 6px 16px rgba(2,5,10,.65),0 32px 80px rgba(232,180,74,.07);
+ --pad:clamp(16px,4vw,26px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.75;
+ -webkit-font-smoothing:antialiased;overflow-x:hidden;
+ background-image:
+  radial-gradient(1100px 620px at 8% -6%,rgba(232,180,74,.10),transparent 62%),
+  radial-gradient(900px 560px at 96% 12%,rgba(63,199,174,.07),transparent 60%),
+  radial-gradient(900px 700px at 40% 62%,rgba(240,137,77,.06),transparent 64%),
+  radial-gradient(800px 600px at 70% 100%,rgba(176,126,240,.05),transparent 62%);
+ background-attachment:fixed;}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:1;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--pad);position:relative;z-index:2}
+.narrow{max-width:720px;margin:0 auto}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:-.035em;line-height:.98;
+ font-size:clamp(34px,9vw,88px)}
+h2{font-family:var(--serif);font-weight:600;letter-spacing:-.03em;line-height:1.08;
+ font-size:clamp(26px,5.2vw,52px)}
+h3{font-family:var(--serif);font-size:clamp(19px,2.6vw,27px);letter-spacing:-.02em;font-weight:600}
+.kicker{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+p{font-size:clamp(16px,2.4vw,17.5px);color:var(--dim);margin-top:var(--s2)}
+p strong,li strong{color:var(--text);font-weight:600}
+em{color:var(--text);font-style:italic}
+section{padding:clamp(56px,12vw,120px) 0;position:relative}
+.act{border-top:1px solid var(--edge)}
+.reveal{opacity:0;transform:translateY(22px);
+ transition:opacity .85s cubic-bezier(.16,.8,.3,1),transform .85s cubic-bezier(.16,.8,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+ .reveal{opacity:1;transform:none;transition:none}
+ .swipe-hint .swipe-arrow,.swipe-edge span{animation:none}
+}
+
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+ padding:clamp(40px,8vw,76px) 0 clamp(56px,10vw,76px)}
+.hero h1{margin:var(--s3) 0}
+.hero .lede{font-size:clamp(17px,2.6vw,21px);color:var(--dim);max-width:62ch}
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,4vw,44px);margin-top:var(--s4)}
+.fig .v{font-family:var(--serif);font-size:clamp(28px,6vw,46px);line-height:1;letter-spacing:-.03em;color:var(--gold)}
+.fig .l{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:8px}
+.scrollcue{margin-top:var(--s4);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.scrollcue span{display:inline-block;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+.pull{font-family:var(--serif);font-size:clamp(22px,4vw,40px);line-height:1.25;letter-spacing:-.02em;
+ color:var(--text);border-left:2px solid var(--gold);padding-left:clamp(14px,3vw,26px);margin:var(--s4) 0}
+
+.keystat{background:linear-gradient(170deg,#1B2432,#131A26);border:1px solid var(--edge);
+ border-left:2px solid var(--gold);border-radius:11px;padding:var(--s2) var(--s3);margin:var(--s3) 0;
+ font-size:clamp(14.5px,2.2vw,15.5px);color:var(--dim)}
+.keystat b{color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-size:11.5px;
+ display:block;margin-bottom:5px}
+.keystat.qb{border-left-color:var(--qb)} .keystat.qb b{color:var(--qb)}
+
+.panel{background:linear-gradient(170deg,var(--p2),var(--p1));border:1px solid var(--edge);
+ border-radius:17px;padding:clamp(14px,3vw,26px);box-shadow:var(--sh2);margin-top:var(--s3)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:right;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);
+ font-weight:600;padding:8px 10px;border-bottom:1px solid var(--edge);white-space:nowrap}
+td{text-align:right;padding:9px 10px;border-bottom:1px solid #161E2B;font-variant-numeric:tabular-nums}
+th.l,td.l{text-align:left}
+tbody tr{transition:background .16s}
+.good{color:var(--good)} .bad{color:var(--bad)} .gold{color:var(--gold)}
+.muted{color:var(--faint);font-size:12px}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:thin}
+.scroll table{min-width:640px}
+.scroll-wrap{position:relative}
+.swipe-hint{display:none;align-items:center;justify-content:flex-end;gap:8px;
+ margin:0 0 10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+ color:var(--faint);font-weight:600;transition:opacity .25s}
+.swipe-hint .swipe-arrow{display:inline-flex;align-items:center;color:var(--gold);
+ font-size:18px;line-height:1;letter-spacing:-.12em;
+ animation:nudge 1.35s ease-in-out infinite}
+.swipe-edge{display:none;position:absolute;top:8px;right:0;bottom:8px;width:42px;
+ pointer-events:none;z-index:4;align-items:center;justify-content:flex-end;
+ padding-right:6px;transition:opacity .25s;
+ background:linear-gradient(90deg,transparent,rgba(20,26,37,.55) 28%,rgba(20,26,37,.96))}
+.swipe-edge span{color:var(--gold);font-size:26px;line-height:1;font-weight:600;
+ animation:nudge 1.35s ease-in-out infinite}
+.panel.has-overflow .swipe-hint{display:flex}
+.panel.has-overflow .swipe-edge{display:flex}
+.panel.at-end .swipe-edge,.panel.at-end .swipe-hint{opacity:0}
+@keyframes nudge{0%,100%{transform:translateX(0);opacity:.45}50%{transform:translateX(6px);opacity:1}}
+th.grade,td.grade,th.pin,td.pin{position:sticky;left:0;z-index:2;text-align:left;white-space:nowrap;
+ background:var(--p2);box-shadow:8px 0 10px -8px rgba(2,5,10,.85);min-width:52px}
+th.grade,th.pin{z-index:3}
+td.grade strong,td.pin strong{font-size:15px;letter-spacing:.02em}
+.board-table{border-collapse:separate;border-spacing:0}
+.scroll .picks-table{min-width:720px}
+
+.board{display:flex;flex-direction:column;gap:var(--s2);margin-top:var(--s3)}
+.kc{background:linear-gradient(165deg,var(--p3),var(--p1));border:1px solid var(--edge);border-radius:16px;
+ padding:clamp(16px,3vw,26px);box-shadow:var(--sh2);position:relative;overflow:hidden}
+.kc::before{content:'';position:absolute;inset:0 0 auto 0;height:2px;
+ background:linear-gradient(90deg,var(--gold),transparent 70%)}
+.kc.hot::before{background:linear-gradient(90deg,var(--bad),transparent 70%)}
+.kc.clean::before{background:linear-gradient(90deg,var(--good),transparent 70%)}
+.kc.light::before{background:linear-gradient(90deg,var(--wr),transparent 70%)}
+.kc.champ{border-color:rgba(232,180,74,.5);box-shadow:var(--sh3)}
+.kc .top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.kc .cost{font-family:var(--serif);font-size:clamp(36px,6vw,48px);line-height:1;letter-spacing:-.04em;color:var(--gold)}
+.kc.hot .cost{color:var(--bad)}
+.kc.clean .cost{color:var(--good)}
+.kc.light .cost{color:var(--wr)}
+.kc .who{min-width:0}
+.kc .team{font-family:var(--serif);font-size:clamp(20px,3vw,26px);letter-spacing:-.02em;line-height:1.15}
+.kc .mgr{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:4px}
+.champ-tag{display:inline-block;margin-top:6px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+ color:var(--ink);background:var(--gold);padding:3px 8px;border-radius:5px;font-weight:700}
+.keepers{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--s3)}
+.chip{display:inline-flex;align-items:baseline;gap:8px;padding:7px 11px;border-radius:9px;
+ background:#161E2B;border:1px solid var(--edge);font-size:14px;color:var(--text)}
+.chip .pos{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.pGOOD{color:var(--good)} .pBAD{color:var(--bad)} .pGOLD{color:var(--gold)}
+.kc .verdict{font-size:14.5px;color:var(--dim);line-height:1.65;margin-top:var(--s2)}
+.kc .vl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+ font-weight:600;margin-top:var(--s3);display:block}
+.kc.hot .vl{color:var(--bad)} .kc.clean .vl{color:var(--good)} .kc.light .vl{color:var(--wr)}
+.statstrip{display:flex;flex-wrap:wrap;gap:18px 28px;margin-top:var(--s3)}
+.statstrip .stat b{display:block;font-family:var(--serif);font-size:clamp(20px,3vw,26px);
+ letter-spacing:-.03em;line-height:1;color:var(--text)}
+.statstrip .stat span{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+
+.spine{margin:var(--s3) 0 0}
+.spinechart{display:flex;flex-direction:column;gap:7px}
+.row{display:grid;grid-template-columns:minmax(92px,168px) 1fr;gap:12px;align-items:center}
+.row .yl{font-size:12px;color:var(--faint);text-align:right;line-height:1.2}
+.row .track{position:relative;height:40px;background:#111825;border-radius:8px;overflow:hidden;
+ border:1px solid #1D2634}
+.row .fill{position:absolute;inset:0 auto 0 0;border-radius:7px;transform-origin:left;transform:scaleX(0);
+ background:linear-gradient(90deg,rgba(232,180,74,.85),rgba(232,180,74,.32));
+ transition:transform 1s cubic-bezier(.18,.85,.32,1.02)}
+.in .row .fill{transform:scaleX(1)}
+.row.hot .fill{background:linear-gradient(90deg,var(--bad),rgba(255,107,107,.28))}
+.row.good .fill{background:linear-gradient(90deg,var(--good),rgba(61,220,151,.28))}
+.row .lab{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;
+ padding:0 12px;font-size:13px;z-index:2;pointer-events:none;gap:8px}
+.row .lab .who{color:var(--text);font-weight:600;letter-spacing:-.01em;
+ text-shadow:0 1px 3px rgba(0,0,0,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.row .lab .amt{color:var(--text);font-weight:700;font-variant-numeric:tabular-nums;
+ text-shadow:0 1px 3px rgba(0,0,0,.75);flex:none}
+.spinenote{display:flex;justify-content:space-between;font-size:12.5px;color:var(--faint);
+ border-top:1px solid var(--edge);padding-top:10px;margin-top:10px;flex-wrap:wrap;gap:10px}
+
+.recbook{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--s2);margin-top:var(--s3)}
+.rec{background:linear-gradient(165deg,#1E2A3C,var(--p1));border:1px solid rgba(232,180,74,.22);
+ border-radius:14px;padding:16px 18px;position:relative;overflow:hidden}
+.rec::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
+.rec.bad::before{background:var(--bad)}
+.rec.teal::before{background:var(--wr)}
+.rec.rb::before{background:var(--rb)}
+.rec.qb::before{background:var(--qb)}
+.rec .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.rec.bad .k{color:var(--bad)}
+.rec.teal .k{color:var(--wr)}
+.rec.rb .k{color:var(--rb)}
+.rec.qb .k{color:var(--qb)}
+.rec .v{font-family:var(--serif);font-size:26px;line-height:1.15;margin:8px 0 6px;letter-spacing:-.02em}
+.rec .s{font-size:13.5px;color:var(--dim);line-height:1.5}
+
+details.fullboard{margin-top:var(--s3)}
+details.fullboard summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;
+ gap:12px;min-height:44px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+ font-weight:600}
+details.fullboard summary::-webkit-details-marker{display:none}
+details.fullboard summary .hint{color:var(--faint);font-weight:600}
+details.fullboard[open] summary .hint{color:var(--gold)}
+
+.tag-chip{display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+ padding:3px 7px;border-radius:999px}
+.tag-chip.value{color:var(--good);background:rgba(61,220,151,.12)}
+.tag-chip.reach{color:var(--bad);background:rgba(255,107,107,.12)}
+
+.sig{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:17px;margin-top:var(--s4);
+ padding-top:var(--s2);border-top:1px solid var(--edge)}
+footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(--faint);font-size:13.5px}
+
+@media(hover:hover) and (pointer:fine){
+ tbody tr:hover{background:#18202Ecc}
+ tbody tr:hover td.grade,tbody tr:hover td.pin{background:#18202E}
+}
+@media(max-width:720px){
+ .figs{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+ .hero{min-height:0}
+ .row{grid-template-columns:1fr}
+ .row .yl{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+ .row .track{height:46px}
+ .kc .top{flex-direction:column-reverse;gap:8px}
+ .kc .cost{font-size:40px}
+ table{font-size:12.5px}
+ td.grade strong,td.pin strong{font-size:16px}
+ body{background-attachment:scroll}
+}
+@media(max-width:420px){
+ .figs{grid-template-columns:1fr 1fr}
+}
+.sitenav{display:flex;flex-wrap:wrap;align-items:center;padding:12px 0 0}
+.sitenav .brand{flex:1 1 auto;min-width:min(100%,160px);padding:10px 12px 10px 0;
+ font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;
+ text-decoration:none;border-bottom:none}
+.sitenav .links{display:flex;flex-wrap:wrap}
+.sitenav a{color:var(--faint);text-decoration:none;border-bottom:none;font-size:11.5px;letter-spacing:.12em;
+ text-transform:uppercase;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;
+ border-radius:8px}
+.sitenav a:hover{color:var(--gold);background:rgba(232,180,74,.08);border-bottom:none}
+.sitenav a.here{color:var(--gold)}
+.sitenav a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media(max-width:720px){
+ .sitenav .links{width:100%;display:grid;grid-template-columns:1fr 1fr}
+ .sitenav a{justify-content:center;padding:12px 6px;white-space:nowrap;letter-spacing:.08em}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="wrap">
+<nav class="sitenav" aria-label="Site">
+  <a class="brand" href="/the-major-league/">Mohn Jadden</a>
+  <div class="links">
+    <a href="/the-major-league/">Home</a>
+    <a href="/the-major-league/recap/">Recap</a>
+    <a class="here" href="/the-major-league/draft-grades/">Draft Grades</a>
+    <a href="/the-major-league/chronicle/">Chronicle</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="kicker">The Major League &middot; 2026 Draft Grades &middot; By Mohn Jadden</div>
+  <h1>The Snake Is Over.<br>Some Of You Reached.</h1>
+  <p class="lede">Ten teams. Sixteen rounds. 160 picks, one snake, and an algorithm that has already made up its mind about Josh Jacobs. Ryan posted the best-graded draft in the room. Just Haefner posted the worst. The guy who built the model still took the lottery ticket his own math told him not to buy.</p>
+  <div class="figs">
+    <div class="fig"><div class="v">160</div><div class="l">Picks made</div></div>
+    <div class="fig"><div class="v">16</div><div class="l">Rounds</div></div>
+    <div class="fig"><div class="v">+73.3</div><div class="l">Best net value, Van Tine</div></div>
+    <div class="fig"><div class="v">A+</div><div class="l">Top grade</div></div>
+  </div>
+  <div class="scrollcue"><span>&darr; Read it as a ranking of nerve</span></div>
+</header>
+</div>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Method</div>
+    <h2>A projection, not a verdict.</h2>
+    <p>This is a snake, not an auction. There is no price tag, so the currency is <strong>draft capital</strong> &mdash; the pick itself &mdash; measured against the field&rsquo;s consensus opinion of that player (a blended ADP across CBS, ESPN, FFToday, FantasyPros, and Sleeper) and against Black Hat Fantasy&rsquo;s own projected VOR at 1-point PPR, scaled to this league&rsquo;s settings (10 teams, 1 QB / 2 RB / 3 WR / TE / FLEX / K / DEF).</p>
+    <p><strong>Value vs. market</strong> is the projected VOR of the best player available at that exact overall pick, per the field&rsquo;s ADP order, minus the VOR of the player actually taken. Negative is a bargain. Positive is a reach. Same sign convention as the auction report. <strong>Projected roster VOR</strong> is points over a replacement-level player at that position, summed across each team&rsquo;s projected Week 1 starting lineup. No keeper math: this redraft does not carry keepers, so every pick here was earned in real time, in draft order.</p>
+    <p>Draft night is a head start, not a verdict. We grade the process now and settle the score in January.</p>
+    <div class="keystat qb"><b>One disclosure</b>Black Hat Fantasy&rsquo;s own model does <em>not</em> buy Josh Jacobs at his consensus ADP (42nd overall) &mdash; it has him projected below replacement. He fell to pick 138 anyway, and somebody still took the swing. Grade him with your own risk tolerance, not just ours. See: The Defendants, LaddGPT.</div>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Board</div>
+    <h2>Ordered by grade.</h2>
+    <p>The at-a-glance scoreboard, best draft to worst. Full breakdowns below for anyone who needs the receipts.</p>
+  </div>
+  <div class="panel reveal" data-scroll-hint>
+    <div class="swipe-hint" aria-hidden="true">
+      <span>Slide for more</span>
+      <span class="swipe-arrow">&rsaquo;&rsaquo;</span>
+    </div>
+    <div class="scroll-wrap">
+      <div class="scroll" tabindex="0" role="region" aria-label="Draft grades by team. Slide sideways for more columns.">
+        <table class="board-table">
+          <thead>
+            <tr>
+              <th class="grade">Grade</th>
+              <th class="l">Team</th><th class="l">Mgr</th><th>Slot</th>
+              <th class="l">Round 1</th><th class="l">Best Value</th><th class="l">Biggest Reach</th>
+            </tr>
+          </thead>
+          <tbody id="board-body"></tbody>
+        </table>
+      </div>
+      <div class="swipe-edge" aria-hidden="true"><span>&rsaquo;</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Defendants</div>
+    <h2>The reigning champ goes first.</h2>
+    <p>Everyone else, best to worst.</p>
+  </div>
+  <div class="board" id="defendants-body"></div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Verdict</div>
+    <h2>Six awards nobody asked for.</h2>
+    <p>Superlatives, handed down with sourcing.</p>
+  </div>
+  <div class="recbook reveal" id="rec-body"></div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Power Rankings</div>
+    <h2>Who actually wins games.</h2>
+    <p>Ranked by projected <em>starting-lineup</em> VOR plus how efficiently they drafted it. That is why CadillacKulpDeville can have the longest bar on this chart and still sit fifth: most raw talent in the league, bought at the worst price in the league. Bench darts that never take the field don&rsquo;t move this number. That&rsquo;s talent plus process. The schedule is next.</p>
+  </div>
+  <div class="panel reveal">
+    <div class="spine">
+      <div class="spinechart" id="power"></div>
+      <div class="spinenote"><span>Projected starting-lineup VOR</span><span>Inside bar: manager &middot; VOR</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Board, Uncut</div>
+    <h2>All 160 picks.</h2>
+    <p>Every name, in the order they came off the board. Value and reach tags are the same math as the grades above.</p>
+  </div>
+  <div class="panel reveal" data-scroll-hint>
+    <details class="fullboard">
+      <summary>
+        <span>Open the full draft board</span>
+        <span class="hint">160 rows</span>
+      </summary>
+      <div class="swipe-hint" aria-hidden="true">
+        <span>Slide for more</span>
+        <span class="swipe-arrow">&rsaquo;&rsaquo;</span>
+      </div>
+      <div class="scroll-wrap">
+        <div class="scroll" tabindex="0" role="region" aria-label="Full 160-pick draft board. Slide sideways for more columns.">
+          <table class="board-table picks-table">
+            <thead>
+              <tr>
+                <th class="pin">#</th>
+                <th>Rd.Pk</th>
+                <th class="l">Team</th>
+                <th class="l">Player</th>
+                <th>ADP</th>
+                <th>Proj. VOR</th>
+                <th class="l">Tag</th>
+              </tr>
+            </thead>
+            <tbody id="picks-body"></tbody>
+          </table>
+        </div>
+        <div class="swipe-edge" aria-hidden="true"><span>&rsaquo;</span></div>
+      </div>
+    </details>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap narrow reveal">
+  <div class="kicker">Closing Argument</div>
+  <div class="pull">Ten managers walked in with a plan. Two Kulps are still fighting each other for the family name, Al renamed his team again, and the guy who built the model still couldn&rsquo;t resist a 138th-overall lottery ticket his own algorithm told him not to buy.</div>
+  <p>The picks are locked. The projections are in. We&rsquo;ll find out who was right in January.</p>
+  <p class="sig">&mdash; Mohn Jadden</p>
+</div></section>
+
+<div class="wrap"><footer>
+  Sourced from a blended ADP (CBS, ESPN, FFToday, FantasyPros, Sleeper) and Black Hat Fantasy projected VOR at 1-point PPR,
+  scaled to this room: ten teams, 1 QB / 2 RB / 3 WR / TE / FLEX / K / DEF. Value vs. market compares the player taken
+  against the best available at that overall pick &mdash; negative is a bargain, positive is a reach. Grades weight
+  full-roster value-vs-market and projected starter VOR; the Power Rankings blend starting-lineup VOR with draft efficiency
+  and are not meant to match The Board one-for-one. No keeper discount. Managers tracked by account, not by team name,
+  which changes most years.
+</footer></div>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+}),{threshold:0,rootMargin:'0px 0px -8% 0px'});
+
+function gTone(g){
+  if(g[0]==='A') return 'clean';
+  if(g[0]==='B') return '';
+  if(g[0]==='C') return 'light';
+  return 'hot';
+}
+function gCell(g){
+  const t=gTone(g);
+  const cls=t==='clean'?'good':(t==='light'?'':(t==='hot'?'bad':'gold'));
+  return `<strong class="${cls}">${g}</strong>`;
+}
+
+const board=[
+  {team:"Van Tine", mgr:"Ryan", slot:9, r1:"Amon-Ra St. Brown", best:"Amon-Ra St. Brown &minus;66.4", reach:"Alvin Kamara +49.9", grade:"A+"},
+  {team:"LaddGPT", mgr:"9ofalltrades (TJ)", slot:3, r1:"Bijan Robinson", best:"Tee Higgins &minus;71.1", reach:"Brian Thomas Jr. +39.8", grade:"A"},
+  {team:"Cha$ing Dubs", mgr:"Kevin", slot:2, r1:"Ja&rsquo;Marr Chase", best:"Drake London &minus;47.3", reach:"Lamar Jackson +43.6", grade:"A"},
+  {team:"Human Psentipede", mgr:"Michaeopteryx", slot:6, r1:"Jonathan Taylor", best:"Rashee Rice &minus;29.1", reach:"Emmett Johnson +69.6", grade:"B+"},
+  {team:"CadillacKulpDeville", mgr:"KulpCommissioner", slot:1, r1:"Jahmyr Gibbs", best:"Tetairoa McMillan &minus;29.1", reach:"Jonah Coleman +98.9", grade:"B+"},
+  {team:"WhoseHungry?", mgr:"Mike", slot:10, r1:"Saquon Barkley", best:"Mark Andrews &minus;40.3", reach:"Tyler Allgeier +80.9", grade:"B-"},
+  {team:"Greatest_of_AL_time", mgr:"Al", slot:4, r1:"Puka Nacua", best:"George Kittle &minus;11.6", reach:"Keenan Allen +34.6", grade:"C+"},
+  {team:"OJ no Kulp", mgr:"pat kulp", slot:8, r1:"James Cook III", best:"Chris Olave &minus;57.6", reach:"Keaton Mitchell +104.2", grade:"C+"},
+  {team:"GooNads", mgr:"Natalie Fullerton", slot:5, r1:"Christian McCaffrey", best:"Michael Wilson &minus;30.2", reach:"Dak Prescott +74.5", grade:"C"},
+  {team:"Medina Sod", mgr:"Just Haefner", slot:7, r1:"Jaxon Smith-Njigba", best:"Justin Herbert &minus;48.2", reach:"Parker Washington +62.1", grade:"D"}
+];
+
+document.getElementById('board-body').innerHTML=board.map(t=>`
+  <tr>
+    <td class="grade">${gCell(t.grade)}</td>
+    <td class="l"><strong>${t.team}</strong></td>
+    <td class="l">${t.mgr}</td>
+    <td>${t.slot}</td>
+    <td class="l">${t.r1}</td>
+    <td class="l good">${t.best}</td>
+    <td class="l bad">${t.reach}</td>
+  </tr>
+`).join('');
+
+const defendants=[
+  {
+    team:"WhoseHungry?", mgr:"Mike &middot; Slot 10 &middot; 2025 finish: 1st", grade:"B-", champ:true,
+    stats:[["481.9","Proj. starter VOR"],["2241","Proj. starter pts"],["&minus;67.9","Net draft value"],["Balanced","Roster build"]],
+    chips:[["ROUND 1","Saquon Barkley at 1.10",'gold'],["BEST VALUE","Mark Andrews &minus;40.3",'good'],["BIGGEST REACH","Tyler Allgeier +80.9",'bad']],
+    verdict:"Mike enters as the reigning champion and drafted like a man defending a title he&rsquo;d rather not risk &mdash; Saquon Barkley at 1.10, then CeeDee Lamb and DeVonta Smith by round 4. Nothing bold, nothing broken. The one swing he did take, Tyler Allgeier 43 spots ahead of his ADP in round 11, is the kind of pick a champion makes when he&rsquo;s bored."
+  },
+  {
+    team:"Van Tine", mgr:"Ryan &middot; Slot 9 &middot; 2025 finish: 8th", grade:"A+",
+    stats:[["559.7","Proj. starter VOR"],["2319","Proj. starter pts"],["+73.3","Net draft value"],["Balanced","Roster build"]],
+    chips:[["ROUND 1","Amon-Ra St. Brown at 1.9",'gold'],["BEST VALUE","Amon-Ra St. Brown &minus;66.4",'good'],["BIGGEST REACH","Alvin Kamara +49.9",'bad']],
+    verdict:"Ryan carries the highest bust rate in the league&rsquo;s history (33.3%) and just posted the single best-graded draft of the ten. Landing Amon-Ra St. Brown at 1.9 &mdash; five spots better than his own consensus ADP &mdash; set the tone; reaching for Alvin Kamara in round 11, his one real gamble, barely dents a 559.7 projected-VOR roster. Best value construction in the field, by our own math, from the league&rsquo;s least likely source."
+  },
+  {
+    team:"LaddGPT", mgr:"9ofalltrades (TJ) &middot; Slot 3 &middot; 2025 finish: 3rd", grade:"A",
+    stats:[["518.5","Proj. starter VOR"],["2280","Proj. starter pts"],["+56.2","Net draft value"],["Balanced","Roster build"]],
+    chips:[["ROUND 1","Bijan Robinson at 1.3",'gold'],["BEST VALUE","Tee Higgins &minus;71.1",'good'],["BIGGEST REACH","Brian Thomas Jr. +39.8",'bad']],
+    verdict:"TJ&rsquo;s own team, and the algorithm he built grades it kindly &mdash; Bijan Robinson at 1.3, then Tee Higgins falling to pick 43 for the best individual value grab in the league not named Amon-Ra. Then, round 14: Josh Jacobs, the one player Black Hat Fantasy&rsquo;s own projection model refuses to endorse. He drafted him anyway. Building the algorithm and immediately overruling it in the same draft is either commendable self-awareness or exactly the kind of thing that gets a bug filed against you."
+  },
+  {
+    team:"Cha$ing Dubs", mgr:"Kevin &middot; Slot 2 &middot; 2025 finish: 4th", grade:"A",
+    stats:[["517.3","Proj. starter VOR"],["2278","Proj. starter pts"],["+26.7","Net draft value"],["Hero RB","Roster build"]],
+    chips:[["ROUND 1","Ja&rsquo;Marr Chase at 1.2",'gold'],["BEST VALUE","Drake London &minus;47.3",'good'],["BIGGEST REACH","Lamar Jackson +43.6",'bad']],
+    verdict:"Kevin ran the closest thing to a textbook Hero-RB build in this league &mdash; Ja&rsquo;Marr Chase, wait on the position until Kyren Williams in round 2, back to receivers from there &mdash; and it graded as one of the three best drafts of the night. Drake London falling to pick 22 was the headline value; reaching a round early for Lamar Jackson was the only real ding."
+  },
+  {
+    team:"Human Psentipede", mgr:"Michaeopteryx &middot; Slot 6 &middot; 2025 finish: 6th", grade:"B+",
+    stats:[["535.0","Proj. starter VOR"],["2296","Proj. starter pts"],["&minus;80.2","Net draft value"],["Balanced","Roster build"]],
+    chips:[["ROUND 1","Jonathan Taylor at 1.6",'gold'],["BEST VALUE","Rashee Rice &minus;29.1",'good'],["BIGGEST REACH","Emmett Johnson +69.6",'bad']],
+    verdict:"Michaeopteryx already owns the most reaches in the league from last season (7) and one of the highest career bust rates in the field (29.8%), and drafted like someone trying to out-talent that reputation &mdash; Jonathan Taylor and De&rsquo;Von Achane give this roster the third-highest projected starter VOR out of ten. The bench is where it got expensive again: Emmett Johnson at pick 155 graded 69.6 points worse than a replacement-level dart throw at that slot, which is most of the gap between this being an A and a B+."
+  },
+  {
+    team:"CadillacKulpDeville", mgr:"KulpCommissioner &middot; Slot 1 &middot; 2025 finish: 5th", grade:"B+",
+    stats:[["588.9","Proj. starter VOR"],["2348","Proj. starter pts"],["&minus;142.3","Net draft value"],["Balanced","Roster build"]],
+    chips:[["ROUND 1","Jahmyr Gibbs at 1.1",'gold'],["BEST VALUE","Tetairoa McMillan &minus;29.1",'good'],["BIGGEST REACH","Jonah Coleman +98.9",'bad']],
+    verdict:"Brian bought the single most talented roster in the league on paper &mdash; 588.9 projected starter VOR, tops in the field &mdash; and paid full retail for every bit of it, finishing dead last in net draft value at &minus;142.3. Jonah Coleman at pick 140, 98.9 points worse than the going rate for that slot, was the low point. Great team. Terrible price."
+  },
+  {
+    team:"Greatest_of_AL_time", mgr:"Al &middot; Slot 4 &middot; 2025 finish: 10th", grade:"C+",
+    stats:[["446.4","Proj. starter VOR"],["2206","Proj. starter pts"],["&minus;116.7","Net draft value"],["Hero RB","Roster build"]],
+    chips:[["ROUND 1","Puka Nacua at 1.4",'gold'],["BEST VALUE","George Kittle &minus;11.6",'good'],["BIGGEST REACH","Keenan Allen +34.6",'bad']],
+    verdict:"Al renamed his team again &mdash; ALBERTosaurus is dead, long live Greatest_of_AL_time &mdash; which is turning into as much of a preseason ritual as the mock drafts themselves. Coming off a historically bad 2025 (&minus;453.9 team VOR, worst in the league by over 170 points), Puka Nacua at 1.4 was a perfectly sound start to a draft that graded out squarely in the middle. The name changes every year. So far, the results haven&rsquo;t."
+  },
+  {
+    team:"OJ no Kulp", mgr:"pat kulp &middot; Slot 8 &middot; 2025 finish: 9th", grade:"C+",
+    stats:[["432.0","Proj. starter VOR"],["2191","Proj. starter pts"],["&minus;107.6","Net draft value"],["Balanced","Roster build"]],
+    chips:[["ROUND 1","James Cook III at 1.8",'gold'],["BEST VALUE","Chris Olave &minus;57.6",'good'],["BIGGEST REACH","Keaton Mitchell +104.2",'bad']],
+    verdict:"pat kulp&rsquo;s draft covers the widest range of outcomes in the entire field: Chris Olave at pick 28 (57.6 points of free value), Trevor Lawrence and Garrett Wilson both falling well past their ADP &mdash; and, in the same 16 rounds, the single worst pick of the entire draft. Keaton Mitchell at pick 128 graded 104.2 points below what that slot is worth, and it&rsquo;s enough on its own to erase almost everything that went right."
+  },
+  {
+    team:"GooNads", mgr:"Natalie Fullerton &middot; Slot 5 &middot; 2025 finish: 2nd", grade:"C",
+    stats:[["414.5","Proj. starter VOR"],["2041","Proj. starter pts"],["&minus;92.7","Net draft value"],["Balanced","Roster build"]],
+    chips:[["ROUND 1","Christian McCaffrey at 1.5",'gold'],["BEST VALUE","Michael Wilson &minus;30.2",'good'],["BIGGEST REACH","Dak Prescott +74.5",'bad']],
+    verdict:"Natalie&rsquo;s 2025 was the best season of her career on paper (488.2 team VOR, runner-up finish), and she came back into 2026 and reached for a quarterback in round 5 anyway &mdash; Dak Prescott, 74.5 points of value left on the table, our War Crime Against the Cap. She also made it through all 16 rounds without drafting a kicker. Ravens D/ST landed in round 16; no K anywhere on the roster. The Zero-Kicker Watch has a new home."
+  },
+  {
+    team:"Medina Sod", mgr:"Just Haefner &middot; Slot 7 &middot; 2025 finish: 7th", grade:"D",
+    stats:[["444.2","Proj. starter VOR"],["2205","Proj. starter pts"],["&minus;205.8","Net draft value"],["Hero RB","Roster build"]],
+    chips:[["ROUND 1","Jaxon Smith-Njigba at 1.7",'gold'],["BEST VALUE","Justin Herbert &minus;48.2",'good'],["BIGGEST REACH","Parker Washington +62.1",'bad']],
+    verdict:"Just Haefner&rsquo;s roster carries the single worst net draft value in the league (&minus;205.8) despite a genuinely great QB2 grab &mdash; Justin Herbert fell all the way to pick 154, a 48.2-point bargain. The problem is everything in between: Parker Washington reached 14 spots ahead of ADP in round 6, and a Hero-RB build built around Jaxon Smith-Njigba at 1.7 never closed the gap it opened early. Lowest grade in the league."
+  }
+];
+
+document.getElementById('defendants-body').innerHTML=defendants.map(d=>{
+  const tone=gTone(d.grade);
+  const chips=d.chips.map(c=>`<span class="chip"><span class="pos p${c[2].toUpperCase()}">${c[0]}</span> ${c[1]}</span>`).join('');
+  const stats=d.stats.map(s=>`<div class="stat"><b>${s[0]}</b><span>${s[1]}</span></div>`).join('');
+  return `<article class="kc ${tone} reveal${d.champ?' champ':''}">
+    <div class="top">
+      <div class="who">
+        <div class="team">${d.team}</div>
+        <div class="mgr">${d.mgr}${d.champ?'<br><span class="champ-tag">Reigning Champion</span>':''}</div>
+      </div>
+      <div class="cost">${d.grade}</div>
+    </div>
+    <div class="statstrip">${stats}</div>
+    <div class="keepers">${chips}</div>
+    <span class="vl">Mohn&rsquo;s Verdict</span>
+    <p class="verdict">${d.verdict}</p>
+  </article>`;
+}).join('');
+
+const rec=[
+  {tone:'', k:'Steal of the Draft', v:'Tee Higgins &middot; LaddGPT', s:'Pick 43, ADP 22. Fell 21 spots and graded 71.1 points better than the slot was worth.'},
+  {tone:'bad', k:'Reach of the Draft', v:'Keaton Mitchell &middot; OJ no Kulp', s:'Pick 128, ADP 183. Taken 55 spots early and graded 104.2 points worse than the slot was worth &mdash; worst single pick of the night.'},
+  {tone:'teal', k:'Best Value Construction', v:'Van Tine &middot; Ryan', s:'+73.3 net draft value, best in the league &mdash; from the manager with the highest career bust rate in the room.'},
+  {tone:'bad', k:'War Crime Against the Cap', v:'Dak Prescott &middot; GooNads', s:'Round 5, pick 45, ADP 76. The single most expensive early-round reach in the field.'},
+  {tone:'rb', k:'The Zero-Kicker Watch', v:'GooNads', s:'Sixteen rounds, one D/ST (Ravens, round 16), zero kickers. Somebody is streaming Week 1.'},
+  {tone:'qb', k:'Best Build', v:'Cha$ing Dubs &middot; Kevin', s:'The cleanest Hero-RB in the field &mdash; one true bell cow in Kyren Williams, receivers everywhere else &mdash; and it graded an A.'}
+];
+document.getElementById('rec-body').innerHTML=rec.map(r=>`
+  <article class="rec ${r.tone}">
+    <div class="k">${r.k}</div>
+    <div class="v">${r.v}</div>
+    <div class="s">${r.s}</div>
+  </article>
+`).join('');
+
+const power=[
+  {team:"Van Tine", mgr:'Ryan', vor:559.7, grade:'A+', line:'Best value and the best floor in the league.', tone:'good'},
+  {team:"LaddGPT", mgr:'TJ', vor:518.5, grade:'A', line:'The model\u2019s own operator lands second. Jacobs pick notwithstanding.', tone:''},
+  {team:"Cha$ing Dubs", mgr:'Kevin', vor:517.3, grade:'A', line:'The Hero-RB build that actually worked as drawn up.', tone:''},
+  {team:"Human Psentipede", mgr:'Michaeopteryx', vor:535.0, grade:'B+', line:'Bought the talent at the top; the reach habit shows up on the back end.', tone:''},
+  {team:"CadillacKulpDeville", mgr:'Brian', vor:588.9, grade:'B+', line:'Most raw talent in the league, bought at the worst price in the league.', tone:''},
+  {team:"WhoseHungry?", mgr:'Mike', vor:481.9, grade:'B-', line:'The defending champ played it safe, and it shows in the middle of the pack.', tone:''},
+  {team:"Greatest_of_AL_time", mgr:'Al', vor:446.4, grade:'C+', line:'New team name, same mid-pack outcome \u2014 for now.', tone:''},
+  {team:"OJ no Kulp", mgr:'pat kulp', vor:432.0, grade:'C+', line:'Best value column and the single worst pick of the night, same 16 rounds.', tone:''},
+  {team:"GooNads", mgr:'Natalie', vor:414.5, grade:'C', line:'Best season of her career last year; reached for a QB and forgot a kicker.', tone:''},
+  {team:"Medina Sod", mgr:'Just Haefner', vor:444.2, grade:'D', line:'Worst net value in the league. Herbert in round 16 was not enough.', tone:'hot'}
+];
+const pmax=Math.max(...power.map(p=>p.vor));
+document.getElementById('power').innerHTML=power.map((p,i)=>{
+  const w=Math.round(100*p.vor/pmax);
+  return `<div class="row ${p.tone}"><div class="yl">${p.team}</div><div class="track">
+   <div class="fill" style="width:${w}%;transition-delay:${i*55}ms"></div>
+   <div class="lab"><span class="who">${p.mgr} &middot; ${p.grade}</span>
+   <span class="amt">${p.vor.toFixed(1)} VOR</span></div></div></div>`;
+}).join('');
+
+const picks = [{"n":1,"rd":"1.1","team":"CadillacKulpDeville","player":"Jahmyr Gibbs","pos":"RB","nfl":"Det","adp":"1.0","vor":"202.6","tag":""},{"n":2,"rd":"1.2","team":"Cha$ing Dubs","player":"Ja'Marr Chase","pos":"WR","nfl":"Cin","adp":"6.0","vor":"160.4","tag":""},{"n":3,"rd":"1.3","team":"LaddGPT","player":"Bijan Robinson","pos":"RB","nfl":"Atl","adp":"2.0","vor":"184.3","tag":""},{"n":4,"rd":"1.4","team":"Greatest_of_AL_time","player":"Puka Nacua","pos":"WR","nfl":"LAR","adp":"4.0","vor":"175.1","tag":""},{"n":5,"rd":"1.5","team":"GooNads","player":"Christian McCaffrey","pos":"RB","nfl":"SF","adp":"3.0","vor":"168.1","tag":""},{"n":6,"rd":"1.6","team":"Human Psentipede","player":"Jonathan Taylor","pos":"RB","nfl":"Ind","adp":"8.0","vor":"141.3","tag":""},{"n":7,"rd":"1.7","team":"Medina Sod","player":"Jaxon Smith-Njigba","pos":"WR","nfl":"Sea","adp":"7.0","vor":"156.8","tag":""},{"n":8,"rd":"1.8","team":"OJ no Kulp","player":"James Cook III","pos":"RB","nfl":"Buf","adp":"13.0","vor":"102.6","tag":"reach"},{"n":9,"rd":"1.9","team":"Van Tine","player":"Amon-Ra St. Brown","pos":"WR","nfl":"Det","adp":"5.0","vor":"150.2","tag":"value"},{"n":10,"rd":"1.10","team":"WhoseHungry?","player":"Saquon Barkley","pos":"RB","nfl":"Phi","adp":"32.0","vor":"90.8","tag":"reach"},{"n":11,"rd":"2.1","team":"WhoseHungry?","player":"CeeDee Lamb","pos":"WR","nfl":"Dal","adp":"11.0","vor":"104.8","tag":""},{"n":12,"rd":"2.2","team":"Van Tine","player":"Chase Brown","pos":"RB","nfl":"Cin","adp":"18.0","vor":"108.0","tag":"value"},{"n":13,"rd":"2.3","team":"OJ no Kulp","player":"Omarion Hampton","pos":"RB","nfl":"LAC","adp":"25.0","vor":"78.4","tag":""},{"n":14,"rd":"2.4","team":"Medina Sod","player":"Kenneth Walker III","pos":"RB","nfl":"KC","adp":"21.0","vor":"84.8","tag":""},{"n":15,"rd":"2.5","team":"Human Psentipede","player":"De'Von Achane","pos":"RB","nfl":"Mia","adp":"10.0","vor":"121.3","tag":""},{"n":16,"rd":"2.6","team":"GooNads","player":"Derrick Henry","pos":"RB","nfl":"Bal","adp":"24.0","vor":"98.8","tag":""},{"n":17,"rd":"2.7","team":"Greatest_of_AL_time","player":"George Pickens","pos":"WR","nfl":"Dal","adp":"17.0","vor":"78.6","tag":""},{"n":18,"rd":"2.8","team":"LaddGPT","player":"Nico Collins","pos":"WR","nfl":"Hou","adp":"9.0","vor":"83.8","tag":""},{"n":19,"rd":"2.9","team":"Cha$ing Dubs","player":"Kyren Williams","pos":"RB","nfl":"LAR","adp":"35.0","vor":"60.9","tag":"reach"},{"n":20,"rd":"2.10","team":"CadillacKulpDeville","player":"Justin Jefferson","pos":"WR","nfl":"Min","adp":"15.0","vor":"99.2","tag":""},{"n":21,"rd":"3.1","team":"CadillacKulpDeville","player":"Ashton Jeanty","pos":"RB","nfl":"LV","adp":"44.0","vor":"82.3","tag":""},{"n":22,"rd":"3.2","team":"Cha$ing Dubs","player":"Drake London","pos":"WR","nfl":"Atl","adp":"20.0","vor":"100.3","tag":"value"},{"n":23,"rd":"3.3","team":"LaddGPT","player":"Brock Bowers","pos":"TE","nfl":"LV","adp":"12.0","vor":"76.6","tag":""},{"n":24,"rd":"3.4","team":"Greatest_of_AL_time","player":"Javonte Williams","pos":"RB","nfl":"Dal","adp":"26.0","vor":"64.8","tag":"reach"},{"n":25,"rd":"3.5","team":"GooNads","player":"A.J. Brown","pos":"WR","nfl":"NE","adp":"14.0","vor":"86.8","tag":""},{"n":26,"rd":"3.6","team":"Human Psentipede","player":"Rashee Rice","pos":"WR","nfl":"KC","adp":"34.0","vor":"93.9","tag":"value"},{"n":27,"rd":"3.7","team":"Medina Sod","player":"Malik Nabers","pos":"WR","nfl":"NYG","adp":"39.0","vor":"52.6","tag":""},{"n":28,"rd":"3.8","team":"OJ no Kulp","player":"Chris Olave","pos":"WR","nfl":"NO","adp":"19.0","vor":"89.0","tag":"value"},{"n":29,"rd":"3.9","team":"Van Tine","player":"Trey McBride","pos":"TE","nfl":"Ari","adp":"16.0","vor":"87.4","tag":""},{"n":30,"rd":"3.10","team":"WhoseHungry?","player":"Jeremiyah Love","pos":"RB","nfl":"Ari","adp":"53.0","vor":"75.3","tag":""},{"n":31,"rd":"4.1","team":"WhoseHungry?","player":"DeVonta Smith","pos":"WR","nfl":"Phi","adp":"29.0","vor":"63.9","tag":""},{"n":32,"rd":"4.2","team":"Van Tine","player":"Josh Allen","pos":"QB","nfl":"Buf","adp":"37.0","vor":"63.0","tag":"reach"},{"n":33,"rd":"4.3","team":"OJ no Kulp","player":"Garrett Wilson","pos":"WR","nfl":"NYJ","adp":"45.0","vor":"61.3","tag":"value"},{"n":34,"rd":"4.4","team":"Medina Sod","player":"Breece Hall","pos":"RB","nfl":"NYJ","adp":"42.0","vor":"71.9","tag":""},{"n":35,"rd":"4.5","team":"Human Psentipede","player":"Jameson Williams","pos":"WR","nfl":"Det","adp":"38.0","vor":"45.2","tag":""},{"n":36,"rd":"4.6","team":"GooNads","player":"Jaylen Waddle","pos":"WR","nfl":"Den","adp":"31.0","vor":"42.2","tag":""},{"n":37,"rd":"4.7","team":"Greatest_of_AL_time","player":"Emeka Egbuka","pos":"WR","nfl":"TB","adp":"77.0","vor":"43.2","tag":""},{"n":38,"rd":"4.8","team":"LaddGPT","player":"Cam Skattebo","pos":"RB","nfl":"NYG","adp":"46.0","vor":"59.4","tag":""},{"n":39,"rd":"4.9","team":"Cha$ing Dubs","player":"Zay Flowers","pos":"WR","nfl":"Bal","adp":"23.0","vor":"71.4","tag":""},{"n":40,"rd":"4.10","team":"CadillacKulpDeville","player":"Tetairoa McMillan","pos":"WR","nfl":"Car","adp":"36.0","vor":"56.7","tag":"value"},{"n":41,"rd":"5.1","team":"CadillacKulpDeville","player":"Colston Loveland","pos":"TE","nfl":"Chi","adp":"27.0","vor":"45.7","tag":""},{"n":42,"rd":"5.2","team":"Cha$ing Dubs","player":"Lamar Jackson","pos":"QB","nfl":"Bal","adp":"49.0","vor":"28.3","tag":"reach"},{"n":43,"rd":"5.3","team":"LaddGPT","player":"Tee Higgins","pos":"WR","nfl":"Cin","adp":"22.0","vor":"53.0","tag":"value"},{"n":44,"rd":"5.4","team":"Greatest_of_AL_time","player":"Quinshon Judkins","pos":"RB","nfl":"Cle","adp":"67.0","vor":"40.3","tag":""},{"n":45,"rd":"5.5","team":"GooNads","player":"Dak Prescott","pos":"QB","nfl":"Dal","adp":"76.0","vor":"7.8","tag":"reach"},{"n":46,"rd":"5.6","team":"Human Psentipede","player":"Davante Adams","pos":"WR","nfl":"LAR","adp":"60.0","vor":"44.3","tag":""},{"n":47,"rd":"5.7","team":"Medina Sod","player":"Ladd McConkey","pos":"WR","nfl":"LAC","adp":"50.0","vor":"41.2","tag":""},{"n":48,"rd":"5.8","team":"OJ no Kulp","player":"DJ Moore","pos":"WR","nfl":"Buf","adp":"63.0","vor":"27.3","tag":""},{"n":49,"rd":"5.9","team":"Van Tine","player":"Travis Etienne Jr.","pos":"RB","nfl":"NO","adp":"30.0","vor":"57.5","tag":""},{"n":50,"rd":"5.10","team":"WhoseHungry?","player":"Tyler Warren","pos":"TE","nfl":"Ind","adp":"28.0","vor":"31.4","tag":""},{"n":51,"rd":"6.1","team":"WhoseHungry?","player":"Bucky Irving","pos":"RB","nfl":"TB","adp":"71.0","vor":"40.7","tag":""},{"n":52,"rd":"6.2","team":"Van Tine","player":"Terry McLaurin","pos":"WR","nfl":"Was","adp":"43.0","vor":"37.1","tag":"value"},{"n":53,"rd":"6.3","team":"OJ no Kulp","player":"D'Andre Swift","pos":"RB","nfl":"Chi","adp":"48.0","vor":"46.5","tag":"value"},{"n":54,"rd":"6.4","team":"Medina Sod","player":"Parker Washington","pos":"WR","nfl":"Jax","adp":"68.0","vor":"13.2","tag":"reach"},{"n":55,"rd":"6.5","team":"Human Psentipede","player":"Drake Maye","pos":"QB","nfl":"NE","adp":"65.0","vor":"19.8","tag":""},{"n":56,"rd":"6.6","team":"GooNads","player":"Carnell Tate","pos":"WR","nfl":"Ten","adp":"75.0","vor":"3.3","tag":""},{"n":57,"rd":"6.7","team":"Greatest_of_AL_time","player":"Bhayshul Tuten","pos":"RB","nfl":"Jax","adp":"88.0","vor":"25.8","tag":""},{"n":58,"rd":"6.8","team":"LaddGPT","player":"Jadarian Price","pos":"RB","nfl":"Sea","adp":"130.0","vor":"2.3","tag":""},{"n":59,"rd":"6.9","team":"Cha$ing Dubs","player":"Christian Watson","pos":"WR","nfl":"GB","adp":"40.0","vor":"27.6","tag":"value"},{"n":60,"rd":"6.10","team":"CadillacKulpDeville","player":"Luther Burden III","pos":"WR","nfl":"Chi","adp":"47.0","vor":"34.3","tag":"value"},{"n":61,"rd":"7.1","team":"CadillacKulpDeville","player":"David Montgomery","pos":"RB","nfl":"Hou","adp":"41.0","vor":"34.0","tag":""},{"n":62,"rd":"7.2","team":"Cha$ing Dubs","player":"Jaylen Warren","pos":"RB","nfl":"Pit","adp":"54.0","vor":"27.9","tag":""},{"n":63,"rd":"7.3","team":"LaddGPT","player":"Marvin Harrison Jr.","pos":"WR","nfl":"Ari","adp":"99.0","vor":"16.4","tag":""},{"n":64,"rd":"7.4","team":"Greatest_of_AL_time","player":"Joe Burrow","pos":"QB","nfl":"Cin","adp":"52.0","vor":"11.8","tag":""},{"n":65,"rd":"7.5","team":"GooNads","player":"Jared Goff","pos":"QB","nfl":"Det","adp":"89.0","vor":"-8.4","tag":""},{"n":66,"rd":"7.6","team":"Human Psentipede","player":"MarShawn Lloyd","pos":"RB","nfl":"GB","adp":"98.0","vor":"-35.8","tag":"reach"},{"n":67,"rd":"7.7","team":"Medina Sod","player":"Tucker Kraft","pos":"TE","nfl":"GB","adp":"74.0","vor":"9.7","tag":""},{"n":68,"rd":"7.8","team":"OJ no Kulp","player":"TreVeyon Henderson","pos":"RB","nfl":"NE","adp":"126.0","vor":"16.8","tag":""},{"n":69,"rd":"7.9","team":"Van Tine","player":"Rome Odunze","pos":"WR","nfl":"Chi","adp":"78.0","vor":"23.5","tag":""},{"n":70,"rd":"7.10","team":"WhoseHungry?","player":"Mike Evans","pos":"WR","nfl":"SF","adp":"55.0","vor":"26.3","tag":"value"},{"n":71,"rd":"8.1","team":"WhoseHungry?","player":"DK Metcalf","pos":"WR","nfl":"Pit","adp":"70.0","vor":"19.3","tag":""},{"n":72,"rd":"8.2","team":"Van Tine","player":"Tony Pollard","pos":"RB","nfl":"Ten","adp":"127.0","vor":"7.7","tag":"reach"},{"n":73,"rd":"8.3","team":"OJ no Kulp","player":"Sam LaPorta","pos":"TE","nfl":"Det","adp":"33.0","vor":"18.9","tag":""},{"n":74,"rd":"8.4","team":"Medina Sod","player":"Jayden Daniels","pos":"QB","nfl":"Was","adp":"80.0","vor":"17.8","tag":""},{"n":75,"rd":"8.5","team":"Human Psentipede","player":"Courtland Sutton","pos":"WR","nfl":"Den","adp":"101.0","vor":"16.7","tag":""},{"n":76,"rd":"8.6","team":"GooNads","player":"Rico Dowdle","pos":"RB","nfl":"Pit","adp":"61.0","vor":"11.1","tag":""},{"n":77,"rd":"8.7","team":"Greatest_of_AL_time","player":"George Kittle","pos":"TE","nfl":"SF","adp":"86.0","vor":"19.4","tag":""},{"n":78,"rd":"8.8","team":"LaddGPT","player":"Brian Thomas Jr.","pos":"WR","nfl":"Jax","adp":"104.0","vor":"3.4","tag":"reach"},{"n":79,"rd":"8.9","team":"Cha$ing Dubs","player":"Kyle Pitts Sr.","pos":"TE","nfl":"Atl","adp":"73.0","vor":"15.3","tag":""},{"n":80,"rd":"8.10","team":"CadillacKulpDeville","player":"Caleb Williams","pos":"QB","nfl":"Chi","adp":"62.0","vor":"4.8","tag":""},{"n":81,"rd":"9.1","team":"CadillacKulpDeville","player":"Rhamondre Stevenson","pos":"RB","nfl":"NE","adp":"79.0","vor":"18.0","tag":""},{"n":82,"rd":"9.2","team":"Cha$ing Dubs","player":"Jonathon Brooks","pos":"RB","nfl":"Car","adp":"134.0","vor":"-16.2","tag":""},{"n":83,"rd":"9.3","team":"LaddGPT","player":"Jalen Hurts","pos":"QB","nfl":"Phi","adp":"57.0","vor":"22.9","tag":"value"},{"n":84,"rd":"9.4","team":"Greatest_of_AL_time","player":"Jacory Croskey-Merritt","pos":"RB","nfl":"Was","adp":"103.0","vor":"-25.6","tag":""},{"n":85,"rd":"9.5","team":"GooNads","player":"J.K. Dobbins","pos":"RB","nfl":"Den","adp":"95.0","vor":"-5.1","tag":""},{"n":86,"rd":"9.6","team":"Human Psentipede","player":"Travis Kelce","pos":"TE","nfl":"KC","adp":"66.0","vor":"14.9","tag":""},{"n":87,"rd":"9.7","team":"Medina Sod","player":"Josh Downs","pos":"WR","nfl":"Ind","adp":"58.0","vor":"-4.2","tag":""},{"n":88,"rd":"9.8","team":"OJ no Kulp","player":"Trevor Lawrence","pos":"QB","nfl":"Jax","adp":"92.0","vor":"2.4","tag":"value"},{"n":89,"rd":"9.9","team":"Van Tine","player":"Chris Godwin Jr.","pos":"WR","nfl":"TB","adp":"91.0","vor":"3.3","tag":""},{"n":90,"rd":"9.10","team":"WhoseHungry?","player":"Jaxson Dart","pos":"QB","nfl":"NYG","adp":"59.0","vor":"6.4","tag":""},{"n":91,"rd":"10.1","team":"WhoseHungry?","player":"Alec Pierce","pos":"WR","nfl":"Ind","adp":"143.0","vor":"19.6","tag":"value"},{"n":92,"rd":"10.2","team":"Van Tine","player":"Quentin Johnston","pos":"WR","nfl":"LAC","adp":"87.0","vor":"-1.5","tag":""},{"n":93,"rd":"10.3","team":"OJ no Kulp","player":"De'Zhaun Stribling","pos":"WR","nfl":"SF","adp":"175.0","vor":"-23.4","tag":"reach"},{"n":94,"rd":"10.4","team":"Medina Sod","player":"Jordan Mason","pos":"RB","nfl":"Min","adp":"142.0","vor":"-27.3","tag":"reach"},{"n":95,"rd":"10.5","team":"Human Psentipede","player":"Jayden Reed","pos":"WR","nfl":"GB","adp":"51.0","vor":"8.8","tag":""},{"n":96,"rd":"10.6","team":"GooNads","player":"Blake Corum","pos":"RB","nfl":"LAR","adp":"151.0","vor":"-34.0","tag":"reach"},{"n":97,"rd":"10.7","team":"Greatest_of_AL_time","player":"Jakobi Meyers","pos":"WR","nfl":"Jax","adp":"109.0","vor":"0.4","tag":""},{"n":98,"rd":"10.8","team":"LaddGPT","player":"Michael Pittman Jr.","pos":"WR","nfl":"Pit","adp":"94.0","vor":"11.2","tag":""},{"n":99,"rd":"10.9","team":"Cha$ing Dubs","player":"KC Concepcion","pos":"WR","nfl":"Cle","adp":"131.0","vor":"-19.8","tag":""},{"n":100,"rd":"10.10","team":"CadillacKulpDeville","player":"Matthew Golden","pos":"WR","nfl":"GB","adp":"121.0","vor":"-10.5","tag":"value"},{"n":101,"rd":"11.1","team":"CadillacKulpDeville","player":"Makai Lemon","pos":"WR","nfl":"Phi","adp":"184.0","vor":"-31.6","tag":"reach"},{"n":102,"rd":"11.2","team":"Cha$ing Dubs","player":"Jordan Addison","pos":"WR","nfl":"Min","adp":"85.0","vor":"-1.5","tag":""},{"n":103,"rd":"11.3","team":"LaddGPT","player":"RJ Harvey","pos":"RB","nfl":"Den","adp":"120.0","vor":"-8.7","tag":"reach"},{"n":104,"rd":"11.4","team":"Greatest_of_AL_time","player":"Chuba Hubbard","pos":"RB","nfl":"Car","adp":"117.0","vor":"0.0","tag":""},{"n":105,"rd":"11.5","team":"GooNads","player":"Michael Wilson","pos":"WR","nfl":"Ari","adp":"84.0","vor":"4.6","tag":"value"},{"n":106,"rd":"11.6","team":"Human Psentipede","player":"Stefon Diggs","pos":"WR","nfl":"Was","adp":"82.0","vor":"-3.3","tag":""},{"n":107,"rd":"11.7","team":"Medina Sod","player":"Chris Rodriguez Jr.","pos":"RB","nfl":"Jax","adp":"161.0","vor":"-73.9","tag":"reach"},{"n":108,"rd":"11.8","team":"OJ no Kulp","player":"Rachaad White","pos":"RB","nfl":"Was","adp":"118.0","vor":"-13.1","tag":""},{"n":109,"rd":"11.9","team":"Van Tine","player":"Alvin Kamara","pos":"RB","nfl":"NO","adp":"264.0","vor":"-66.7","tag":"reach"},{"n":110,"rd":"11.10","team":"WhoseHungry?","player":"Zach Charbonnet","pos":"RB","nfl":"Sea","adp":"256.0","vor":"-70.2","tag":"reach"},{"n":111,"rd":"12.1","team":"WhoseHungry?","player":"Tyler Allgeier","pos":"RB","nfl":"Ari","adp":"154.0","vor":"-80.5","tag":"reach"},{"n":112,"rd":"12.2","team":"Van Tine","player":"Tyjae Spears","pos":"RB","nfl":"Ten","adp":"156.0","vor":"-39.5","tag":""},{"n":113,"rd":"12.3","team":"OJ no Kulp","player":"Jordyn Tyson","pos":"WR","nfl":"NO","adp":"86.0","vor":"-49.8","tag":"reach"},{"n":114,"rd":"12.4","team":"Medina Sod","player":"Mike Washington Jr.","pos":"RB","nfl":"LV","adp":"221.0","vor":"-94.1","tag":"reach"},{"n":115,"rd":"12.5","team":"Human Psentipede","player":"Kenny Gainwell","pos":"RB","nfl":"TB","adp":"136.0","vor":"-8.2","tag":""},{"n":116,"rd":"12.6","team":"GooNads","player":"Jalen Coker","pos":"WR","nfl":"Car","adp":"64.0","vor":"-18.4","tag":""},{"n":117,"rd":"12.7","team":"Greatest_of_AL_time","player":"Deebo Samuel Sr.","pos":"WR","nfl":"SF","adp":"115.0","vor":"-15.2","tag":""},{"n":118,"rd":"12.8","team":"LaddGPT","player":"Wan'Dale Robinson","pos":"WR","nfl":"Ten","adp":"123.0","vor":"0.0","tag":""},{"n":119,"rd":"12.9","team":"Cha$ing Dubs","player":"Kyle Monangai","pos":"RB","nfl":"Chi","adp":"173.0","vor":"-22.5","tag":""},{"n":120,"rd":"12.10","team":"CadillacKulpDeville","player":"Brandon Aubrey","pos":"K","nfl":"Dal","adp":null,"vor":"17.6","tag":""},{"n":121,"rd":"13.1","team":"CadillacKulpDeville","player":"Ja'Kobi Lane","pos":"WR","nfl":"Bal","adp":"199.0","vor":"-77.3","tag":"reach"},{"n":122,"rd":"13.2","team":"Cha$ing Dubs","player":"Harold Fannin Jr.","pos":"TE","nfl":"Cle","adp":"56.0","vor":"21.9","tag":"value"},{"n":123,"rd":"13.3","team":"LaddGPT","player":"Khalil Shakir","pos":"WR","nfl":"Buf","adp":"83.0","vor":"-5.3","tag":""},{"n":124,"rd":"13.4","team":"Greatest_of_AL_time","player":"Keenan Allen","pos":"WR","nfl":"Ind","adp":"157.0","vor":"-34.6","tag":"reach"},{"n":125,"rd":"13.5","team":"GooNads","player":"Romeo Doubs","pos":"WR","nfl":"NE","adp":"102.0","vor":"-10.2","tag":""},{"n":126,"rd":"13.6","team":"Human Psentipede","player":"Jason Myers","pos":"K","nfl":"Sea","adp":null,"vor":"15.6","tag":""},{"n":127,"rd":"13.7","team":"Medina Sod","player":"Rams","pos":"DEF","nfl":"LAR","adp":null,"vor":"19.1","tag":""},{"n":128,"rd":"13.8","team":"OJ no Kulp","player":"Keaton Mitchell","pos":"RB","nfl":"LAC","adp":"183.0","vor":"-87.4","tag":"reach"},{"n":129,"rd":"13.9","team":"Van Tine","player":"Bo Nix","pos":"QB","nfl":"Den","adp":"90.0","vor":"-5.9","tag":""},{"n":130,"rd":"13.10","team":"WhoseHungry?","player":"Texans","pos":"DEF","nfl":"Hou","adp":null,"vor":"30.2","tag":""},{"n":131,"rd":"14.1","team":"WhoseHungry?","player":"Ka'imi Fairbairn","pos":"K","nfl":"Hou","adp":null,"vor":"12.1","tag":""},{"n":132,"rd":"14.2","team":"Van Tine","player":"Broncos","pos":"DEF","nfl":"Den","adp":null,"vor":"24.8","tag":""},{"n":133,"rd":"14.3","team":"OJ no Kulp","player":"Chris Bell","pos":"WR","nfl":"Mia","adp":"229.0","vor":"-82.2","tag":"reach"},{"n":134,"rd":"14.4","team":"Medina Sod","player":"Spencer Shrader","pos":"K","nfl":"Ind","adp":null,"vor":"-22.9","tag":""},{"n":135,"rd":"14.5","team":"Human Psentipede","player":"Seahawks","pos":"DEF","nfl":"Sea","adp":null,"vor":"22.0","tag":""},{"n":136,"rd":"14.6","team":"GooNads","player":"Xavier Worthy","pos":"WR","nfl":"KC","adp":"125.0","vor":"-7.2","tag":""},{"n":137,"rd":"14.7","team":"Greatest_of_AL_time","player":"Woody Marks","pos":"RB","nfl":"Hou","adp":"162.0","vor":"-48.0","tag":"reach"},{"n":138,"rd":"14.8","team":"LaddGPT","player":"Josh Jacobs","pos":"RB","nfl":"GB","adp":"42.0","vor":"-18.1","tag":""},{"n":139,"rd":"14.9","team":"Cha$ing Dubs","player":"Aaron Jones Sr.","pos":"RB","nfl":"Min","adp":"141.0","vor":"-14.5","tag":""},{"n":140,"rd":"14.10","team":"CadillacKulpDeville","player":"Jonah Coleman","pos":"RB","nfl":"Den","adp":"279.0","vor":"-122.0","tag":"reach"},{"n":141,"rd":"15.1","team":"CadillacKulpDeville","player":"Denzel Boston","pos":"WR","nfl":"Cle","adp":"164.0","vor":"-45.5","tag":""},{"n":142,"rd":"15.2","team":"Cha$ing Dubs","player":"Eagles","pos":"DEF","nfl":"Phi","adp":null,"vor":"14.6","tag":""},{"n":143,"rd":"15.3","team":"LaddGPT","player":"Cameron Dicker","pos":"K","nfl":"LAC","adp":null,"vor":"10.9","tag":""},{"n":144,"rd":"15.4","team":"Greatest_of_AL_time","player":"Harrison Butker","pos":"K","nfl":"KC","adp":null,"vor":"0.1","tag":""},{"n":145,"rd":"15.5","team":"GooNads","player":"Dalton Kincaid","pos":"TE","nfl":"Buf","adp":"108.0","vor":"-13.7","tag":"reach"},{"n":146,"rd":"15.6","team":"Human Psentipede","player":"Rashid Shaheed","pos":"WR","nfl":"Sea","adp":"138.0","vor":"-23.1","tag":""},{"n":147,"rd":"15.7","team":"Medina Sod","player":"Tre Tucker","pos":"WR","nfl":"LV","adp":"129.0","vor":"-34.5","tag":""},{"n":148,"rd":"15.8","team":"OJ no Kulp","player":"Chargers","pos":"DEF","nfl":"LAC","adp":null,"vor":"8.7","tag":""},{"n":149,"rd":"15.9","team":"Van Tine","player":"Jake Ferguson","pos":"TE","nfl":"Dal","adp":"96.0","vor":"-5.1","tag":"value"},{"n":150,"rd":"15.10","team":"WhoseHungry?","player":"Caleb Douglas","pos":"WR","nfl":"Mia","adp":"194.0","vor":"-80.8","tag":""},{"n":151,"rd":"16.1","team":"WhoseHungry?","player":"Mark Andrews","pos":"TE","nfl":"Bal","adp":"69.0","vor":"0.0","tag":"value"},{"n":152,"rd":"16.2","team":"Van Tine","player":"Cam Little","pos":"K","nfl":"Jax","adp":null,"vor":"0.5","tag":""},{"n":153,"rd":"16.3","team":"OJ no Kulp","player":"Evan McPherson","pos":"K","nfl":"Cin","adp":null,"vor":"-3.1","tag":""},{"n":154,"rd":"16.4","team":"Medina Sod","player":"Justin Herbert","pos":"QB","nfl":"LAC","adp":"97.0","vor":"-2.6","tag":"value"},{"n":155,"rd":"16.5","team":"Human Psentipede","player":"Emmett Johnson","pos":"RB","nfl":"KC","adp":"241.0","vor":"-130.0","tag":"reach"},{"n":156,"rd":"16.6","team":"GooNads","player":"Ravens","pos":"DEF","nfl":"Bal","adp":null,"vor":"8.8","tag":""},{"n":157,"rd":"16.7","team":"Greatest_of_AL_time","player":"49ers","pos":"DEF","nfl":"SF","adp":null,"vor":"-12.7","tag":""},{"n":158,"rd":"16.8","team":"LaddGPT","player":"Jaguars","pos":"DEF","nfl":"Jax","adp":null,"vor":"0.0","tag":""},{"n":159,"rd":"16.9","team":"Cha$ing Dubs","player":"Harrison Mevis","pos":"K","nfl":"LAR","adp":null,"vor":"4.0","tag":""},{"n":160,"rd":"16.10","team":"CadillacKulpDeville","player":"Steelers","pos":"DEF","nfl":"Pit","adp":null,"vor":"11.7","tag":""}];
+
+document.getElementById('picks-body').innerHTML=picks.map(p=>{
+  const tag=p.tag?`<span class="tag-chip ${p.tag}">${p.tag}</span>`:'';
+  const adp=p.adp||'&mdash;';
+  return `<tr>
+    <td class="pin"><strong>${p.n}</strong></td>
+    <td>${p.rd}</td>
+    <td class="l">${p.team}</td>
+    <td class="l">${p.player} <span class="muted">${p.pos} ${p.nfl}</span></td>
+    <td>${adp}</td>
+    <td>${p.vor}</td>
+    <td class="l">${tag}</td>
+  </tr>`;
+}).join('');
+
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+const revealIn=()=>document.querySelectorAll('.reveal:not(.in)').forEach(e=>{
+  const r=e.getBoundingClientRect();
+  if(r.top<innerHeight*0.92 && r.bottom>0) e.classList.add('in');
+});
+revealIn();
+addEventListener('load',revealIn,{once:true});
+
+function setupScrollHints(){
+  document.querySelectorAll('[data-scroll-hint]').forEach(panel=>{
+    const sc=panel.querySelector('.scroll');
+    if(!sc) return;
+    const update=()=>{
+      const overflow=sc.scrollWidth>sc.clientWidth+4;
+      const atEnd=sc.scrollLeft+sc.clientWidth>=sc.scrollWidth-8;
+      panel.classList.toggle('has-overflow',overflow);
+      panel.classList.toggle('at-end',atEnd||!overflow);
+    };
+    sc.addEventListener('scroll',update,{passive:true});
+    addEventListener('resize',update);
+    const details=panel.querySelector('details');
+    if(details) details.addEventListener('toggle',()=>requestAnimationFrame(update));
+    update();
+    requestAnimationFrame(update);
+  });
+}
+setupScrollHints();
+addEventListener('load',setupScrollHints,{once:true});
+</script>
+</body>
+</html>
