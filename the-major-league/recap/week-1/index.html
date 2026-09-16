@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07090E">
+<title>The Major League &mdash; Week 1 Recap</title>
+<meta name="description" content="CadillacKulpDeville opened the season by burying Human Psentipede by 85. Week 1 of The Major League, in the voice of Mohn Jadden.">
+<link rel="canonical" href="/the-major-league/recap/week-1/">
+<style>
+  :root{
+    --ink:#07090E; --p1:#0D1119; --p2:#141A25; --p3:#1D2534;
+    --line:#2A3446; --edge:#28324399;
+    --text:#EDF1F8; --dim:#93A3B9; --faint:#61728A;
+    --gold:#E8B44A; --good:#3DDC97; --bad:#FF6B6B; --hot:#FF8355;
+    --serif: ui-serif,'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+    --sans: 'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    --s1:8px; --s2:16px; --s3:26px; --s4:44px; --s5:76px; --s6:120px;
+    --sh1: 0 1px 2px rgba(2,5,10,.55), 0 3px 10px rgba(2,5,10,.4);
+    --sh2: 0 3px 8px rgba(2,5,10,.6), 0 16px 40px rgba(2,5,10,.5);
+    --sh3: 0 6px 16px rgba(2,5,10,.65), 0 32px 80px rgba(232,180,74,.07);
+    --pad: clamp(16px,4vw,26px);
+  }
+  *{box-sizing:border-box;}
+  html,body{background:var(--ink);}
+  body{
+    margin:0;
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    background-image:
+      radial-gradient(1100px 620px at 8% -6%, rgba(232,180,74,.10), transparent 62%),
+      radial-gradient(900px 560px at 96% 12%, rgba(63,199,174,.07), transparent 60%),
+      radial-gradient(900px 700px at 40% 62%, rgba(240,137,77,.06), transparent 64%),
+      radial-gradient(800px 600px at 70% 100%, rgba(176,126,240,.05), transparent 62%);
+    background-attachment:fixed;
+  }
+  .grain{
+    position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 var(--pad); position:relative; z-index:2;}
+  .narrow{max-width:720px; margin:0 auto;}
+
+  .sitenav{display:flex;flex-wrap:wrap;align-items:center;padding:12px 0 0}
+  .sitenav .brand{flex:1 1 auto;min-width:min(100%,160px);padding:10px 12px 10px 0;
+    font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .sitenav .links{display:flex;flex-wrap:wrap}
+  .sitenav a{color:var(--faint);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+    padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:8px}
+  .sitenav a:hover{color:var(--gold);background:rgba(232,180,74,.08)}
+  .sitenav a.here{color:var(--gold)}
+  .sitenav a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+  header.hero{padding:var(--s5) 0 var(--s4);}
+  .kicker{font-size:11.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); font-weight:600;}
+  h1{font-family:var(--serif); font-weight:600; letter-spacing:-.035em; line-height:.98; font-size:clamp(34px,9vw,84px); margin:14px 0 0;}
+  .lede{font-size:clamp(17px,2.6vw,21px); color:var(--dim); max-width:64ch; margin:var(--s3) 0 0;}
+  .lede strong{color:var(--text); font-weight:700;}
+  .figs{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(16px,4vw,44px); margin-top:var(--s4);}
+  .fig .v{font-family:var(--serif); font-size:clamp(24px,5vw,38px); line-height:1; letter-spacing:-.03em; color:var(--gold);}
+  .fig .l{font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--faint); margin-top:8px;}
+
+  section{padding:clamp(40px,9vw,84px) 0; position:relative;}
+  section.act{border-top:1px solid var(--edge);}
+  h2{font-family:var(--serif); font-weight:600; letter-spacing:-.03em; line-height:1.08; font-size:clamp(24px,4.6vw,44px); margin:10px 0 0;}
+  h3{font-family:var(--serif); font-size:clamp(18px,2.4vw,24px); letter-spacing:-.02em; font-weight:600; margin:0;}
+  .narrow > p.intro{color:var(--dim); font-size:15px; max-width:60ch; margin:14px 0 0;}
+
+  .panel{background:linear-gradient(170deg,var(--p2),var(--p1)); border:1px solid var(--edge); border-radius:17px; padding:clamp(16px,3vw,28px); box-shadow:var(--sh2); margin-top:var(--s3);}
+  .panel h3{color:var(--gold); margin-bottom:10px;}
+  .panel p{color:var(--dim); font-size:14.5px; line-height:1.75; margin:0 0 10px;}
+  .panel p:last-child{margin-bottom:0;}
+  .panel p strong{color:var(--text);}
+
+  .matchup{background:linear-gradient(170deg,var(--p2),var(--p1)); border:1px solid var(--edge); border-radius:17px; padding:clamp(16px,3vw,28px); box-shadow:var(--sh2); margin-top:var(--s3);}
+  .mrow{display:flex; align-items:center; gap:clamp(10px,3vw,22px);}
+  .side{flex:1 1 0; min-width:0;}
+  .side.r{text-align:right;}
+  .side .team{font-family:var(--serif); font-size:clamp(17px,2.8vw,22px); letter-spacing:-.02em; line-height:1.15;}
+  .side .mgr{font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); margin-top:4px;}
+  .side .score{font-family:var(--serif); font-size:clamp(28px,4.6vw,38px); letter-spacing:-.03em; color:var(--faint); margin-top:8px; font-variant-numeric:tabular-nums;}
+  .side .score.win{color:var(--gold);}
+  .vs{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); flex:0 0 auto; padding:0 4px;}
+  .statlines{margin-top:var(--s2); display:flex; flex-direction:column; gap:8px;}
+  .statline{display:flex; align-items:baseline; gap:10px; font-size:13px; padding:8px 10px; background:#141C29; border:1px solid #1B2432; border-radius:9px; flex-wrap:wrap;}
+  .statline .tag{font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; font-weight:700; padding:2px 6px; border-radius:5px; flex:0 0 auto;}
+  .statline.good .tag{color:var(--good); background:rgba(61,220,151,.12);}
+  .statline.bad .tag{color:var(--bad); background:rgba(255,107,107,.12);}
+  .statline.hurt .tag{color:var(--hot); background:rgba(255,131,85,.13);}
+  .statline .who{color:var(--text); font-weight:600; flex:1 1 0; min-width:120px;}
+  .statline .ctx{color:var(--faint); font-size:12px;}
+  .statline .pts{font-variant-numeric:tabular-nums; font-weight:700; color:var(--text); flex:0 0 auto;}
+  .statline .d{font-variant-numeric:tabular-nums; font-size:11.5px; flex:0 0 auto;}
+  .statline.good .d{color:var(--good);}
+  .statline.bad .d{color:var(--bad);}
+  .statline.hurt .d{color:var(--hot);}
+  .matchup .verdict{font-size:14.5px; color:var(--dim); line-height:1.7; margin-top:var(--s3);}
+  .pred{margin-top:var(--s2); font-size:13.5px; color:var(--text); padding-top:12px; border-top:1px solid var(--edge);}
+  .pred b{color:var(--gold); text-transform:uppercase; letter-spacing:.1em; font-size:10.5px; margin-right:6px;}
+  .pred .call{color:var(--faint);}
+  .pred.hit .call{color:var(--good);}
+  .pred.miss .call{color:var(--bad);}
+
+  .recbook{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:16px; margin-top:var(--s3);}
+  .rec{background:linear-gradient(165deg,var(--p3),var(--p1)); border:1px solid var(--edge); border-radius:14px; padding:18px 20px;}
+  .rec .k{font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); display:block;}
+  .rec .v{font-family:var(--serif); font-size:1.4rem; color:var(--text); font-variant-numeric:tabular-nums; display:block; margin-top:6px;}
+  .rec .v.bad{color:var(--bad);}
+  .rec .v.gold{color:var(--gold);}
+  .rec .s{color:var(--dim); font-size:13.5px; line-height:1.6; margin:8px 0 0;}
+  .rec .s .bad{color:var(--bad); font-weight:700;}
+  .rec .award-name{font-family:var(--serif); color:var(--gold); font-size:1.05rem; display:block;}
+  @media(hover:hover) and (pointer:fine){
+    .matchup:hover{box-shadow:var(--sh3)}
+  }
+
+  .keystat{background:linear-gradient(170deg,var(--p2),var(--p1)); border:1px solid var(--edge); border-radius:11px; padding:14px 18px; margin-top:var(--s3); font-size:13.5px; color:var(--dim);}
+  .keystat b{color:var(--gold); font-weight:600;}
+
+  .pull{font-family:var(--serif); font-size:clamp(20px,3.6vw,32px); line-height:1.3; letter-spacing:-.02em; color:var(--text); border-left:2px solid var(--gold); padding-left:clamp(14px,3vw,26px); margin:var(--s4) 0 0; font-style:italic;}
+  .sig{font-family:var(--serif); font-style:italic; color:var(--gold); font-size:17px; margin-top:var(--s4); padding-top:var(--s2); border-top:1px solid var(--edge);}
+
+  footer{border-top:1px solid var(--edge); padding:var(--s4) 0 var(--s5); color:var(--faint); font-size:13.5px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  footer a{color:var(--gold)}
+
+  @media (max-width:720px){
+    .figs{grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px;}
+    .mrow{flex-wrap:wrap;}
+    .side.r{text-align:left;}
+    .vs{order:3; width:100%; text-align:left; padding:2px 0;}
+    .recbook{grid-template-columns:1fr;}
+    body{background-attachment:scroll}
+    .sitenav .links{width:100%}
+    .sitenav a{flex:1 1 auto;justify-content:center;padding:12px 8px}
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="wrap">
+  <nav class="sitenav" aria-label="Site">
+    <a class="brand" href="/the-major-league/">Mohn Jadden</a>
+    <div class="links">
+      <a href="/the-major-league/">Home</a>
+      <a class="here" href="/the-major-league/recap/">Recap</a>
+      <a href="/the-major-league/chronicle/">Chronicle</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="kicker">The Major League &middot; Week 1 &middot; By Mohn Jadden</div>
+    <h1>Seniority<br>Rules.</h1>
+    <p class="lede">Week 1 opened with a message from the league's most decorated franchise. CadillacKulpDeville put up <strong>192.26</strong> &mdash; the highest score and the widest margin the board saw all week &mdash; and it was never within shouting distance of competitive. Four of Yahoo's five pre-game favorites covered. The fifth got run over by a receiver playing out of his mind. And TJ's Bijan Claude Van Damme dropped a number that wins most weeks in this league and still went home 0-1. Nine months removed from hoisting the trophy, WhoseHungry? already needs an answer.</p>
+    <div class="figs">
+      <div class="fig"><div class="v">192.26</div><div class="l">Top score &mdash; CadillacKulpDeville</div></div>
+      <div class="fig"><div class="v">84.94</div><div class="l">Widest margin of the week</div></div>
+      <div class="fig"><div class="v">4 of 5</div><div class="l">Yahoo pre-game favorites that covered</div></div>
+      <div class="fig"><div class="v">495.64</div><div class="l">Points stranded on benches leaguewide</div></div>
+    </div>
+  </header>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">The Story</div>
+      <h2>Kulp Sets the Tone</h2>
+      <p class="intro">CKD opened the season exactly how a three-time champion is supposed to. Nobody else was within shouting distance.</p>
+    </div>
+    <div class="panel">
+      <h3>192 and Change</h3>
+      <p>CadillacKulpDeville's 192.26 wasn't just the week's high score &mdash; it beat its own 146.00 projection by 46 points, and every part of the roster pulled in the same direction at once. Caleb Williams nearly doubled his number with 37.26 (two rushing touchdowns, 269 through the air) as Chicago hung 59 on Carolina. Jahmyr Gibbs bulldozed his way to 34.60. Justin Jefferson turned 18.07 projected points into 31.20 actual ones. Ashton Jeanty needed one flex slot on his first Sunday in the league to put up 32.70, more than double his own number. Even the Steelers defense chipped in 18 points on a 7.35 projection. There was no soft spot in the lineup to point at &mdash; the whole roster ran hot on the same afternoon, which is a different, scarier thing than one guy getting lucky.</p>
+      <p>Michaeopteryx's Human Psentipede wasn't a bad build, either &mdash; Jonathan Taylor actually delivered, 26.10 on a 17.89 projection &mdash; and it still didn't move the needle, because everything else in that lineup came in under its number: Drake Maye, De'Von Achane, all three wideouts, the flex. CadillacKulpDeville is the league's career leader in titles and average finish, and this is just what it looks like when that gap shows up in Week 1 instead of waiting for December.</p>
+    </div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Scoreboard</div>
+      <h2>Four Chalk, One Coin Flip</h2>
+      <p class="intro">Yahoo's own pre-game numbers picked a winner in all five games and got four of them right. The one miss was a virtual pick&rsquo;em that broke the wrong way for the guy who was actually favored.</p>
+    </div>
+
+    <div class="matchup">
+      <div class="mrow">
+        <div class="side"><div class="team">CadillacKulpDeville</div><div class="mgr">Brian Kulp</div><div class="score win">192.26</div></div>
+        <div class="vs">def.</div>
+        <div class="side r"><div class="team">Human Psentipede</div><div class="mgr">Michaeopteryx</div><div class="score">107.32</div></div>
+      </div>
+      <div class="statlines">
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Caleb Williams</span><span class="ctx">QB &middot; CadillacKulpDeville</span><span class="pts">37.26</span><span class="d">+18.54</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">Colston Loveland</span><span class="ctx">TE &middot; CadillacKulpDeville &middot; catchless in a 59-point win</span><span class="pts">0.00</span><span class="d">&minus;12.90</span></div>
+      </div>
+      <p class="verdict">The kind of score that makes the rest of the standings look like a typo. Kulp didn't need his tight end to do anything &mdash; the Bears' rookie went catchless and the final margin still hit 84.94, because Gibbs, Jefferson and Jeanty were all doing 150% of their job description simultaneously. Taylor's 26.10 was a legitimately great fantasy day for Human Psentipede and it didn't buy them a single competitive quarter.</p>
+      <div class="pred hit"><b>Yahoo</b>CadillacKulpDeville by 16.65 (146.00&ndash;129.35) <span class="call">&mdash; hit, and not close to the actual number</span></div>
+    </div>
+
+    <div class="matchup">
+      <div class="mrow">
+        <div class="side"><div class="team">Cha$ing Dubs</div><div class="mgr">Kevin</div><div class="score win">124.16</div></div>
+        <div class="vs">def.</div>
+        <div class="side r"><div class="team">Greatest_of_AL_time</div><div class="mgr">Al</div><div class="score">105.86</div></div>
+      </div>
+      <div class="statlines">
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Christian Watson</span><span class="ctx">FLEX &middot; Cha$ing Dubs</span><span class="pts">32.70</span><span class="d">+19.73</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">Ja'Marr Chase</span><span class="ctx">WR &middot; Cha$ing Dubs &middot; 2 catches, 12 yards</span><span class="pts">3.20</span><span class="d">&minus;18.20</span></div>
+        <div class="statline hurt"><span class="tag">Hurt</span><span class="who">George Kittle</span><span class="ctx">TE &middot; Greatest_of_AL_time &middot; exited vs. Seahawks</span><span class="pts">3.20</span><span class="d">&minus;5.96</span></div>
+      </div>
+      <p class="verdict">The week's lowest-scoring winner, and Kevin needed every bit of Christian Watson's flex explosion to get there after Ja'Marr Chase turned in the single worst game of his career. No fault to Al for Kittle leaving hurt early &mdash; that one's not on the lineup card. The part that should worry him more: Al went 0-14 last season, the same year Natalie went a perfect 14-0, and the sequel opens 0-1 with a bench that outscored his own starters. Nobody's saying it's happening again. Nobody's saying it isn't.</p>
+      <div class="pred hit"><b>Yahoo</b>Cha$ing Dubs by 5.98 (137.97&ndash;131.99) <span class="call">&mdash; hit</span></div>
+    </div>
+
+    <div class="matchup">
+      <div class="mrow">
+        <div class="side"><div class="team">OJ no Kulp</div><div class="mgr">pat kulp</div><div class="score win">170.60</div></div>
+        <div class="vs">def.</div>
+        <div class="side r"><div class="team">Bijan Claude Van Damme</div><div class="mgr">TJ</div><div class="score">146.22</div></div>
+      </div>
+      <div class="statlines">
+        <div class="statline good"><span class="tag">Boom</span><span class="who">D'Andre Swift</span><span class="ctx">FLEX &middot; OJ no Kulp</span><span class="pts">32.40</span><span class="d">+19.70</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">Tee Higgins</span><span class="ctx">WR &middot; Bijan Claude Van Damme</span><span class="pts">8.90</span><span class="d">&minus;6.64</span></div>
+      </div>
+      <p class="verdict">Yahoo liked TJ by 2.56 points pre-game, and there's no lineup mistake to point at after the fact &mdash; his team actually beat its own projection by 11.51 points. It just wasn't close to enough, because Trevor Lawrence, Chris Olave, DJ Moore and D'Andre Swift all ran hot for pat kulp at the same time, and that roster beat its number by nearly 40. The one bright spot: Juwan Johnson, added off waivers midweek, quietly beat his own projection (14.40 on 10.12) in his first start for the new team.</p>
+      <div class="pred miss"><b>Yahoo</b>Bijan Claude Van Damme by 2.56 (134.71&ndash;132.15) <span class="call">&mdash; miss, upset</span></div>
+    </div>
+
+    <div class="matchup">
+      <div class="mrow">
+        <div class="side"><div class="team">Medina Sod</div><div class="mgr">Just Haefner</div><div class="score win">164.26</div></div>
+        <div class="vs">def.</div>
+        <div class="side r"><div class="team">GooNads</div><div class="mgr">Natalie</div><div class="score">121.20</div></div>
+      </div>
+      <div class="statlines">
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Kenneth Walker III</span><span class="ctx">RB &middot; Medina Sod</span><span class="pts">34.10</span><span class="d">+19.46</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">Jaylen Waddle</span><span class="ctx">WR &middot; GooNads</span><span class="pts">1.20</span><span class="d">&minus;12.70</span></div>
+        <div class="statline hurt"><span class="tag">Hurt</span><span class="who">A.J. Brown</span><span class="ctx">WR &middot; GooNads &middot; exited Patriots debut, later landed on IR</span><span class="pts">5.60</span><span class="d">+5.60</span></div>
+      </div>
+      <p class="verdict">Derrick Henry went for 35.30 on the losing side and it barely registered, because Jaylen Waddle no-showed for 1.20 on a 13.90 projection and A.J. Brown &mdash; in his first game for a new team &mdash; left the field hurt before he could do anything with it. Yahoo's projection had already priced Brown near zero pre-game, so there's no bench alternative being missed here, just a rough coincidence stacked on a division loss. Medina Sod didn't need fireworks: Kenneth Walker and a genuinely even lineup did the boring, effective work all afternoon.</p>
+      <div class="pred hit"><b>Yahoo</b>Medina Sod by 21.63 (133.90&ndash;112.27) <span class="call">&mdash; hit</span></div>
+    </div>
+
+    <div class="matchup">
+      <div class="mrow">
+        <div class="side"><div class="team">Van Tine</div><div class="mgr">Ryan</div><div class="score win">153.56</div></div>
+        <div class="vs">def.</div>
+        <div class="side r"><div class="team">WhoseHungry?</div><div class="mgr">Mike</div><div class="score">127.80</div></div>
+      </div>
+      <div class="statlines">
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Josh Allen</span><span class="ctx">QB &middot; Van Tine &middot; beat Houston 36-31</span><span class="pts">35.66</span><span class="d">+15.53</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">Texans D/ST</span><span class="ctx">DEF &middot; WhoseHungry? &middot; allowed 36 to Buffalo</span><span class="pts">&minus;2.00</span><span class="d">&minus;8.14</span></div>
+      </div>
+      <p class="verdict">Mike's title defense opens with an L, and there's a cruel little joke buried in how it happened: he started the Texans defense, which got torched for 36 points by the Bills &mdash; and the Bills' quarterback, Josh Allen, happened to be the exact player powering the roster that beat him. Dallas Goedert, a Tuesday waiver pickup, dropped 23.70 without leaving Mike's bench while starter Tyler Warren managed 10.30 &mdash; the single biggest started-over-bench inversion of the week, and it still wasn't enough to flip the result even if it had been in the lineup.</p>
+      <div class="pred hit"><b>Yahoo</b>Van Tine by 2.84 (136.12&ndash;133.28) <span class="call">&mdash; hit, narrowly</span></div>
+    </div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Studs &amp; Duds</div>
+      <h2>Best, Worst, Unluckiest</h2>
+      <p class="intro">No lineup-card felonies to report this week &mdash; every real gap between a starter and a bench alternative either had an injury behind it or was too close pre-game to call a mistake. The football did all the damage on its own.</p>
+    </div>
+    <div class="recbook">
+      <div class="rec">
+        <span class="k">Top Team</span>
+        <span class="v gold">CadillacKulpDeville &mdash; 192.26</span>
+        <p class="s">High score by 21.66 over the field, and the only team that bothered clearing 190. Everyone else was playing a different sport that afternoon.</p>
+      </div>
+      <div class="rec">
+        <span class="k">Top Player</span>
+        <span class="v gold">Caleb Williams &mdash; 37.26</span>
+        <p class="s">Nearly doubled his own 18.72 projection and turned Carolina's secondary into a highlight reel &mdash; two rushing scores, 269 through the air, in a 59-37 rout.</p>
+      </div>
+      <div class="rec">
+        <span class="k">Bench Goat</span>
+        <span class="v bad">Greatest_of_AL_time &mdash; 80.70</span>
+        <p class="s">Chuba Hubbard (23.70) and Deebo Samuel (18.00) rotted on Al's bench all week, and no, it wasn't a bad call &mdash; his actual starters carried the higher projection at every one of those spots and still came up empty. Just an absurdly loaded bench on a night that needed one and didn't have it.</p>
+      </div>
+      <div class="rec">
+        <span class="k">Unluckiest</span>
+        <span class="v">Bijan Claude Van Damme &mdash; 146.22</span>
+        <p class="s">The week's fifth-highest score, better than five of the other nine teams posted &mdash; including the outright winning score in the Cha$ing Dubs game &mdash; and it was worth exactly nothing. Wrong bracket to be good in.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Awards</div>
+      <h2>This Week's Hardware</h2>
+      <p class="intro">Three trophies, none of them for a mistake, because nobody made one worth naming.</p>
+    </div>
+    <div class="recbook">
+      <div class="rec">
+        <span class="award-name">Radio Silence at Tight End</span>
+        <p class="s">Colston Loveland went catchless in a 59-point blowout win. Kyle Pitts went catchless in a much narrower win. Both zeroed out, both managers still walked away 1-0 &mdash; whatever the tight end spot was supposed to provide, nobody actually needed it this week.</p>
+      </div>
+      <div class="rec">
+        <span class="award-name">The Stash Outscores the Start</span>
+        <p class="s">Mike added Dallas Goedert off waivers the day before Week 1 opened, then started Tyler Warren over him anyway. Warren: 10.30. Goedert, from the bench: 23.70. The single biggest bench-beats-starter gap of the week, at the exact position Mike himself had just upgraded.</p>
+      </div>
+      <div class="rec">
+        <span class="award-name">Friendly Fire</span>
+        <p class="s">Mike's Texans defense got run for 36 points by Buffalo. Buffalo's quarterback was Josh Allen &mdash; property of Van Tine, the manager who beat Mike this week by 25.76. He didn't just lose to Van Tine's Josh Allen; he actively started a defense that got beaten by him too.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Standings Move</div>
+      <h2>Who's 1-0, Who's Not</h2>
+      <p class="intro">Five clean starts, five teams already searching for answers &mdash; including a defending champion and a manager who outscored half the league and still has nothing to show for it.</p>
+    </div>
+    <div class="statlines">
+      <div class="statline good"><span class="tag">1-0</span><span class="who">CadillacKulpDeville, OJ no Kulp, Medina Sod, Van Tine, Cha$ing Dubs</span><span class="ctx">five clean scorecards, one league already bracing to find out which of them is real</span></div>
+      <div class="statline bad"><span class="tag">0-1</span><span class="who">Human Psentipede, Bijan Claude Van Damme, GooNads, WhoseHungry?, Greatest_of_AL_time</span><span class="ctx">five 0-1's, and at least two of them (see: Unluckiest and Bench Goat, above) have a real case they got jobbed</span></div>
+    </div>
+    <div class="keystat"><b>Tightest numbers on the board:</b> two of the five games were inside a field goal on Yahoo's own pre-game math &mdash; TJ over pat kulp by 2.56, and Van Tine over Mike by 2.84. Only the first one flipped.</div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Mohn's Closing Thought</div>
+      <p class="pull">One week in, and the league already has its villain: a three-time champion who beat his own projection by 46 points and buried Human Psentipede by 85 before anyone else finished their coffee. Five teams open clean, five are already digging out, and the defending champion is one of them. If Week 1 is the floor, keep a defibrillator near the league group chat by November.</p>
+      <p class="sig">Mohn Jadden &mdash; Keeping it real since...you know when</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>The Major League &middot; Week 1, 2026 &middot; Compiled by Mohn Jadden.</span>
+    <span><a href="/the-major-league/chronicle/">The chronicle</a></span>
+  </footer>
+</div>
+</body>
+</html>
