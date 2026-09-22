@@ -2,21 +2,145 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#07090E">
 <title>The Major League &mdash; Recap</title>
-<meta name="description" content="This week's Major League recap, by Mohn Jadden.">
-<link rel="canonical" href="/the-major-league/recap/week-1/">
-<meta http-equiv="refresh" content="0; url=/the-major-league/recap/week-1/">
+<meta name="description" content="Every weekly recap of The Major League, by Mohn Jadden.">
+<link rel="canonical" href="/the-major-league/recap/">
 <style>
-body{background:#07090E;color:#EDF1F8;font-family:ui-sans-serif,system-ui,sans-serif;
- margin:0;min-height:100svh;display:grid;place-items:center;padding:24px}
-a{color:#E8B44A}
-p{color:#93A3B9;max-width:36ch;text-align:center;line-height:1.6}
+:root{
+ --ink:#07090E; --p1:#0D1119; --p2:#141A25; --p3:#1D2534;
+ --edge:#28324399; --text:#EDF1F8; --dim:#93A3B9; --faint:#61728A;
+ --gold:#E8B44A; --good:#3DDC97; --rb:#F0894D; --wr:#3FC7AE;
+ --serif:ui-serif,'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+ --sans:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+ --s2:16px;--s3:26px;--s4:44px;--s5:76px;
+ --sh2:0 3px 8px rgba(2,5,10,.6),0 16px 40px rgba(2,5,10,.5);
+ --sh3:0 6px 16px rgba(2,5,10,.65),0 32px 80px rgba(232,180,74,.07);
+ --pad:clamp(16px,4vw,26px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.7;
+ -webkit-font-smoothing:antialiased;
+ background-image:
+  radial-gradient(1100px 620px at 8% -6%,rgba(232,180,74,.10),transparent 62%),
+  radial-gradient(900px 560px at 96% 12%,rgba(63,199,174,.07),transparent 60%),
+  radial-gradient(900px 700px at 40% 62%,rgba(240,137,77,.06),transparent 64%);
+ background-attachment:fixed;}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:1;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--pad) var(--s5);position:relative;z-index:2}
+
+.sitenav{display:flex;flex-wrap:wrap;align-items:center;padding:12px 0 0}
+.sitenav .brand{flex:1 1 auto;min-width:min(100%,160px);padding:10px 12px 10px 0;
+ font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;
+ text-decoration:none}
+.sitenav .links{display:flex;flex-wrap:wrap}
+.sitenav a{color:var(--faint);text-decoration:none;border:0;font-size:11.5px;letter-spacing:.12em;
+ text-transform:uppercase;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;
+ border-radius:8px}
+.sitenav a:hover{color:var(--gold);background:rgba(232,180,74,.08)}
+.sitenav a.here{color:var(--gold)}
+.sitenav a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+.hero{padding:clamp(28px,6vw,56px) 0 clamp(20px,4vw,32px)}
+.kicker{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:-.035em;line-height:.98;
+ font-size:clamp(36px,9vw,76px);margin:var(--s3) 0 var(--s2)}
+.lede{font-size:clamp(16.5px,2.5vw,20px);color:var(--dim);max-width:46ch}
+
+.cat{margin-top:clamp(28px,5vw,48px)}
+.cat-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px;
+ padding-bottom:14px;border-bottom:1px solid var(--edge);margin-bottom:16px}
+.cat-head .note{font-size:13.5px;color:var(--faint)}
+
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{display:flex;flex-direction:column;background:linear-gradient(165deg,var(--p3),var(--p1));
+ border:1px solid var(--edge);border-radius:18px;padding:clamp(18px,3vw,26px);
+ box-shadow:var(--sh2);text-decoration:none;color:inherit;position:relative;overflow:hidden;
+ min-height:220px;transition:transform .3s cubic-bezier(.2,.9,.3,1.25),box-shadow .3s}
+.card::before{content:'';position:absolute;inset:0 0 auto 0;height:2px;
+ background:linear-gradient(90deg,var(--gold),transparent 70%)}
+.card.hot::before{background:linear-gradient(90deg,var(--rb),transparent 70%)}
+.card .tag{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.card.hot .tag{color:var(--rb)}
+.card h2{font-family:var(--serif);font-size:clamp(24px,3.4vw,32px);letter-spacing:-.025em;
+ line-height:1.12;margin:10px 0 8px;font-weight:600}
+.card p{font-size:15px;color:var(--dim);line-height:1.6;flex:1}
+.card .go{margin-top:18px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.card.span{grid-column:1/-1;min-height:0}
+.card.span p{max-width:62ch}
+.card.quiet{min-height:0}
+@media(hover:hover) and (pointer:fine){
+ .card:hover{transform:translateY(-4px);box-shadow:var(--sh3)}
+}
+.card:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+footer{border-top:1px solid var(--edge);padding:var(--s4) 0 0;margin-top:var(--s5);
+ color:var(--faint);font-size:13.5px}
+
+@media(max-width:720px){
+ .cards{grid-template-columns:1fr}
+ .card{min-height:0}
+ .cat-head{flex-direction:column;align-items:flex-start;gap:4px}
+ body{background-attachment:scroll}
+ .sitenav .links{width:100%;display:grid;grid-template-columns:1fr 1fr}
+ .sitenav a{justify-content:center;padding:12px 6px;white-space:nowrap;letter-spacing:.08em}
+}
 </style>
-<script>location.replace('/the-major-league/recap/week-1/');</script>
 </head>
 <body>
-<p>Opening this week&rsquo;s recap. <a href="/the-major-league/recap/week-1/">Week 1 &mdash; Seniority Rules.</a></p>
+<div class="grain"></div>
+<div class="wrap">
+
+<nav class="sitenav" aria-label="Site">
+  <a class="brand" href="/the-major-league/">Mohn Jadden</a>
+  <div class="links">
+    <a href="/the-major-league/">Home</a>
+    <a class="here" href="/the-major-league/recap/">Recap</a>
+    <a href="/the-major-league/draft-grades/">Draft Grades</a>
+    <a href="/the-major-league/chronicle/">Chronicle</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="kicker">The Major League &middot; 2026 Recap</div>
+  <h1>The weeks,<br>in order.</h1>
+  <p class="lede">Every recap, filed. This week is on top. The earlier ones sit underneath, where you can still find them.</p>
+</header>
+
+<section class="cat" aria-labelledby="this-week">
+  <div class="cat-head">
+    <div class="kicker" id="this-week">This week</div>
+    <div class="note">Week 2</div>
+  </div>
+  <div class="cards">
+    <a class="card span hot" href="/the-major-league/recap/week-2/">
+      <div class="tag">Week 2 &middot; New</div>
+      <h2>Da Bears. Da Bust. Da AL Wins.</h2>
+      <p>CadillacKulpDeville became CadillacKulpDaBears and the Bears scored three points. Al ended a 15-game losing streak. The defending champ is 0&ndash;2.</p>
+      <div class="go">Open the recap &rarr;</div>
+    </a>
+  </div>
+</section>
+
+<section class="cat" aria-labelledby="the-file">
+  <div class="cat-head">
+    <div class="kicker" id="the-file">The file</div>
+    <div class="note">Earlier weeks</div>
+  </div>
+  <div class="cards">
+    <a class="card span quiet" href="/the-major-league/recap/week-1/">
+      <div class="tag">Week 1</div>
+      <h2>Seniority Rules.</h2>
+      <p>CadillacKulpDeville opened the season by burying Human Psentipede by 85. Four of five favorites covered. The defending champ is already 0&ndash;1.</p>
+      <div class="go">Open the recap &rarr;</div>
+    </a>
+  </div>
+</section>
+
+<footer>The Major League, 2026. Compiled by Mohn Jadden.</footer>
+</div>
 </body>
 </html>
