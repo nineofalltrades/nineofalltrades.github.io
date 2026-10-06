@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07090E">
+<title>The Franchise &mdash; Week 4 Recap</title>
+<meta name="description" content="Team KAS wins as a 35.50-point underdog with two receivers giving him nothing. Chad sets the season high. Janice takes first. Week 4 of The Franchise.">
+<link rel="canonical" href="/the-franchise-2026-recap/week-4/">
+<style>
+  :root{
+    --ink:#07090E; --p1:#0D1119; --p2:#141A25; --p3:#1D2534;
+    --line:#2A3446; --edge:#28324399;
+    --text:#EDF1F8; --dim:#93A3B9; --faint:#61728A;
+    --gold:#E8B44A; --good:#3DDC97; --bad:#FF6B6B; --hot:#FF8355;
+    --serif: ui-serif,'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+    --sans: 'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    --s1:8px; --s2:16px; --s3:26px; --s4:44px; --s5:76px; --s6:120px;
+    --sh1: 0 1px 2px rgba(2,5,10,.55), 0 3px 10px rgba(2,5,10,.4);
+    --sh2: 0 3px 8px rgba(2,5,10,.6), 0 16px 40px rgba(2,5,10,.5);
+    --sh3: 0 6px 16px rgba(2,5,10,.65), 0 32px 80px rgba(232,180,74,.07);
+    --pad: clamp(16px,4vw,26px);
+  }
+  *{box-sizing:border-box;}
+  html,body{background:var(--ink);}
+  body{
+    margin:0;
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    background-image:
+      radial-gradient(1100px 620px at 8% -6%, rgba(232,180,74,.10), transparent 62%),
+      radial-gradient(900px 560px at 96% 12%, rgba(63,199,174,.07), transparent 60%),
+      radial-gradient(900px 700px at 40% 62%, rgba(240,137,77,.06), transparent 64%),
+      radial-gradient(800px 600px at 70% 100%, rgba(176,126,240,.05), transparent 62%);
+    background-attachment:fixed;
+  }
+  .grain{
+    position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 var(--pad); position:relative; z-index:2;}
+  .narrow{max-width:720px; margin:0 auto;}
+
+  .sitenav{display:flex;flex-wrap:wrap;align-items:center;padding:12px 0 0}
+  .sitenav .brand{flex:1 1 auto;min-width:min(100%,160px);padding:10px 12px 10px 0;
+    font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .sitenav .links{display:flex;flex-wrap:wrap}
+  .sitenav a{color:var(--faint);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+    padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:8px}
+  .sitenav a:hover{color:var(--gold);background:rgba(232,180,74,.08)}
+  .sitenav a.here{color:var(--gold)}
+  .sitenav a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+  header.hero{padding:var(--s5) 0 var(--s4);}
+  .kicker{font-size:11.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); font-weight:600;}
+  h1{font-family:var(--serif); font-weight:600; letter-spacing:-.035em; line-height:.98; font-size:clamp(34px,9vw,84px); margin:14px 0 0;}
+  .lede{font-size:clamp(17px,2.6vw,21px); color:var(--dim); max-width:64ch; margin:var(--s3) 0 0;}
+  .lede strong{color:var(--text); font-weight:700;}
+  .figs{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(16px,4vw,44px); margin-top:var(--s4);}
+  .fig .v{font-family:var(--serif); font-size:clamp(24px,5vw,38px); line-height:1; letter-spacing:-.03em; color:var(--gold);}
+  .fig .l{font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--faint); margin-top:8px;}
+
+  .pod{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:var(--s4);
+    padding:16px 18px;background:linear-gradient(165deg,#15241C,var(--p1));
+    border:1px solid rgba(29,185,84,.32);border-radius:16px;text-decoration:none;color:inherit;
+    box-shadow:var(--sh2);position:relative;overflow:hidden;min-height:44px;
+    transition:transform .3s cubic-bezier(.2,.9,.3,1.25),box-shadow .3s}
+  .pod::before{content:'';position:absolute;inset:0 0 auto 0;height:2px;
+    background:linear-gradient(90deg,#1DB954,transparent 70%)}
+  .pod-play{flex:none;width:52px;height:52px;border-radius:50%;background:#1DB954;color:#04110a;
+    display:grid;place-items:center;box-shadow:0 8px 20px rgba(29,185,84,.28)}
+  .pod-play svg{width:22px;height:22px;margin-left:3px}
+  .pod-copy{flex:1 1 200px;min-width:0}
+  .pod-copy .k{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#1DB954;font-weight:600}
+  .pod-copy strong{display:block;font-family:var(--serif);font-size:clamp(18px,2.8vw,24px);
+    letter-spacing:-.02em;line-height:1.2;margin:5px 0 4px;font-weight:600;color:var(--text)}
+  .pod-copy .m{font-size:13.5px;color:var(--dim);line-height:1.45}
+  .pod-go{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1DB954;font-weight:600}
+  @media(hover:hover) and (pointer:fine){
+    .pod:hover{transform:translateY(-3px);box-shadow:var(--sh3)}
+  }
+  .pod:focus-visible{outline:2px solid #1DB954;outline-offset:3px}
+
+  section{padding:clamp(40px,9vw,84px) 0; position:relative;}
+  section.act{border-top:1px solid var(--edge);}
+  h2{font-family:var(--serif); font-weight:600; letter-spacing:-.03em; line-height:1.08; font-size:clamp(24px,4.6vw,44px); margin:10px 0 0;}
+  h3{font-family:var(--serif); font-size:clamp(18px,2.4vw,24px); letter-spacing:-.02em; font-weight:600; margin:0;}
+  .narrow > p.intro{color:var(--dim); font-size:15px; max-width:60ch; margin:14px 0 0;}
+
+  .panel{background:linear-gradient(170deg,var(--p2),var(--p1)); border:1px solid var(--edge); border-radius:17px; padding:clamp(16px,3vw,28px); box-shadow:var(--sh2); margin-top:var(--s3);}
+  .panel h3{color:var(--gold); margin-bottom:10px;}
+  .panel p{color:var(--dim); font-size:14.5px; line-height:1.75; margin:0 0 10px;}
+  .panel p:last-child{margin-bottom:0;}
+  .panel p strong{color:var(--text);}
+
+  .matchup{background:linear-gradient(170deg,var(--p2),var(--p1)); border:1px solid var(--edge); border-radius:17px; padding:clamp(16px,3vw,28px); box-shadow:var(--sh2); margin-top:var(--s3);}
+  .mrow{display:flex; align-items:center; gap:clamp(10px,3vw,22px);}
+  .side{flex:1 1 0; min-width:0;}
+  .side.r{text-align:right;}
+  .side .team{font-family:var(--serif); font-size:clamp(17px,2.8vw,22px); letter-spacing:-.02em; line-height:1.15;}
+  .side .mgr{font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); margin-top:4px;}
+  .side .score{font-family:var(--serif); font-size:clamp(28px,4.6vw,38px); letter-spacing:-.03em; color:var(--faint); margin-top:8px; font-variant-numeric:tabular-nums;}
+  .side .score.win{color:var(--gold);}
+  .vs{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); flex:0 0 auto; padding:0 4px;}
+  .statlines{margin-top:var(--s2); display:flex; flex-direction:column; gap:8px;}
+  .statline{display:flex; align-items:baseline; gap:10px; font-size:13px; padding:8px 10px; background:#141C29; border:1px solid #1B2432; border-radius:9px; flex-wrap:wrap;}
+  .statline .tag{font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; font-weight:700; padding:2px 6px; border-radius:5px; flex:0 0 auto;}
+  .statline.good .tag{color:var(--good); background:rgba(61,220,151,.12);}
+  .statline.bad .tag{color:var(--bad); background:rgba(255,107,107,.12);}
+  .statline .who{color:var(--text); font-weight:600; flex:1 1 0; min-width:120px;}
+  .statline .ctx{color:var(--faint); font-size:12px;}
+  .statline .pts{font-variant-numeric:tabular-nums; font-weight:700; color:var(--text); flex:0 0 auto;}
+  .statline .d{font-variant-numeric:tabular-nums; font-size:11.5px; flex:0 0 auto;}
+  .statline.good .d{color:var(--good);}
+  .statline.bad .d{color:var(--bad);}
+  .matchup .verdict{font-size:14.5px; color:var(--dim); line-height:1.7; margin-top:var(--s3);}
+  .pred{margin-top:var(--s2); font-size:13.5px; color:var(--text); padding-top:12px; border-top:1px solid var(--edge);}
+  .pred b{color:var(--gold); text-transform:uppercase; letter-spacing:.1em; font-size:10.5px; margin-right:6px;}
+  .pred.alt{margin-top:6px; padding-top:0; border-top:none; color:var(--faint); font-size:12.5px;}
+  .pred.alt b{color:var(--faint);}
+  .pred .call{color:var(--faint);}
+  .pred.hit .call{color:var(--good);}
+  .pred.miss .call{color:var(--bad);}
+
+  .recbook{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:16px; margin-top:var(--s3);}
+  .rec{background:linear-gradient(165deg,var(--p3),var(--p1)); border:1px solid var(--edge); border-radius:14px; padding:18px 20px;}
+  .rec .k{font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); display:block;}
+  .rec .v{font-family:var(--serif); font-size:1.4rem; color:var(--text); font-variant-numeric:tabular-nums; display:block; margin-top:6px;}
+  .rec .v.bad{color:var(--bad);}
+  .rec .v.gold{color:var(--gold);}
+  .rec .s{color:var(--dim); font-size:13.5px; line-height:1.6; margin:8px 0 0;}
+  .rec .s .bad{color:var(--bad); font-weight:700;}
+  .rec .award-name{font-family:var(--serif); color:var(--gold); font-size:1.05rem; display:block;}
+  @media(hover:hover) and (pointer:fine){
+    .matchup:hover{box-shadow:var(--sh3)}
+  }
+
+  .keystat{background:linear-gradient(170deg,var(--p2),var(--p1)); border:1px solid var(--edge); border-radius:11px; padding:14px 18px; margin-top:var(--s3); font-size:13.5px; color:var(--dim);}
+  .keystat b{color:var(--gold); font-weight:600;}
+
+  .pull{font-family:var(--serif); font-size:clamp(20px,3.6vw,32px); line-height:1.3; letter-spacing:-.02em; color:var(--text); border-left:2px solid var(--gold); padding-left:clamp(14px,3vw,26px); margin:var(--s4) 0 0; font-style:italic;}
+  .sig{font-family:var(--serif); font-style:italic; color:var(--gold); font-size:17px; margin-top:var(--s4); padding-top:var(--s2); border-top:1px solid var(--edge);}
+
+  footer{border-top:1px solid var(--edge); padding:var(--s4) 0 var(--s5); color:var(--faint); font-size:13.5px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  footer a{color:var(--gold)}
+
+  @media (max-width:720px){
+    .figs{grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px;}
+    .mrow{flex-wrap:wrap;}
+    .side.r{text-align:left;}
+    .vs{order:3; width:100%; text-align:left; padding:2px 0;}
+    .recbook{grid-template-columns:1fr;}
+    .pod{padding:14px 14px 16px;align-items:flex-start}
+    .pod-go{width:100%}
+    body{background-attachment:scroll}
+    .sitenav .links{width:100%}
+    .sitenav a{flex:1 1 auto;justify-content:center;padding:12px 8px}
+  }
+  .vhead{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:var(--s3);}
+  .vhead + .verdict{margin-top:6px;}
+  .divs{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);margin-top:var(--s3);}
+  .divs h3{color:var(--gold);font-size:18px;margin-bottom:10px;}
+  .shout{margin:var(--s3) 0 0;padding:0;list-style:none;}
+  .shout li{color:var(--dim);font-size:15px;line-height:1.6;padding:8px 0;border-bottom:1px solid var(--edge);}
+  .shout li b{color:var(--text);}
+  .bless{color:var(--dim);font-size:16px;margin-top:var(--s3);}
+  .tagline{font-family:var(--serif);color:var(--gold);font-size:19px;margin-top:var(--s2);}
+  @media (max-width:720px){ .divs{grid-template-columns:1fr;} }
+  .stdiv h3{color:var(--gold);font-size:18px;margin:0 0 12px;}
+  .srow{display:grid;grid-template-columns:44px minmax(0,1fr) auto;column-gap:12px;row-gap:10px;align-items:center;
+    background:linear-gradient(165deg,var(--p2),var(--p1));border:1px solid var(--edge);border-left:3px solid var(--line);
+    border-radius:12px;padding:14px 16px;margin-bottom:10px;}
+  .srow.good{border-left-color:var(--good);} .srow.bad{border-left-color:var(--bad);}
+  .srow .rk{display:flex;flex-direction:column;align-items:center;line-height:1;}
+  .srow .rk .n{font-family:var(--serif);font-size:26px;color:var(--text);font-variant-numeric:tabular-nums;}
+  .srow .mv{font-size:10.5px;font-weight:700;margin-top:5px;letter-spacing:.02em;}
+  .srow .mv.up{color:var(--good);} .srow .mv.down{color:var(--bad);}
+  .srow .nm{font-family:var(--serif);font-size:18px;letter-spacing:-.01em;line-height:1.2;color:var(--text);}
+  .srow .mg{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:3px;}
+  .srow .rc{font-family:var(--serif);font-size:26px;color:var(--gold);font-variant-numeric:tabular-nums;text-align:right;line-height:1;}
+  .srow .stk{display:block;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.1em;margin-top:6px;}
+  .srow .stk.w{color:var(--good);} .srow .stk.l{color:var(--bad);}
+  .srow .nums{grid-column:1 / -1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;}
+  .srow .nums span{background:#141C29;border:1px solid #1B2432;border-radius:8px;padding:6px 7px;min-width:0;
+    font-variant-numeric:tabular-nums;font-size:13px;color:var(--text);font-weight:600;line-height:1.3;}
+  .srow .nums i{display:block;font-style:normal;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:600;}
+  .srow .nums b{font-weight:600;} .srow .nums b.hi{color:var(--gold);} .srow .nums b.lo{color:var(--bad);}
+  .srow .tag2{grid-column:1 / -1;margin:0;color:var(--dim);font-size:13.5px;line-height:1.55;}
+  .skey{color:var(--faint);font-size:12px;margin:6px 0 0;}
+  @media (max-width:359px){ .srow .nums{grid-template-columns:repeat(2,minmax(0,1fr));} }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="wrap">
+  <nav class="sitenav" aria-label="Site">
+    <a class="brand" href="/">Mohn Jadden</a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/the-franchise-2026-primer/">Primer</a>
+      <a class="here" href="/the-franchise-2026-recap/">Recap</a>
+      <a href="/the-franchise-2026-preseason/">Preseason</a>
+      <a href="/the-franchise-chronicle/">The Franchise</a>
+      <a href="/the-franchise-2026-draft-grades/">Draft Grades</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="kicker">The Franchise &middot; Week 4 &middot; By Mohn Jadden</div>
+    <h1>Two Zeros<br>and a Cowboy.</h1>
+    <p class="lede">Week 4 took the projections, put them in a blender, and hit puree. The biggest favorite of the week lost to a team that got zero points from two of its receivers. The team with the worst score in Week 3 put up the best score of the year. The defending champ left a small village of points on his bench and still won in a landslide. <strong>If you saw any of this coming, you're lying.</strong></p>
+    <p class="lede">Mike S pulled off a heist with half a crew. Dao found out a 35-point cushion is mostly air. Chad stopped pretending to be a fraud and started pretending to be a dynasty. Janice moved into first and didn't even have to get up. Eric made the right call at quarterback and still lost. Chris picked the wrong quarterback again and still won. Curtis lost a family argument, Mike E got run over, and Rob lost his quarterback and half his backfield by halftime. TJ won by a mile with his two hottest players watching. Let's get into it.</p>
+    <div class="figs">
+      <div class="fig"><div class="v">35.50</div><div class="l">Dao's projected cushion Friday. He lost</div></div>
+      <div class="fig"><div class="v">172.68</div><div class="l">Chad's score, seven days after finishing dead last</div></div>
+      <div class="fig"><div class="v">59.10</div><div class="l">What TJ's two bench running backs scored</div></div>
+      <div class="fig"><div class="v">93.68</div><div class="l">New season low. Rob's training room sends its regards</div></div>
+    </div>
+  </header>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">The Story</div>
+      <h2>Two Zeros and a Cowboy</h2>
+    </div>
+    <div class="panel">
+      <p>Friday afternoon, Team KAS was the deadest man walking in the league. Justin Jefferson was ruled out. Ladd McConkey was a game-time decision with a bad foot and bad ribs. D-Unit was favored by <strong>35.50</strong>, the biggest spread on the board, and Dao still had Burrow, Gibbs and Chase to play. Mike S's own projection had him at 109. Bookies would've taken this one off the board out of pity.</p>
+      <p>Then Sunday happened. McConkey left early with the foot and finished with a <strong>0.00</strong>. Ja'Marr Chase took a concussion and left with 4.20. Joe Burrow threw for 428 yards like a man trying to win the game by himself, put up <strong>36.92</strong>, and the other nine guys in Dao's lineup combined for 71.80. Meanwhile Javonte Williams punched in three touchdowns in Houston and dropped <strong>30.70</strong>. Dao went into Monday night down 12.80 with one bullet left: Juwan Johnson against the Falcons. He needed 12.81. He got 8.90. Final: <strong>112.62&ndash;108.72</strong>. Mike S started a receiver who scored zero, had his best receiver on IR, and won anyway. That's not luck. That's a guy who wandered into a bank with a squirt gun and walked out with the vault.</p>
+    </div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Scoreboard</div>
+      <h2>One Heist, Four Beatdowns</h2>
+    </div>
+
+    <div class="matchup">
+      <div class="mrow">
+        <div class="side"><div class="team">Team KAS</div><div class="mgr">Mike S</div><div class="score win">112.62</div></div>
+        <div class="vs">def.</div>
+        <div class="side r"><div class="team">D-Unit</div><div class="mgr">Dao</div><div class="score">108.72</div></div>
+      </div>
+      <div class="statlines">
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Javonte Williams</span><span class="ctx">RB &middot; Team KAS &middot; three rushing TDs</span><span class="pts">30.70</span></div>
+        <div class="statline bad"><span class="tag">Hurt, done early</span><span class="who">Ladd McConkey</span><span class="ctx">WR &middot; Team KAS &middot; foot</span><span class="pts">0.00</span></div>
+      </div>
+      <span class="vhead">Verdict: Never Tell Me the Odds</span>
+      <p class="verdict">Full story up top. The extra twist of the knife: Rhamondre Stevenson put up 18.20 on Dao's bench while Jacory Croskey-Merritt gave him 6.90 at flex. Croskey-Merritt projected higher, so that's a bad beat, not a crime. Dao gets sympathy for Chase's head and nothing else. Mike S had lost two straight and had every reason to mail it in. Somebody check that man for a horseshoe.</p>
+      <div class="pred miss"><b>Friday line</b>D-Unit by 35.50 <span class="call">&mdash; upset, and not a small one</span></div>
+    </div>
+
+    <div class="matchup">
+      <div class="mrow">
+        <div class="side"><div class="team">TEAM HoldMyCHUBBBA</div><div class="mgr">Chad</div><div class="score win">172.68</div></div>
+        <div class="vs">def.</div>
+        <div class="side r"><div class="team">Njigba Please</div><div class="mgr">Mike E</div><div class="score">119.98</div></div>
+      </div>
+      <div class="statlines">
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Tetairoa McMillan</span><span class="ctx">WR &middot; HoldMyCHUBBBA &middot; 14 catches, 192 yards, 2 TDs</span><span class="pts">39.20</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">Josh Downs</span><span class="ctx">WR &middot; Njigba Please &middot; projected 12.95</span><span class="pts">3.10</span></div>
+      </div>
+      <span class="vhead">Verdict: Fraud Watch Has Been Suspended Pending Review</span>
+      <p class="verdict">Last week we put Chad on fraud watch and Tetairoa McMillan gave him 2.70. This week McMillan caught FOURTEEN balls, and Hubbard and Jonathan Taylor tacked on 52.60 between them. Chad didn't beat Mike E so much as file a restraining order against him. Mike E got 21.20 from Nabers and 18.40 from LaPorta and it was like bringing a nice bottle of wine to a house fire. Chad, the fraud tag comes off for now. We're keeping it in a drawer.</p>
+      <div class="pred hit"><b>Friday line</b>TEAM HoldMyCHUBBBA by 9.53 <span class="call">&mdash; favorite won, by 43 more than advertised</span></div>
+    </div>
+
+    <div class="matchup">
+      <div class="mrow">
+        <div class="side"><div class="team">J Squad</div><div class="mgr">Janice</div><div class="score win">160.00</div></div>
+        <div class="vs">def.</div>
+        <div class="side r"><div class="team">The McClusterfucks</div><div class="mgr">Eric</div><div class="score">132.16</div></div>
+      </div>
+      <div class="statlines">
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Kenneth Walker III</span><span class="ctx">RB &middot; J Squad &middot; 177 yards, 2 TDs</span><span class="pts">33.60</span></div>
+        <div class="statline bad"><span class="tag">Hurt, done early</span><span class="who">Rashee Rice</span><span class="ctx">WR &middot; McClusterfucks &middot; hamstring, could miss weeks</span><span class="pts">0.00</span></div>
+      </div>
+      <span class="vhead">Verdict: She Doesn't Even Have to Try</span>
+      <p class="verdict">Janice's two running backs combined for 66.90 and turned Eric's afternoon into a hostage video. Credit where it's due, Eric: you cut Justin Herbert, started Bryce Young, and Young outscored Herbert by 13.60. You were right! It just didn't matter. And here's the cruelest part: Janice's quarterback, Dak Prescott, spent Sunday feeding Eric's CeeDee Lamb 189 yards. She beat you with your own receiver's QB. Rice's hamstring is a gut punch. Brutal. Not his fault. Everything else? That's just Janice.</p>
+      <div class="pred miss"><b>Friday line</b>The McClusterfucks by 8.60 <span class="call">&mdash; upset</span></div>
+    </div>
+
+    <div class="matchup">
+      <div class="mrow">
+        <div class="side"><div class="team">Henrys Heros</div><div class="mgr">Chris</div><div class="score win">136.34</div></div>
+        <div class="vs">def.</div>
+        <div class="side r"><div class="team">The Annexation of PR</div><div class="mgr">Curtis</div><div class="score">115.68</div></div>
+      </div>
+      <div class="statlines">
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Tee Higgins</span><span class="ctx">WR &middot; Henrys Heros &middot; 16 targets, 157 yards</span><span class="pts">22.20</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">D'Andre Swift</span><span class="ctx">RB &middot; Annexation &middot; projected 14.69</span><span class="pts">7.90</span></div>
+      </div>
+      <span class="vhead">Verdict: Thanksgiving Is Going to Be Quiet</span>
+      <p class="verdict">Cousins, head to head, and the cousin with the better kicker won. Spencer Shrader hit for 16.00, more than either of Curtis's starting running backs. Higgins grinded out 157 yards before his groin tapped out late, and Judkins added 20.30 on Thursday night. Then Alvin Kamara scored twice on his bench while Swift started. Swift projected way higher, so that's a bad beat. Curtis, you did everything right and you're 3&ndash;5. Pass the stuffing.</p>
+      <div class="pred hit"><b>Friday line</b>Henrys Heros by 12.41 <span class="call">&mdash; favorite won</span></div>
+    </div>
+
+    <div class="matchup">
+      <div class="mrow">
+        <div class="side"><div class="team">Nico'd &amp; Dimed</div><div class="mgr">TJ</div><div class="score win">148.42</div></div>
+        <div class="vs">def.</div>
+        <div class="side r"><div class="team">Ken You Not Pickett</div><div class="mgr">Rob</div><div class="score">93.68</div></div>
+      </div>
+      <div class="statlines">
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Nico Collins</span><span class="ctx">WR &middot; Nico'd &amp; Dimed &middot; back from the hamstring, 2 TDs</span><span class="pts">28.30</span></div>
+        <div class="statline bad"><span class="tag">Hurt, done early</span><span class="who">Saquon Barkley</span><span class="ctx">RB &middot; Ken You Not Pickett &middot; hamstring</span><span class="pts">1.70</span></div>
+      </div>
+      <span class="vhead">Verdict: Somebody Call It</span>
+      <p class="verdict">Biggest blowout of the week, and it wasn't a fair fight. Rob walked in without Achane, Jacobs, Caleb Williams, Alec Pierce or Jordan Mason. Then Saquon's hamstring went early and Lamar Jackson didn't come out for the second half. Lamar threw for 222 and two scores in ONE HALF and was still Rob's best player. His second-best player was his kicker. Brutal. None of it his fault. Rob, at this point your roster isn't a fantasy team. It's a waiting room.</p>
+      <div class="pred hit"><b>Friday line</b>Nico'd &amp; Dimed by 10.22 <span class="call">&mdash; favorite won</span></div>
+    </div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Highlights</div>
+      <h2>&#x1F4AA; Studs of the Week</h2>
+    </div>
+    <div class="statlines">
+      <div class="statline good"><span class="tag">33.90</span><span class="who">CeeDee Lamb</span><span class="ctx">McClusterfucks &middot; 21 targets. Dallas threw to him like it was a court order</span></div>
+      <div class="statline good"><span class="tag">33.30</span><span class="who">Kyren Williams</span><span class="ctx">J Squad &middot; Two rushing TDs and ten catches. A running back with a side hustle</span></div>
+      <div class="statline good"><span class="tag">30.10</span><span class="who">Bijan Robinson</span><span class="ctx">Nico'd &amp; Dimed &middot; 145 yards and two scores on Monday night. Treated the Saints like traffic cones</span></div>
+      <div class="statline good"><span class="tag">28.40</span><span class="who">Chuba Hubbard</span><span class="ctx">HoldMyCHUBBBA &middot; Projected 16.34. Ran like he'd heard the team name and took it personally</span></div>
+      <div class="statline good"><span class="tag">24.30</span><span class="who">Puka Nacua</span><span class="ctx">Annexation of PR &middot; First week back on a snap count. 125 yards. Some snap count</span></div>
+      <div class="statline good"><span class="tag">18.00</span><span class="who">Jake Bates</span><span class="ctx">Ken You Not Pickett &middot; Eighteen points from a kicker. On this roster, that makes him a franchise player</span></div>
+    </div>
+    <div class="narrow" style="margin-top:var(--s4)">
+      <h2>&#x1F4A9; Duds of the Week</h2>
+    </div>
+    <div class="statlines">
+      <div class="statline bad"><span class="tag">1.20</span><span class="who">Dalton Kincaid</span><span class="ctx">HoldMyCHUBBBA &middot; Chad scored 172 and his tight end contributed a rounding error</span></div>
+      <div class="statline bad"><span class="tag">1.60</span><span class="who">Parker Washington</span><span class="ctx">D-Unit &middot; Projected 13.58. Spent the afternoon as a decoy for nothing</span></div>
+      <div class="statline bad"><span class="tag">1.90</span><span class="who">Dalton Schultz</span><span class="ctx">Team KAS &middot; $18 of FAAB, and the gift receipt is looking better every week</span></div>
+      <div class="statline bad"><span class="tag">2.00</span><span class="who">Broncos DEF</span><span class="ctx">Ken You Not Pickett &middot; Gave up 24 to the Niners and scored 2. Didn't exactly lift the mood</span></div>
+      <div class="statline bad"><span class="tag">2.30</span><span class="who">Emeka Egbuka</span><span class="ctx">Annexation of PR &middot; One of those weeks where you check if he was actually active. He was</span></div>
+      <div class="statline bad"><span class="tag">4.20</span><span class="who">Garrett Wilson</span><span class="ctx">D-Unit &middot; The Jets scored 12 points. Garrett's share of the fun was about a third</span></div>
+    </div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Studs &amp; Duds</div>
+      <h2>The Numbers That Matter</h2>
+    </div>
+    <div class="recbook">
+      <div class="rec">
+        <span class="k">Top Team</span>
+        <span class="v gold">TEAM HoldMyCHUBBBA &mdash; 172.68</span>
+        <p class="s">New season high by 13. Seventy points better than his own score the week before. And Drake Maye threw three touchdowns on the bench for 30.16, so this could have been 187. Chad, pick a personality and stick with it.</p>
+      </div>
+      <div class="rec">
+        <span class="k">Bench Goat</span>
+        <span class="v bad">Nico'd &amp; Dimed &mdash; 49.20</span>
+        <p class="s">Kyle Monangai ran for 146 and two scores. Emanuel Wilson took over Seattle's backfield. Both on the pine, both projected a hair under the guys who started. Bad beat, no crime. Those two alone outscored Rob's top three starters, and TJ still won by more than 54.</p>
+      </div>
+      <div class="rec">
+        <span class="k">Unluckiest</span>
+        <span class="v">The McClusterfucks &mdash; lost with 132.16</span>
+        <p class="s">Fifth-best score of the week. It beats five teams. It beat the median. It lost by 27.84 because Janice picked this week to score 160. Eric has scored 121 and 132 the last two weeks and lost both. The commissioner should look into that.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Awards</div>
+      <h2>&#x1F3C6; Weekly Hardware</h2>
+    </div>
+    <div class="recbook">
+      <div class="rec">
+        <span class="award-name">&#x1F381; The Regift Award</span>
+        <p class="s">TJ dropped Dontayvion Wicks on Tuesday, then paid $2 to get him back at 12:28 a.m. Friday, and cut Romeo Doubs to make room. Wicks: 3.30. Doubs, on waivers, belonging to nobody: two touchdowns and 20.80. TJ paid two dollars to swap a 20-point receiver for a 3-point one. After midnight. Nothing good happens after midnight.</p>
+      </div>
+      <div class="rec">
+        <span class="award-name">&#x1F4FA; The Reunion Special</span>
+        <p class="s">Travis Kelce spent nine seasons on Janice's roster. This week he finally faced her, in Eric's lineup, and gave his old boss 2.50 points of pure loyalty. Meanwhile Harold Fannin outscored him from Eric's bench for the second straight week. On paper it's a coin flip. On the scoreboard it's a sequel.</p>
+      </div>
+      <div class="rec">
+        <span class="award-name">&#x1FA99; The Coin Flip Award</span>
+        <p class="s">Last week Chris started Goff and Tyler Shough threw four touchdowns on his bench. This week he started Shough and Goff threw for 412 on his bench, 30.68 points of it. Both weeks the projections were about a tenth of a point apart. Chris has now been wrong both ways and won both games. Some guys are just built different.</p>
+      </div>
+      <div class="rec">
+        <span class="award-name">&#x1F3E6; The Interest-Bearing Account</span>
+        <p class="s">Janice has not spent one dollar of FAAB this season. Not one. Seven teams have been burning FAAB like day traders, and the lady with all $100 still in the envelope is sitting in first place. Turns out the best waiver move is the one you don't make.</p>
+      </div>
+    </div>
+    <div class="keystat"><b>Start/Sit Court:</b> nobody screwed up, three weeks running. Monangai, Wilson, Goff, Maye and Kamara all boomed on benches, and every one of them was projected below, or within a point of, the guy who started. Every ugly line this week was an injury or a bad beat. Court adjourned. Again.</div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Standings</div>
+      <h2>&#x1F4CA; The Table After Week 4</h2>
+    </div>
+    <div class="divs">
+      <div class="stdiv">
+        <h3>Weak Side</h3>
+        <div class="srow good">
+          <div class="rk"><span class="n">2</span><span class="mv down">&#9660;1</span></div>
+          <div class="tm"><div class="nm">Henrys Heros</div><div class="mg">Chris</div></div>
+          <div class="rc">6-2<span class="stk w">W2</span></div>
+          <div class="nums"><span><i>H2H</i>3-1</span><span><i>Median</i><b>3-1</b></span><span><i>PF</i><b>536.22</b></span><span><i>PA</i><b>489.96</b></span></div>
+          <p class="tag2">Won the week, lost the penthouse on a tiebreaker. Nobody tell him</p>
+        </div>
+        <div class="srow good">
+          <div class="rk"><span class="n">4</span><span class="mv up">&#9650;3</span></div>
+          <div class="tm"><div class="nm">TEAM HoldMyCHUBBBA</div><div class="mg">Chad</div></div>
+          <div class="rc">5-3<span class="stk w">W1</span></div>
+          <div class="nums"><span><i>H2H</i>3-1</span><span><i>Median</i><b>2-2</b></span><span><i>PF</i><b>510.74</b></span><span><i>PA</i><b>459.26</b></span></div>
+          <p class="tag2">Fewest points allowed in the league. The schedule still loves him, he just doesn't need it as much</p>
+        </div>
+        <div class="srow ">
+          <div class="rk"><span class="n">5</span><span class="mv down">&#9660;2</span></div>
+          <div class="tm"><div class="nm">Ken You Not Pickett</div><div class="mg">Rob</div></div>
+          <div class="rc">4-4<span class="stk l">L1</span></div>
+          <div class="nums"><span><i>H2H</i>1-3</span><span><i>Median</i><b>3-1</b></span><span><i>PF</i><b>485.98</b></span><span><i>PA</i><b>554.16</b></span></div>
+          <p class="tag2">Second-most points allowed, most names on the injury report, still .500. Tougher than he looks</p>
+        </div>
+        <div class="srow ">
+          <div class="rk"><span class="n">7</span><span class="mv up">&#9650;1</span></div>
+          <div class="tm"><div class="nm">Team KAS</div><div class="mg">Mike S</div></div>
+          <div class="rc">3-5<span class="stk w">W1</span></div>
+          <div class="nums"><span><i>H2H</i>2-2</span><span><i>Median</i><b>1-3</b></span><span><i>PF</i><b>490.86</b></span><span><i>PA</i><b>499.20</b></span></div>
+          <p class="tag2">Still owns Josh Allen. Might get Jefferson back. Suddenly nobody wants this matchup</p>
+        </div>
+        <div class="srow bad">
+          <div class="rk"><span class="n">9</span><span class="mv up">&#9650;1</span></div>
+          <div class="tm"><div class="nm">The McClusterfucks</div><div class="mg">Eric</div></div>
+          <div class="rc">3-5<span class="stk l">L2</span></div>
+          <div class="nums"><span><i>H2H</i>1-3</span><span><i>Median</i><b>2-2</b></span><span><i>PF</i><b>483.54</b></span><span><i>PA</i><b>498.28</b></span></div>
+          <p class="tag2">Out of the basement, $53 left in the budget, and somehow climbing. Commish never quits</p>
+        </div>
+      </div>
+      <div class="stdiv">
+        <h3>Strong Side</h3>
+        <div class="srow good">
+          <div class="rk"><span class="n">1</span><span class="mv up">&#9650;1</span></div>
+          <div class="tm"><div class="nm">J Squad</div><div class="mg">Janice</div></div>
+          <div class="rc">6-2<span class="stk w">W1</span></div>
+          <div class="nums"><span><i>H2H</i>3-1</span><span><i>Median</i><b>3-1</b></span><span><i>PF</i><b>550.80</b></span><span><i>PA</i><b>481.64</b></span></div>
+          <p class="tag2">Second in points, first in the table, last in giving a damn about your opinion</p>
+        </div>
+        <div class="srow good">
+          <div class="rk"><span class="n">3</span><span class="mv up">&#9650;1</span></div>
+          <div class="tm"><div class="nm">Nico'd &amp; Dimed</div><div class="mg">TJ</div></div>
+          <div class="rc">5-3<span class="stk w">W1</span></div>
+          <div class="nums"><span><i>H2H</i>2-2</span><span><i>Median</i><b class="hi">3-1</b></span><span><i>PF</i><b>566.48</b></span><span><i>PA</i><b>531.16</b></span></div>
+          <p class="tag2">Most points in the league, third in the table. The math still owes him one</p>
+        </div>
+        <div class="srow ">
+          <div class="rk"><span class="n">6</span><span class="mv down">&#9660;1</span></div>
+          <div class="tm"><div class="nm">D-Unit</div><div class="mg">Dao</div></div>
+          <div class="rc">3-5<span class="stk l">L1</span></div>
+          <div class="nums"><span><i>H2H</i>2-2</span><span><i>Median</i><b>1-3</b></span><span><i>PF</i><b>499.66</b></span><span><i>PA</i><b>527.88</b></span></div>
+          <p class="tag2">Rode a two-game win streak into Sunday. Left with a concussion protocol and a grudge</p>
+        </div>
+        <div class="srow ">
+          <div class="rk"><span class="n">8</span><span class="mv down">&#9660;2</span></div>
+          <div class="tm"><div class="nm">The Annexation of PR</div><div class="mg">Curtis</div></div>
+          <div class="rc">3-5<span class="stk l">L1</span></div>
+          <div class="nums"><span><i>H2H</i>2-2</span><span><i>Median</i><b>1-3</b></span><span><i>PF</i><b>484.88</b></span><span><i>PA</i><b>500.78</b></span></div>
+          <p class="tag2">Last year's runner-up. This year's runner-up in every game that matters</p>
+        </div>
+        <div class="srow bad">
+          <div class="rk"><span class="n">10</span><span class="mv down">&#9660;1</span></div>
+          <div class="tm"><div class="nm">Njigba Please</div><div class="mg">Mike E</div></div>
+          <div class="rc">2-6<span class="stk l">L1</span></div>
+          <div class="nums"><span><i>H2H</i>1-3</span><span><i>Median</i><b>1-3</b></span><span><i>PF</i><b>489.22</b></span><span><i>PA</i><b>556.06</b></span></div>
+          <p class="tag2">Most points allowed in the league. Every opponent saves their best game for him. It's almost flattering</p>
+        </div>
+      </div>
+    </div>
+    <p class="skey">Record counts head-to-head plus the weekly median &middot; &#9650;&#9660; = spots moved since Week 3</p>
+    <div class="keystat"><b>Median madness:</b> this week's line was 126.07. Rob's perfect run against it is over. The new co-champions of being robbed are TJ and Rob, both 3&ndash;1 against the median and a combined 3&ndash;5 against actual opponents. Meanwhile Mike S beat the week's biggest favorite and still went 1&ndash;1, because 112.62 doesn't clear anything. One win. Zero celebrations.</div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Week 5</div>
+      <h2>&#x1F6A8; Storylines to Watch</h2>
+    </div>
+    <div class="recbook">
+      <div class="rec">
+        <span class="award-name">1. The Season High vs. the First Seat</span>
+        <p class="s">TEAM HoldMyCHUBBBA vs. J Squad. Chad just posted the best score of the year. Janice is in first on a tiebreaker. One of them is about to find out whether last week meant anything.</p>
+      </div>
+      <div class="rec">
+        <span class="award-name">2. The Points Machine vs. the Commish</span>
+        <p class="s">Nico'd &amp; Dimed vs. The McClusterfucks. The league's top offense against a commissioner who just lost his flex to a hamstring and has $53 to replace him. TJ, meanwhile, has to keep an eye on Monangai's thumb.</p>
+      </div>
+      <div class="rec">
+        <span class="award-name">3. The Infirmary Bowl</span>
+        <p class="s">D-Unit vs. Ken You Not Pickett. Chase is in the concussion protocol. Saquon's hamstring is a question. Lamar is day-to-day. Whoever has more guys standing on Sunday morning probably wins.</p>
+      </div>
+      <div class="rec">
+        <span class="award-name">4. Loser Goes to 3&ndash;7</span>
+        <p class="s">The Annexation of PR vs. Team KAS. Two 3&ndash;5 teams, one season on the line. Mike S just pulled off the heist of the year, and Jefferson's hoping to be back. Curtis would like a turn at being lucky.</p>
+      </div>
+      <div class="rec">
+        <span class="award-name">5. David vs. Goliath, Minus the Slingshot</span>
+        <p class="s">Henrys Heros vs. Njigba Please. 6&ndash;2 against 2&ndash;6. Mike E needs this one badly, and he gets a team built around a 32-year-old running back who refuses to get old. Good luck.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Mohn's Closing Thought</div>
+      <p class="pull">Four weeks in, the team with the most points is third, the team that spends nothing is first, and the biggest lock of the season lost to a guy with two empty receivers. Projections are a suggestion. The median is a mood. Nobody in this league knows anything, and that includes me.</p>
+      <p class="bless"><b style="color:var(--text)">Special Shoutouts:</b></p>
+      <ul class="shout">
+        <li><b>Mike S</b>, for paying $30 to keep Justin Jefferson and getting his best win of the year the one week Jefferson didn't play.</li>
+        <li><b>Dao</b>, for rostering two franchise quarterbacks and finding out that's still only one position.</li>
+        <li><b>Chad</b>, for the most Chad week imaginable: the best score of the year with a tight end who scored 1.20.</li>
+        <li><b>Rob</b>, for still not spending a single FAAB dollar with half the roster in the trainer's room. Discipline or denial, we'll find out.</li>
+        <li><b>Curtis</b>, for doing everything right in a 3&ndash;5 season. Somewhere, a projection model is proud of you.</li>
+        <li><b>TJ</b>, for making 14 waiver moves in four weeks. The wire has started sending him holiday cards.</li>
+      </ul>
+      <p class="bless">Set those Week 5 lineups, read the injury report twice, and may your starters stay healthy, your bench stay quiet, and your opponent stay a 35-point favorite right up until kickoff.</p>
+      <p class="tagline">The Franchise Recap: where the spread is fiction and the bench is always right.</p>
+      <p class="sig">Mohn Jadden &mdash; Keeping it real for a while</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>The Franchise &middot; Week 4, 2026 &middot; Compiled by Mohn Jadden.</span>
+    <span><a href="/the-franchise-2026-recap/">All recaps</a> &middot; <a href="/the-franchise-2026-primer/week-4/">Week 4 primer</a> &middot; <a href="/the-franchise-2026-recap/week-3/">Week 3 recap</a></span>
+  </footer>
+</div>
+</body>
+</html>
