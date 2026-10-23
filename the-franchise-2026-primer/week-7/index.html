@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07090E">
+<title>The Franchise &mdash; Week 7 Primer</title>
+<meta name="description" content="One Thursday, four flips. Bears 30, Patriots 24, Burden and Maye rewrote the board, and the median line is 0.60 wide.">
+<link rel="canonical" href="/the-franchise-2026-primer/week-7/">
+<style>
+:root{
+ --ink:#07090E; --p1:#0D1119; --p2:#141A25; --p3:#1D2534; --line:#2A3446;
+ --edge:#28324399; --text:#EDF1F8; --dim:#93A3B9; --faint:#61728A;
+ --rb:#F0894D; --wr:#3FC7AE; --qb:#B07EF0; --te:#F2C94C;
+ --gold:#E8B44A; --good:#3DDC97; --bad:#FF6B6B; --hot:#FF8355;
+ --serif:ui-serif,'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+ --sans:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+ --s1:8px;--s2:16px;--s3:26px;--s4:44px;--s5:76px;--s6:120px;
+ --sh1:0 1px 2px rgba(2,5,10,.55),0 3px 10px rgba(2,5,10,.4);
+ --sh2:0 3px 8px rgba(2,5,10,.6),0 16px 40px rgba(2,5,10,.5);
+ --pad:clamp(16px,4vw,26px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.75;
+ -webkit-font-smoothing:antialiased;overflow-x:hidden;
+ background-image:
+  radial-gradient(1100px 620px at 8% -6%,rgba(232,180,74,.10),transparent 62%),
+  radial-gradient(900px 560px at 96% 12%,rgba(63,199,174,.07),transparent 60%),
+  radial-gradient(900px 700px at 40% 62%,rgba(240,137,77,.06),transparent 64%),
+  radial-gradient(800px 600px at 70% 100%,rgba(176,126,240,.05),transparent 62%);
+ background-attachment:fixed;}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:1;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--pad);position:relative;z-index:2}
+.narrow{max-width:720px;margin:0 auto}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:-.035em;line-height:.98;
+ font-size:clamp(34px,9vw,88px)}
+h2{font-family:var(--serif);font-weight:600;letter-spacing:-.03em;line-height:1.08;
+ font-size:clamp(26px,5.2vw,52px)}
+.kicker{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+p{font-size:clamp(16px,2.4vw,17.5px);color:var(--dim);margin-top:var(--s2)}
+p strong,li strong{color:var(--text);font-weight:600}
+em{color:var(--text);font-style:italic}
+section{padding:clamp(56px,12vw,120px) 0;position:relative}
+.act{border-top:1px solid var(--edge)}
+.reveal{opacity:0;transform:translateY(22px);
+ transition:opacity .85s cubic-bezier(.16,.8,.3,1),transform .85s cubic-bezier(.16,.8,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+ padding:clamp(40px,8vw,76px) 0 clamp(56px,10vw,76px)}
+.hero h1{margin:var(--s3) 0}
+.hero .lede{font-size:clamp(17px,2.6vw,21px);color:var(--dim);max-width:62ch}
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,4vw,44px);margin-top:var(--s4)}
+.fig .v{font-family:var(--serif);font-size:clamp(28px,6vw,46px);line-height:1;letter-spacing:-.03em;color:var(--gold)}
+.fig .l{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:8px}
+.scrollcue{margin-top:var(--s4);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.scrollcue span{display:inline-block;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+.pull{font-family:var(--serif);font-size:clamp(22px,4vw,40px);line-height:1.25;letter-spacing:-.02em;
+ color:var(--text);border-left:2px solid var(--gold);padding-left:clamp(14px,3vw,26px);margin:var(--s4) 0}
+
+.keystat{background:linear-gradient(170deg,#1B2432,#131A26);border:1px solid var(--edge);
+ border-left:2px solid var(--gold);border-radius:11px;padding:var(--s2) var(--s3);margin:var(--s3) 0;
+ font-size:clamp(14.5px,2.2vw,15.5px);color:var(--dim)}
+.keystat b{color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-size:11.5px;
+ display:block;margin-bottom:5px}
+.keystat.bad{border-left-color:var(--bad)} .keystat.bad b{color:var(--bad)}
+.keystat.good{border-left-color:var(--good)} .keystat.good b{color:var(--good)}
+
+.panel{background:linear-gradient(170deg,var(--p2),var(--p1));border:1px solid var(--edge);
+ border-radius:17px;padding:clamp(14px,3vw,26px);box-shadow:var(--sh2);margin-top:var(--s3)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:right;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);
+ font-weight:600;padding:8px 10px;border-bottom:1px solid var(--edge);white-space:nowrap}
+td{text-align:right;padding:9px 10px;border-bottom:1px solid #161E2B;font-variant-numeric:tabular-nums}
+th.l,td.l{text-align:left}
+tbody tr{transition:background .16s}
+.good{color:var(--good)} .bad{color:var(--bad)} .gold{color:var(--gold)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.scroll table{min-width:560px}
+td .sub{display:block;font-size:12px;color:var(--faint);line-height:1.3}
+
+.matchup{background:linear-gradient(165deg,var(--p3),var(--p1));border:1px solid var(--edge);
+ border-radius:16px;padding:clamp(16px,3vw,26px);box-shadow:var(--sh2);position:relative;
+ overflow:hidden;margin-top:var(--s2)}
+.matchup::before{content:'';position:absolute;inset:0 0 auto 0;height:2px;
+ background:linear-gradient(90deg,var(--gold),transparent 70%)}
+.matchup.flip::before{background:linear-gradient(90deg,var(--bad),transparent 70%)}
+.matchup.clean::before{background:linear-gradient(90deg,var(--good),transparent 70%)}
+.matchup.light::before{background:linear-gradient(90deg,var(--wr),transparent 70%)}
+.mhead{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+.mtitle{font-family:var(--serif);font-size:clamp(19px,3vw,28px);letter-spacing:-.02em;line-height:1.2}
+.mtitle .sm{color:var(--faint);font-size:.62em;font-family:var(--sans);letter-spacing:.02em}
+.flag{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+ padding:4px 9px;border-radius:6px;background:rgba(255,107,107,.12);color:var(--bad);flex:none}
+.flag.calm{background:#161E2B;color:var(--faint)}
+
+.swingbar{margin-top:var(--s3);display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(8px,2vw,18px);
+ align-items:center;background:#111825;border:1px solid #1D2634;border-radius:12px;
+ padding:clamp(12px,2.5vw,18px)}
+.sb{min-width:0}
+.sb .lbl{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.sb .val{font-family:var(--serif);font-size:clamp(15px,2.6vw,20px);letter-spacing:-.015em;
+ line-height:1.25;margin-top:5px;color:var(--dim)}
+.sb.now .val{color:var(--text)}
+.sb.now .lbl{color:var(--gold)}
+.arrow{font-size:20px;color:var(--gold);line-height:1;flex:none}
+.swingnote{margin-top:10px;font-size:12.5px;color:var(--faint);text-align:center}
+.swingnote b{color:var(--bad);font-weight:700}
+
+.statlines{margin-top:var(--s3);border-top:1px solid var(--edge);padding-top:var(--s2)}
+.statlines .hd{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+.statline{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:4px 0;font-size:13.5px}
+.statline .tag{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+ padding:2px 7px;border-radius:5px;background:#161E2B;color:var(--faint);flex:none}
+.statline .tag.good{color:var(--good);background:rgba(61,220,151,.10)}
+.statline .tag.bad{color:var(--bad);background:rgba(255,107,107,.10)}
+.statline .nm{color:var(--text);font-weight:600;flex:none}
+.statline .who{color:var(--faint);font-size:12px;flex:1 1 auto;min-width:0}
+.statline .pts{font-variant-numeric:tabular-nums;font-weight:700;flex:none}
+.statline .d{font-size:12px;color:var(--faint);font-weight:400;margin-left:4px}
+.matchup .vl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+ font-weight:600;margin-top:var(--s3);display:block}
+.matchup .verdict{font-size:14.5px;color:var(--dim);line-height:1.68;margin-top:var(--s1)}
+.pred{margin-top:var(--s2);padding-top:var(--s2);border-top:1px solid var(--edge);
+ font-size:14px;color:var(--text);font-variant-numeric:tabular-nums}
+.pred b{color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-size:10.5px;
+ margin-right:8px;font-weight:600}
+.pred.alt{margin-top:6px;padding-top:0;border-top:none;font-size:12.5px;color:var(--faint)}
+.pred.alt b{color:var(--faint)}
+.pred.adj{margin-top:6px;padding-top:0;border-top:none;font-size:12.5px;color:var(--wr)}
+.pred.adj b{color:var(--wr)}
+
+.recbook{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--s2);margin-top:var(--s3)}
+.rec{background:linear-gradient(165deg,#1E2A3C,var(--p1));border:1px solid rgba(232,180,74,.22);
+ border-radius:14px;padding:16px 18px;position:relative;overflow:hidden}
+.rec::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
+.rec.bad::before{background:var(--bad)}
+.rec.teal::before{background:var(--wr)}
+.rec.rb::before{background:var(--rb)}
+.rec .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.rec.bad .k{color:var(--bad)}
+.rec.teal .k{color:var(--wr)}
+.rec.rb .k{color:var(--rb)}
+.rec .v{font-family:var(--serif);font-size:26px;line-height:1.1;margin:8px 0 6px;letter-spacing:-.02em}
+.rec .s{font-size:13.5px;color:var(--dim);line-height:1.45}
+
+.sig{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:17px;margin-top:var(--s4);
+ padding-top:var(--s2);border-top:1px solid var(--edge)}
+footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(--faint);font-size:13.5px}
+
+@media(hover:hover) and (pointer:fine){ tbody tr:hover{background:#18202Ecc} }
+@media(max-width:720px){
+ .figs{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+ .hero{min-height:0}
+ table{font-size:12.5px}
+ .scroll{box-shadow:inset -22px 0 16px -12px rgba(7,9,14,.92)}
+ body{background-attachment:scroll}
+ .swingbar{grid-template-columns:1fr;gap:10px;text-align:center}
+ .arrow{transform:rotate(90deg)}
+}
+@media(max-width:420px){ .figs{grid-template-columns:1fr 1fr} }
+.sitenav{display:flex;flex-wrap:wrap;align-items:center;padding:12px 0 0}
+.sitenav .brand{flex:1 1 auto;min-width:min(100%,160px);padding:10px 12px 10px 0;
+ font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;
+ text-decoration:none;border-bottom:none}
+.sitenav .links{display:flex;flex-wrap:wrap}
+.sitenav a{color:var(--faint);text-decoration:none;border-bottom:none;font-size:11.5px;letter-spacing:.12em;
+ text-transform:uppercase;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;
+ border-radius:8px}
+.sitenav a:hover{color:var(--gold);background:rgba(232,180,74,.08);border-bottom:none}
+.sitenav a.here{color:var(--gold)}
+.sitenav a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media(max-width:720px){
+ .sitenav .links{width:100%}
+ .sitenav a{flex:1 1 auto;justify-content:center;padding:12px 8px}
+}
+footer a{color:var(--gold);text-decoration:none}
+.tag.mid{color:var(--gold);background:rgba(232,180,74,.10)}
+@media(max-width:720px){
+ .ledger table{font-size:14px}
+ .ledger thead{display:none}
+ .ledger tr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 12px;padding:14px 2px;border-bottom:1px solid #161E2B}
+ .ledger tbody tr:last-child{border-bottom:none}
+ .ledger td{border:none;padding:0;text-align:left}
+ .ledger td:nth-child(1){grid-column:1/-1;color:var(--text);font-weight:600}
+ .ledger td:nth-child(1) .sub{font-weight:400;margin-top:2px}
+ .ledger td:nth-child(2){grid-column:1/-1;font-size:12px;color:var(--gold);letter-spacing:.04em;margin-bottom:6px}
+ .ledger td[data-l]::before{content:attr(data-l);display:block;font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--faint);font-weight:600;margin-bottom:1px}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="wrap">
+<nav class="sitenav" aria-label="Site">
+  <a class="brand" href="/">Mohn Jadden</a>
+  <div class="links">
+    <a href="/">Home</a>
+    <a class="here" href="/the-franchise-2026-primer/">Primer</a>
+    <a href="/the-franchise-2026-recap/">Recap</a>
+    <a href="/the-franchise-2026-preseason/">Preseason</a>
+    <a href="/the-franchise-chronicle/">The Franchise</a>
+    <a href="/the-franchise-2026-draft-grades/">Draft Grades</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="kicker">The Franchise · 2026 Week 7 Primer · By Mohn Jadden</div>
+  <h1>One Thursday,<br>Four Flips.</h1>
+  <p class="lede">Eleven points. That was Eric’s cushion on Wednesday. Then Luther Burden caught four balls in Chicago and it vanished, along with TJ’s cushion, Janice’s cushion, and Chad’s. Four of five favorites changed hands in a single prime-time game. Chad leads by 24 and is the underdog. Mike E is starting a man on a bye. Rob’s lineup has a ribs-and-Achilles receiver in it and a running back making his return from the exempt list. The median is 131.67, and five of you are standing within 0.60 of it. Pour something.</p>
+  <div class="figs">
+    <div class="fig"><div class="v">4 of 5</div><div class="l">Favorites that flipped</div></div>
+    <div class="fig"><div class="v">+42.61</div><div class="l">Net over proj, 7 Thursday starters</div></div>
+    <div class="fig"><div class="v">0.04</div><div class="l">Chris’s margin over the median</div></div>
+    <div class="fig"><div class="v">$16</div><div class="l">FAAB spent all week</div></div>
+  </div>
+  <div class="scrollcue"><span>↓ It started in Chicago</span></div>
+</header>
+</div>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">Thursday Night</div>
+    <h2>Bears 30, Patriots 24.</h2>
+    <p>This was Chicago’s game, then New England’s, then Chicago’s again. Luther Burden did the damage: four catches, 130 yards, a 58-yard catch-and-run that set up the first touchdown, and a screen on third-and-17 with 14 seconds left in the half that he took 24 yards to the house. Caleb Williams threw for 308 and two scores with no interceptions. D’Andre Swift ground out 22 carries and 78 yards, plus his seventh touchdown of the year. Then Cairo Santos kicked a career-long 58-yarder with 1:34 left, because why not.</p>
+    <p>The Patriots did not go quietly. Drake Maye threw for 321 and two touchdowns, ran one in from seven yards, and gave one back on an interception. Rhamondre Stevenson caught a 48-yarder. Eli Raridon caught a 30-yarder. They also took ten penalties and missed sixteen tackles, which is the only way to lose a game you were never out of. Rome Odunze finished it off with a 21-yard grab on third-and-9 and a recovered onside kick. Cole Kmet went down with a knee and corner Malik Muhammad with a toe, so Chicago won and paid for it.</p>
+    <p>Seven starters from this league were on that field. Six beat their number. The seventh was A.J. Brown, who caught three for 48 yards and went home with 6.30.</p>
+  </div>
+
+  <div class="panel narrow reveal ledger">
+    <table>
+      <thead><tr>
+        <th class="l">The ledger</th><th class="l">Belongs to</th><th>Proj</th><th>Got</th><th>+/−</th>
+      </tr></thead>
+      <tbody>
+        <tr><td class="l">Luther Burden III <span class="sub">4 rec, 130 yds, TD</span></td><td class="l">Henrys Heros</td><td data-l="Proj">11.11</td><td data-l="Got" class="gold">22.80</td><td data-l="+/−" class="good">+11.69</td></tr>
+        <tr><td class="l">Drake Maye <span class="sub">24/31, 321 yds, 2 TD, INT · 7-yd rush TD</span></td><td class="l">TEAM HoldMyCHUBBBA</td><td data-l="Proj">23.25</td><td data-l="Got" class="gold">34.24</td><td data-l="+/−" class="good">+10.99</td></tr>
+        <tr><td class="l">Rhamondre Stevenson <span class="sub">5 rec, 93 yds, 48-yd TD</span></td><td class="l">D-Unit</td><td data-l="Proj">11.43</td><td data-l="Got" class="gold">20.60</td><td data-l="+/−" class="good">+9.17</td></tr>
+        <tr><td class="l">Colston Loveland <span class="sub">7 rec, 69 yds, TD · two drops</span></td><td class="l">Team KAS</td><td data-l="Proj">8.69</td><td data-l="Got" class="gold">16.40</td><td data-l="+/−" class="good">+7.71</td></tr>
+        <tr><td class="l">Caleb Williams <span class="sub">22/33, 308 yds, 2 TD · 4 car, 19 yds</span></td><td class="l">Ken You Not Pickett</td><td data-l="Proj">22.42</td><td data-l="Got" class="gold">27.82</td><td data-l="+/−" class="good">+5.40</td></tr>
+        <tr><td class="l">D’Andre Swift <span class="sub">22 car, 78 yds, TD</span></td><td class="l">The Annexation of PR</td><td data-l="Proj">15.52</td><td data-l="Got">19.20</td><td data-l="+/−" class="good">+3.68</td></tr>
+        <tr><td class="l">A.J. Brown <span class="sub">3 rec, 48 yds</span></td><td class="l">TEAM HoldMyCHUBBBA</td><td data-l="Proj">12.33</td><td data-l="Got" class="bad">6.30</td><td data-l="+/−" class="bad">−6.03</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="narrow reveal">
+    <p>From the benches: Roschon Johnson, whom TJ picked up this week, scored 1.50 against a projection of 8.12. He isn’t in the lineup. Consider it a wasted dollar of faith.</p>
+    <div class="keystat"><b>Key Stat</b>TEAM HoldMyCHUBBBA leads Team KAS 40.54 to 16.40 and <strong class="gold">is the one live leader that isn’t favored.</strong> Chad’s remaining eight players project to 90.62. Mike S’s remaining nine project to 116.10. The scoreboard says Chad. The math says go look at the scoreboard again.</div>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Board</div>
+    <h2>Five teams, 0.60 of a point, one line.</h2>
+    <p>Here’s how crowded it gets. The Live Proj median is <strong>131.67</strong>. Henrys Heros sit 0.04 above it. Ken You Not Pickett sit 0.05 below. J Squad are 0.36 under, HoldMyCHUBBBA 0.51, The McClusterfucks 0.60. That’s five teams inside 0.64 of a point, and every one of them is going to spend Sunday afternoon refreshing a kicker. Njigba Please are somewhere else entirely, 27.67 under, with a bye-week back in the lineup.</p>
+    <p>If Yahoo’s chalk holds, <strong>Annexation, D-Unit, Team KAS and Henrys Heros all go 2–0</strong>. TJ and Rob split: TJ loses his matchup and clears the median, Rob wins his and doesn’t. HoldMyCHUBBBA, J Squad, The McClusterfucks and Njigba Please go 0–2. That sends <strong>Nico’d &amp; Dimed to 10–4, alone in first</strong>, and drops Chad from second into a four-way tie at 7–7. Chalk got one night this week and lost four games in it. Take that into Sunday.</p>
+    <p>Blackhat’s median is 122.75, and it nudges the line: Team KAS lands 0.43 over, Rob lands 0.43 under. The two systems agree on four of five winners and split on Chad against Mike S. Here are all five.</p>
+  </div>
+
+  <article class="matchup flip reveal">
+    <div class="mhead">
+      <div class="mtitle">Nico’d &amp; Dimed <span class="sm">TJ</span> vs. The Annexation of PR <span class="sm">Curtis</span></div>
+      <div class="flag">Flipped</div>
+    </div>
+    <div class="swingbar">
+      <div class="sb"><div class="lbl">Before kickoff</div><div class="val">Nico’d &amp; Dimed by 2.59<br><span style="font-size:.8em;color:var(--faint)">134.18 – 131.59</span></div></div>
+      <div class="arrow">→</div>
+      <div class="sb now"><div class="lbl">Now</div><div class="val">Annexation by 1.09<br><span style="font-size:.8em;color:var(--faint)">135.27 – 134.18</span></div></div>
+    </div>
+    <div class="swingnote">The Title Rematch. Last December TJ won by 2.84. <b>Curtis left 22.1 points on his own bench doing it.</b></div>
+    <div class="statlines">
+      <div class="hd">Already played</div>
+      <div class="statline"><span class="tag good">Boom</span><span class="nm">D’Andre Swift</span>
+        <span class="who">Chi RB · The Annexation of PR</span><span class="pts good">19.20<span class="d">proj 15.52</span></span></div>
+    </div>
+    <span class="vl">The read</span>
+    <p class="verdict">Try to feel sorry for TJ. He did nothing wrong. He started nobody on Thursday, and Curtis started a Bear who piled up 22 carries and a touchdown, and that was enough to turn a 2.59-point lead into a 1.09-point hole. That’s what a Thursday starter does to you. It’s a tax on the people who showed up early.<br><br>The history is the fun part. TJ leads this series 13–12 and holds the trophy from the 2.84 game, the one where Curtis sat Chris Godwin for Drake London and left it on the bench. Start Godwin and it’s 172.0 to 154.5, Curtis lifts it, and we’re all having a different conversation. Curtis has made six playoffs in twelve years and has no rings. TJ, meanwhile, holds the trophy and the worst lineup efficiency in the room, 14.6 points a week left on the bench. The value is on his roster. The lineup card is a separate hobby. This week’s fine print: DeVonta Smith is questionable, Bowers was limited Wednesday with a calf and a hamstring, and Kendre Miller starts at 8.53 with Tuten on bye. Curtis has the longer list. Egbuka is in concussion protocol, Golden’s shoulder was limited, and Puka Nacua is tagged questionable with a calf. <strong>Both systems like Curtis</strong>, Yahoo by 1.09 and Blackhat by 5.38. TJ can lose this and still go 10–4 on the median. That’s a hell of a consolation prize.</p>
+    <div class="pred"><b>Yahoo</b>The Annexation of PR 135.27 – 134.18 (by 1.09)</div>
+    <div class="pred alt"><b>Blackhat</b>The Annexation of PR 130.43 – 125.05 (by 5.38)</div>
+  </article>
+
+  <article class="matchup flip reveal">
+    <div class="mhead">
+      <div class="mtitle">J Squad <span class="sm">Janice</span> vs. Ken You Not Pickett <span class="sm">Rob</span></div>
+      <div class="flag">Flipped</div>
+    </div>
+    <div class="swingbar">
+      <div class="sb"><div class="lbl">Before kickoff</div><div class="val">J Squad by 5.09<br><span style="font-size:.8em;color:var(--faint)">131.31 – 126.22</span></div></div>
+      <div class="arrow">→</div>
+      <div class="sb now"><div class="lbl">Now</div><div class="val">Ken You Not Pickett by 0.31<br><span style="font-size:.8em;color:var(--faint)">131.62 – 131.31</span></div></div>
+    </div>
+    <div class="swingnote">Coin Flip Sunday. <b>Caleb Williams was 5.40 over, and the whole gap was 5.09.</b> Rob is a favorite by the width of a fingernail.</div>
+    <div class="statlines">
+      <div class="hd">Already played</div>
+      <div class="statline"><span class="tag good">Boom</span><span class="nm">Caleb Williams</span>
+        <span class="who">Chi QB · Ken You Not Pickett</span><span class="pts good">27.82<span class="d">proj 22.42</span></span></div>
+    </div>
+    <span class="vl">The read</span>
+    <p class="verdict">Rob left $600 in his FAAB budget across six straight seasons, on purpose, and he is on course for a seventh: a full $100, zero dollars spent, and a roster that’s one injury report away from needing a priest. Mike Evans has ribs and an Achilles and a recommendation to “plan without him” for two weeks. Christian Watson’s ankle is limited. Bucky Irving and Saquon Barkley are both questionable. Josh Jacobs came off the commissioner’s exempt list Monday and can play Sunday at Detroit, and Rob has him starting at 12.28. He did make a move: Odunze out, Jordan Addison in. Then Odunze caught a 21-yarder on third-and-9 and recovered the onside kick. That’s the Rob experience. Never spend the dollar, always cut the guy.<br><br>Janice has the cleaner lineup and the thinner history. Rob leads the series 5–4 and beat her twice last year, including 158.86 to 115.30. Rob also lost the 2024 title by 0.86 while sitting 9.1 points on his own bench, so the man knows what a coin flip feels like. Janice has never busted on $50-plus money in twelve years and made her first FAAB bid of the year this week for $3. Caleb Williams closed the gap with 0.31 to spare. <strong>Blackhat has Rob by 5.58</strong>, which is the confident one. Yahoo’s call is a rounding error.</p>
+    <div class="pred"><b>Yahoo</b>Ken You Not Pickett 131.62 – 131.31 (by 0.31)</div>
+    <div class="pred alt"><b>Blackhat</b>Ken You Not Pickett 122.32 – 116.74 (by 5.58)</div>
+  </article>
+
+  <article class="matchup flip reveal">
+    <div class="mhead">
+      <div class="mtitle">The McClusterfucks <span class="sm">Eric</span> vs. Henrys Heros <span class="sm">Chris</span></div>
+      <div class="flag">Flipped</div>
+    </div>
+    <div class="swingbar">
+      <div class="sb"><div class="lbl">Before kickoff</div><div class="val">The McClusterfucks by 11.05<br><span style="font-size:.8em;color:var(--faint)">131.07 – 120.02</span></div></div>
+      <div class="arrow">→</div>
+      <div class="sb now"><div class="lbl">Now</div><div class="val">Henrys Heros by 0.64<br><span style="font-size:.8em;color:var(--faint)">131.71 – 131.07</span></div></div>
+    </div>
+    <div class="swingnote">Stroud Revenge Game. <b>Eleven points of cushion, gone in one prime-time game.</b></div>
+    <div class="statlines">
+      <div class="hd">Already played</div>
+      <div class="statline"><span class="tag good">Boom</span><span class="nm">Luther Burden III</span>
+        <span class="who">Chi WR · Henrys Heros</span><span class="pts good">22.80<span class="d">proj 11.11</span></span></div>
+    </div>
+    <span class="vl">The read</span>
+    <p class="verdict">Luther Burden was projected for 11.11, put up 22.80, and wiped out Eric’s entire 11-point lead on his own. The +11.69 is the biggest swing of any starter in the league. Chris’s other starters haven’t played yet, and Chris is now 0.04 above the median line. He has gone 0–4 over the last two weeks, so a Thursday night in Chicago is a nice change of scenery.<br><br>Here’s the part Eric should lose sleep over. In week 9 of 2023, Eric sat C.J. Stroud at 51.8 points for Justin Herbert at 9.0 and lost to Chris by 4.8. That 42.8-point swap is still the second-biggest sit in the file, and this is the same opponent. Eric leads the series 9–6 and owns four of the five loudest sits in league history, plus four championship rings, which is the least fair combination in the building. This time Stroud is in his lineup, so there’s nobody to blame but the schedule. Kelce, limited Wednesday and Thursday with an ankle, is tagged questionable. Chris spent Thursday morning dropping Lloyd and Keenan Allen for Tyrone Tracy Jr. and Jaylin Noel, and he has Judkins (ankle, limited) and Goedert (questionable) on his injury list too. Eric is 0.60 under the median line and 0.64 behind Chris. <strong>Blackhat has Chris by 2.72.</strong> Find a point, Eric.</p>
+    <div class="pred"><b>Yahoo</b>Henrys Heros 131.71 – 131.07 (by 0.64)</div>
+    <div class="pred alt"><b>Blackhat</b>Henrys Heros 120.68 – 117.96 (by 2.72)</div>
+  </article>
+
+  <article class="matchup flip reveal">
+    <div class="mhead">
+      <div class="mtitle">TEAM HoldMyCHUBBBA <span class="sm">Chad</span> vs. Team KAS <span class="sm">Mike S</span></div>
+      <div class="flag">Flipped</div>
+    </div>
+    <div class="swingbar">
+      <div class="sb"><div class="lbl">Before kickoff</div><div class="val">HoldMyCHUBBBA by 1.41<br><span style="font-size:.8em;color:var(--faint)">126.20 – 124.79</span></div></div>
+      <div class="arrow">→</div>
+      <div class="sb now"><div class="lbl">Now</div><div class="val">Team KAS by 1.34<br><span style="font-size:.8em;color:var(--faint)">132.50 – 131.16</span></div></div>
+    </div>
+    <div class="swingnote">Maye Day. <b>Chad leads 40.54 to 16.40 and Yahoo still has Mike S ahead.</b> The only live leader that isn’t favored.</div>
+    <div class="statlines">
+      <div class="hd">Already played</div>
+      <div class="statline"><span class="tag good">Boom</span><span class="nm">Drake Maye</span>
+        <span class="who">NE QB · TEAM HoldMyCHUBBBA</span><span class="pts good">34.24<span class="d">proj 23.25</span></span></div>
+      <div class="statline"><span class="tag good">Boom</span><span class="nm">Colston Loveland</span>
+        <span class="who">Chi TE · Team KAS</span><span class="pts good">16.40<span class="d">proj 8.69</span></span></div>
+      <div class="statline"><span class="tag bad">Bust</span><span class="nm">A.J. Brown</span>
+        <span class="who">NE WR · TEAM HoldMyCHUBBBA</span><span class="pts bad">6.30<span class="d">proj 12.33</span></span></div>
+    </div>
+    <span class="vl">The read</span>
+    <p class="verdict">Chad found Drake Maye for $5 on the waiver wire last year. It’s the best pickup in league history, 230 ownership points and none of them left on the bench. This year Chad benched him for Trevor Lawrence on a 3.01-point Start/Sit Court edge, and Lawrence scored 34.04. Jacksonville is on bye this week, so Maye starts, and he put up 34.24 on Thursday, which is 0.20 more than Lawrence did. The court has no further comment. Brown gave back 6.03 with three catches for 48 yards.<br><br>Chad has the 24-point lead and Mike S has 25.5 more points of projection still to come. Chad leads this series 10–4, and the best thing in it is the 2023 trade where Mike S sent Amon-Ra St. Brown, Jonathan Taylor and D’Andre Swift to Chad for Justin Jefferson, Kenneth Walker and Rachaad White. Jefferson is in Mike S’s lineup again this week at 14.97, with a limited-Wednesday ankle. Mike S has made two playoffs in seven years and never seen a podium, which isn’t a drought, it’s a climate. Chad’s last big year was 12–2, a scoring title, and a lost semifinal. Mike S picked up Aaron Rodgers for $2, and Rodgers starts at 20.49. George Pickens is tagged questionable. Chad added Will Reichard for $0 at kicker. <strong>Blackhat has Chad by 3.89</strong>, the one matchup where the two systems pick different winners.</p>
+    <div class="pred"><b>Yahoo</b>Team KAS 132.50 – 131.16 (by 1.34)</div>
+    <div class="pred alt"><b>Blackhat</b>TEAM HoldMyCHUBBBA 127.06 – 123.17 (by 3.89)</div>
+  </article>
+
+  <article class="matchup clean reveal">
+    <div class="mhead">
+      <div class="mtitle">D-Unit <span class="sm">Dao</span> vs. Njigba Please <span class="sm">Mike E</span></div>
+      <div class="flag calm">Wider</div>
+    </div>
+    <div class="swingbar">
+      <div class="sb"><div class="lbl">Before kickoff</div><div class="val">D-Unit by 30.86<br><span style="font-size:.8em;color:var(--faint)">134.86 – 104.00</span></div></div>
+      <div class="arrow">→</div>
+      <div class="sb now"><div class="lbl">Now</div><div class="val">D-Unit by 40.03<br><span style="font-size:.8em;color:var(--faint)">144.03 – 104.00</span></div></div>
+    </div>
+    <div class="swingnote">Bottom Shelf. Dao has <b>the highest projection in the league</b>, and Mike E has the lowest by 27 points.</div>
+    <div class="statlines">
+      <div class="hd">Already played</div>
+      <div class="statline"><span class="tag good">Boom</span><span class="nm">Rhamondre Stevenson</span>
+        <span class="who">NE RB · D-Unit</span><span class="pts good">20.60<span class="d">proj 11.43</span></span></div>
+    </div>
+    <span class="vl">The read</span>
+    <p class="verdict">Dao’s flex caught five for 93 yards and a 48-yard touchdown, finished with 20.60 against a projection of 11.43, and made a 30.86-point lead into a 40.03-point lead without breaking a sweat. Yahoo gives D-Unit an 80 percent chance. The other 20 percent is the usual Sunday nonsense.<br><br>Now the real story. Mike E has the cleanest lineup card in the league, a career 9.4 points a week left on the bench. He is starting Omarion Hampton at zero on a bye, and his bench is no help: Diggs, Rachaad White and Brian Thomas Jr. are on bye too, and Jeremiyah Love is questionable and projected at 0.37. Jordan Love is back and limited with a back issue, and Denzel Boston is questionable. The man who never sits the wrong guy is starting the wrong guy, and he has no right guy. This is the same Mike E who went 1–12 in 2020 and won the 2014 title as a 6–7 sixth seed, so he’s capable of anything. He has also won the last meeting with Dao, 124.60 to 92.28. Dao has paid $105 for a rookie when the record was $72, set the league scoring record earlier this month, and just spent $10 on a tight end who’s sitting on his bench behind Juwan Johnson. <strong>Blackhat has Dao by 36.88.</strong> Nobody has a path here except the Sunday nonsense.</p>
+    <div class="pred"><b>Yahoo</b>D-Unit 144.03 – 104.00 (by 40.03)</div>
+    <div class="pred alt"><b>Blackhat</b>D-Unit 132.94 – 96.06 (by 36.88)</div>
+  </article>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">Bye Week</div>
+    <h2>Four teams are off, and one lineup still has a bye in it.</h2>
+    <p>Buffalo, Jacksonville, the Chargers and Washington have the week off. Mike E did not get the memo.</p>
+  </div>
+  <div class="recbook">
+    <article class="rec bad reveal">
+      <div class="k">Starting on a bye</div>
+      <div class="v">Omarion Hampton</div>
+      <div class="s"><strong>Njigba Please</strong> starts Hampton at zero. Diggs, White and Thomas Jr. are on the bench and also off this week, which is how you end up at 104.00, 27 points under everyone else.</div>
+    </article>
+    <article class="rec reveal">
+      <div class="k">The Start/Sit Court is adjourned</div>
+      <div class="v">Trevor Lawrence</div>
+      <div class="s"><strong>TEAM HoldMyCHUBBBA</strong> can’t start last week’s 34.04 this week. Jacksonville is on bye, so Maye starts by default and Chad doesn’t have to rule on anything.</div>
+    </article>
+    <article class="rec reveal">
+      <div class="k">Bench only</div>
+      <div class="v">Tuten · Daniels · Mitchell</div>
+      <div class="s"><strong>Nico’d &amp; Dimed</strong> has Bhayshul Tuten, Jayden Daniels and Keaton Mitchell parked on the bench, all off this week. Kendre Miller starts at 8.53.</div>
+    </article>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">Sick Bay</div>
+    <h2>Read the inactives twice.</h2>
+    <p>Where Yahoo gave a questionable tag and nothing else, that’s all I list.</p>
+  </div>
+  <div class="recbook">
+    <article class="rec bad reveal">
+      <div class="k">Questionable · ribs and Achilles</div>
+      <div class="v">Mike Evans</div>
+      <div class="s">Reports said to plan without him for at least two weeks, and he missed Wednesday’s practice. <strong>Ken You Not Pickett</strong> has him in the lineup at 5.24. Hope is not a strategy, but it is free.</div>
+    </article>
+    <article class="rec bad reveal">
+      <div class="k">Questionable · concussion, foot</div>
+      <div class="v">Emeka Egbuka</div>
+      <div class="s">Missed Wednesday and is in the concussion protocol. <strong>Annexation</strong> has him at 6.54.</div>
+    </article>
+    <article class="rec bad reveal">
+      <div class="k">Back from the exempt list</div>
+      <div class="v">Josh Jacobs</div>
+      <div class="s">Removed from the commissioner’s exempt list Monday and eligible to play Sunday at Detroit. The NFL’s personal-conduct investigation is still open. <strong>Ken You Not Pickett</strong> has him starting at 12.28.</div>
+    </article>
+    <article class="rec bad reveal">
+      <div class="k">Out 6–10 weeks · hamstring</div>
+      <div class="v">Davante Adams</div>
+      <div class="s">The Rams receiver is done for a while. <strong>Annexation’s</strong> Puka Nacua is tagged questionable with a calf.</div>
+    </article>
+    <article class="rec reveal">
+      <div class="k">Limited Wednesday</div>
+      <div class="v">Judkins · Golden · Watson</div>
+      <div class="s">Ankle for Quinshon Judkins (<strong>Henrys Heros</strong>), shoulder for Matthew Golden (<strong>Annexation</strong>), ankle for Christian Watson (<strong>Ken You Not Pickett</strong>).</div>
+    </article>
+    <article class="rec reveal">
+      <div class="k">Ankle</div>
+      <div class="v">Travis Kelce</div>
+      <div class="s">Limited Wednesday and Thursday, per the Chiefs. Tagged questionable for <strong>The McClusterfucks</strong>, who can’t afford another one.</div>
+    </article>
+    <article class="rec reveal">
+      <div class="k">Tagged, no news</div>
+      <div class="v">Smith · Goedert · Pickens · Boston · Irving · Barkley</div>
+      <div class="s">DeVonta Smith (<strong>Nico’d &amp; Dimed</strong>), Dallas Goedert (<strong>Henrys Heros</strong>), George Pickens (<strong>Team KAS</strong>), Denzel Boston (<strong>Njigba Please</strong>), Bucky Irving and Saquon Barkley (<strong>Ken You Not Pickett</strong>). Barkley plays Monday.</div>
+    </article>
+    <article class="rec reveal">
+      <div class="k">Limited, no designation</div>
+      <div class="v">Bowers · Jefferson · J. Love</div>
+      <div class="s">Brock Bowers (calf, hamstring) for <strong>Nico’d &amp; Dimed</strong>, Justin Jefferson (ankle) for <strong>Team KAS</strong> and Jordan Love (back) for <strong>Njigba Please</strong>.</div>
+    </article>
+    <article class="rec teal reveal">
+      <div class="k">Out for the season</div>
+      <div class="v">Terry McLaurin</div>
+      <div class="s">A torn patellar tendon. Washington is on bye anyway, so the schedule had the decency to hide it.</div>
+    </article>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Wire</div>
+    <h2>Sixteen dollars, and Janice finally opened her wallet.</h2>
+  </div>
+  <div class="recbook">
+    <article class="rec reveal">
+      <div class="k">Biggest spend of the week</div>
+      <div class="v">$10 — Pat Freiermuth</div>
+      <div class="s"><strong>D-Unit</strong> won him at 1:05 a.m. Thursday and parked him on the bench behind Juwan Johnson. Dao pays $105 for a rookie and $10 for a tight end he doesn’t start. It’s a brand.</div>
+    </article>
+    <article class="rec teal reveal">
+      <div class="k">First dollars of the season</div>
+      <div class="v">$3 — Malik Washington</div>
+      <div class="s"><strong>J Squad</strong> cut Rashid Shaheed and made her first FAAB bid of the year. She has $97 left and the look of a woman who just discovered a new kind of shopping.</div>
+    </article>
+    <article class="rec reveal">
+      <div class="k">The quarterback patch</div>
+      <div class="v">$2 — Aaron Rodgers</div>
+      <div class="s"><strong>Team KAS</strong> won him on the Wednesday run. He starts at 20.49.</div>
+    </article>
+    <article class="rec reveal">
+      <div class="k">Free kicker</div>
+      <div class="v">$0 — Will Reichard</div>
+      <div class="s"><strong>TEAM HoldMyCHUBBBA</strong> picked him up for nothing after Roman Wilson was dropped. He starts at 9.17. Chad’s best waiver work is still the guy named Maye.</div>
+    </article>
+    <article class="rec reveal">
+      <div class="k">The defense swap</div>
+      <div class="v">$1 — Vikings DEF</div>
+      <div class="s"><strong>Nico’d &amp; Dimed</strong> cut the Chiefs defense and starts Minnesota at 7.73. TJ also added Roschon Johnson and Seth McGowan, dropping Tyreek Hill for the latter.</div>
+    </article>
+    <article class="rec bad reveal">
+      <div class="k">The timing award</div>
+      <div class="v">Odunze → Addison</div>
+      <div class="s"><strong>Ken You Not Pickett</strong> dropped Rome Odunze for Jordan Addison on Thursday, and Odunze then caught the 21-yarder on third-and-9 and recovered the onside kick. Rob also swapped Brandin Cooks for T.J. Hockenson, and he is the only manager who still hasn’t spent a dollar.</div>
+    </article>
+    <article class="rec reveal">
+      <div class="k">Thursday morning shuffle</div>
+      <div class="v">Lloyd, Allen → Tracy, Noel</div>
+      <div class="s"><strong>Henrys Heros</strong> dropped MarShawn Lloyd and Keenan Allen and added Tyrone Tracy Jr., Jaylin Noel and Colby Parkinson. Chris barely touches the wire, so this is a man in a panic.</div>
+    </article>
+    <article class="rec reveal">
+      <div class="k">Cousins out</div>
+      <div class="v">Kirk Cousins → Bam Knight</div>
+      <div class="s"><strong>D-Unit</strong> dropped the Week 6 stopgap quarterback. Dao also swapped the Jaguars defense for the Jets.</div>
+    </article>
+    <article class="rec reveal">
+      <div class="k">Dodged one</div>
+      <div class="v">Patriots DEF → Titans DEF</div>
+      <div class="s"><strong>Annexation</strong> made the swap on Wednesday, the day before New England allowed 30. Curtis also added Kyler Murray and dropped Jaleel McLaughlin.</div>
+    </article>
+  </div>
+  <div class="narrow reveal">
+    <div class="keystat"><b>Key Stat</b>Six weeks in, Rob is the only manager with a full $100, on the heels of six straight seasons of spending zero. <strong class="gold">The whole league spent $16 this week</strong>, and $10 of it was a tight end on a bench.</div>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap narrow reveal">
+  <div class="kicker">Final Word</div>
+  <h2>Thursday flipped it. Sunday decides it.</h2>
+  <p class="pull">Four favorites changed hands in one night, the median line is 0.60 wide, and Chad is up 24 and still behind.</p>
+  <p>If the new chalk holds, TJ goes to 10–4 and stays alone in first. That doesn’t mean much. The #1 seed has won this league three times in twelve years. First place is a favorite, not a verdict, and the guy in second is two games back.</p>
+  <p>TJ: you were favored by 2.59 before kickoff, and you’re a 1.09 underdog this morning because a running back you don’t own carried the ball 22 times. Welcome to the lineup card.</p>
+  <p>Curtis: the rematch is yours if you want it. Last December you left 22 points on the bench and lost by 2.84. Start the right people.</p>
+  <p>Chris: Burden handed you 11.69 over his projection and turned an 11-point deficit into a lead. You’re 0.04 over the median. Do not touch anything.</p>
+  <p>Eric: it’s Stroud, it’s Chris, and you’re 0.60 short of the median line. You’ve been here before. You’ve got four rings and one memory you’d like back.</p>
+  <p>Chad: Maye scored 34.24, which is 0.20 more than Lawrence gave you last week when you benched Maye. Lawrence is on bye. The court has no comment.</p>
+  <p>Mike S: Loveland dropped two passes and still beat his projection by 7.71. That’s the whole league in a sentence.</p>
+  <p>Mike E: a running back on bye is in your lineup, and so are three more on your bench. You’re the best in the building at the lineup card. Check it twice.</p>
+  <p>Rob: Caleb closed the gap with 0.31 to spare, and your receiver room reads like a medical chart. Odunze says hello.</p>
+  <p>Janice: twelve years of never busting on star money, and now you’ve spent $3 of FAAB. The market welcomes you.</p>
+  <p>Dao: the highest projection in the league, a $10 tight end on your bench, and Mike E on the other side. Don’t get cute.</p>
+  <p class="sig">— Mohn Jadden</p>
+</div></section>
+
+<div class="wrap"><footer>
+  The Franchise, 2026 Week 7. Ten teams, 0.5 PPR, head-to-head plus the league median. Pre-kickoff numbers are Yahoo’s Orig Proj; current numbers are Live Proj. The Blackhat line is Black Hat Fantasy’s half-PPR consensus, generated 2026-10-23 01:33 UTC, with Thursday actuals substituted for players who have already played; Blackhat has no number for Mike Evans, so Yahoo’s 5.24 stands in. Medians: Yahoo Live Proj 131.67, Blackhat 122.75. Current as of Friday, October 23. Historical notes from the Franchise Chronicle, 2014–2025.
+  · <a href="/the-franchise-2026-recap/week-6/">Week 6 recap</a>
+  · <a href="/the-franchise-2026-primer/week-6/">Week 6 primer</a>
+  · <a href="/the-franchise-chronicle/">The Chronicle</a>
+</footer></div>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+}),{threshold:0,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+const revealIn=()=>document.querySelectorAll('.reveal:not(.in)').forEach(e=>{
+  const r=e.getBoundingClientRect();
+  if(r.top<innerHeight*0.92 && r.bottom>0) e.classList.add('in');
+});
+revealIn();
+addEventListener('load',revealIn,{once:true});
+</script>
+</body>
+</html>
