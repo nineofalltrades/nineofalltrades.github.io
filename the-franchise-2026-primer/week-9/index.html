@@ -193,6 +193,15 @@ footer a{color:var(--gold);text-decoration:none}
  .ledger td[data-l]::before{content:attr(data-l);display:block;font-size:9.5px;letter-spacing:.14em;
   text-transform:uppercase;color:var(--faint);font-weight:600;margin-bottom:1px}
 }
+@media(max-width:720px){
+ .tape thead{display:none}
+ .tape tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px;padding:14px 2px;border-bottom:1px solid #161E2B}
+ .tape tbody tr:last-child{border-bottom:none}
+ .tape td{border:none;padding:0;text-align:left}
+ .tape td:first-child{grid-column:1/-1;color:var(--text);font-weight:600;font-size:13.5px}
+ .tape td[data-l]::before{content:attr(data-l);display:block;font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--faint);font-weight:600;margin-bottom:2px}
+}
 </style>
 </head>
 <body>
@@ -255,16 +264,16 @@ footer a{color:var(--gold);text-decoration:none}
     <p>The last trade in The Franchise was a three-for-three on October 12, 2023: Justin Jefferson, Kenneth Walker and Rachaad White went to Team KAS, and Amon-Ra St. Brown, Jonathan Taylor and D’Andre Swift went to HoldMyChubb. Then nobody traded anybody for 1,120 days, which fits a league whose own chronicle says trades explain nothing about who wins. Here’s what the drought ended with.</p>
   </div>
 
-  <div class="panel narrow reveal scroll">
+  <div class="panel narrow reveal tape">
     <table>
       <thead><tr><th class="l">The tape</th><th>LaPorta <span class="sub">to The McClusterfucks</span></th><th>Charbonnet <span class="sub">to Njigba Please</span></th></tr></thead>
       <tbody>
-        <tr><td class="l">Market value (FantasyCalc, 0.5 PPR)</td><td class="gold">1,564</td><td>938 <span class="sub">844 after the calculator’s haircut</span></td></tr>
-        <tr><td class="l">Position rank, rest of season</td><td class="gold">TE6</td><td>RB32</td></tr>
-        <tr><td class="l">Points over replacement, rest of season</td><td class="good">13.4</td><td class="bad">0.0</td></tr>
-        <tr><td class="l">Rest-of-season projection</td><td>9.7 ppg · 97 pts</td><td>10.1 ppg · 91 pts</td></tr>
-        <tr><td class="l">2026 so far</td><td>70.50 in 7 games <span class="sub">TE7</span></td><td>5.00 in 1 game <span class="sub">first game back from the ACL</span></td></tr>
-        <tr><td class="l">Week 9 projection (Blackhat)</td><td>10.05</td><td>11.25</td></tr>
+        <tr><td class="l">Market value (FantasyCalc, 0.5 PPR)</td><td data-l="LaPorta · to Eric" class="gold">1,564</td><td data-l="Charbonnet · to Mike E">938 <span class="sub">844 after the calculator’s haircut</span></td></tr>
+        <tr><td class="l">Position rank, rest of season</td><td data-l="LaPorta · to Eric" class="gold">TE6</td><td data-l="Charbonnet · to Mike E">RB32</td></tr>
+        <tr><td class="l">Points over replacement, rest of season</td><td data-l="LaPorta · to Eric" class="good">13.4</td><td data-l="Charbonnet · to Mike E" class="bad">0.0</td></tr>
+        <tr><td class="l">Rest-of-season projection</td><td data-l="LaPorta · to Eric">9.7 ppg · 97 pts</td><td data-l="Charbonnet · to Mike E">10.1 ppg · 91 pts</td></tr>
+        <tr><td class="l">2026 so far</td><td data-l="LaPorta · to Eric">70.50 in 7 games <span class="sub">TE7</span></td><td data-l="Charbonnet · to Mike E">5.00 in 1 game <span class="sub">first game back from the ACL</span></td></tr>
+        <tr><td class="l">Week 9 projection (Blackhat)</td><td data-l="LaPorta · to Eric">10.05</td><td data-l="Charbonnet · to Mike E">11.25</td></tr>
       </tbody>
     </table>
   </div>
