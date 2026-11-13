@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07090E">
+<title>The Franchise &mdash; Week 10 Primer</title>
+<meta name="description" content="Isaiah Likely’s 66-yard touchdown flips Rob into a favorite, Stefon Diggs wins the game from Mike E’s bench, and first place comes down to the median.">
+<link rel="canonical" href="/the-franchise-2026-primer/week-10/">
+<style>
+:root{
+ --ink:#07090E; --p1:#0D1119; --p2:#141A25; --p3:#1D2534; --line:#2A3446;
+ --edge:#28324399; --text:#EDF1F8; --dim:#93A3B9; --faint:#61728A;
+ --rb:#F0894D; --wr:#3FC7AE; --qb:#B07EF0; --te:#F2C94C;
+ --gold:#E8B44A; --good:#3DDC97; --bad:#FF6B6B; --hot:#FF8355;
+ --serif:ui-serif,'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+ --sans:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+ --s1:8px;--s2:16px;--s3:26px;--s4:44px;--s5:76px;--s6:120px;
+ --sh1:0 1px 2px rgba(2,5,10,.55),0 3px 10px rgba(2,5,10,.4);
+ --sh2:0 3px 8px rgba(2,5,10,.6),0 16px 40px rgba(2,5,10,.5);
+ --pad:clamp(16px,4vw,26px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.75;
+ -webkit-font-smoothing:antialiased;overflow-x:hidden;
+ background-image:
+  radial-gradient(1100px 620px at 8% -6%,rgba(232,180,74,.10),transparent 62%),
+  radial-gradient(900px 560px at 96% 12%,rgba(63,199,174,.07),transparent 60%),
+  radial-gradient(900px 700px at 40% 62%,rgba(240,137,77,.06),transparent 64%),
+  radial-gradient(800px 600px at 70% 100%,rgba(176,126,240,.05),transparent 62%);
+ background-attachment:fixed;}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:1;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--pad);position:relative;z-index:2}
+.narrow{max-width:720px;margin:0 auto}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:-.035em;line-height:.98;
+ font-size:clamp(34px,9vw,88px)}
+h2{font-family:var(--serif);font-weight:600;letter-spacing:-.03em;line-height:1.08;
+ font-size:clamp(26px,5.2vw,52px)}
+.kicker{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+p{font-size:clamp(16px,2.4vw,17.5px);color:var(--dim);margin-top:var(--s2)}
+p strong,li strong{color:var(--text);font-weight:600}
+em{color:var(--text);font-style:italic}
+section{padding:clamp(56px,12vw,120px) 0;position:relative}
+.act{border-top:1px solid var(--edge)}
+.reveal{opacity:0;transform:translateY(22px);
+ transition:opacity .85s cubic-bezier(.16,.8,.3,1),transform .85s cubic-bezier(.16,.8,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+ padding:clamp(40px,8vw,76px) 0 clamp(56px,10vw,76px)}
+.hero h1{margin:var(--s3) 0}
+.hero .lede{font-size:clamp(17px,2.6vw,21px);color:var(--dim);max-width:62ch}
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,4vw,44px);margin-top:var(--s4)}
+.fig .v{font-family:var(--serif);font-size:clamp(28px,6vw,46px);line-height:1;letter-spacing:-.03em;color:var(--gold)}
+.fig .l{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:8px}
+.scrollcue{margin-top:var(--s4);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.scrollcue span{display:inline-block;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+.pull{font-family:var(--serif);font-size:clamp(22px,4vw,40px);line-height:1.25;letter-spacing:-.02em;
+ color:var(--text);border-left:2px solid var(--gold);padding-left:clamp(14px,3vw,26px);margin:var(--s4) 0}
+
+.keystat{background:linear-gradient(170deg,#1B2432,#131A26);border:1px solid var(--edge);
+ border-left:2px solid var(--gold);border-radius:11px;padding:var(--s2) var(--s3);margin:var(--s3) 0;
+ font-size:clamp(14.5px,2.2vw,15.5px);color:var(--dim)}
+.keystat b{color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-size:11.5px;
+ display:block;margin-bottom:5px}
+.keystat.bad{border-left-color:var(--bad)} .keystat.bad b{color:var(--bad)}
+.keystat.good{border-left-color:var(--good)} .keystat.good b{color:var(--good)}
+
+.panel{background:linear-gradient(170deg,var(--p2),var(--p1));border:1px solid var(--edge);
+ border-radius:17px;padding:clamp(14px,3vw,26px);box-shadow:var(--sh2);margin-top:var(--s3)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:right;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);
+ font-weight:600;padding:8px 10px;border-bottom:1px solid var(--edge);white-space:nowrap}
+td{text-align:right;padding:9px 10px;border-bottom:1px solid #161E2B;font-variant-numeric:tabular-nums}
+th.l,td.l{text-align:left}
+tbody tr{transition:background .16s}
+.good{color:var(--good)} .bad{color:var(--bad)} .gold{color:var(--gold)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.scroll table{min-width:560px}
+td .sub{display:block;font-size:12px;color:var(--faint);line-height:1.3}
+
+.matchup{background:linear-gradient(165deg,var(--p3),var(--p1));border:1px solid var(--edge);
+ border-radius:16px;padding:clamp(16px,3vw,26px);box-shadow:var(--sh2);position:relative;
+ overflow:hidden;margin-top:var(--s2)}
+.matchup::before{content:'';position:absolute;inset:0 0 auto 0;height:2px;
+ background:linear-gradient(90deg,var(--gold),transparent 70%)}
+.matchup.flip::before{background:linear-gradient(90deg,var(--bad),transparent 70%)}
+.matchup.clean::before{background:linear-gradient(90deg,var(--good),transparent 70%)}
+.matchup.light::before{background:linear-gradient(90deg,var(--wr),transparent 70%)}
+.mhead{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+.mtitle{font-family:var(--serif);font-size:clamp(19px,3vw,28px);letter-spacing:-.02em;line-height:1.2}
+.mtitle .sm{color:var(--faint);font-size:.62em;font-family:var(--sans);letter-spacing:.02em}
+.flag{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+ padding:4px 9px;border-radius:6px;background:rgba(255,107,107,.12);color:var(--bad);flex:none}
+.flag.calm{background:#161E2B;color:var(--faint)}
+
+.swingbar{margin-top:var(--s3);display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(8px,2vw,18px);
+ align-items:center;background:#111825;border:1px solid #1D2634;border-radius:12px;
+ padding:clamp(12px,2.5vw,18px)}
+.sb{min-width:0}
+.sb .lbl{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.sb .val{font-family:var(--serif);font-size:clamp(15px,2.6vw,20px);letter-spacing:-.015em;
+ line-height:1.25;margin-top:5px;color:var(--dim)}
+.sb.now .val{color:var(--text)}
+.sb.now .lbl{color:var(--gold)}
+.arrow{font-size:20px;color:var(--gold);line-height:1;flex:none}
+.swingnote{margin-top:10px;font-size:12.5px;color:var(--faint);text-align:center}
+.swingnote b{color:var(--bad);font-weight:700}
+
+.statlines{margin-top:var(--s3);border-top:1px solid var(--edge);padding-top:var(--s2)}
+.statlines .hd{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+.statline{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:4px 0;font-size:13.5px}
+.statline .tag{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+ padding:2px 7px;border-radius:5px;background:#161E2B;color:var(--faint);flex:none}
+.statline .tag.good{color:var(--good);background:rgba(61,220,151,.10)}
+.statline .tag.bad{color:var(--bad);background:rgba(255,107,107,.10)}
+.statline .nm{color:var(--text);font-weight:600;flex:none}
+.statline .who{color:var(--faint);font-size:12px;flex:1 1 auto;min-width:0}
+.statline .pts{font-variant-numeric:tabular-nums;font-weight:700;flex:none}
+.statline .d{font-size:12px;color:var(--faint);font-weight:400;margin-left:4px}
+.matchup .vl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+ font-weight:600;margin-top:var(--s3);display:block}
+.matchup .verdict{font-size:14.5px;color:var(--dim);line-height:1.68;margin-top:var(--s1)}
+.pred{margin-top:var(--s2);padding-top:var(--s2);border-top:1px solid var(--edge);
+ font-size:14px;color:var(--text);font-variant-numeric:tabular-nums}
+.pred b{color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-size:10.5px;
+ margin-right:8px;font-weight:600}
+.pred.alt{margin-top:6px;padding-top:0;border-top:none;font-size:12.5px;color:var(--faint)}
+.pred.alt b{color:var(--faint)}
+.pred.adj{margin-top:6px;padding-top:0;border-top:none;font-size:12.5px;color:var(--wr)}
+.pred.adj b{color:var(--wr)}
+
+.recbook{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--s2);margin-top:var(--s3)}
+.rec{background:linear-gradient(165deg,#1E2A3C,var(--p1));border:1px solid rgba(232,180,74,.22);
+ border-radius:14px;padding:16px 18px;position:relative;overflow:hidden}
+.rec::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
+.rec.bad::before{background:var(--bad)}
+.rec.teal::before{background:var(--wr)}
+.rec.rb::before{background:var(--rb)}
+.rec .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.rec.bad .k{color:var(--bad)}
+.rec.teal .k{color:var(--wr)}
+.rec.rb .k{color:var(--rb)}
+.rec .v{font-family:var(--serif);font-size:26px;line-height:1.1;margin:8px 0 6px;letter-spacing:-.02em}
+.rec .s{font-size:13.5px;color:var(--dim);line-height:1.45}
+
+.sig{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:17px;margin-top:var(--s4);
+ padding-top:var(--s2);border-top:1px solid var(--edge)}
+footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(--faint);font-size:13.5px}
+
+@media(hover:hover) and (pointer:fine){ tbody tr:hover{background:#18202Ecc} }
+@media(max-width:720px){
+ .figs{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+ .hero{min-height:0}
+ table{font-size:12.5px}
+ .scroll{box-shadow:inset -22px 0 16px -12px rgba(7,9,14,.92)}
+ body{background-attachment:scroll}
+ .swingbar{grid-template-columns:1fr;gap:10px;text-align:center}
+ .arrow{transform:rotate(90deg)}
+}
+@media(max-width:420px){ .figs{grid-template-columns:1fr 1fr} }
+.sitenav{display:flex;flex-wrap:wrap;align-items:center;padding:12px 0 0}
+.sitenav .brand{flex:1 1 auto;min-width:min(100%,160px);padding:10px 12px 10px 0;
+ font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;
+ text-decoration:none;border-bottom:none}
+.sitenav .links{display:flex;flex-wrap:wrap}
+.sitenav a{color:var(--faint);text-decoration:none;border-bottom:none;font-size:11.5px;letter-spacing:.12em;
+ text-transform:uppercase;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;
+ border-radius:8px}
+.sitenav a:hover{color:var(--gold);background:rgba(232,180,74,.08);border-bottom:none}
+.sitenav a.here{color:var(--gold)}
+.sitenav a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media(max-width:720px){
+ .sitenav .links{width:100%}
+ .sitenav a{flex:1 1 auto;justify-content:center;padding:12px 8px}
+}
+footer a{color:var(--gold);text-decoration:none}
+.tag.mid{color:var(--gold);background:rgba(232,180,74,.10)}
+@media(max-width:720px){
+ .ledger table{font-size:14px}
+ .ledger thead{display:none}
+ .ledger tr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 12px;padding:14px 2px;border-bottom:1px solid #161E2B}
+ .ledger tbody tr:last-child{border-bottom:none}
+ .ledger td{border:none;padding:0;text-align:left}
+ .ledger td:nth-child(1){grid-column:1/-1;color:var(--text);font-weight:600}
+ .ledger td:nth-child(1) .sub{font-weight:400;margin-top:2px}
+ .ledger td:nth-child(2){grid-column:1/-1;font-size:12px;color:var(--gold);letter-spacing:.04em;margin-bottom:6px}
+ .ledger td[data-l]::before{content:attr(data-l);display:block;font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--faint);font-weight:600;margin-bottom:1px}
+}
+@media(max-width:720px){
+ .tape thead{display:none}
+ .tape tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px;padding:14px 2px;border-bottom:1px solid #161E2B}
+ .tape tbody tr:last-child{border-bottom:none}
+ .tape td{border:none;padding:0;text-align:left}
+ .tape td:first-child{grid-column:1/-1;color:var(--text);font-weight:600;font-size:13.5px}
+ .tape td[data-l]::before{content:attr(data-l);display:block;font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--faint);font-weight:600;margin-bottom:2px}
+}
+</style></head>
+<body>
+<div class="grain"></div>
+<div class="wrap">
+<nav class="sitenav" aria-label="Site">
+  <a class="brand" href="/">Mohn Jadden</a>
+  <div class="links">
+    <a href="/">Home</a>
+    <a class="here" href="/the-franchise-2026-primer/">Primer</a>
+    <a href="/the-franchise-2026-recap/">Recap</a>
+    <a href="/the-franchise-2026-preseason/">Preseason</a>
+    <a href="/the-franchise-chronicle/">The Franchise</a>
+    <a href="/the-franchise-2026-draft-grades/">Draft Grades</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="kicker">The Franchise · 2026 Week 10 Primer · By Mohn Jadden</div>
+  <h1>Sixty-Six Yards<br>to First Place.</h1>
+  <p class="lede">The best fantasy night on Thursday went to a Giants tight end in a Giants loss. Isaiah Likely’s 24.20 turned Ken You Not Pickett from an 8.89-point underdog into a 4.84-point favorite, and the man who actually won the game, Stefon Diggs, did it from Mike E’s bench. Rob and TJ are both 13–5, and Yahoo has TJ clearing the median while Rob comes up 3.94 short of it, which would leave TJ alone in first. Blackhat has TJ losing to Chad and the tie holding. Meanwhile Team KAS is starting two Bears on a Chicago bye.</p>
+  <div class="scrollcue"><span>↓ It started at MetLife</span></div>
+</header>
+</div>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Headline</div>
+    <h2>Commanders 24, Giants 21.</h2>
+    <p>The lead changed hands six times. Jayden Daniels threw his first two interceptions of the season on back-to-back fourth-quarter drives, J.J. McCarthy hit Likely for a 66-yard touchdown to go up 21–17 with 8:13 left, and Washington looked finished. Then a bad Giants punt, a pass interference, and Daniels found Diggs behind the defense for 32 yards with 57 seconds left. McCarthy’s deep ball on the last drive went to Rasul Douglas. Daniels finished 23 of 33 for 249 and three touchdowns, and Cam Skattebo, back from the hamstring, scored twice.</p>
+    <p>Six of our starters played, all in two matchups, and nobody left the game hurt. Likely and Skattebo blew past their numbers, and Malik Nabers and Dominic Zvada both got buried. The only favorite that changed was in The Annexation of PR vs. Ken You Not Pickett, and the bench produced two of the night’s best lines: Daniels’ 26.16 for TJ and Diggs’ 17.30 for Mike E.</p>
+  </div>
+
+  <div class="panel narrow reveal ledger">
+    <table>
+      <thead><tr>
+        <th class="l">The ledger</th><th class="l">Belongs to</th><th>Proj</th><th>Got</th><th>+/−</th>
+      </tr></thead>
+      <tbody>
+        <tr><td class="l">Isaiah Likely <span class="sub">9 rec, 127 yds, 66-yd TD</span></td><td class="l">Ken You Not Pickett</td><td data-l="Proj">9.73</td><td data-l="Got" class="gold">24.20</td><td data-l="+/−" class="good">+14.47</td></tr>
+        <tr><td class="l">Cam Skattebo <span class="sub">18 car, 78 yds, 2 TD · 3 rec, 44 yds</span></td><td class="l">Njigba Please</td><td data-l="Proj">13.64</td><td data-l="Got" class="gold">27.50</td><td data-l="+/−" class="good">+13.86</td></tr>
+        <tr><td class="l">Austin Ekeler <span class="sub">10 car, 28 yds rushing</span></td><td class="l">Ken You Not Pickett</td><td data-l="Proj">8.84</td><td data-l="Got">8.10</td><td data-l="+/−" class="bad">−0.74</td></tr>
+        <tr><td class="l">Rachaad White <span class="sub">11 car, 47 yds</span></td><td class="l">Njigba Please</td><td data-l="Proj">10.87</td><td data-l="Got" class="bad">6.80</td><td data-l="+/−" class="bad">−4.07</td></tr>
+        <tr><td class="l">Dominic Zvada <span class="sub">3 PAT · missed a 33-yarder</span></td><td class="l">D-Unit</td><td data-l="Proj">8.10</td><td data-l="Got" class="bad">3.00</td><td data-l="+/−" class="bad">−5.10</td></tr>
+        <tr><td class="l">Malik Nabers <span class="sub">5 rec, 44 yds</span></td><td class="l">Njigba Please</td><td data-l="Proj">12.84</td><td data-l="Got" class="bad">4.90</td><td data-l="+/−" class="bad">−7.94</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="narrow reveal">
+    <div class="keystat good"><b>Key Stat</b>Likely beat his number by 14.47 by himself. <strong class="gold">That flipped Rob from an 8.89 underdog to a 4.84 favorite</strong>, a 13.73-point swing from one tight end on a team that lost.</div>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Board</div>
+    <h2>Same record, different lines.</h2>
+    <p>The Live Proj median is <strong>129.00</strong>. TJ is 8.38 over it and Rob is 3.94 under it, so if Yahoo’s chalk holds, both win, only TJ clears, and Nico’d &amp; Dimed goes to 15–5 with Ken You Not Pickett a game back. Blackhat puts the line at 126.30 and flips TJ’s matchup, which makes both of them 14–6. J Squad sits 2.15 above the line and Njigba Please 2.15 below it. Here are all five.</p>
+  </div>
+
+  <article class="matchup flip reveal">
+    <div class="mhead">
+      <div class="mtitle">The Annexation of PR <span class="sm">Curtis</span> vs. Ken You Not Pickett <span class="sm">Rob</span></div>
+      <div class="flag">Flipped</div>
+    </div>
+    <div class="swingbar">
+      <div class="sb"><div class="lbl">Before kickoff</div><div class="val">The Annexation of PR by 8.89<br><span style="font-size:.8em;color:var(--faint)">120.22 – 111.33</span></div></div>
+      <div class="arrow">→</div>
+      <div class="sb now"><div class="lbl">Now</div><div class="val">Ken You Not Pickett by 4.84<br><span style="font-size:.8em;color:var(--faint)">125.06 – 120.22</span></div></div>
+    </div>
+    <div class="swingnote">The only flip of the week, <b>and it was one catch-and-run</b>.</div>
+    <div class="statlines">
+      <div class="hd">Already played</div>
+      <div class="statline"><span class="tag good">Boom</span><span class="nm">Isaiah Likely</span>
+        <span class="who">NYG TE · Ken You Not Pickett</span><span class="pts good">24.20<span class="d">proj 9.73</span></span></div>
+      <div class="statline"><span class="tag mid">Decent</span><span class="nm">Austin Ekeler</span>
+        <span class="who">Was RB · Ken You Not Pickett</span><span class="pts">8.10<span class="d">proj 8.84</span></span></div>
+    </div>
+    <span class="vl">The read</span>
+    <p class="verdict">Likely was McCarthy’s favorite target all night, nine catches for 127 yards, and the 66-yarder was most of the difference in this matchup. Ekeler was a free-agent pickup at 6:56 Thursday night, with Barkley and Irving on byes and Jacobs out, and he did exactly what a stopgap does: 28 rushing yards and a 0.74 miss. Rob’s Sunday rests on Bryce Young at quarterback, while Curtis still has Stafford and George Kittle, the $2 pickup from 2024 that the Chronicle lists as his best bargain ever. <strong>Both systems have Rob</strong>, Yahoo by 4.84 and Blackhat by 6.62.</p>
+    <div class="pred"><b>Yahoo</b>Ken You Not Pickett 125.06 – 120.22 (by 4.84)</div>
+    <div class="pred alt"><b>Blackhat</b>Ken You Not Pickett 121.14 – 114.52 (by 6.62)</div>
+  </article>
+
+  <article class="matchup light reveal">
+    <div class="mhead">
+      <div class="mtitle">Nico’d &amp; Dimed <span class="sm">TJ</span> vs. TEAM HoldMyCHUBBBA <span class="sm">Chad</span></div>
+      <div class="flag calm">Split</div>
+    </div>
+    <div class="swingbar">
+      <div class="sb"><div class="lbl">Before kickoff</div><div class="val">Nico’d &amp; Dimed by 5.20<br><span style="font-size:.8em;color:var(--faint)">137.38 – 132.18</span></div></div>
+      <div class="arrow">→</div>
+      <div class="sb now"><div class="lbl">Now</div><div class="val">Nico’d &amp; Dimed by 5.20<br><span style="font-size:.8em;color:var(--faint)">137.38 – 132.18</span></div></div>
+    </div>
+    <div class="swingnote">Yahoo likes TJ. <b>Blackhat likes Chad.</b></div>
+    <span class="vl">The read</span>
+    <p class="verdict">Nobody in either lineup has played, but TJ’s bench did: Jayden Daniels put up 26.16 while Brock Purdy waits for 4:25 in Dallas at a 24.53 projection, so the call was right by about a point and a half. The problem is Bhayshul Tuten, who sat out Wednesday and Thursday with the ankle and foot. <strong>Yahoo has Nico’d &amp; Dimed by 5.20, and Blackhat has TEAM HoldMyCHUBBBA by 0.92</strong>, so the matchup with first place in it is the one the two systems disagree on. Either way TJ clears both medians, so what’s at stake is the head-to-head win.</p>
+    <div class="pred"><b>Yahoo</b>Nico’d &amp; Dimed 137.38 – 132.18 (by 5.20)</div>
+    <div class="pred alt"><b>Blackhat</b>TEAM HoldMyCHUBBBA 134.74 – 133.82 (by 0.92)</div>
+  </article>
+
+  <article class="matchup reveal">
+    <div class="mhead">
+      <div class="mtitle">The McClusterfucks <span class="sm">Eric</span> vs. D-Unit <span class="sm">Dao</span></div>
+      <div class="flag calm">Tighter</div>
+    </div>
+    <div class="swingbar">
+      <div class="sb"><div class="lbl">Before kickoff</div><div class="val">D-Unit by 6.22<br><span style="font-size:.8em;color:var(--faint)">143.51 – 137.29</span></div></div>
+      <div class="arrow">→</div>
+      <div class="sb now"><div class="lbl">Now</div><div class="val">D-Unit by 1.12<br><span style="font-size:.8em;color:var(--faint)">138.41 – 137.29</span></div></div>
+    </div>
+    <div class="swingnote">A Wednesday kicker pickup <b>gave back 5.10</b>.</div>
+    <div class="statlines">
+      <div class="hd">Already played</div>
+      <div class="statline"><span class="tag bad">Bust</span><span class="nm">Dominic Zvada</span>
+        <span class="who">NYG K · D-Unit</span><span class="pts bad">3.00<span class="d">proj 8.10</span></span></div>
+    </div>
+    <span class="vl">The read</span>
+    <p class="verdict">Dao dropped Matt Gay for Zvada on Wednesday, and Zvada pulled a 33-yarder wide left on the Giants’ second drive and finished with three extra points. That one miss took D-Unit from a six-point favorite to barely one. <strong>Blackhat already has it the other way, The McClusterfucks by 3.97</strong>. Eric’s week comes down to McCaffrey and Lamb in the 4:25 window, and Dao still has Gibbs and Chase to come.</p>
+    <div class="pred"><b>Yahoo</b>D-Unit 138.41 – 137.29 (by 1.12)</div>
+    <div class="pred alt"><b>Blackhat</b>The McClusterfucks 136.33 – 132.36 (by 3.97)</div>
+  </article>
+
+  <article class="matchup reveal">
+    <div class="mhead">
+      <div class="mtitle">Team KAS <span class="sm">Mike S</span> vs. Njigba Please <span class="sm">Mike E</span></div>
+      <div class="flag calm">Wider</div>
+    </div>
+    <div class="swingbar">
+      <div class="sb"><div class="lbl">Before kickoff</div><div class="val">Njigba Please by 4.35<br><span style="font-size:.8em;color:var(--faint)">125.00 – 120.65</span></div></div>
+      <div class="arrow">→</div>
+      <div class="sb now"><div class="lbl">Now</div><div class="val">Njigba Please by 6.20<br><span style="font-size:.8em;color:var(--faint)">126.85 – 120.65</span></div></div>
+    </div>
+    <div class="swingnote">Three Giants and Commanders played for Mike E, <b>and the best one was benched</b>.</div>
+    <div class="statlines">
+      <div class="hd">Already played</div>
+      <div class="statline"><span class="tag good">Boom</span><span class="nm">Cam Skattebo</span>
+        <span class="who">NYG RB · Njigba Please</span><span class="pts good">27.50<span class="d">proj 13.64</span></span></div>
+      <div class="statline"><span class="tag bad">Bust</span><span class="nm">Rachaad White</span>
+        <span class="who">Was RB · Njigba Please</span><span class="pts bad">6.80<span class="d">proj 10.87</span></span></div>
+      <div class="statline"><span class="tag bad">Bust</span><span class="nm">Malik Nabers</span>
+        <span class="who">NYG WR · Njigba Please</span><span class="pts bad">4.90<span class="d">proj 12.84</span></span></div>
+    </div>
+    <span class="vl">The read</span>
+    <p class="verdict">Skattebo, who missed last week with the hamstring, had 122 yards from scrimmage and two touchdowns, and his +13.86 covered for Nabers (five catches, 44 yards) and White (47 yards on 11 carries) almost by himself. Diggs caught six for 83 and the game-winner, all of it for 17.30 on the bench, which is 12.40 more than Nabers gave Mike E in the same slot. Team KAS is starting Colston Loveland and Cairo Santos on a Bears bye, so these numbers assume Mike S gets around to Hunter Henry, Chris Boswell and George Pickens. <strong>Both systems have Njigba Please</strong>, Yahoo by 6.20 and Blackhat by 7.19, and if nobody touches the KAS lineup it’s 126.85 to 99.85.</p>
+    <div class="pred"><b>Yahoo</b>Njigba Please 126.85 – 120.65 (by 6.20)</div>
+    <div class="pred alt"><b>Blackhat</b>Njigba Please 124.38 – 117.19 (by 7.19)</div>
+  </article>
+
+  <article class="matchup clean reveal">
+    <div class="mhead">
+      <div class="mtitle">Henrys Heros <span class="sm">Chris</span> vs. J Squad <span class="sm">Janice</span></div>
+      <div class="flag calm">Untouched</div>
+    </div>
+    <div class="swingbar">
+      <div class="sb"><div class="lbl">Before kickoff</div><div class="val">J Squad by 12.09<br><span style="font-size:.8em;color:var(--faint)">131.15 – 119.06</span></div></div>
+      <div class="arrow">→</div>
+      <div class="sb now"><div class="lbl">Now</div><div class="val">J Squad by 12.09<br><span style="font-size:.8em;color:var(--faint)">131.15 – 119.06</span></div></div>
+    </div>
+    <div class="swingnote">Twenty starters, <b>zero snaps so far</b>.</div>
+    <span class="vl">The read</span>
+    <p class="verdict">Nobody in this one has played. Chris has David Montgomery in the flex, and Montgomery hasn’t played since Week 5 and is projected at 3.50 by Blackhat, while Jared Goff (chest) and Amon-Ra St. Brown (ribs) open the day in Munich at 9:30. Janice has Jakobi Meyers (ankle, no practice yet) in her flex with Woody Marks projected 3.22 higher on her bench. <strong>Both systems have J Squad</strong>, Yahoo by 12.09 and Blackhat by 15.75, and a win plus the median gets Janice to 13–7.</p>
+    <div class="pred"><b>Yahoo</b>J Squad 131.15 – 119.06 (by 12.09)</div>
+    <div class="pred alt"><b>Blackhat</b>J Squad 128.22 – 112.47 (by 15.75)</div>
+  </article>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">Bye Week Check</div>
+    <h2>Two Bears, one lineup.</h2>
+    <p>Chicago, Denver, Philadelphia and Tampa Bay are off. Nine lineups are clean, Mike E included, after three straight weeks on this list. The tenth is starting both of its Bears.</p>
+  </div>
+  <div class="recbook">
+    <article class="rec bad reveal">
+      <div class="k">TE · Bye</div>
+      <div class="v">Colston Loveland</div>
+      <div class="s"><strong>Team KAS</strong> has Hunter Henry sitting right there on the bench. He’s questionable, but he’s playing a football game this week, and Loveland isn’t.</div>
+    </article>
+    <article class="rec bad reveal">
+      <div class="k">K · Bye</div>
+      <div class="v">Cairo Santos</div>
+      <div class="s">Santos was last week’s $0 waiver pickup, and he got exactly one start before the bye. Chris Boswell is on the same bench.</div>
+    </article>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">Sick Bay</div>
+    <h2>Nobody got hurt Thursday. The practice reports did the damage.</h2>
+  </div>
+  <div class="recbook">
+    <article class="rec bad reveal">
+      <div class="k">Ankle/foot · DNP Wed &amp; Thu</div>
+      <div class="v">Bhayshul Tuten</div>
+      <div class="s">He hasn’t practiced this week and starts for <strong>Nico’d &amp; Dimed</strong>. If he sits, TJ’s best fill-in on the bench is Jordan Mason at 10.06.</div>
+    </article>
+    <article class="rec bad reveal">
+      <div class="k">Groin · out since Week 5</div>
+      <div class="v">David Montgomery</div>
+      <div class="s">He missed Wednesday and was limited Thursday, and he’s in the <strong>Henrys Heros</strong> flex. Blackhat projects him at 3.50.</div>
+    </article>
+    <article class="rec bad reveal">
+      <div class="k">Ankle · DNP</div>
+      <div class="v">Jakobi Meyers</div>
+      <div class="s">He hasn’t practiced and he’s in the <strong>J Squad</strong> flex. Woody Marks is on the bench.</div>
+    </article>
+    <article class="rec bad reveal">
+      <div class="k">Ribs · chest · Munich, 9:30</div>
+      <div class="v">St. Brown · Goff</div>
+      <div class="s">Both were limited both days, and the Lions play first on Sunday. St. Brown starts for <strong>J Squad</strong> and Goff for <strong>Henrys Heros</strong>.</div>
+    </article>
+    <article class="rec reveal">
+      <div class="k">Concussion · back at practice</div>
+      <div class="v">Garrett Wilson</div>
+      <div class="s">He practiced Wednesday and Thursday while working through the protocol, and he’s in <strong>D-Unit</strong>’s flex. Clearing it is the only thing left.</div>
+    </article>
+    <article class="rec reveal">
+      <div class="k">Tagged, no news</div>
+      <div class="v">Pollard · Fannin · Hockenson · Kincaid · McConkey · Parkinson</div>
+      <div class="s">All six start with a Q, for Eric, Dao, Rob, Mike E, Mike S and Chris. Read Friday’s designations before you lock anything.</div>
+    </article>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Wire</div>
+    <h2>Rob finally opened the wallet.</h2>
+  </div>
+  <div class="recbook">
+    <article class="rec reveal">
+      <div class="k">Breaking the seal · $10</div>
+      <div class="v">Bryce Young</div>
+      <div class="s">Last week this page pointed out that <strong>Ken You Not Pickett</strong> had all $100 and that Rob had never spent a waiver dollar. With Lamar on IR and Caleb Williams on a bye, $10 of it went to the Panthers quarterback, who starts at 22.00.</div>
+    </article>
+    <article class="rec teal reveal">
+      <div class="k">Eighty minutes out · Free agent</div>
+      <div class="v">Austin Ekeler</div>
+      <div class="s">Rob dropped Ryan Flournoy at 6:56 Thursday for a Commanders back who started that night. He went 0.74 under projection, which is fine for a guy who wasn’t on the roster at dinner.</div>
+    </article>
+    <article class="rec bad reveal">
+      <div class="k">Bad drop · Wednesday waivers</div>
+      <div class="v">Antonio Williams</div>
+      <div class="s"><strong>The McClusterfucks</strong> cut him for Audric Estime ($6), who’s on the bench. Thursday night Williams caught two balls for 42 yards and a touchdown.</div>
+    </article>
+    <article class="rec reveal">
+      <div class="k">Biggest spend · $19</div>
+      <div class="v">Corey Kiner</div>
+      <div class="s"><strong>Nico’d &amp; Dimed</strong> paid $19 of the league’s $45 and put him straight in the flex at 11.93. TJ is down to $32.</div>
+    </article>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap narrow reveal">
+  <div class="kicker">Final Word</div>
+  <h2>Check your bench.</h2>
+  <p class="pull">A tight end flipped a matchup, a kicker almost flipped another, and two of Thursday’s best lines were on benches.</p>
+  <p>Mike S: Loveland and Santos are both Bears, and the Bears are off. Swapping in Henry, Boswell and Pickens is worth 20.80 projected points, all three are already on your roster, and Adonai Mitchell is starting again after last week’s goose egg.</p>
+  <p>Rob: Likely bailed you out and you spent your first waiver dollars. You’re still 3.94 under the median on Yahoo, and that’s the difference between sharing first place and chasing it.</p>
+  <p>TJ: Yahoo says you’re alone in first by Sunday night and Blackhat says Chad beats you by less than a point. Tuten hasn’t practiced all week.</p>
+  <p>Mike E: no byes this week, so that’s progress. You did start Nabers over Diggs, though, and Diggs caught the game-winner.</p>
+  <p class="sig">— Mohn Jadden</p>
+</div></section>
+
+<div class="wrap"><footer>
+  The Franchise, 2026 Week 10. Ten teams, 0.5 PPR, head-to-head plus the league median. Pre-kickoff numbers are Yahoo’s Orig Proj; current numbers are Live Proj. The Blackhat line is Black Hat Fantasy’s projection scored with this league’s settings, as shown on the Yahoo matchup page, with Thursday actuals in for players who have already played. Team KAS hasn’t set its lineup, so its numbers use the best lineup on its roster (Hunter Henry, Chris Boswell and George Pickens in for Colston Loveland, Cairo Santos and Adonai Mitchell); as set, it projects 99.85 on Yahoo and 99.61 on Blackhat. Medians: Yahoo Live Proj 129.00, Blackhat 126.30. Current as of Friday morning, November 13. Historical notes from the Franchise Chronicle, 2014–2025.
+  · <a href="/the-franchise-2026-recap/week-9/">Week 9 recap</a>
+  · <a href="/the-franchise-2026-primer/week-9/">Week 9 primer</a>
+  · <a href="/the-franchise-chronicle/">The Chronicle</a>
+</footer></div>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+}),{threshold:0,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+const revealIn=()=>document.querySelectorAll('.reveal:not(.in)').forEach(e=>{
+  const r=e.getBoundingClientRect();
+  if(r.top<innerHeight*0.92 && r.bottom>0) e.classList.add('in');
+});
+revealIn();
+addEventListener('load',revealIn,{once:true});
+</script>
+</body>
+</html>
