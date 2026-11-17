@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07090E">
+<title>The Franchise &mdash; 2026 Midterms: The Draft, Graded in November</title>
+<meta name="description" content="Ten weeks of real points against August&rsquo;s auction prices. Who won the draft, who set money on fire, and whether any of it matters.">
+<style>
+:root{
+ --ink:#07090E; --p1:#0D1119; --p2:#141A25; --p3:#1D2534; --line:#2A3446;
+ --edge:#28324399; --text:#EDF1F8; --dim:#93A3B9; --faint:#61728A;
+ --rb:#F0894D; --wr:#3FC7AE; --qb:#B07EF0; --te:#F2C94C;
+ --gold:#E8B44A; --good:#3DDC97; --bad:#FF6B6B; --hot:#FF8355;
+ --serif:ui-serif,'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+ --sans:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+ --s1:8px;--s2:16px;--s3:26px;--s4:44px;--s5:76px;--s6:120px;
+ --sh1:0 1px 2px rgba(2,5,10,.55),0 3px 10px rgba(2,5,10,.4);
+ --sh2:0 3px 8px rgba(2,5,10,.6),0 16px 40px rgba(2,5,10,.5);
+ --sh3:0 6px 16px rgba(2,5,10,.65),0 32px 80px rgba(232,180,74,.07);
+ --pad:clamp(16px,4vw,26px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.75;
+ -webkit-font-smoothing:antialiased;overflow-x:hidden;
+ background-image:
+  radial-gradient(1100px 620px at 8% -6%,rgba(232,180,74,.10),transparent 62%),
+  radial-gradient(900px 560px at 96% 12%,rgba(63,199,174,.07),transparent 60%),
+  radial-gradient(900px 700px at 40% 62%,rgba(240,137,77,.06),transparent 64%),
+  radial-gradient(800px 600px at 70% 100%,rgba(176,126,240,.05),transparent 62%);
+ background-attachment:fixed;}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:1;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--pad);position:relative;z-index:2}
+.narrow{max-width:720px;margin:0 auto}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:-.035em;line-height:.98;
+ font-size:clamp(34px,9vw,88px)}
+h2{font-family:var(--serif);font-weight:600;letter-spacing:-.03em;line-height:1.08;
+ font-size:clamp(26px,5.2vw,52px)}
+h3{font-family:var(--serif);font-size:clamp(19px,2.6vw,27px);letter-spacing:-.02em;font-weight:600}
+.kicker{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+p{font-size:clamp(16px,2.4vw,17.5px);color:var(--dim);margin-top:var(--s2)}
+p strong,li strong{color:var(--text);font-weight:600}
+em{color:var(--text);font-style:italic}
+section{padding:clamp(56px,12vw,120px) 0;position:relative}
+.act{border-top:1px solid var(--edge)}
+.reveal{opacity:0;transform:translateY(22px);
+ transition:opacity .85s cubic-bezier(.16,.8,.3,1),transform .85s cubic-bezier(.16,.8,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+ .reveal{opacity:1;transform:none;transition:none}
+ .swipe-hint .swipe-arrow,.swipe-edge span{animation:none}
+}
+
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+ padding:clamp(40px,8vw,76px) 0 clamp(56px,10vw,76px)}
+.hero h1{margin:var(--s3) 0}
+.hero .lede{font-size:clamp(17px,2.6vw,21px);color:var(--dim);max-width:62ch}
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,4vw,44px);margin-top:var(--s4)}
+.fig .v{font-family:var(--serif);font-size:clamp(28px,6vw,46px);line-height:1;letter-spacing:-.03em;color:var(--gold)}
+.fig .l{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:8px}
+.scrollcue{margin-top:var(--s4);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.scrollcue span{display:inline-block;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+.pod{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:var(--s4);
+ padding:16px 18px;background:linear-gradient(165deg,#15241C,var(--p1));
+ border:1px solid rgba(29,185,84,.32);border-radius:16px;text-decoration:none;color:inherit;
+ box-shadow:var(--sh2);position:relative;overflow:hidden;min-height:44px;
+ transition:transform .3s cubic-bezier(.2,.9,.3,1.25),box-shadow .3s}
+.pod::before{content:'';position:absolute;inset:0 0 auto 0;height:2px;
+ background:linear-gradient(90deg,#1DB954,transparent 70%)}
+.pod-play{flex:none;width:52px;height:52px;border-radius:50%;background:#1DB954;color:#04110a;
+ display:grid;place-items:center;box-shadow:0 8px 20px rgba(29,185,84,.28)}
+.pod-play svg{width:22px;height:22px;margin-left:3px}
+.pod-copy{flex:1 1 200px;min-width:0}
+.pod-copy .k{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#1DB954;font-weight:600}
+.pod-copy strong{display:block;font-family:var(--serif);font-size:clamp(18px,2.8vw,24px);
+ letter-spacing:-.02em;line-height:1.2;margin:5px 0 4px;font-weight:600;color:var(--text)}
+.pod-copy .m{font-size:13.5px;color:var(--dim);line-height:1.45}
+.pod-go{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1DB954;font-weight:600}
+@media(hover:hover) and (pointer:fine){
+ .pod:hover{transform:translateY(-3px);box-shadow:var(--sh3)}
+}
+.pod:focus-visible{outline:2px solid #1DB954;outline-offset:3px}
+
+.pull{font-family:var(--serif);font-size:clamp(22px,4vw,40px);line-height:1.25;letter-spacing:-.02em;
+ color:var(--text);border-left:2px solid var(--gold);padding-left:clamp(14px,3vw,26px);margin:var(--s4) 0}
+
+.keystat{background:linear-gradient(170deg,#1B2432,#131A26);border:1px solid var(--edge);
+ border-left:2px solid var(--gold);border-radius:11px;padding:var(--s2) var(--s3);margin:var(--s3) 0;
+ font-size:clamp(14.5px,2.2vw,15.5px);color:var(--dim)}
+.keystat b{color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-size:11.5px;
+ display:block;margin-bottom:5px}
+.keystat.qb{border-left-color:var(--qb)} .keystat.qb b{color:var(--qb)}
+
+.panel{background:linear-gradient(170deg,var(--p2),var(--p1));border:1px solid var(--edge);
+ border-radius:17px;padding:clamp(14px,3vw,26px);box-shadow:var(--sh2);margin-top:var(--s3)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:right;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);
+ font-weight:600;padding:8px 10px;border-bottom:1px solid var(--edge);white-space:nowrap}
+td{text-align:right;padding:9px 10px;border-bottom:1px solid #161E2B;font-variant-numeric:tabular-nums}
+th.l,td.l{text-align:left}
+tbody tr{transition:background .16s}
+.good{color:var(--good)} .bad{color:var(--bad)} .gold{color:var(--gold)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:thin}
+.scroll table{min-width:640px}
+.scroll-wrap{position:relative}
+.swipe-hint{display:none;align-items:center;justify-content:flex-end;gap:8px;
+ margin:0 0 10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+ color:var(--faint);font-weight:600;transition:opacity .25s}
+.swipe-hint .swipe-arrow{display:inline-flex;align-items:center;color:var(--gold);
+ font-size:18px;line-height:1;letter-spacing:-.12em;
+ animation:nudge 1.35s ease-in-out infinite}
+.swipe-edge{display:none;position:absolute;top:8px;right:0;bottom:8px;width:42px;
+ pointer-events:none;z-index:4;align-items:center;justify-content:flex-end;
+ padding-right:6px;transition:opacity .25s;
+ background:linear-gradient(90deg,transparent,rgba(20,26,37,.55) 28%,rgba(20,26,37,.96))}
+.swipe-edge span{color:var(--gold);font-size:26px;line-height:1;font-weight:600;
+ animation:nudge 1.35s ease-in-out infinite}
+.panel.has-overflow .swipe-hint{display:flex}
+.panel.has-overflow .swipe-edge{display:flex}
+.panel.at-end .swipe-edge,.panel.at-end .swipe-hint{opacity:0}
+@keyframes nudge{0%,100%{transform:translateX(0);opacity:.45}50%{transform:translateX(6px);opacity:1}}
+th.grade,td.grade,th.pin,td.pin{position:sticky;left:0;z-index:2;text-align:left;white-space:nowrap;
+ background:var(--p2);box-shadow:8px 0 10px -8px rgba(2,5,10,.85);min-width:52px}
+th.grade,th.pin{z-index:3}
+td.grade strong,td.pin strong{font-size:15px;letter-spacing:.02em}
+.board-table,.standings-table{border-collapse:separate;border-spacing:0}
+.scroll .standings-table{min-width:500px}
+.sim-note{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.sim-note span{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);
+ border:1px solid var(--edge);border-radius:999px;padding:5px 10px}
+
+.board{display:flex;flex-direction:column;gap:var(--s2);margin-top:var(--s3)}
+.kc{background:linear-gradient(165deg,var(--p3),var(--p1));border:1px solid var(--edge);border-radius:16px;
+ padding:clamp(16px,3vw,26px);box-shadow:var(--sh2);position:relative;overflow:hidden}
+.kc::before{content:'';position:absolute;inset:0 0 auto 0;height:2px;
+ background:linear-gradient(90deg,var(--gold),transparent 70%)}
+.kc.hot::before{background:linear-gradient(90deg,var(--bad),transparent 70%)}
+.kc.clean::before{background:linear-gradient(90deg,var(--good),transparent 70%)}
+.kc.light::before{background:linear-gradient(90deg,var(--wr),transparent 70%)}
+.kc.champ{border-color:rgba(232,180,74,.5);box-shadow:var(--sh3)}
+.kc .top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.kc .cost{font-family:var(--serif);font-size:clamp(36px,6vw,48px);line-height:1;letter-spacing:-.04em;color:var(--gold)}
+.kc.hot .cost{color:var(--bad)}
+.kc.clean .cost{color:var(--good)}
+.kc.light .cost{color:var(--wr)}
+.kc .who{min-width:0}
+.kc .team{font-family:var(--serif);font-size:clamp(20px,3vw,26px);letter-spacing:-.02em;line-height:1.15}
+.kc .mgr{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:4px}
+.champ-tag{display:inline-block;margin-top:6px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+ color:var(--ink);background:var(--gold);padding:3px 8px;border-radius:5px;font-weight:700}
+.keepers{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--s3)}
+.chip{display:inline-flex;align-items:baseline;gap:8px;padding:7px 11px;border-radius:9px;
+ background:#161E2B;border:1px solid var(--edge);font-size:14px;color:var(--text)}
+.chip .pos{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.chip .amt{font-variant-numeric:tabular-nums;font-weight:700;color:var(--gold)}
+.pRB{color:var(--rb)} .pWR{color:var(--wr)} .pQB{color:var(--qb)} .pTE{color:var(--te)}
+.pGOOD{color:var(--good)} .pBAD{color:var(--bad)}
+.chip.val-good .amt{color:var(--good)} .chip.val-bad .amt{color:var(--bad)}
+.kc .verdict{font-size:14.5px;color:var(--dim);line-height:1.65;margin-top:var(--s2)}
+.kc .vl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+ font-weight:600;margin-top:var(--s3);display:block}
+.kc.hot .vl{color:var(--bad)} .kc.clean .vl{color:var(--good)} .kc.light .vl{color:var(--wr)}
+
+.spine{margin:var(--s3) 0 0}
+.spinechart{display:flex;flex-direction:column;gap:7px}
+.row{display:grid;grid-template-columns:minmax(92px,160px) 1fr;gap:12px;align-items:center}
+.row .yl{font-size:12px;color:var(--faint);text-align:right;line-height:1.2}
+.row .track{position:relative;height:40px;background:#111825;border-radius:8px;overflow:hidden;
+ border:1px solid #1D2634}
+.row .fill{position:absolute;inset:0 auto 0 0;border-radius:7px;transform-origin:left;transform:scaleX(0);
+ background:linear-gradient(90deg,rgba(232,180,74,.85),rgba(232,180,74,.32));
+ transition:transform 1s cubic-bezier(.18,.85,.32,1.02)}
+.in .row .fill{transform:scaleX(1)}
+.row.hot .fill{background:linear-gradient(90deg,var(--bad),rgba(255,107,107,.28))}
+.row.good .fill{background:linear-gradient(90deg,var(--good),rgba(61,220,151,.28))}
+.row .lab{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;
+ padding:0 12px;font-size:13px;z-index:2;pointer-events:none;gap:8px}
+.row .lab .who{color:var(--text);font-weight:600;letter-spacing:-.01em;
+ text-shadow:0 1px 3px rgba(0,0,0,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.row .lab .amt{color:var(--text);font-weight:700;font-variant-numeric:tabular-nums;
+ text-shadow:0 1px 3px rgba(0,0,0,.75);flex:none}
+.spinenote{display:flex;justify-content:space-between;font-size:12.5px;color:var(--faint);
+ border-top:1px solid var(--edge);padding-top:10px;margin-top:10px;flex-wrap:wrap;gap:10px}
+
+.recbook{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--s2);margin-top:var(--s3)}
+.rec{background:linear-gradient(165deg,#1E2A3C,var(--p1));border:1px solid rgba(232,180,74,.22);
+ border-radius:14px;padding:16px 18px;position:relative;overflow:hidden}
+.rec::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
+.rec.bad::before{background:var(--bad)}
+.rec.teal::before{background:var(--wr)}
+.rec.rb::before{background:var(--rb)}
+.rec.qb::before{background:var(--qb)}
+.rec .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.rec.bad .k{color:var(--bad)}
+.rec.teal .k{color:var(--wr)}
+.rec.rb .k{color:var(--rb)}
+.rec.qb .k{color:var(--qb)}
+.rec .v{font-family:var(--serif);font-size:26px;line-height:1.15;margin:8px 0 6px;letter-spacing:-.02em}
+.rec .s{font-size:13.5px;color:var(--dim);line-height:1.5}
+
+.sig{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:17px;margin-top:var(--s4);
+ padding-top:var(--s2);border-top:1px solid var(--edge)}
+footer{border-top:1px solid var(--edge);padding:var(--s4) 0 var(--s5);color:var(--faint);font-size:13.5px}
+
+@media(hover:hover) and (pointer:fine){
+ tbody tr:hover{background:#18202Ecc}
+ tbody tr:hover td.grade,tbody tr:hover td.pin{background:#18202E}
+}
+@media(max-width:720px){
+ .figs{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+ .hero{min-height:0}
+ .row{grid-template-columns:1fr}
+ .row .yl{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+ .row .track{height:46px}
+ .kc .top{flex-direction:column-reverse;gap:8px}
+ .kc .cost{font-size:40px}
+ table{font-size:12.5px}
+ td.grade strong,td.pin strong{font-size:16px}
+ .pod{padding:14px 14px 16px;align-items:flex-start}
+ .pod-go{width:100%}
+ body{background-attachment:scroll}
+}
+@media(max-width:420px){
+ .figs{grid-template-columns:1fr 1fr}
+}
+.sitenav{display:flex;flex-wrap:wrap;align-items:center;padding:12px 0 0}
+.sitenav .brand{flex:1 1 auto;min-width:min(100%,160px);padding:10px 12px 10px 0;
+ font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;
+ text-decoration:none;border-bottom:none}
+.sitenav .links{display:flex;flex-wrap:wrap}
+.sitenav a{color:var(--faint);text-decoration:none;border-bottom:none;font-size:11.5px;letter-spacing:.12em;
+ text-transform:uppercase;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;
+ border-radius:8px}
+.sitenav a:hover{color:var(--gold);background:rgba(232,180,74,.08);border-bottom:none}
+.sitenav a.here{color:var(--gold)}
+@media(max-width:720px){
+ .sitenav .links{width:100%}
+ .sitenav a{flex:1 1 auto;justify-content:center;padding:12px 8px}
+}
+
+.tag{display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:3px 7px;border-radius:5px;border:1px solid var(--edge);color:var(--dim)}
+.tag.hit{color:var(--good);border-color:rgba(61,220,151,.4)} .tag.bust{color:var(--bad);border-color:rgba(255,107,107,.4)} .tag.fine{color:var(--gold);border-color:rgba(232,180,74,.4)}
+.mini{font-size:12px;color:var(--faint)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
+@media(max-width:720px){.two{grid-template-columns:1fr}}
+.posbar .fill.rb{background:linear-gradient(90deg,var(--rb),rgba(240,137,77,.25))}
+.posbar .fill.wr{background:linear-gradient(90deg,var(--wr),rgba(63,199,174,.25))}
+.posbar .fill.qb{background:linear-gradient(90deg,var(--qb),rgba(176,126,240,.25))}
+.posbar .fill.te{background:linear-gradient(90deg,var(--te),rgba(242,201,76,.25))}
+.posbar .fill.ghost{background:repeating-linear-gradient(135deg,rgba(255,255,255,.07) 0 6px,transparent 6px 12px);border:1px dashed var(--line)}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="wrap">
+<nav class="sitenav" aria-label="Site">
+  <a class="brand" href="/">Mohn Jadden</a>
+  <div class="links">
+    <a href="/">Home</a>
+    <a href="/the-franchise-2026-primer/">Primer</a>
+    <a href="/the-franchise-2026-recap/">Recap</a>
+    <a href="/the-franchise-2026-preseason/">Preseason</a>
+    <a href="/the-franchise-chronicle/">The Franchise</a>
+    <a href="/the-franchise-2026-draft-grades/">Draft Grades</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="kicker">The Franchise &middot; 2026 Midterms &middot; By Mohn Jadden</div>
+  <h1>Ten Weeks Later,<br>The Auction Gets Its Verdict.</h1>
+  <p class="lede">In August we graded your bids on projections. Now we grade them on points. D-Unit turned <strong>$195 into $307</strong> of production. Njigba Please turned $200 into $139 and a 4&ndash;16 record. De&rsquo;Von Achane has cost <strong>$44</strong> and played three games. And Chuba Hubbard &mdash; six dollars, pick 86, nominated like an afterthought &mdash; has out-earned seven of the twelve players who went for $40 or more.</p>
+  <div class="figs">
+    <div class="fig"><div class="v">+$47.8</div><div class="l">Best pick, Hubbard at $6</div></div>
+    <div class="fig"><div class="v">&minus;$45.3</div><div class="l">Worst pick, Hampton at $56</div></div>
+    <div class="fig"><div class="v">$0.73</div><div class="l">Back per $1 spent at $20&ndash;39</div></div>
+    <div class="fig"><div class="v">0.89</div><div class="l">Draft haul vs. points scored</div></div>
+  </div>
+  <div class="scrollcue"><span>&darr; The receipts, ten weeks deep</span></div>
+</header>
+</div>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Method</div>
+    <h2>No more projections. Just points.</h2>
+    <p>August&rsquo;s grades had to guess. This page doesn&rsquo;t. Every drafted player is scored on his actual 2026 Yahoo fantasy points through Week 10 (Half-PPR, this league&rsquo;s settings), measured against a replacement-level player at his position &mdash; the same value-over-replacement math the Chronicle uses.</p>
+    <p>Ten teams start eight skill players: QB, two RB, two WR, TE and two W/R/T flex spots. Fill every starting slot with the best scorers in the league and the next man up sets the bar: the <strong>11th QB (210.3 pts)</strong>, the <strong>31st RB (72.9)</strong>, the <strong>31st WR (76.5)</strong> and the <strong>11th TE (72.1)</strong>. Everything above that line is value. Everything below it is a waiver claim with a price tag.</p>
+    <p>To turn points into dollars, the room&rsquo;s own auction money gets spread across all the value that actually got produced. This year, every point over replacement was worth <strong>$0.48</strong>. A player&rsquo;s &ldquo;earned&rdquo; price is $1 plus his points over replacement times that rate. Profit is earned minus paid.</p>
+    <div class="keystat"><b>House rules</b>Points count no matter who rostered the player, so a guy who got cut still earns for the team that drafted him &mdash; this grades the auction, not the waiver wire. Kickers and defenses are excluded, same as August. Missed games count against you: a $44 running back who plays three games is a $44 running back who played three games.</div>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Board</div>
+    <h2>August&rsquo;s grades, regraded.</h2>
+    <p>&ldquo;Returned&rdquo; is the total earned value of everyone each team drafted. One team cleared a hundred dollars of profit. Four roughly broke even. Five lost $39 or more.</p>
+  </div>
+  <div class="panel reveal" data-scroll-hint>
+    <div class="swipe-hint" aria-hidden="true"><span>Slide for more</span><span class="swipe-arrow">&rsaquo;&rsaquo;</span></div>
+    <div class="scroll-wrap"><div class="scroll" tabindex="0" role="region" aria-label="November draft board">
+    <table class="board-table"><thead><tr><th class="grade">Nov</th><th class="l">Team</th><th>Aug</th><th>Spent</th><th>Returned</th><th>Net</th><th>Draft Rk</th><th>Standing</th><th>PF</th></tr></thead><tbody><tr><td class="grade"><strong class="good">A+</strong></td><td class="l"><strong>D-Unit</strong></td><td><span class="gold">B+</span></td><td>$195</td><td class="gold">$307</td><td class="good">+$112.0</td><td>1</td><td>4 &middot; 12-8</td><td>1,507.2</td></tr><tr><td class="grade"><strong class="gold">B+</strong></td><td class="l"><strong>The McClusterfucks</strong></td><td><span class="good">A-</span></td><td>$200</td><td class="gold">$205</td><td class="good">+$5.0</td><td>2</td><td>6 &middot; 9-11</td><td>1,325.8</td></tr><tr><td class="grade"><strong class="gold">B+</strong></td><td class="l"><strong>TEAM HoldMyCHUBBBA</strong></td><td><span class="">C+</span></td><td>$200</td><td class="gold">$201</td><td class="good">+$1.3</td><td>3</td><td>5 &middot; 11-9</td><td>1,272.0</td></tr><tr><td class="grade"><strong class="gold">B+</strong></td><td class="l"><strong>Nico&rsquo;d &amp; Dimed</strong></td><td><span class="gold">B-</span></td><td>$200</td><td class="gold">$201</td><td class="good">+$1.0</td><td>4</td><td>1 &middot; 13-7</td><td>1,356.9</td></tr><tr><td class="grade"><strong class="gold">B</strong></td><td class="l"><strong>J Squad</strong></td><td><span class="bad">F</span></td><td>$200</td><td class="gold">$195</td><td class="bad">&minus;$4.8</td><td>5</td><td>3 &middot; 13-7</td><td>1,250.5</td></tr><tr><td class="grade"><strong class="">C</strong></td><td class="l"><strong>Team KAS</strong></td><td><span class="gold">B</span></td><td>$200</td><td class="gold">$161</td><td class="bad">&minus;$39.4</td><td>6</td><td>8 &middot; 9-11</td><td>1,187.9</td></tr><tr><td class="grade"><strong class="">C</strong></td><td class="l"><strong>Ken You Not Pickett</strong></td><td><span class="good">A</span></td><td>$200</td><td class="gold">$153</td><td class="bad">&minus;$47.0</td><td>7</td><td>2 &middot; 13-7</td><td>1,306.2</td></tr><tr><td class="grade"><strong class="">C-</strong></td><td class="l"><strong>Henrys Heros</strong></td><td><span class="">C-</span></td><td>$200</td><td class="gold">$152</td><td class="bad">&minus;$48.1</td><td>8</td><td>9 &middot; 7-13</td><td>1,202.6</td></tr><tr><td class="grade"><strong class="">C-</strong></td><td class="l"><strong>The Annexation of PR</strong></td><td><span class="bad">D</span></td><td>$200</td><td class="gold">$150</td><td class="bad">&minus;$49.8</td><td>9</td><td>7 &middot; 9-11</td><td>1,257.5</td></tr><tr><td class="grade"><strong class="bad">D</strong></td><td class="l"><strong>Njigba Please</strong></td><td><span class="">C</span></td><td>$200</td><td class="gold">$139</td><td class="bad">&minus;$61.0</td><td>10</td><td>10 &middot; 4-16</td><td>1,181.4</td></tr></tbody></table>
+    </div><div class="swipe-edge" aria-hidden="true"><span>&rsaquo;</span></div></div></div>
+  <div class="narrow reveal">
+    <div class="keystat"><b>The biggest swings</b>August&rsquo;s <strong>A</strong> (Ken You Not Pickett) has the 7th-best haul. August&rsquo;s <strong>F</strong> (J Squad) has the 5th-best and sits 3rd in the standings. The model was right about D-Unit being dangerous and wrong about why: it flagged the $35 Jadarian Price bid as the Reach of the Draft (correct, &minus;$34) and missed that the rest of the roster would print money.</div>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">Exhibit A &middot; Does the draft matter?</div>
+    <h2>It builds the points. It doesn&rsquo;t hand out the wins.</h2>
+    <p>Draft haul against points scored has a correlation of <strong>0.89</strong>. That&rsquo;s about as close to &ldquo;the auction decides your offense&rdquo; as fantasy football gets. Draft haul against standings drops to <strong>0.45</strong>. That&rsquo;s where the schedule takes over.</p>
+  </div>
+  <div class="panel reveal spine"><div class="spinechart"><div class="row good"><div class="yl">4th &middot; 1,507 PF</div><div class="track"><div class="fill" style="width:100.0%"></div><div class="lab"><span class="who">D-Unit</span><span class="amt">$307</span></div></div></div><div class="row good"><div class="yl">6th &middot; 1,326 PF</div><div class="track"><div class="fill" style="width:66.8%"></div><div class="lab"><span class="who">The McClusterfucks</span><span class="amt">$205</span></div></div></div><div class="row good"><div class="yl">5th &middot; 1,272 PF</div><div class="track"><div class="fill" style="width:65.6%"></div><div class="lab"><span class="who">TEAM HoldMyCHUBBBA</span><span class="amt">$201</span></div></div></div><div class="row good"><div class="yl">1st &middot; 1,357 PF</div><div class="track"><div class="fill" style="width:65.5%"></div><div class="lab"><span class="who">Nico&rsquo;d &amp; Dimed</span><span class="amt">$201</span></div></div></div><div class="row "><div class="yl">3rd &middot; 1,250 PF</div><div class="track"><div class="fill" style="width:63.6%"></div><div class="lab"><span class="who">J Squad</span><span class="amt">$195</span></div></div></div><div class="row "><div class="yl">8th &middot; 1,188 PF</div><div class="track"><div class="fill" style="width:52.3%"></div><div class="lab"><span class="who">Team KAS</span><span class="amt">$161</span></div></div></div><div class="row hot"><div class="yl">2nd &middot; 1,306 PF</div><div class="track"><div class="fill" style="width:49.8%"></div><div class="lab"><span class="who">Ken You Not Pickett</span><span class="amt">$153</span></div></div></div><div class="row hot"><div class="yl">9th &middot; 1,203 PF</div><div class="track"><div class="fill" style="width:49.5%"></div><div class="lab"><span class="who">Henrys Heros</span><span class="amt">$152</span></div></div></div><div class="row hot"><div class="yl">7th &middot; 1,258 PF</div><div class="track"><div class="fill" style="width:48.9%"></div><div class="lab"><span class="who">The Annexation of PR</span><span class="amt">$150</span></div></div></div><div class="row hot"><div class="yl">10th &middot; 1,181 PF</div><div class="track"><div class="fill" style="width:45.3%"></div><div class="lab"><span class="who">Njigba Please</span><span class="amt">$139</span></div></div></div></div>
+    <div class="spinenote"><span>Bars: earned value of each team&rsquo;s draft class</span><span>Left: current standing &middot; points for</span></div>
+  </div>
+  <div class="narrow reveal">
+    <p><strong>D-Unit</strong> has scored 1,507 points, 150 more than anybody else, and sits 4th because it has also given up 1,391. <strong>J Squad</strong> sits 3rd with the 5th-best draft partly because nobody has scored on them: 1,144.9 points against, lowest in the league. <strong>Ken You Not Pickett</strong> is 2nd with the 7th-best draft, which means everything good about that team came after the auction (see The Wire). <strong>Njigba Please</strong> is last in draft value and last in the standings. Sometimes the math is boring.</p>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Steals</div>
+    <h2>The twelve best dollars spent.</h2>
+    <p>Eight of these twelve cost $9 or less. Three of the top six belong to D-Unit, whose $4 Joe Burrow is the QB1 by 30 points. The &ldquo;K&rdquo; tag marks a keeper.</p>
+  </div>
+  <div class="panel reveal" data-scroll-hint>
+    <div class="swipe-hint" aria-hidden="true"><span>Slide for more</span><span class="swipe-arrow">&rsaquo;&rsaquo;</span></div>
+    <div class="scroll-wrap"><div class="scroll" tabindex="0" role="region" aria-label="Best values">
+    <table class="board-table"><thead><tr><th class="l">Player</th><th class="l">Pos Rk</th><th class="l">Drafted by</th><th>Paid</th><th>Pts</th><th>Earned</th><th>Profit</th></tr></thead><tbody><tr><td class="l"><strong>Chuba Hubbard</strong></td><td class="l"><span class="pRB">RB</span>6</td><td class="l">TEAM HoldMyCHUBBBA</td><td>$6</td><td>183.4</td><td class="gold">$53.8</td><td class="good"><strong>+$47.8</strong></td></tr><tr><td class="l"><strong>Joe Burrow</strong></td><td class="l"><span class="pQB">QB</span>1</td><td class="l">D-Unit</td><td>$4</td><td>287.1</td><td class="gold">$37.7</td><td class="good"><strong>+$33.7</strong></td></tr><tr><td class="l"><strong>Matthew Golden</strong></td><td class="l"><span class="pWR">WR</span>6</td><td class="l">The Annexation of PR</td><td>$3</td><td>151.0</td><td class="gold">$36.6</td><td class="good"><strong>+$33.6</strong></td></tr><tr><td class="l"><strong>Christian Watson</strong></td><td class="l"><span class="pWR">WR</span>4</td><td class="l">Ken You Not Pickett</td><td>$9</td><td>161.6</td><td class="gold">$41.7</td><td class="good"><strong>+$32.7</strong></td></tr><tr><td class="l"><strong>Jaylen Warren</strong></td><td class="l"><span class="pRB">RB</span>14</td><td class="l">D-Unit</td><td>$6</td><td>151.5</td><td class="gold">$38.6</td><td class="good"><strong>+$32.6</strong></td></tr><tr><td class="l"><strong>Jahmyr Gibbs</strong></td><td class="l"><span class="pRB">RB</span>1</td><td class="l">D-Unit <span class="tag fine">K</span></td><td>$57</td><td>257.8</td><td class="gold">$89.4</td><td class="good"><strong>+$32.4</strong></td></tr><tr><td class="l"><strong>Bucky Irving</strong></td><td class="l"><span class="pRB">RB</span>10</td><td class="l">Ken You Not Pickett</td><td>$17</td><td>167.8</td><td class="gold">$46.4</td><td class="good"><strong>+$29.4</strong></td></tr><tr><td class="l"><strong>Tony Pollard</strong></td><td class="l"><span class="pRB">RB</span>15</td><td class="l">The McClusterfucks</td><td>$8</td><td>145.6</td><td class="gold">$35.8</td><td class="good"><strong>+$27.8</strong></td></tr><tr><td class="l"><strong>Jaxon Smith-Njigba</strong></td><td class="l"><span class="pWR">WR</span>1</td><td class="l">Njigba Please <span class="tag fine">K</span></td><td>$48</td><td>232.1</td><td class="gold">$75.4</td><td class="good"><strong>+$27.4</strong></td></tr><tr><td class="l"><strong>CeeDee Lamb</strong></td><td class="l"><span class="pWR">WR</span>2</td><td class="l">The McClusterfucks <span class="tag fine">K</span></td><td>$30</td><td>187.7</td><td class="gold">$54.2</td><td class="good"><strong>+$24.2</strong></td></tr><tr><td class="l"><strong>Isaiah Likely</strong></td><td class="l"><span class="pTE">TE</span>2</td><td class="l">Ken You Not Pickett</td><td>$6</td><td>130.0</td><td class="gold">$28.7</td><td class="good"><strong>+$22.7</strong></td></tr><tr><td class="l"><strong>Blake Corum</strong></td><td class="l"><span class="pRB">RB</span>17</td><td class="l">D-Unit</td><td>$2</td><td>120.3</td><td class="gold">$23.7</td><td class="good"><strong>+$21.7</strong></td></tr></tbody></table>
+    </div><div class="swipe-edge" aria-hidden="true"><span>&rsaquo;</span></div></div></div>
+  <div class="narrow reveal">
+    <div class="keystat"><b>Chuba Hubbard, $6</b>RB6 on the season at 183.4 points, ahead of Jonathan Taylor, the $45 keeper on the same roster. TEAM HoldMyCHUBBBA nominated him at pick 86. If you&rsquo;ve ever wondered whether the team name was a prophecy, it was.</div>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Bonfire</div>
+    <h2>The twelve most expensive mistakes.</h2>
+    <p>Not every bust is a bad bid; some are just bad luck. The Cause column separates the two. Six or fewer games played reads as missed time. Everyone else showed up and just didn&rsquo;t produce.</p>
+  </div>
+  <div class="panel reveal" data-scroll-hint>
+    <div class="swipe-hint" aria-hidden="true"><span>Slide for more</span><span class="swipe-arrow">&rsaquo;&rsaquo;</span></div>
+    <div class="scroll-wrap"><div class="scroll" tabindex="0" role="region" aria-label="Worst values">
+    <table class="board-table"><thead><tr><th class="l">Player</th><th class="l">Pos Rk</th><th class="l">Drafted by</th><th>Paid</th><th>Pts</th><th>GP</th><th>PPG</th><th class="l">Cause</th><th>Earned</th><th>Profit</th></tr></thead><tbody><tr><td class="l"><strong>Omarion Hampton</strong></td><td class="l"><span class="pRB">RB</span>25</td><td class="l">Njigba Please</td><td>$56</td><td>93.1</td><td>9</td><td>10.3</td><td class="l"><span class="tag">Played. Didn&rsquo;t help.</span></td><td class="gold">$10.7</td><td class="bad"><strong>&minus;$45.3</strong></td></tr><tr><td class="l"><strong>De&rsquo;Von Achane</strong></td><td class="l"><span class="pRB">RB</span>71</td><td class="l">Ken You Not Pickett</td><td>$44</td><td>24.5</td><td>3</td><td>8.2</td><td class="l"><span class="tag bust">Missed time</span></td><td class="gold">$1</td><td class="bad"><strong>&minus;$43.0</strong></td></tr><tr><td class="l"><strong>Amon-Ra St. Brown</strong></td><td class="l"><span class="pWR">WR</span>5</td><td class="l">J Squad</td><td>$80</td><td>153.1</td><td>9</td><td>17.0</td><td class="l"><span class="tag">Played. Didn&rsquo;t help.</span></td><td class="gold">$37.6</td><td class="bad"><strong>&minus;$42.4</strong></td></tr><tr><td class="l"><strong>Jeremiyah Love</strong></td><td class="l"><span class="pRB">RB</span>45</td><td class="l">Njigba Please</td><td>$41</td><td>55.5</td><td>6</td><td>9.2</td><td class="l"><span class="tag bust">Missed time</span></td><td class="gold">$1</td><td class="bad"><strong>&minus;$40.0</strong></td></tr><tr><td class="l"><strong>Jadarian Price</strong></td><td class="l"><span class="pRB">RB</span>53</td><td class="l">D-Unit</td><td>$35</td><td>43.0</td><td>6</td><td>7.2</td><td class="l"><span class="tag bust">Missed time</span></td><td class="gold">$1</td><td class="bad"><strong>&minus;$34.0</strong></td></tr><tr><td class="l"><strong>Saquon Barkley</strong></td><td class="l"><span class="pRB">RB</span>36</td><td class="l">Ken You Not Pickett <span class="tag fine">K</span></td><td>$33</td><td>62.1</td><td>7</td><td>8.9</td><td class="l"><span class="tag">Played. Didn&rsquo;t help.</span></td><td class="gold">$1</td><td class="bad"><strong>&minus;$32.0</strong></td></tr><tr><td class="l"><strong>A.J. Brown</strong></td><td class="l"><span class="pWR">WR</span>97</td><td class="l">TEAM HoldMyCHUBBBA</td><td>$32</td><td>18.3</td><td>4</td><td>4.6</td><td class="l"><span class="tag bust">Missed time</span></td><td class="gold">$1</td><td class="bad"><strong>&minus;$31.0</strong></td></tr><tr><td class="l"><strong>Emeka Egbuka</strong></td><td class="l"><span class="pWR">WR</span>45</td><td class="l">The Annexation of PR</td><td>$32</td><td>62.8</td><td>7</td><td>9.0</td><td class="l"><span class="tag">Played. Didn&rsquo;t help.</span></td><td class="gold">$1</td><td class="bad"><strong>&minus;$31.0</strong></td></tr><tr><td class="l"><strong>Ladd McConkey</strong></td><td class="l"><span class="pWR">WR</span>73</td><td class="l">Team KAS</td><td>$30</td><td>43.1</td><td>6</td><td>7.2</td><td class="l"><span class="tag bust">Missed time</span></td><td class="gold">$1</td><td class="bad"><strong>&minus;$29.0</strong></td></tr><tr><td class="l"><strong>Travis Etienne Jr.</strong></td><td class="l"><span class="pRB">RB</span>61</td><td class="l">The McClusterfucks</td><td>$26</td><td>34.1</td><td>4</td><td>8.5</td><td class="l"><span class="tag bust">Missed time</span></td><td class="gold">$1</td><td class="bad"><strong>&minus;$25.0</strong></td></tr><tr><td class="l"><strong>Jordan Mason</strong><div class="mini">now: Nico&rsquo;d &amp; Dimed</div></td><td class="l"><span class="pRB">RB</span>58</td><td class="l">Ken You Not Pickett</td><td>$25</td><td>37.8</td><td>5</td><td>7.6</td><td class="l"><span class="tag bust">Missed time</span></td><td class="gold">$1</td><td class="bad"><strong>&minus;$24.0</strong></td></tr><tr><td class="l"><strong>DeVonta Smith</strong></td><td class="l"><span class="pWR">WR</span>52</td><td class="l">Nico&rsquo;d &amp; Dimed</td><td>$25</td><td>57.0</td><td>4</td><td>14.2</td><td class="l"><span class="tag bust">Missed time</span></td><td class="gold">$1</td><td class="bad"><strong>&minus;$24.0</strong></td></tr></tbody></table>
+    </div><div class="swipe-edge" aria-hidden="true"><span>&rsaquo;</span></div></div></div>
+  <div class="narrow reveal">
+    <div class="pull">Omarion Hampton has played nine games at 10.3 a week. That&rsquo;s not an injury. That&rsquo;s a $56 RB25.</div>
+    <p>Amon-Ra St. Brown is the strange one. He&rsquo;s been good: WR5, 153.1 points. But at $80 he needed to be a different sport. J Squad paid for an MVP and got a very nice receiver, which is how you lose $42 on a top-five player.</p>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Stars</div>
+    <h2>The $40 Club: six hits, two fine, four on fire.</h2>
+    <p>A <strong>Hit</strong> earned his price. <strong>Fine</strong> earned at least 60% of it. A <strong>Bust</strong> didn&rsquo;t. The six hits are all running backs or Jaxon Smith-Njigba, and five of them were keepers.</p>
+  </div>
+  <div class="panel reveal" data-scroll-hint>
+    <div class="swipe-hint" aria-hidden="true"><span>Slide for more</span><span class="swipe-arrow">&rsaquo;&rsaquo;</span></div>
+    <div class="scroll-wrap"><div class="scroll" tabindex="0" role="region" aria-label="$40 club">
+    <table class="board-table"><thead><tr><th class="l">Verdict</th><th class="l">Player</th><th class="l">Team</th><th>Paid</th><th>Pts</th><th>GP</th><th class="l">Pos Rk</th><th>Earned</th><th>Net</th></tr></thead><tbody><tr><td class="l"><span class="tag bust">Bust</span></td><td class="l"><strong>Amon-Ra St. Brown</strong></td><td class="l">J Squad</td><td>$80</td><td>153.1</td><td>9</td><td class="l"><span class="pWR">WR</span>5</td><td class="gold">$37.6</td><td class="bad">&minus;$42.4</td></tr><tr><td class="l"><span class="tag hit">Hit</span></td><td class="l"><strong>Jahmyr Gibbs</strong></td><td class="l">D-Unit <span class="tag fine">K</span></td><td>$57</td><td>257.8</td><td>9</td><td class="l"><span class="pRB">RB</span>1</td><td class="gold">$89.4</td><td class="good">+$32.4</td></tr><tr><td class="l"><span class="tag bust">Bust</span></td><td class="l"><strong>Omarion Hampton</strong></td><td class="l">Njigba Please</td><td>$56</td><td>93.1</td><td>9</td><td class="l"><span class="pRB">RB</span>25</td><td class="gold">$10.7</td><td class="bad">&minus;$45.3</td></tr><tr><td class="l"><span class="tag hit">Hit</span></td><td class="l"><strong>Kenneth Walker III</strong></td><td class="l">J Squad</td><td>$54</td><td>204.3</td><td>8</td><td class="l"><span class="pRB">RB</span>3</td><td class="gold">$63.8</td><td class="good">+$9.8</td></tr><tr><td class="l"><span class="tag fine">Fine</span></td><td class="l"><strong>Puka Nacua</strong></td><td class="l">The Annexation of PR <span class="tag fine">K</span></td><td>$53</td><td>142.3</td><td>7</td><td class="l"><span class="pWR">WR</span>8</td><td class="gold">$32.5</td><td class="bad">&minus;$20.5</td></tr><tr><td class="l"><span class="tag hit">Hit</span></td><td class="l"><strong>Bijan Robinson</strong></td><td class="l">Nico&rsquo;d &amp; Dimed <span class="tag fine">K</span></td><td>$52</td><td>201.7</td><td>10</td><td class="l"><span class="pRB">RB</span>4</td><td class="gold">$62.6</td><td class="good">+$10.6</td></tr><tr><td class="l"><span class="tag fine">Fine</span></td><td class="l"><strong>Ja&rsquo;Marr Chase</strong></td><td class="l">D-Unit <span class="tag fine">K</span></td><td>$50</td><td>167.8</td><td>9</td><td class="l"><span class="pWR">WR</span>3</td><td class="gold">$44.6</td><td class="bad">&minus;$5.4</td></tr><tr><td class="l"><span class="tag hit">Hit</span></td><td class="l"><strong>Jaxon Smith-Njigba</strong></td><td class="l">Njigba Please <span class="tag fine">K</span></td><td>$48</td><td>232.1</td><td>10</td><td class="l"><span class="pWR">WR</span>1</td><td class="gold">$75.4</td><td class="good">+$27.4</td></tr><tr><td class="l"><span class="tag hit">Hit</span></td><td class="l"><strong>Christian McCaffrey</strong></td><td class="l">The McClusterfucks <span class="tag fine">K</span></td><td>$46</td><td>205.5</td><td>9</td><td class="l"><span class="pRB">RB</span>2</td><td class="gold">$64.4</td><td class="good">+$18.4</td></tr><tr><td class="l"><span class="tag hit">Hit</span></td><td class="l"><strong>Jonathan Taylor</strong></td><td class="l">TEAM HoldMyCHUBBBA <span class="tag fine">K</span></td><td>$45</td><td>169.6</td><td>10</td><td class="l"><span class="pRB">RB</span>9</td><td class="gold">$47.2</td><td class="good">+$2.2</td></tr><tr><td class="l"><span class="tag bust">Bust</span></td><td class="l"><strong>De&rsquo;Von Achane</strong></td><td class="l">Ken You Not Pickett</td><td>$44</td><td>24.5</td><td>3</td><td class="l"><span class="pRB">RB</span>71</td><td class="gold">$1</td><td class="bad">&minus;$43.0</td></tr><tr><td class="l"><span class="tag bust">Bust</span></td><td class="l"><strong>Jeremiyah Love</strong></td><td class="l">Njigba Please</td><td>$41</td><td>55.5</td><td>6</td><td class="l"><span class="pRB">RB</span>45</td><td class="gold">$1</td><td class="bad">&minus;$40.0</td></tr></tbody></table>
+    </div><div class="swipe-edge" aria-hidden="true"><span>&rsaquo;</span></div></div></div>
+  <div class="narrow reveal">
+    <div class="keystat"><b>Keepers vs. live bids</b>Among $40-plus players, kept players went 5 hits, 2 fine, 0 busts. Players bought live on auction night went 1 hit (Kenneth Walker III) and 4 busts. The best way to buy a star this year was to already own one.</div>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Price Tiers</div>
+    <h2>The middle of the auction was a crime scene.</h2>
+    <p>Bargain bins beat the luxury aisle by a lot. The worst place to spend money in 2026 was the $20&ndash;39 tier: 32 players, $875 out the door, $636 back. Every dollar spent there returned seventy-three cents.</p>
+  </div>
+  <div class="panel reveal" data-scroll-hint>
+    <div class="swipe-hint" aria-hidden="true"><span>Slide for more</span><span class="swipe-arrow">&rsaquo;&rsaquo;</span></div>
+    <div class="scroll-wrap"><div class="scroll" tabindex="0" role="region" aria-label="Return by price tier">
+    <table class="board-table"><thead><tr><th class="l">Price</th><th>Players</th><th>Spent</th><th>Returned</th><th>Return per $1</th><th>Above repl.</th></tr></thead><tbody><tr><td class="l"><strong>$40+</strong></td><td>12</td><td>$626</td><td class="gold">$530</td><td class="bad"><strong>$0.85</strong></td><td>10 of 12</td></tr><tr><td class="l"><strong>$20&ndash;39</strong></td><td>32</td><td>$875</td><td class="gold">$636</td><td class="bad"><strong>$0.73</strong></td><td>20 of 32</td></tr><tr><td class="l"><strong>$10&ndash;19</strong></td><td>18</td><td>$242</td><td class="gold">$171</td><td class="bad"><strong>$0.71</strong></td><td>8 of 18</td></tr><tr><td class="l"><strong>$4&ndash;9</strong></td><td>24</td><td>$147</td><td class="gold">$332</td><td class="good"><strong>$2.26</strong></td><td>15 of 24</td></tr><tr><td class="l"><strong>$1&ndash;3</strong></td><td>55</td><td>$82</td><td class="gold">$195</td><td class="good"><strong>$2.38</strong></td><td>15 of 55</td></tr></tbody></table>
+    </div><div class="swipe-edge" aria-hidden="true"><span>&rsaquo;</span></div></div></div>
+  <div class="narrow reveal">
+    <p>Meanwhile the $4&ndash;9 tier returned <strong>$2.26 per dollar</strong>. That&rsquo;s Burrow, Hubbard, Christian Watson, Jaylen Warren, Isaiah Likely, Tony Pollard. Those are the guys you nominate to drain someone else&rsquo;s budget and then accidentally win.</p>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">Market Correction</div>
+    <h2>Receivers were the tax.</h2>
+    <p>Dashed bar is what the room paid at each position. Solid bar is what came back. Running backs came back at par plus a little. Receivers cost $823 and returned $640, so the room collectively overpaid the position by <strong>$183</strong>.</p>
+  </div>
+  <div class="panel reveal spine"><div class="spinechart"><div class="row posbar"><div class="yl"><span class="pRB">RB</span> &middot; 50 drafted</div><div class="track"><div class="fill ghost" style="width:95.4%"></div><div class="fill rb" style="width:100.0%;opacity:.95"></div><div class="lab"><span class="who">Paid $936</span><span class="amt">Returned $981</span></div></div></div><div class="row posbar"><div class="yl"><span class="pWR">WR</span> &middot; 59 drafted</div><div class="track"><div class="fill ghost" style="width:83.9%"></div><div class="fill wr" style="width:65.3%;opacity:.95"></div><div class="lab"><span class="who">Paid $823</span><span class="amt">Returned $640</span></div></div></div><div class="row posbar"><div class="yl"><span class="pTE">TE</span> &middot; 15 drafted</div><div class="track"><div class="fill ghost" style="width:14.5%"></div><div class="fill te" style="width:14.4%;opacity:.95"></div><div class="lab"><span class="who">Paid $142</span><span class="amt">Returned $142</span></div></div></div><div class="row posbar"><div class="yl"><span class="pQB">QB</span> &middot; 17 drafted</div><div class="track"><div class="fill ghost" style="width:7.2%"></div><div class="fill qb" style="width:10.3%;opacity:.95"></div><div class="lab"><span class="who">Paid $71</span><span class="amt">Returned $101</span></div></div></div></div>
+    <div class="spinenote"><span>Quarterbacks: $71 spent, every starting-caliber QB went for under $16</span><span>Kickers &amp; DEF excluded</span></div>
+  </div>
+  <div class="narrow reveal">
+    <p>Quarterback is the quiet scandal. The 11th-best QB has 210 points, which means the position is so deep that only six drafted quarterbacks clear replacement at all. Joe Burrow ($4), Josh Allen ($15) and Dak Prescott ($5) are the only ones who&rsquo;ve earned real money. Four of the top eight QBs in the league weren&rsquo;t even drafted.</p>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">Keeper Court</div>
+    <h2>Twenty keepers, $681 committed, $731 returned.</h2>
+    <p>As a group the keepers did their job, about $50 of surplus across the league. But it&rsquo;s lopsided. The McClusterfucks, TEAM HoldMyCHUBBBA and Nico&rsquo;d &amp; Dimed each kept two players who earned more than they cost. Ken You Not Pickett kept Lamar Jackson and Saquon Barkley for $41 and got $2 of value back.</p>
+  </div>
+  <div class="panel reveal" data-scroll-hint>
+    <div class="swipe-hint" aria-hidden="true"><span>Slide for more</span><span class="swipe-arrow">&rsaquo;&rsaquo;</span></div>
+    <div class="scroll-wrap"><div class="scroll" tabindex="0" role="region" aria-label="Keepers">
+    <table class="board-table"><thead><tr><th class="l">Keeper</th><th class="l">Team</th><th>Kept at</th><th>Pts</th><th class="l">Pos Rk</th><th>Earned</th><th>Net</th></tr></thead><tbody><tr><td class="l"><strong>Jahmyr Gibbs</strong></td><td class="l">D-Unit</td><td>$57</td><td>257.8</td><td class="l"><span class="pRB">RB</span>1</td><td class="gold">$89.4</td><td class="good"><strong>+$32.4</strong></td></tr><tr><td class="l"><strong>Jaxon Smith-Njigba</strong></td><td class="l">Njigba Please</td><td>$48</td><td>232.1</td><td class="l"><span class="pWR">WR</span>1</td><td class="gold">$75.4</td><td class="good"><strong>+$27.4</strong></td></tr><tr><td class="l"><strong>CeeDee Lamb</strong></td><td class="l">The McClusterfucks</td><td>$30</td><td>187.7</td><td class="l"><span class="pWR">WR</span>2</td><td class="gold">$54.2</td><td class="good"><strong>+$24.2</strong></td></tr><tr><td class="l"><strong>James Cook III</strong></td><td class="l">TEAM HoldMyCHUBBBA</td><td>$36</td><td>187.8</td><td class="l"><span class="pRB">RB</span>5</td><td class="gold">$55.9</td><td class="good"><strong>+$19.9</strong></td></tr><tr><td class="l"><strong>Christian McCaffrey</strong></td><td class="l">The McClusterfucks</td><td>$46</td><td>205.5</td><td class="l"><span class="pRB">RB</span>2</td><td class="gold">$64.4</td><td class="good"><strong>+$18.4</strong></td></tr><tr><td class="l"><strong>Kyren Williams</strong></td><td class="l">J Squad</td><td>$28</td><td>159.2</td><td class="l"><span class="pRB">RB</span>11</td><td class="gold">$42.3</td><td class="good"><strong>+$14.3</strong></td></tr><tr><td class="l"><strong>Bijan Robinson</strong></td><td class="l">Nico&rsquo;d &amp; Dimed</td><td>$52</td><td>201.7</td><td class="l"><span class="pRB">RB</span>4</td><td class="gold">$62.6</td><td class="good"><strong>+$10.6</strong></td></tr><tr><td class="l"><strong>Derrick Henry</strong></td><td class="l">Henrys Heros</td><td>$39</td><td>173.4</td><td class="l"><span class="pRB">RB</span>8</td><td class="gold">$49</td><td class="good"><strong>+$10.0</strong></td></tr><tr><td class="l"><strong>Brock Bowers</strong></td><td class="l">Nico&rsquo;d &amp; Dimed</td><td>$24</td><td>127.9</td><td class="l"><span class="pTE">TE</span>3</td><td class="gold">$27.7</td><td class="good"><strong>+$3.7</strong></td></tr><tr><td class="l"><strong>Ashton Jeanty</strong></td><td class="l">Team KAS</td><td>$30</td><td>140.0</td><td class="l"><span class="pRB">RB</span>16</td><td class="gold">$33.1</td><td class="good"><strong>+$3.1</strong></td></tr><tr><td class="l"><strong>Jonathan Taylor</strong></td><td class="l">TEAM HoldMyCHUBBBA</td><td>$45</td><td>169.6</td><td class="l"><span class="pRB">RB</span>9</td><td class="gold">$47.2</td><td class="good"><strong>+$2.2</strong></td></tr><tr><td class="l"><strong>Malik Nabers</strong></td><td class="l">Njigba Please</td><td>$21</td><td>112.2</td><td class="l"><span class="pWR">WR</span>15</td><td class="gold">$18.1</td><td class="bad"><strong>&minus;$2.9</strong></td></tr><tr><td class="l"><strong>Ja&rsquo;Marr Chase</strong></td><td class="l">D-Unit</td><td>$50</td><td>167.8</td><td class="l"><span class="pWR">WR</span>3</td><td class="gold">$44.6</td><td class="bad"><strong>&minus;$5.4</strong></td></tr><tr><td class="l"><strong>Marvin Harrison Jr.</strong></td><td class="l">Henrys Heros</td><td>$7</td><td>32.0</td><td class="l"><span class="pWR">WR</span>94</td><td class="gold">$1</td><td class="bad"><strong>&minus;$6.0</strong></td></tr><tr><td class="l"><strong>Lamar Jackson</strong></td><td class="l">Ken You Not Pickett</td><td>$8</td><td>91.8</td><td class="l"><span class="pQB">QB</span>30</td><td class="gold">$1</td><td class="bad"><strong>&minus;$7.0</strong></td></tr><tr><td class="l"><strong>DJ Moore</strong></td><td class="l">J Squad</td><td>$10</td><td>68.9</td><td class="l"><span class="pWR">WR</span>38</td><td class="gold">$1</td><td class="bad"><strong>&minus;$9.0</strong></td></tr><tr><td class="l"><strong>Chase Brown</strong></td><td class="l">The Annexation of PR</td><td>$34</td><td>117.5</td><td class="l"><span class="pRB">RB</span>18</td><td class="gold">$22.3</td><td class="bad"><strong>&minus;$11.7</strong></td></tr><tr><td class="l"><strong>Puka Nacua</strong></td><td class="l">The Annexation of PR</td><td>$53</td><td>142.3</td><td class="l"><span class="pWR">WR</span>8</td><td class="gold">$32.5</td><td class="bad"><strong>&minus;$20.5</strong></td></tr><tr><td class="l"><strong>Justin Jefferson</strong></td><td class="l">Team KAS</td><td>$30</td><td>91.7</td><td class="l"><span class="pWR">WR</span>23</td><td class="gold">$8.3</td><td class="bad"><strong>&minus;$21.7</strong></td></tr><tr><td class="l"><strong>Saquon Barkley</strong></td><td class="l">Ken You Not Pickett</td><td>$33</td><td>62.1</td><td class="l"><span class="pRB">RB</span>36</td><td class="gold">$1</td><td class="bad"><strong>&minus;$32.0</strong></td></tr></tbody></table>
+    </div><div class="swipe-edge" aria-hidden="true"><span>&rsaquo;</span></div></div></div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Dollar Store</div>
+    <h2>Four dollars and under. Several of them got cut.</h2>
+    <p>The cheapest above-replacement picks in the room. Read the last column slowly. A surprising number of these guys made their money for somebody else.</p>
+  </div>
+  <div class="panel reveal" data-scroll-hint>
+    <div class="swipe-hint" aria-hidden="true"><span>Slide for more</span><span class="swipe-arrow">&rsaquo;&rsaquo;</span></div>
+    <div class="scroll-wrap"><div class="scroll" tabindex="0" role="region" aria-label="Four dollars and under">
+    <table class="board-table"><thead><tr><th class="l">Player</th><th class="l">Pos Rk</th><th class="l">Drafted by</th><th>Paid</th><th>Pts</th><th>Earned</th><th class="l">Where he is now</th></tr></thead><tbody><tr><td class="l"><strong>Joe Burrow</strong></td><td class="l"><span class="pQB">QB</span>1</td><td class="l">D-Unit</td><td>$4</td><td>287.1</td><td class="gold">$37.7</td><td class="l ">Still there</td></tr><tr><td class="l"><strong>Matthew Golden</strong></td><td class="l"><span class="pWR">WR</span>6</td><td class="l">The Annexation of PR</td><td>$3</td><td>151.0</td><td class="gold">$36.6</td><td class="l ">Still there</td></tr><tr><td class="l"><strong>Blake Corum</strong></td><td class="l"><span class="pRB">RB</span>17</td><td class="l">D-Unit</td><td>$2</td><td>120.3</td><td class="gold">$23.7</td><td class="l ">Still there</td></tr><tr><td class="l"><strong>Rhamondre Stevenson</strong></td><td class="l"><span class="pRB">RB</span>20</td><td class="l">D-Unit</td><td>$4</td><td>112.5</td><td class="gold">$19.9</td><td class="l ">Still there</td></tr><tr><td class="l"><strong>George Kittle</strong></td><td class="l"><span class="pTE">TE</span>4</td><td class="l">J Squad</td><td>$2</td><td>105.7</td><td class="gold">$17.1</td><td class="l bad">The Annexation of PR</td></tr><tr><td class="l"><strong>Aaron Jones Sr.</strong></td><td class="l"><span class="pRB">RB</span>24</td><td class="l">Team KAS</td><td>$1</td><td>101.5</td><td class="gold">$14.7</td><td class="l ">Still there</td></tr><tr><td class="l"><strong>Tyler Allgeier</strong></td><td class="l"><span class="pRB">RB</span>27</td><td class="l">Nico&rsquo;d &amp; Dimed</td><td>$1</td><td>91.0</td><td class="gold">$9.7</td><td class="l bad">Ken You Not Pickett</td></tr><tr><td class="l"><strong>Travis Kelce</strong></td><td class="l"><span class="pTE">TE</span>6</td><td class="l">D-Unit</td><td>$1</td><td>87.9</td><td class="gold">$8.6</td><td class="l bad">The McClusterfucks</td></tr><tr><td class="l"><strong>Michael Wilson</strong></td><td class="l"><span class="pWR">WR</span>20</td><td class="l">TEAM HoldMyCHUBBBA</td><td>$3</td><td>96.6</td><td class="gold">$10.6</td><td class="l bad">Waivers</td></tr><tr><td class="l"><strong>Stefon Diggs</strong></td><td class="l"><span class="pWR">WR</span>22</td><td class="l">The McClusterfucks</td><td>$3</td><td>92.6</td><td class="gold">$8.7</td><td class="l bad">Njigba Please</td></tr><tr><td class="l"><strong>Denzel Boston</strong></td><td class="l"><span class="pWR">WR</span>25</td><td class="l">Njigba Please</td><td>$2</td><td>88.8</td><td class="gold">$6.9</td><td class="l ">Still there</td></tr><tr><td class="l"><strong>Alvin Kamara</strong></td><td class="l"><span class="pRB">RB</span>30</td><td class="l">The Annexation of PR</td><td>$1</td><td>81.0</td><td class="gold">$4.9</td><td class="l bad">J Squad</td></tr></tbody></table>
+    </div><div class="swipe-edge" aria-hidden="true"><span>&rsaquo;</span></div></div></div>
+  <div class="narrow reveal">
+    <div class="keystat"><b>Cut too soon</b>J Squad dropped George Kittle (TE4) on Sept. 16 for Rashid Shaheed; The Annexation of PR paid $10 for him three days later. Nico&rsquo;d &amp; Dimed cut Tyler Allgeier on Sept. 30 to grab the Vikings defense for $1; Ken You Not Pickett picked him up for free. D-Unit cut Travis Kelce on Sept. 10 for Michael Mayer. The McClusterfucks cut Stefon Diggs on Sept. 13, and he&rsquo;s now on Njigba Please.</div>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap">
+  <div class="narrow reveal">
+    <div class="kicker">The Wire</div>
+    <h2>Twelve undrafted players are above replacement.</h2>
+    <p>Twelve players nobody bought in August are producing like starters. Four of them are quarterbacks, which tells you everything about the position this year. One caution: these are season totals, so some of these points were scored before the current owner picked the player up.</p>
+  </div>
+  <div class="panel reveal" data-scroll-hint>
+    <div class="swipe-hint" aria-hidden="true"><span>Slide for more</span><span class="swipe-arrow">&rsaquo;&rsaquo;</span></div>
+    <div class="scroll-wrap"><div class="scroll" tabindex="0" role="region" aria-label="Undrafted earners">
+    <table class="board-table"><thead><tr><th class="l">Player</th><th class="l">Pos</th><th class="l">On</th><th class="l">How he got there</th><th>Season Pts</th><th>Value</th></tr></thead><tbody><tr><td class="l"><strong>Braelon Allen</strong></td><td class="l"><span class="pRB">RB</span></td><td class="l ">The McClusterfucks</td><td class="l">$32 waiver, Sep 30</td><td>116.4</td><td class="gold">$21.8</td></tr><tr><td class="l"><strong>Ollie Gordon II</strong></td><td class="l"><span class="pRB">RB</span></td><td class="l ">The McClusterfucks</td><td class="l">$10 waiver, Sep 30</td><td>104.3</td><td class="gold">$16</td></tr><tr><td class="l"><strong>Jordan Love</strong></td><td class="l"><span class="pQB">QB</span></td><td class="l ">Njigba Please</td><td class="l">Free agent, Sep 24</td><td>239.3</td><td class="gold">$14.9</td></tr><tr><td class="l"><strong>Brock Purdy</strong></td><td class="l"><span class="pQB">QB</span></td><td class="l ">Nico&rsquo;d &amp; Dimed</td><td class="l">$2 waiver, Sep 16</td><td>233.6</td><td class="gold">$12.1</td></tr><tr><td class="l"><strong>Tre Tucker</strong></td><td class="l"><span class="pWR">WR</span></td><td class="l ">Henrys Heros</td><td class="l">Free agent, Nov 13 (fourth team)</td><td>96.4</td><td class="gold">$10.5</td></tr><tr><td class="l"><strong>Emmett Johnson</strong></td><td class="l"><span class="pRB">RB</span></td><td class="l ">D-Unit</td><td class="l">Free agent, Nov 4 (second stint)</td><td>92.7</td><td class="gold">$10.5</td></tr><tr><td class="l"><strong>Kirk Cousins</strong></td><td class="l"><span class="pQB">QB</span></td><td class="l bad">Waivers</td><td class="l">Cut by D-Unit Oct 22 for Bam Knight</td><td>227.5</td><td class="gold">$9.2</td></tr><tr><td class="l"><strong>C.J. Stroud</strong></td><td class="l"><span class="pQB">QB</span></td><td class="l ">The McClusterfucks</td><td class="l">Free agent, Oct 14</td><td>221.9</td><td class="gold">$6.5</td></tr><tr><td class="l"><strong>Emanuel Wilson</strong></td><td class="l"><span class="pRB">RB</span></td><td class="l bad">Waivers</td><td class="l">Cut by Nico&rsquo;d &amp; Dimed Nov 3</td><td>83.9</td><td class="gold">$6.3</td></tr><tr><td class="l"><strong>Ryan Flournoy</strong></td><td class="l"><span class="pWR">WR</span></td><td class="l bad">Waivers</td><td class="l">Cut by Ken You Not Pickett Nov 12</td><td>84.0</td><td class="gold">$4.6</td></tr><tr><td class="l"><strong>DeMario Douglas</strong></td><td class="l"><span class="pWR">WR</span></td><td class="l ">Njigba Please</td><td class="l">$0 waiver, Nov 4</td><td>82.8</td><td class="gold">$4</td></tr><tr><td class="l"><strong>Pat Freiermuth</strong></td><td class="l"><span class="pTE">TE</span></td><td class="l bad">Waivers</td><td class="l">Cut by D-Unit Nov 4</td><td>77.4</td><td class="gold">$3.5</td></tr></tbody></table>
+    </div><div class="swipe-edge" aria-hidden="true"><span>&rsaquo;</span></div></div></div>
+  <div class="narrow reveal">
+    <div class="pull">Kirk Cousins has 227.5 points, the 6th-most of any quarterback. He&rsquo;s on waivers. D-Unit picked him up Oct. 15 and cut him a week later for Bam Knight.</div>
+    <p><strong>Best FAAB dollar:</strong> Brock Purdy for $2 to Nico&rsquo;d &amp; Dimed in Week 2 (QB5, 233.6 points). <strong>Best big bid:</strong> Braelon Allen for $32 to The McClusterfucks, who also landed Ollie Gordon II for $10 the same night. <strong>Most expensive miss:</strong> Jonah Coleman for $35 to D-Unit, 61.1 points, still below replacement. Runner-up: Corey Kiner, $19 to Nico&rsquo;d &amp; Dimed, 39.5 points.</p>
+  </div>
+  <div class="panel reveal" data-scroll-hint>
+    <div class="swipe-hint" aria-hidden="true"><span>Slide for more</span><span class="swipe-arrow">&rsaquo;&rsaquo;</span></div>
+    <div class="scroll-wrap"><div class="scroll" tabindex="0" role="region" aria-label="FAAB">
+    <table class="board-table"><thead><tr><th class="l">Team</th><th>FAAB spent</th><th>Left</th><th>Moves</th><th class="l">Standing</th></tr></thead><tbody><tr><td class="l"><strong>D-Unit</strong></td><td class="gold">$86</td><td>$14</td><td>30</td><td class="l">4 &middot; 12-8</td></tr><tr><td class="l"><strong>Nico&rsquo;d &amp; Dimed</strong></td><td class="gold">$68</td><td>$32</td><td>30</td><td class="l">1 &middot; 13-7</td></tr><tr><td class="l"><strong>The McClusterfucks</strong></td><td class="gold">$54</td><td>$46</td><td>30</td><td class="l">6 &middot; 9-11</td></tr><tr><td class="l"><strong>Team KAS</strong></td><td class="gold">$40</td><td>$60</td><td>13</td><td class="l">8 &middot; 9-11</td></tr><tr><td class="l"><strong>Njigba Please</strong></td><td class="gold">$38</td><td>$62</td><td>11</td><td class="l">10 &middot; 4-16</td></tr><tr><td class="l"><strong>The Annexation of PR</strong></td><td class="gold">$25</td><td>$75</td><td>19</td><td class="l">7 &middot; 9-11</td></tr><tr><td class="l"><strong>TEAM HoldMyCHUBBBA</strong></td><td class="gold">$20</td><td>$80</td><td>10</td><td class="l">5 &middot; 11-9</td></tr><tr><td class="l"><strong>J Squad</strong></td><td class="gold">$13</td><td>$87</td><td>11</td><td class="l">3 &middot; 13-7</td></tr><tr><td class="l"><strong>Ken You Not Pickett</strong></td><td class="gold">$10</td><td>$90</td><td>15</td><td class="l">2 &middot; 13-7</td></tr><tr><td class="l"><strong>Henrys Heros</strong></td><td class="gold">$10</td><td>$90</td><td>10</td><td class="l">9 &middot; 7-13</td></tr></tbody></table>
+    </div><div class="swipe-edge" aria-hidden="true"><span>&rsaquo;</span></div></div></div>
+  <div class="narrow reveal">
+    <p>The three heaviest waiver teams (D-Unit, Nico&rsquo;d &amp; Dimed and The McClusterfucks, 30 moves each) are 1st, 4th and 6th. The two lightest spenders, Ken You Not Pickett and Henrys Heros at $10 each, are 2nd and 9th. FAAB budget doesn&rsquo;t predict anything. Hitting on the right claim does: Ken&rsquo;s best pickups (Bryce Young for $10, the Vikings defense for free) cost almost nothing.</p>
+  </div>
+</div></section>
+
+<section class="act"><div class="wrap narrow reveal">
+  <div class="kicker">The Receipts &middot; How August aged</div>
+  <h2>The model can smell an overpay. It can&rsquo;t find a bargain.</h2>
+  <p>Each team got one &ldquo;Overpay&rdquo; call and one &ldquo;Best Value&rdquo; call in August. Ten weeks later:</p>
+  <div class="recbook">
+    <div class="rec bad"><div class="k">Overpay calls</div><div class="v">9 of 10 right</div><div class="s">Hampton, Amon-Ra, Price, Egbuka, McConkey, Jordan Mason, TreVeyon Henderson, Lawrence and MarShawn Lloyd all lost money. The one miss: Bhayshul Tuten, called a $20 overpay, now +$19.9.</div></div>
+    <div class="rec teal"><div class="k">Best Value calls</div><div class="v">3 of 10 right</div><div class="s">Josh Allen (+$8.2), Trey McBride (+$7.4) and Cam Skattebo (+$4.5) paid off. Drake London, Rashee Rice and Breece Hall lost money; the rest were roughly break-even.</div></div>
+    <div class="rec"><div class="k">Grade vs. haul</div><div class="v">A &rarr; 7th, F &rarr; 5th</div><div class="s">The top-graded draft has the 7th-best return. The bottom-graded draft has the 5th-best return and a top-3 record.</div></div>
+  </div>
+  <p>That&rsquo;s the lesson of the 2026 auction. Fear was priced correctly. Hope wasn&rsquo;t priced at all. Nobody in August saw a $6 Chuba Hubbard, a $4 Joe Burrow or a $3 Matthew Golden coming, and those three picks are worth $115 of profit combined.</p>
+</div></section>
+
+<section class="act"><div class="wrap narrow reveal">
+  <div class="kicker">Closing Argument</div>
+  <div class="pull">The auction decided who could score. The schedule decided who won. D-Unit won the first one by a hundred dollars and is still fourth.</div>
+  <p>Four regular-season weeks left before the Week 15 playoffs. The draft is done talking. What happens now comes from your bench, your waiver claims and your Sunday lineup decisions. For a few of you, that&rsquo;s bad news.</p>
+  <p class="sig">&mdash; Mohn Jadden &middot; Keeping it real since 2014</p>
+</div></section>
+
+<div class="wrap"><footer>
+  Sourced from the league&rsquo;s Yahoo draft results (160 picks, including 20 keepers at their kept prices), Yahoo season fantasy points through Week 10 under this league&rsquo;s Half-PPR scoring, the standings page and the full transaction log. Replacement level = the first player outside the league&rsquo;s 80 starting skill slots (10 QB, 20 RB, 20 WR, 10 TE, 20 W/R/T flex, filled best-available). Earned value = $1 + points over replacement &times; $0.48, the rate that spreads the room&rsquo;s non-minimum skill-player auction dollars across all value produced. Points are credited to the drafting team regardless of later roster moves; waiver-wire points are full-season totals, not points scored after pickup. Kickers and defenses excluded. James Conner, Jayden Reed, Ricky Pearsall and De&rsquo;Zhaun Stribling had fewer than 6 points and were scored as zero. August grades and calls are from the 2026 Draft Grades page.
+</footer></div>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+}),{threshold:0,rootMargin:'0px 0px -8% 0px'});
+
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+const revealIn=()=>document.querySelectorAll('.reveal:not(.in)').forEach(e=>{
+  const r=e.getBoundingClientRect();
+  if(r.top<innerHeight*0.92 && r.bottom>0) e.classList.add('in');
+});
+revealIn();
+addEventListener('load',revealIn,{once:true});
+
+function setupScrollHints(){
+  document.querySelectorAll('[data-scroll-hint]').forEach(panel=>{
+    const sc=panel.querySelector('.scroll');
+    if(!sc) return;
+    const update=()=>{
+      const overflow=sc.scrollWidth>sc.clientWidth+4;
+      const atEnd=sc.scrollLeft+sc.clientWidth>=sc.scrollWidth-8;
+      panel.classList.toggle('has-overflow',overflow);
+      panel.classList.toggle('at-end',atEnd||!overflow);
+    };
+    sc.addEventListener('scroll',update,{passive:true});
+    addEventListener('resize',update);
+    update();
+    requestAnimationFrame(update);
+  });
+}
+setupScrollHints();
+addEventListener('load',setupScrollHints,{once:true});
+</script>
+</body>
+</html>
