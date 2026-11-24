@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07090E">
+<title>The Major League &mdash; Week 11 Recap</title>
+<meta name="description" content="GooNads beats Van Tine by 0.74 with a zero in the flex, Al clinches a playoff spot a year after going 0-14, Brian clinches with a 63-point win, and Kevin sets a perfect lineup for the week's low score. Week 11 of The Major League.">
+<link rel="canonical" href="/the-major-league/recap/week-11/">
+<style>
+  :root{
+    --ink:#07090E; --p1:#0D1119; --p2:#141A25; --p3:#1D2534;
+    --line:#2A3446; --edge:#28324399;
+    --text:#EDF1F8; --dim:#93A3B9; --faint:#61728A;
+    --gold:#E8B44A; --good:#3DDC97; --bad:#FF6B6B; --hot:#FF8355;
+    --serif: ui-serif,'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+    --sans: 'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    --s1:8px; --s2:16px; --s3:26px; --s4:44px; --s5:76px; --s6:120px;
+    --sh1: 0 1px 2px rgba(2,5,10,.55), 0 3px 10px rgba(2,5,10,.4);
+    --sh2: 0 3px 8px rgba(2,5,10,.6), 0 16px 40px rgba(2,5,10,.5);
+    --sh3: 0 6px 16px rgba(2,5,10,.65), 0 32px 80px rgba(232,180,74,.07);
+    --pad: clamp(16px,4vw,26px);
+  }
+  *{box-sizing:border-box;}
+  html,body{background:var(--ink);}
+  body{
+    margin:0;
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    background-image:
+      radial-gradient(1100px 620px at 8% -6%, rgba(232,180,74,.10), transparent 62%),
+      radial-gradient(900px 560px at 96% 12%, rgba(63,199,174,.07), transparent 60%),
+      radial-gradient(900px 700px at 40% 62%, rgba(240,137,77,.06), transparent 64%),
+      radial-gradient(800px 600px at 70% 100%, rgba(176,126,240,.05), transparent 62%);
+    background-attachment:fixed;
+  }
+  .grain{
+    position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 var(--pad); position:relative; z-index:2;}
+  .narrow{max-width:720px; margin:0 auto;}
+
+  .sitenav{display:flex;flex-wrap:wrap;align-items:center;padding:12px 0 0}
+  .sitenav .brand{flex:1 1 auto;min-width:min(100%,160px);padding:10px 12px 10px 0;
+    font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .sitenav .links{display:flex;flex-wrap:wrap}
+  .sitenav a{color:var(--faint);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+    padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:8px}
+  .sitenav a:hover{color:var(--gold);background:rgba(232,180,74,.08)}
+  .sitenav a.here{color:var(--gold)}
+  .sitenav a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+  header.hero{padding:var(--s5) 0 var(--s4);}
+  .kicker{font-size:11.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); font-weight:600;}
+  h1{font-family:var(--serif); font-weight:600; letter-spacing:-.035em; line-height:.98; font-size:clamp(34px,9vw,84px); margin:14px 0 0;}
+  .lede{font-size:clamp(17px,2.6vw,21px); color:var(--dim); max-width:64ch; margin:var(--s3) 0 0;}
+  .lede strong{color:var(--text); font-weight:700;}
+  .figs{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(16px,4vw,44px); margin-top:var(--s4);}
+  .fig .v{font-family:var(--serif); font-size:clamp(24px,5vw,38px); line-height:1; letter-spacing:-.03em; color:var(--gold);}
+  .fig .l{font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--faint); margin-top:8px;}
+
+  .pod{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:var(--s4);
+    padding:16px 18px;background:linear-gradient(165deg,#15241C,var(--p1));
+    border:1px solid rgba(29,185,84,.32);border-radius:16px;text-decoration:none;color:inherit;
+    box-shadow:var(--sh2);position:relative;overflow:hidden;min-height:44px;
+    transition:transform .3s cubic-bezier(.2,.9,.3,1.25),box-shadow .3s}
+  .pod::before{content:'';position:absolute;inset:0 0 auto 0;height:2px;
+    background:linear-gradient(90deg,#1DB954,transparent 70%)}
+  .pod-play{flex:none;width:52px;height:52px;border-radius:50%;background:#1DB954;color:#04110a;
+    display:grid;place-items:center;box-shadow:0 8px 20px rgba(29,185,84,.28)}
+  .pod-play svg{width:22px;height:22px;margin-left:3px}
+  .pod-copy{flex:1 1 200px;min-width:0}
+  .pod-copy .k{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#1DB954;font-weight:600}
+  .pod-copy strong{display:block;font-family:var(--serif);font-size:clamp(18px,2.8vw,24px);
+    letter-spacing:-.02em;line-height:1.2;margin:5px 0 4px;font-weight:600;color:var(--text)}
+  .pod-copy .m{font-size:13.5px;color:var(--dim);line-height:1.45}
+  .pod-go{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1DB954;font-weight:600}
+  @media(hover:hover) and (pointer:fine){
+    .pod:hover{transform:translateY(-3px);box-shadow:var(--sh3)}
+  }
+  .pod:focus-visible{outline:2px solid #1DB954;outline-offset:3px}
+
+  section{padding:clamp(40px,9vw,84px) 0; position:relative;}
+  section.act{border-top:1px solid var(--edge);}
+  h2{font-family:var(--serif); font-weight:600; letter-spacing:-.03em; line-height:1.08; font-size:clamp(24px,4.6vw,44px); margin:10px 0 0;}
+  h3{font-family:var(--serif); font-size:clamp(18px,2.4vw,24px); letter-spacing:-.02em; font-weight:600; margin:0;}
+  .narrow > p.intro{color:var(--dim); font-size:15px; max-width:60ch; margin:14px 0 0;}
+
+  .panel{background:linear-gradient(170deg,var(--p2),var(--p1)); border:1px solid var(--edge); border-radius:17px; padding:clamp(16px,3vw,28px); box-shadow:var(--sh2); margin-top:var(--s3);}
+  .panel h3{color:var(--gold); margin-bottom:10px;}
+  .panel p{color:var(--dim); font-size:14.5px; line-height:1.75; margin:0 0 10px;}
+  .panel p:last-child{margin-bottom:0;}
+  .panel p strong{color:var(--text);}
+
+  .matchup{background:linear-gradient(170deg,var(--p2),var(--p1)); border:1px solid var(--edge); border-radius:17px; padding:clamp(16px,3vw,28px); box-shadow:var(--sh2); margin-top:var(--s3);}
+  .mrow{display:flex; align-items:center; gap:clamp(10px,3vw,22px);}
+  .side{flex:1 1 0; min-width:0;}
+  .side.r{text-align:right;}
+  .side .team{font-family:var(--serif); font-size:clamp(17px,2.8vw,22px); letter-spacing:-.02em; line-height:1.15; overflow-wrap:anywhere;}
+  .side .mgr{font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); margin-top:4px;}
+  .side .score{font-family:var(--serif); font-size:clamp(28px,4.6vw,38px); letter-spacing:-.03em; color:var(--faint); margin-top:8px; font-variant-numeric:tabular-nums;}
+  .side .score.win{color:var(--gold);}
+  .vs{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); flex:0 0 auto; padding:0 4px;}
+  .statlines{margin-top:var(--s2); display:flex; flex-direction:column; gap:8px;}
+  .statline{display:flex; align-items:baseline; gap:10px; font-size:13px; padding:8px 10px; background:#141C29; border:1px solid #1B2432; border-radius:9px; flex-wrap:wrap;}
+  .statline .tag{font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; font-weight:700; padding:2px 6px; border-radius:5px; flex:0 0 auto;}
+  .statline.good .tag{color:var(--good); background:rgba(61,220,151,.12);}
+  .statline.bad .tag{color:var(--bad); background:rgba(255,107,107,.12);}
+  .statline.hurt .tag{color:var(--hot); background:rgba(255,131,85,.13);}
+  .statline .who{color:var(--text); font-weight:600; flex:1 1 0; min-width:120px;}
+  .statline .ctx{color:var(--faint); font-size:12px;}
+  .statline .pts{font-variant-numeric:tabular-nums; font-weight:700; color:var(--text); flex:0 0 auto;}
+  .statline .d{font-variant-numeric:tabular-nums; font-size:11.5px; flex:0 0 auto;}
+  .statline.good .d{color:var(--good);}
+  .statline.bad .d{color:var(--bad);}
+  .statline.hurt .d{color:var(--hot);}
+  .matchup .verdict{font-size:14.5px; color:var(--dim); line-height:1.7; margin-top:var(--s3);}
+  .pred{margin-top:var(--s2); font-size:13.5px; color:var(--text); padding-top:12px; border-top:1px solid var(--edge);}
+  .pred b{color:var(--gold); text-transform:uppercase; letter-spacing:.1em; font-size:10.5px; margin-right:6px;}
+  .pred .call{color:var(--faint);}
+  .pred.hit .call{color:var(--good);}
+  .pred.miss .call{color:var(--bad);}
+.pred.alt{margin-top:6px; padding-top:0; border-top:0; font-size:12.5px; color:var(--dim);}
+.pred.alt b{color:var(--dim);}
+
+  .recbook{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:16px; margin-top:var(--s3);}
+  .rec{background:linear-gradient(165deg,var(--p3),var(--p1)); border:1px solid var(--edge); border-radius:14px; padding:18px 20px;}
+  .rec .k{font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); display:block;}
+  .rec .v{font-family:var(--serif); font-size:1.4rem; color:var(--text); font-variant-numeric:tabular-nums; display:block; margin-top:6px;}
+  .rec .v.bad{color:var(--bad);}
+  .rec .v.gold{color:var(--gold);}
+  .rec .s{color:var(--dim); font-size:13.5px; line-height:1.6; margin:8px 0 0;}
+  .rec .s .bad{color:var(--bad); font-weight:700;}
+  .rec .award-name{font-family:var(--serif); color:var(--gold); font-size:1.05rem; display:block;}
+  @media(hover:hover) and (pointer:fine){
+    .matchup:hover{box-shadow:var(--sh3)}
+  }
+
+  .keystat{background:linear-gradient(170deg,var(--p2),var(--p1)); border:1px solid var(--edge); border-radius:11px; padding:14px 18px; margin-top:var(--s3); font-size:13.5px; color:var(--dim);}
+  .keystat b{color:var(--gold); font-weight:600;}
+
+  .pull{font-family:var(--serif); font-size:clamp(20px,3.6vw,32px); line-height:1.3; letter-spacing:-.02em; color:var(--text); border-left:2px solid var(--gold); padding-left:clamp(14px,3vw,26px); margin:var(--s4) 0 0; font-style:italic;}
+  .sig{font-family:var(--serif); font-style:italic; color:var(--gold); font-size:17px; margin-top:var(--s4); padding-top:var(--s2); border-top:1px solid var(--edge);}
+
+  footer{border-top:1px solid var(--edge); padding:var(--s4) 0 var(--s5); color:var(--faint); font-size:13.5px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  footer a{color:var(--gold)}
+
+  @media (max-width:720px){
+    .figs{grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px;}
+    .mrow{flex-wrap:wrap;}
+    .side.r{text-align:left;}
+    .vs{order:3; width:100%; text-align:left; padding:2px 0;}
+    .recbook{grid-template-columns:1fr;}
+    .pod{padding:14px 14px 16px;align-items:flex-start}
+    .pod-go{width:100%}
+    body{background-attachment:scroll}
+    .sitenav .links{width:100%;display:grid;grid-template-columns:1fr 1fr}
+    .sitenav a{justify-content:center;padding:12px 6px;white-space:nowrap;letter-spacing:.08em}
+  }
+
+  .checkup{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin-top:var(--s3);}
+  .check .q{font-family:var(--serif); font-size:1.1rem; color:var(--text); display:block; margin-top:4px;}
+  .check .verdict-tag{font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:var(--gold); display:block; margin-top:10px;}
+  .listhead{font-family:var(--serif); font-size:1.2rem; color:var(--gold); margin:var(--s4) 0 0;}
+  .ranks{list-style:none; padding:0; margin:var(--s3) 0 0; display:flex; flex-direction:column; gap:8px;}
+  .ranks li{display:flex; gap:12px; align-items:baseline; flex-wrap:wrap; font-size:13.5px; padding:10px 12px; background:#141C29; border:1px solid #1B2432; border-radius:9px;}
+  .ranks .n{font-family:var(--serif); color:var(--gold); font-size:1.1rem; width:1.6em; flex:0 0 auto;}
+  .ranks .t{color:var(--text); font-weight:600;}
+  .ranks .r{color:var(--faint); font-variant-numeric:tabular-nums; font-size:12px;}
+  .ranks .c{color:var(--dim); flex:1 1 100%; font-size:13px; padding-left:calc(1.6em + 12px);}
+  .shout{margin:var(--s3) 0 0; padding-left:1.1em; color:var(--dim); font-size:15px;}
+  .shout li{margin:6px 0;}
+  .shout b{color:var(--text);}
+  .tagline{color:var(--faint); font-style:italic; font-size:14px; margin-top:var(--s3);}
+  .divs{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);margin-top:var(--s3);}
+  @media (max-width:720px){ .divs{grid-template-columns:1fr;} }
+  .stdiv h3{color:var(--gold);font-size:18px;margin:0 0 12px;}
+  .srow{display:grid;grid-template-columns:44px minmax(0,1fr) auto;column-gap:12px;row-gap:10px;align-items:center;
+    background:linear-gradient(165deg,var(--p2),var(--p1));border:1px solid var(--edge);border-left:3px solid var(--line);
+    border-radius:12px;padding:14px 16px;margin-bottom:10px;}
+  .srow.good{border-left-color:var(--good);} .srow.bad{border-left-color:var(--bad);}
+  .srow .rk{display:flex;flex-direction:column;align-items:center;line-height:1;}
+  .srow .rk .n{font-family:var(--serif);font-size:26px;color:var(--text);font-variant-numeric:tabular-nums;}
+  .srow .mv{font-size:10.5px;font-weight:700;margin-top:5px;letter-spacing:.02em;color:var(--faint);}
+  .srow .mv.up{color:var(--good);} .srow .mv.down{color:var(--bad);}
+  .srow .nm{font-family:var(--serif);font-size:18px;letter-spacing:-.01em;line-height:1.2;color:var(--text);overflow-wrap:anywhere;}
+  .srow .mg{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:3px;}
+  .srow .rc{font-family:var(--serif);font-size:26px;color:var(--gold);font-variant-numeric:tabular-nums;text-align:right;line-height:1;}
+  .srow .stk{display:block;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.1em;margin-top:6px;}
+  .srow .stk.w{color:var(--good);} .srow .stk.l{color:var(--bad);}
+  .srow .nums{grid-column:1 / -1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;}
+  .srow .nums span{background:#141C29;border:1px solid #1B2432;border-radius:8px;padding:6px 7px;min-width:0;
+    font-variant-numeric:tabular-nums;font-size:13px;color:var(--text);font-weight:600;line-height:1.3;}
+  .srow .nums i{display:block;font-style:normal;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:600;}
+  .srow .nums b{font-weight:600;} .srow .nums b.hi{color:var(--gold);} .srow .nums b.lo{color:var(--bad);}
+  .srow .tag2{grid-column:1 / -1;margin:0;color:var(--dim);font-size:13.5px;line-height:1.55;}
+  .skey{color:var(--faint);font-size:12px;margin:6px 0 0;}
+  @media (max-width:359px){ .srow .nums{grid-template-columns:repeat(2,minmax(0,1fr));} }
+  .leaders{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:var(--s3);}
+  .lcard{background:linear-gradient(165deg,var(--p3),var(--p1));border:1px solid var(--edge);border-radius:14px;padding:18px 18px 16px;border-top:2px solid var(--gold);display:flex;flex-direction:column;}
+  .lcard.good{border-top-color:var(--good);} .lcard.bad{border-top-color:var(--bad);}
+  .lhead{display:flex;flex-direction:column;gap:2px;margin-bottom:12px;}
+  .lhead .lt{font-family:var(--serif);font-size:19px;letter-spacing:-.01em;color:var(--text);}
+  .lhead .ls{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);}
+  .lrows{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;}
+  .lrows li{display:grid;grid-template-columns:20px minmax(0,1fr) auto;column-gap:10px;row-gap:5px;align-items:baseline;}
+  .lrows .lr{font-family:var(--serif);font-size:15px;color:var(--faint);font-variant-numeric:tabular-nums;}
+  .lrows .ln{font-size:13.5px;color:var(--text);font-weight:600;line-height:1.25;min-width:0;overflow-wrap:anywhere;}
+  .lrows .ln i,.lrows .lv i{display:block;font-style:normal;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:600;margin-top:2px;}
+  .lrows .lv{font-family:var(--serif);font-size:17px;color:var(--text);font-variant-numeric:tabular-nums;text-align:right;line-height:1.1;}
+  .lrows .lv i{letter-spacing:.06em;text-transform:none;}
+  .lrows .lbar{grid-column:2 / -1;height:4px;border-radius:3px;background:#1B2432;overflow:hidden;}
+  .lrows .lbar b{display:block;height:100%;border-radius:3px;background:var(--dim);opacity:.55;}
+  .lcard.gold li.top .lv,.lcard.gold li.top .lr{color:var(--gold);} .lcard.gold li.top .lbar b{background:var(--gold);opacity:1;}
+  .lcard.good li.top .lv,.lcard.good li.top .lr{color:var(--good);} .lcard.good li.top .lbar b{background:var(--good);opacity:1;}
+  .lcard.bad li.top .lv,.lcard.bad li.top .lr{color:var(--bad);} .lcard.bad li.top .lbar b{background:var(--bad);opacity:1;}
+  .lrows li.last{margin-top:6px;padding-top:10px;border-top:1px dashed var(--edge);}
+  .lrows li.last .lv,.lrows li.last .lr{color:var(--bad);} .lrows li.last .lbar b{background:var(--bad);opacity:.8;}
+  .lq{color:var(--dim);font-size:13px;line-height:1.55;margin:14px 0 0;padding-top:12px;border-top:1px solid var(--edge);}
+  @media (max-width:900px){ .leaders{grid-template-columns:1fr;} }
+  .oddswrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 var(--pad);max-width:1100px;margin:var(--s3) auto 0;}
+  .odds{background:var(--p2);border:1px solid var(--edge);border-left:3px solid var(--good);border-radius:11px;padding:14px 16px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;align-items:center;}
+  .odds.bad{border-left-color:var(--bad);}
+  .odds .nm{display:block;font-family:var(--serif);font-size:18px;line-height:1.2;color:var(--text);overflow-wrap:anywhere;}
+  .odds .mg{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:3px;}
+  .odds .ov{font-family:var(--serif);font-size:30px;color:var(--gold);font-variant-numeric:tabular-nums;text-align:right;line-height:1;}
+  .odds .ob{grid-column:1 / -1;height:6px;background:#141C29;border-radius:3px;overflow:hidden;order:3;}
+  .odds .bar{height:100%;background:var(--good);} .odds.bad .bar{background:var(--bad);}
+  .odds .om{grid-column:1 / -1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;order:4;}
+  .odds .om span{background:#141C29;border:1px solid #1B2432;border-radius:8px;padding:6px 7px;font-size:12.5px;color:var(--text);font-variant-numeric:tabular-nums;}
+  .odds .om i{display:block;font-style:normal;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:600;}
+  .odds .tag2{grid-column:1 / -1;order:5;margin:0;color:var(--dim);font-size:13.5px;line-height:1.55;}
+  @media (max-width:720px){ .oddswrap{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="wrap">
+  <nav class="sitenav" aria-label="Site">
+    <a class="brand" href="/the-major-league/">Mohn Jadden</a>
+    <div class="links">
+      <a href="/the-major-league/">Home</a>
+      <a class="here" href="/the-major-league/recap/">Recap</a>
+      <a href="/the-major-league/draft-grades/">Draft Grades</a>
+      <a href="/the-major-league/chronicle/">Chronicle</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="kicker">The Major League &middot; Week 11 &middot; By Mohn Jadden</div>
+    <h1>A Zero in the Flex.<br>A Win Anyway.</h1>
+    <p class="lede">Courtland Sutton was targeted twice on Sunday and caught neither. He was in GooNads' flex spot, and Natalie still beat Van Tine <strong>119.20&ndash;118.46</strong>, the second-closest game of the season. Al, who went 0-14 last year, has <strong>clinched a playoff spot</strong> with three weeks to spare. Brian clinched too, by beating Kevin by 63.24. Mike picked up a quarterback Sunday afternoon and got 23.22 out of him, and Kevin set a perfect lineup and still had the worst score in the league.</p>
+    <div class="figs">
+      <div class="fig"><div class="v">0.74</div><div class="l">GooNads over Van Tine, with Courtland Sutton's 0.00 in the flex spot</div></div>
+      <div class="fig"><div class="v">8-3</div><div class="l">Al, clinched. Twelve months ago he was 0-11</div></div>
+      <div class="fig"><div class="v">63.24</div><div class="l">Brian over Kevin, the week's biggest margin and Brian's fifth straight win</div></div>
+      <div class="fig"><div class="v">3</div><div class="l">Perfect lineups this week, including the week's lowest score (BlueGreen, 93.76)</div></div>
+    </div>
+  <a class="pod" href="https://open.spotify.com/episode/5Al3rIpDYZrvZqn8f88Dxr" target="_blank" rel="noopener noreferrer">
+      <span class="pod-play" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72L19.06 12 8 5.14z"/></svg>
+      </span>
+      <span class="pod-copy">
+        <span class="k">Podcast version</span>
+        <strong>The Major League &mdash; Week 11 Recap</strong>
+        <span class="m">Prefer to hear it? Same recap, out loud, on Black Hat Fantasy Football: Mohn Jadden&rsquo;s Playbook.</span>
+      </span>
+      <span class="pod-go">Play on Spotify &rarr;</span>
+    </a>
+  </header>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">The Story</div>
+      <h2>A Receiver Who Caught Nothing, and an Al Who Can't Lose</h2>
+      <p class="intro">One game came down to 74 hundredths of a point. Another one sent the league's least likely playoff team into December with a reservation.</p>
+    </div>
+    <div class="panel">
+      <h3>Courtland Sutton Caught Nothing. Natalie Won by 0.74.</h3>
+      <p>Denver beat Las Vegas 38-24 on Sunday. Jonah Coleman ran for three touchdowns, Evan Engram caught six balls, and <strong>Courtland Sutton</strong> was targeted twice and caught zero. It was the first time in 39 games he'd been blanked. He was in GooNads' flex spot, projected for 9.10, and he gave her <strong>0.00</strong>. Natalie won anyway, because <strong>Dak Prescott</strong> threw four touchdowns and ran for another in the Cowboys' 51-30 win over Tennessee (<strong>35.90</strong>, the best player score in the league). Derrick Henry added 20.10, and the Ravens defense gave up 35-plus points and still scored 9.00 on a return touchdown. Jalen Coker left with a concussion after 8.70. Her bench had nothing that could play flex: J.K. Dobbins scored 0.00, Kincaid was out, Michael Wilson is on IR, and Jared Goff's 20.36 was stuck behind Dak. So 119.20 was the best lineup her roster could field. It was a perfect lineup with a zero in it.</p>
+      <p>Ryan was Yahoo's 7.39-point favorite, and then Josh Allen threw two interceptions against Miami (14.16, 9.50 under projection) and Chase Brown scored 8.60. The bench had what he needed. The 49ers defense scored 15.00 there while he started the Broncos (13.00), and Braelon Allen scored 9.40 while Travis Etienne started (7.60). Either swap alone would have won it. Both sat because they were projected lower, so neither one is a lineup mistake. Ryan lost the season's second-closest game by less than the 1.80-point gap between two running backs on his own roster. Natalie's four-game losing streak is over and she's out of last place. Ryan is 6-5 and still holds the last playoff spot. The trophy remains officially Mike's. Natalie was in a good enough mood Sunday night that people are asking where she was keeping it.</p>
+    </div>
+    <div class="panel">
+      <h3>Al Has Clinched. Al.</h3>
+      <p>In 2025, as ALBERTosaurus, Al went 0-14 in the regular season and finished last for the second year in a row. Through 11 weeks that team had allowed 1,695.52 points, the third-most at that point of a season in league history. He hasn't finished in the top six since 2020. On Sunday he beat TJ <strong>155.30&ndash;113.44</strong> for his fourth straight win, moved to <strong>8-3</strong>, and Yahoo put the asterisk next to his name. Al is in the playoffs with three weeks left, and his 1,266.52 points against is the fewest in the league. That's 429 fewer than last year's team had allowed by this point.</p>
+      <p>He did it the boring way. Chuba Hubbard ran for 120 and two scores (<strong>26.00</strong>), Javonte Williams scored twice (24.10), George Pickens caught seven for 102 and a touchdown (23.80), Purdy threw three touchdowns (22.20), Kittle caught two of them (18.40), and Boswell kicked three field goals (13.00). Al left 20.60 on his bench, the most in the league, and won by 41.86. Brian clinched the same afternoon. He beat Kevin 157.00&ndash;93.76 for his fifth straight win, with Jonah Coleman's three touchdowns (34.90) out of the flex spot. The two clinched teams own the two best records and the league's two longest active win streaks, five and four.</p>
+    </div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Storyline Checkup</div>
+      <h2>How Week 10's Hot Takes Aged</h2>
+      <p class="intro">Five calls last week. One landed perfectly, two were right in spirit, and one was off by 60 points.</p>
+    </div>
+    <div class="checkup">
+      <div class="rec check">
+        <span class="k">Week 10 said</span>
+        <span class="q">Bijan vs. Al: "TJ's tight end has an ankle and his kicker has a grudge."</span>
+        <span class="verdict-tag">Verdict: The ankle won</span>
+        <p class="s">Bowers was inactive and Al beat Yahoo's number with room to spare, 155.30&ndash;113.44. Bates kicked 9.00 and Boswell kicked 13.00. TJ still leads the series 16-10, which is the only thing he leads this week.</p>
+      </div>
+      <div class="rec check">
+        <span class="k">Week 10 said</span>
+        <span class="q">Brian vs. Kevin: "Yahoo has 3.07 points between them."</span>
+        <span class="verdict-tag">Verdict: Off by 60.17</span>
+        <p class="s">The line had stretched to 29.16 by kickoff, and Brian still doubled it. 157.00&ndash;93.76, and the 15-15 series is now Brian's, 16-15.</p>
+      </div>
+      <div class="rec check">
+        <span class="k">Week 10 said</span>
+        <span class="q">Medina Sod vs. OJ no Kulp: "Yahoo hasn't seen what Mahomes does when he's free."</span>
+        <span class="verdict-tag">Verdict: It has now</span>
+        <p class="s">Mahomes threw three touchdowns for 24.96 and Haefner won by 20.88, not 1.72. Haefner leads 16-11, and pat's last exit is now in the rearview mirror.</p>
+      </div>
+      <div class="rec check">
+        <span class="k">Week 10 said</span>
+        <span class="q">GooNads vs. Van Tine: "The only thing left on her schedule is ruining somebody else's. Ryan would be the perfect candidate."</span>
+        <span class="verdict-tag">Verdict: Nailed it, by 0.74</span>
+        <p class="s">Natalie ruined Ryan's week with a receiver who caught nothing. She leads the series 8-5 and is officially the most dangerous 3-8 team in America.</p>
+      </div>
+      <div class="rec check">
+        <span class="k">Week 10 said</span>
+        <span class="q">Human Psentipede vs. WhoseHungry?: "Neither will see 169 this time."</span>
+        <span class="verdict-tag">Verdict: Correct. Mike saw 143</span>
+        <p class="s">Mike won 143.32&ndash;101.40 and leads 16-13. Michaeopteryx did see Kirk Cousins, after dropping Drake Maye for him on Wednesday.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Scoreboard</div>
+      <h2>Four Blowouts and a Rounding Error</h2>
+      <p class="intro">Margins of 63.24, 41.92, 41.86 and 20.88. The fifth game was decided by 0.74, and it's the one both Yahoo and Black Hat missed. Both went 4-for-5, and they agreed on every favorite.</p>
+    </div>
+
+    <div class="matchup">
+      <div class="mrow">
+        <div class="side"><div class="team">GooNads</div><div class="mgr">Natalie Fullerton</div><div class="score win">119.20</div></div>
+        <div class="vs">def.</div>
+        <div class="side r"><div class="team">Van Tine</div><div class="mgr">Ryan</div><div class="score">118.46</div></div>
+      </div>
+      <div class="statlines">
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Dak Prescott</span><span class="ctx">QB &middot; GooNads &middot; 325 yards, four touchdown passes and one on the ground against Tennessee</span><span class="pts">35.90</span><span class="d">+12.84</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">Courtland Sutton</span><span class="ctx">WR &middot; GooNads &middot; two targets, zero catches, one winning lineup</span><span class="pts">0.00</span><span class="d">&minus;9.10</span></div>
+        <div class="statline hurt"><span class="tag">Hurt</span><span class="who">Jalen Coker</span><span class="ctx">WR &middot; GooNads &middot; concussion</span><span class="pts">8.70</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">Josh Allen</span><span class="ctx">QB &middot; Van Tine &middot; two interceptions against the Dolphins, and that's the game</span><span class="pts">14.16</span><span class="d">&minus;9.50</span></div>
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Devaughn Vele</span><span class="ctx">WR &middot; Van Tine &middot; started over two higher-projected receivers and caught seven</span><span class="pts">14.60</span><span class="d">+8.40</span></div>
+      </div>
+      <p class="verdict">Natalie set a perfect lineup that included a zero, which takes some doing. Dak, Henry (20.10) and McCaffrey (14.20) did the work while Sutton, Andrews (3.40) and Pineiro (5.00) did a little less. Ryan made one gutsy call and it paid: he started Vele (projected 6.20) over Godwin and Keon Coleman, and Vele outscored both of them combined. Everything else went sideways. Allen and Chase Brown came in 16.59 under projection between them. The 49ers defense and Braelon Allen sat on 24.40 combined, and either one would have flipped the game. Neither was the wrong call before kickoff, and both were wrong by Sunday night. Natalie is out of last place. Ryan is still in sixth, but he can hear seventh breathing.</p>
+      <p class="pred miss"><b>Yahoo</b>Van Tine by 7.39 (135.46&ndash;128.07) &mdash; <span class="call">miss, an 8.13-point swing</span></p>
+      <p class="pred alt miss"><b>Black Hat</b>Van Tine by 11.08 (134.57&ndash;123.49) &mdash; <span class="call">miss, and Black Hat liked Ryan even more</span></p>
+    </div>
+
+    <div class="matchup">
+      <div class="mrow">
+        <div class="side"><div class="team">Greatest_of_AL_time</div><div class="mgr">Al</div><div class="score win">155.30</div></div>
+        <div class="vs">def.</div>
+        <div class="side r"><div class="team">Bijan Claude Van Damme</div><div class="mgr">TJ</div><div class="score">113.44</div></div>
+      </div>
+      <div class="statlines">
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Chuba Hubbard</span><span class="ctx">RB &middot; Greatest_of_AL_time &middot; 120 rushing yards and two scores, plus a two-point conversion for good measure</span><span class="pts">26.00</span><span class="d">+8.25</span></div>
+        <div class="statline good"><span class="tag">Boom</span><span class="who">George Kittle</span><span class="ctx">TE &middot; Greatest_of_AL_time &middot; three catches, 34 yards, two touchdowns. Efficient</span><span class="pts">18.40</span><span class="d">+5.45</span></div>
+        <div class="statline hurt"><span class="tag">Hurt</span><span class="who">Bhayshul Tuten</span><span class="ctx">RB &middot; Greatest_of_AL_time &middot; reaggravated the foot/ankle injury</span><span class="pts">8.30</span></div>
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Bears D/ST</span><span class="ctx">DEF &middot; Bijan Claude Van Damme &middot; last Wednesday's waiver add: six sacks and a pick</span><span class="pts">16.00</span><span class="d">+8.59</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">Cam Skattebo</span><span class="ctx">RB &middot; Bijan Claude Van Damme &middot; 34 rushing yards, one week after two touchdowns</span><span class="pts">6.80</span><span class="d">&minus;8.19</span></div>
+      </div>
+      <p class="verdict">TJ's lineup was perfect, and that's the bad news. Bijan was on bye, Bowers was inactive, and the 113.44 he started was the best lineup his roster could field. Keenan Allen and Ayomanor combined for 12.50 on the bench and wouldn't have helped. Trevor Lawrence threw two picks (14.74), Skattebo and Dowdle combined for 14.20 at running back, and Brenton Strange, picked up at 12:28 p.m. Sunday by Yahoo's clock to cover for Bowers, caught three balls for 4.60. The Bears defense was the best thing on his roster, which tells you how the day went. Al left 20.60 on his bench (Antonio Williams caught nine for 122 there) and still won by 41.86. It wasn't a mistake: Egbuka was projected 3.02 higher and Tuten was hurt. TJ's three-game streak is over, his odds slipped to 94%, and next up is the guy in first place.</p>
+      <p class="pred hit"><b>Yahoo</b>Greatest_of_AL_time by 15.02 (138.83&ndash;123.81) &mdash; <span class="call">hit, and Al nearly tripled it</span></p>
+      <p class="pred alt hit"><b>Black Hat</b>Greatest_of_AL_time by 8.44 (132.09&ndash;123.65) &mdash; <span class="call">hit, and it undersold Al by 33.42</span></p>
+    </div>
+
+    <div class="matchup">
+      <div class="mrow">
+        <div class="side"><div class="team">CadillacKulpDeville</div><div class="mgr">Brian Kulp</div><div class="score win">157.00</div></div>
+        <div class="vs">def.</div>
+        <div class="side r"><div class="team">BlueGreen</div><div class="mgr">Kevin</div><div class="score">93.76</div></div>
+      </div>
+      <div class="statlines">
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Jonah Coleman</span><span class="ctx">RB &middot; CadillacKulpDeville &middot; 111 yards and three touchdowns from the flex spot</span><span class="pts">34.90</span><span class="d">+16.83</span></div>
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Jahmyr Gibbs</span><span class="ctx">RB &middot; CadillacKulpDeville &middot; two more touchdowns. He does this</span><span class="pts">27.80</span><span class="d">+4.11</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">Ja'Marr Chase</span><span class="ctx">WR &middot; BlueGreen &middot; five catches for 31 on Monday night while Brian's quarterback threw for 300</span><span class="pts">8.10</span><span class="d">&minus;14.52</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">Jaylen Warren</span><span class="ctx">RB &middot; BlueGreen &middot; 28 rushing yards in a three-point loss in Philly</span><span class="pts">4.90</span><span class="d">&minus;11.44</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">Vikings D/ST</span><span class="ctx">DEF &middot; CadillacKulpDeville &middot; the 49ers hung 35 on Minnesota and this unit scored zero</span><span class="pts">0.00</span><span class="d">&minus;5.72</span></div>
+      </div>
+      <p class="verdict">Kevin's lineup was perfect too, at 93.76. With Kyren, London, Watson and Hunter Henry all on bye, Kevin started the best he had, and the best he had was a kicker with 3.00, a Lions defense with 4.00 and Adonai Mitchell, Wednesday's waiver add, with 5.00. Monday night was the cruel part. Brian owned Joe Burrow (19.90, 300 yards, two touchdowns) and Kevin owned Chase, and Burrow threw his touchdowns to other people. Brian left 17.70 on the bench, with Ashton Jeanty catching a touchdown and going for 27.90 there, but Jeanty was projected 1.21 below Montgomery, so it's a loud bench and not a bad one. Five straight wins, clinched, and the commissioner's biggest problem right now is having too many running backs.</p>
+      <p class="pred hit"><b>Yahoo</b>CadillacKulpDeville by 29.16 (155.86&ndash;126.70) &mdash; <span class="call">hit, and Kevin finished 32.94 under his projection</span></p>
+      <p class="pred alt hit"><b>Black Hat</b>CadillacKulpDeville by 34.84 (156.49&ndash;121.65) &mdash; <span class="call">hit, and it had Brian&rsquo;s score within 0.51</span></p>
+    </div>
+
+    <div class="matchup">
+      <div class="mrow">
+        <div class="side"><div class="team">WhoseHungry?</div><div class="mgr">Mike</div><div class="score win">143.32</div></div>
+        <div class="vs">def.</div>
+        <div class="side r"><div class="team">Human Psentipede</div><div class="mgr">Michaeopteryx</div><div class="score">101.40</div></div>
+      </div>
+      <div class="statlines">
+        <div class="statline good"><span class="tag">Boom</span><span class="who">CeeDee Lamb</span><span class="ctx">WR &middot; WhoseHungry? &middot; 11 catches, 132 yards and a touchdown against Tennessee</span><span class="pts">30.20</span><span class="d">+7.71</span></div>
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Cam Ward</span><span class="ctx">QB &middot; WhoseHungry? &middot; a Sunday-afternoon free agent with three touchdowns against Dallas</span><span class="pts">23.22</span><span class="d">+3.98</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">DK Metcalf</span><span class="ctx">WR &middot; WhoseHungry? &middot; one catch, two yards, and an ejection</span><span class="pts">1.20</span><span class="d">&minus;9.03</span></div>
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Travis Kelce</span><span class="ctx">TE &middot; Human Psentipede &middot; two touchdowns and the best tight end score of the week</span><span class="pts">25.40</span><span class="d">+13.46</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">Kirk Cousins</span><span class="ctx">QB &middot; Human Psentipede &middot; Wednesday's replacement for Drake Maye: 235 yards, no touchdowns, one pick</span><span class="pts">8.40</span><span class="d">&minus;7.04</span></div>
+      </div>
+      <p class="verdict">Stafford was on bye, so at 12:28 p.m. Sunday, by Yahoo's clock, Mike cut his kicker Tyler Bass and picked up Cam Ward. Ward threw two touchdowns and ran for another against Dallas. On the other side of the same game, Lamb went for 30.20, so Mike collected 53.42 points from both ends of a 51-30 game. Mike Evans added 22.90 and the Texans defense held the Colts to three points (15.00). Metcalf got ejected in Philadelphia after his second scuffle with Cooper DeJean, and Tyler Warren caught one ball for 22 yards. Saquon left with a stinger and still scored 13.50. Michaeopteryx got 25.40 from Kelce and 19.30 from Jameson Williams, and not much else: Jonathan Taylor ran 11 times for 21 yards, Flournoy scored 2.10 and the Bucs defense scored zero. Four straight losses. The defending champ is 4-7 and still breathing, barely.</p>
+      <p class="pred hit"><b>Yahoo</b>WhoseHungry? by 19.07 (136.92&ndash;117.85) &mdash; <span class="call">hit, and Mike beat it by 22.85</span></p>
+      <p class="pred alt hit"><b>Black Hat</b>WhoseHungry? by 17.69 (134.73&ndash;117.04) &mdash; <span class="call">hit</span></p>
+    </div>
+
+    <div class="matchup">
+      <div class="mrow">
+        <div class="side"><div class="team">Medina Sod</div><div class="mgr">Justin Haefner</div><div class="score win">137.66</div></div>
+        <div class="vs">def.</div>
+        <div class="side r"><div class="team">OJ no Kulp</div><div class="mgr">pat kulp</div><div class="score">116.78</div></div>
+      </div>
+      <div class="statlines">
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Patrick Mahomes</span><span class="ctx">QB &middot; Medina Sod &middot; 324 yards and three scores. Still the best free agent of 2026</span><span class="pts">24.96</span><span class="d">+2.88</span></div>
+        <div class="statline good"><span class="tag">Boom</span><span class="who">Breece Hall</span><span class="ctx">RB &middot; Medina Sod &middot; 86 rushing yards and a receiving touchdown</span><span class="pts">19.00</span><span class="d">+4.50</span></div>
+        <div class="statline good"><span class="tag">Boom</span><span class="who">DJ Moore</span><span class="ctx">WR &middot; OJ no Kulp &middot; tweaked a knee, came back, and scored a touchdown anyway</span><span class="pts">23.10</span><span class="d">+9.13</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">Jordyn Tyson</span><span class="ctx">WR &middot; OJ no Kulp &middot; one catch, six yards, and the flex spot to himself</span><span class="pts">2.00</span><span class="d">&minus;9.72</span></div>
+        <div class="statline bad"><span class="tag">Bust</span><span class="who">Chargers D/ST</span><span class="ctx">DEF &middot; OJ no Kulp &middot; picked up Thursday night, one sack, one point</span><span class="pts">1.00</span><span class="d">&minus;5.78</span></div>
+      </div>
+      <p class="verdict">Haefner's Chiefs stack paid out again: Mahomes, Emmett Johnson (24.30), Downs (9.90) and the KC defense (7.00) put up 66.16. Nabers and Parker Washington added 36.80 between them. Ladd McConkey caught two touchdowns on the bench (20.70) while Pat Bryant started at flex (6.20), but McConkey was projected only 2.55 higher, which is a coin flip and not a crime. pat got 42.30 from DJ Moore and Olave and almost nothing from the other end of the roster. Tyson, Garrett Wilson (6.90) and the Chargers defense combined for 9.90 across three starting spots. The Chargers were Thursday's pickup, made by dropping Aaron Rodgers four days after adding him. pat is 4-7 on a three-game skid and down to 4% odds. He's still the most efficient lineup-setter in the league, which is like being the most punctual guest at a party that already ended.</p>
+      <p class="pred hit"><b>Yahoo</b>Medina Sod by 3.33 (139.28&ndash;135.95) &mdash; <span class="call">hit, though pat finished 19.17 under his projection</span></p>
+      <p class="pred alt hit"><b>Black Hat</b>Medina Sod by 5.28 (135.75&ndash;130.47) &mdash; <span class="call">hit</span></p>
+    </div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Studs &amp; Duds</div>
+      <h2>Best, Worst, Unluckiest</h2>
+      <p class="intro">The Cowboys and Titans scored 81 points on Sunday, and six managers in this league had a piece of it. The best player of the week had a fantasy teammate who caught nothing.</p>
+    </div>
+    <div class="recbook">
+      <div class="rec">
+        <span class="k">Top Team</span>
+        <span class="v gold">CadillacKulpDeville &mdash; 157.00</span>
+        <p class="s">The week's high by 1.70 over Al, from a team that left 17.70 on the bench. Brian could have scored 174.70. He settled for clinching.</p>
+      </div>
+      <div class="rec">
+        <span class="k">Top Player</span>
+        <span class="v gold">Dak Prescott &mdash; 35.90</span>
+        <p class="s">Five total touchdowns, 1.00 ahead of Jonah Coleman, and the reason Natalie won a game she had no business winning with a zero in the lineup.</p>
+      </div>
+      <div class="rec">
+        <span class="k">Bench Goat</span>
+        <span class="v bad">Greatest_of_AL_time &mdash; 20.60</span>
+        <p class="s">Antonio Williams (21.20) and Hockenson (11.50) sat. Egbuka was projected higher and Tuten got hurt, so it's a bad beat and not a bad lineup. Al won by 41.86 and won't lose sleep over it.</p>
+      </div>
+      <div class="rec">
+        <span class="k">Unluckiest</span>
+        <span class="v bad">Van Tine &mdash; 118.46, a loss</span>
+        <p class="s">Lost by 0.74 to a team whose flex player caught zero passes. Two bench players each could have won it, and Yahoo said neither should start. Sometimes the math is right and Sunday is wrong.</p>
+      </div>
+    </div>
+    <div class="narrow"><h3 class="listhead">&#x1F4AA; Studs of the Week</h3></div>
+    <div class="statlines">
+      <div class="statline good"><span class="tag">Stud</span><span class="who">Dak Prescott</span><span class="ctx">GooNads &middot; the only thing standing between Natalie and a fifth straight loss</span><span class="pts">35.90</span><span class="d">+12.84</span></div>
+      <div class="statline good"><span class="tag">Stud</span><span class="who">Jonah Coleman</span><span class="ctx">CadillacKulpDeville &middot; three touchdowns from a rookie in the flex. Rich get richer</span><span class="pts">34.90</span><span class="d">+16.83</span></div>
+      <div class="statline good"><span class="tag">Stud</span><span class="who">CeeDee Lamb</span><span class="ctx">WhoseHungry? &middot; 132 yards, and the other team's quarterback was in Mike's lineup too</span><span class="pts">30.20</span><span class="d">+7.71</span></div>
+      <div class="statline good"><span class="tag">Stud</span><span class="who">Chuba Hubbard</span><span class="ctx">Greatest_of_AL_time &middot; back-to-back weeks over 25, two touchdowns, one playoff clinch</span><span class="pts">26.00</span><span class="d">+8.25</span></div>
+      <div class="statline good"><span class="tag">Stud</span><span class="who">Travis Kelce</span><span class="ctx">Human Psentipede &middot; two touchdowns in a 41-point loss. Great performance, wrong roster</span><span class="pts">25.40</span><span class="d">+13.46</span></div>
+      <div class="statline good"><span class="tag">Stud</span><span class="who">Mike Evans</span><span class="ctx">WhoseHungry? &middot; nearly double his projection, in a 49ers uniform, for the defending champ</span><span class="pts">22.90</span><span class="d">+11.42</span></div>
+    </div>
+    <div class="narrow"><h3 class="listhead">&#x1F4A9; Duds of the Week</h3></div>
+    <div class="statlines">
+      <div class="statline bad"><span class="tag">Dud</span><span class="who">Courtland Sutton</span><span class="ctx">GooNads &middot; his team scored 38 and he scored nothing. First blank in 39 games</span><span class="pts">0.00</span><span class="d">&minus;9.10</span></div>
+      <div class="statline bad"><span class="tag">Dud</span><span class="who">Ja'Marr Chase</span><span class="ctx">BlueGreen &middot; 231 yards last week, 31 this week. Kevin got the low end of the range</span><span class="pts">8.10</span><span class="d">&minus;14.52</span></div>
+      <div class="statline bad"><span class="tag">Dud</span><span class="who">Jordyn Tyson</span><span class="ctx">OJ no Kulp &middot; projected 11.72 and gave pat a single catch</span><span class="pts">2.00</span><span class="d">&minus;9.72</span></div>
+      <div class="statline bad"><span class="tag">Dud</span><span class="who">DK Metcalf</span><span class="ctx">WhoseHungry? &middot; two yards and a trip to the locker room before the fourth quarter</span><span class="pts">1.20</span><span class="d">&minus;9.03</span></div>
+      <div class="statline bad"><span class="tag">Dud</span><span class="who">Chargers D/ST</span><span class="ctx">OJ no Kulp &middot; replaced Aaron Rodgers on the roster and played about as well as you'd expect</span><span class="pts">1.00</span><span class="d">&minus;5.78</span></div>
+      <div class="statline bad"><span class="tag">Dud</span><span class="who">Vikings D/ST</span><span class="ctx">CadillacKulpDeville &middot; 20.00 last week, zero this week. Somebody's got to keep Brian humble</span><span class="pts">0.00</span><span class="d">&minus;5.72</span></div>
+    </div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Awards</div>
+      <h2>This Week's Hardware</h2>
+      <p class="intro">Nobody started a player who was projected 3 or more points below someone on the bench, and nobody started anyone who'd been ruled out. Every bench bomb this week was a bad beat. The awards had to find other material.</p>
+    </div>
+    <div class="recbook">
+      <div class="rec">
+        <span class="award-name">&#x1F47B; The Ghost Flex Award</span>
+        <p class="s">Natalie, who won a game with Courtland Sutton's 0.00 in her flex spot. It wasn't even a mistake: the only bench points she had were Jared Goff's 20.36, and he's a quarterback. A perfect lineup with a hole in it, and a 0.74-point win.</p>
+      </div>
+      <div class="rec">
+        <span class="award-name">&#x1F4D0; The Right Call, Wrong Sunday Award</span>
+        <p class="s">Ryan, who correctly started the Broncos over the 49ers and Etienne over Braelon Allen, then watched the benched pair outscore the started pair by 3.80 in a 0.74-point loss. He even nailed the Vele call. Process: A. Result: 6-5.</p>
+      </div>
+      <div class="rec">
+        <span class="award-name">&#x1F512; The Reservation Confirmed Award</span>
+        <p class="s">Al, clinched at 8-3, one calendar year after 0-14. Brian clinched too, but Brian has three titles and Al hasn't finished in the top six since 2020, so Al gets the big font.</p>
+      </div>
+      <div class="rec">
+        <span class="award-name">&#x1F570;&#xFE0F; The 12:28 Club</span>
+        <p class="s">Mike and TJ each made a Sunday free-agent move at exactly 12:28 p.m. by Yahoo's clock. Mike got Cam Ward and 23.22. TJ got Brenton Strange and 4.60. Same minute, 18.62 points apart, and only one of them won.</p>
+      </div>
+      <div class="rec">
+        <span class="award-name">&#x1F6AA; The Early Exit Award</span>
+        <p class="s">DK Metcalf, ejected in Philadelphia after two run-ins with Cooper DeJean. He says he wasn't going for the eye. Either way he left with one catch for two yards, and Mike's WR2 slot was the real victim.</p>
+      </div>
+      <div class="rec">
+        <span class="award-name">&#x1F9F9; The Perfect and Pointless Award</span>
+        <p class="s">Kevin, who set the optimal lineup and scored 93.76, the week's low, while four of his guys sat on bye. Honorable mention to TJ, also perfect, also beaten by 41-plus. A perfect lineup is only as good as the roster behind it.</p>
+      </div>
+      <div class="rec">
+        <span class="award-name">&#x1F504; The No Returns Award</span>
+        <p class="s">Michaeopteryx, who dropped Drake Maye (ankle, out indefinitely) for Kirk Cousins on Wednesday. Cousins threw for 235, no touchdowns and an interception. The logic was fine. The result was Kirk Cousins.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Standings Move</div>
+      <h2>&#x1F4CA; The Table After Week 11</h2>
+      <p class="intro">Two teams clinched, three are tied at 6-5 for the last three spots, and the two 4-7 teams need to win out and get help.</p>
+    </div>
+    <div class="divs">
+      <div class="stdiv">
+        <h3>Inside the Line</h3>
+        <div class="srow good">
+          <div class="rk"><span class="n">1</span><span class="mv">&ndash;</span></div>
+          <div class="tm"><div class="nm">CadillacKulpDeville</div><div class="mg">Brian Kulp</div></div>
+          <div class="rc">8-3<span class="stk w">W5</span></div>
+          <div class="nums"><span><i>PF</i><b class="hi">1,659.74</b></span><span><i>PA</i><b>1,288.88</b></span><span><i>Week 11</i><b class="hi">157.00</b></span><span><i>PF Rank</i><b>1st</b></span></div>
+          <p class="tag2">Clinched, five straight, and back on top of the points board. The only open question is how much bench he can waste before December.</p>
+        </div>
+        <div class="srow good">
+          <div class="rk"><span class="n">2</span><span class="mv">&ndash;</span></div>
+          <div class="tm"><div class="nm">Greatest_of_AL_time</div><div class="mg">Al</div></div>
+          <div class="rc">8-3<span class="stk w">W4</span></div>
+          <div class="nums"><span><i>PF</i><b>1,550.16</b></span><span><i>PA</i><b class="hi">1,266.52</b></span><span><i>Week 11</i><b>155.30</b></span><span><i>PF Rank</i><b>3rd</b></span></div>
+          <p class="tag2">Clinched. Read that again slowly. Fewest points against in the league, a year after one of the most.</p>
+        </div>
+        <div class="srow good">
+          <div class="rk"><span class="n">3</span><span class="mv">&ndash;</span></div>
+          <div class="tm"><div class="nm">Medina Sod</div><div class="mg">Justin Haefner</div></div>
+          <div class="rc">7-4<span class="stk w">W2</span></div>
+          <div class="nums"><span><i>PF</i><b>1,652.90</b></span><span><i>PA</i><b>1,467.90</b></span><span><i>Week 11</i><b>137.66</b></span><span><i>PF Rank</i><b>2nd</b></span></div>
+          <p class="tag2">6.84 points behind Brian for the scoring title. One more Mahomes afternoon and Haefner has the most points and only the third-best record.</p>
+        </div>
+        <div class="srow good">
+          <div class="rk"><span class="n">4</span><span class="mv">&ndash;</span></div>
+          <div class="tm"><div class="nm">Bijan Claude Van Damme</div><div class="mg">TJ</div></div>
+          <div class="rc">6-5<span class="stk l">L1</span></div>
+          <div class="nums"><span><i>PF</i><b>1,463.60</b></span><span><i>PA</i><b>1,453.80</b></span><span><i>Week 11</i><b>113.44</b></span><span><i>PF Rank</i><b>4th</b></span></div>
+          <p class="tag2">Fourth by tiebreaker, one loss from the pile at 6-6. Next up: the first-place team on a five-game streak.</p>
+        </div>
+        <div class="srow good">
+          <div class="rk"><span class="n">5</span><span class="mv">&ndash;</span></div>
+          <div class="tm"><div class="nm">BlueGreen</div><div class="mg">Kevin</div></div>
+          <div class="rc">6-5<span class="stk l">L2</span></div>
+          <div class="nums"><span><i>PF</i><b>1,429.48</b></span><span><i>PA</i><b>1,440.76</b></span><span><i>Week 11</i><b class="lo">93.76</b></span><span><i>PF Rank</i><b>6th</b></span></div>
+          <p class="tag2">Two straight losses by a combined 122.96, and the odds went up anyway. Kevin's schedule is doing a better job than Kevin's roster.</p>
+        </div>
+        <div class="srow good">
+          <div class="rk"><span class="n">6</span><span class="mv">&ndash;</span></div>
+          <div class="tm"><div class="nm">Van Tine</div><div class="mg">Ryan</div></div>
+          <div class="rc">6-5<span class="stk l">L1</span></div>
+          <div class="nums"><span><i>PF</i><b>1,423.46</b></span><span><i>PA</i><b>1,426.00</b></span><span><i>Week 11</i><b>118.46</b></span><span><i>PF Rank</i><b>7th</b></span></div>
+          <p class="tag2">Lost by 0.74 and kept his seat. Seventh in points, sixth in the table, two games clear with three to play. Ryan is still doing more with less.</p>
+        </div>
+      </div>
+      <div class="stdiv">
+        <h3>Outside Looking In</h3>
+        <div class="srow bad">
+          <div class="rk"><span class="n">7</span><span class="mv">&ndash;</span></div>
+          <div class="tm"><div class="nm">OJ no Kulp</div><div class="mg">pat kulp</div></div>
+          <div class="rc">4-7<span class="stk l">L3</span></div>
+          <div class="nums"><span><i>PF</i><b>1,442.22</b></span><span><i>PA</i><b>1,524.82</b></span><span><i>Week 11</i><b>116.78</b></span><span><i>PF Rank</i><b>5th</b></span></div>
+          <p class="tag2">Fifth in points, seventh in the standings, three straight losses. pat's season has been out-scored by its own schedule.</p>
+        </div>
+        <div class="srow bad">
+          <div class="rk"><span class="n">8</span><span class="mv">&ndash;</span></div>
+          <div class="tm"><div class="nm">WhoseHungry?</div><div class="mg">Mike</div></div>
+          <div class="rc">4-7<span class="stk w">W1</span></div>
+          <div class="nums"><span><i>PF</i><b>1,392.90</b></span><span><i>PA</i><b class="lo">1,625.56</b></span><span><i>Week 11</i><b>143.32</b></span><span><i>PF Rank</i><b>8th</b></span></div>
+          <p class="tag2">Most points allowed in the league by 63.72. The defending champ needs three wins and two collapses, and he's not getting the trophy back from wherever it went.</p>
+        </div>
+        <div class="srow bad">
+          <div class="rk"><span class="n">9</span><span class="mv up">&#x25B2;1</span></div>
+          <div class="tm"><div class="nm">GooNads</div><div class="mg">Natalie Fullerton</div></div>
+          <div class="rc">3-8<span class="stk w">W1</span></div>
+          <div class="nums"><span><i>PF</i><b>1,313.02</b></span><span><i>PA</i><b>1,561.84</b></span><span><i>Week 11</i><b>119.20</b></span><span><i>PF Rank</i><b>9th</b></span></div>
+          <p class="tag2">Out of the cellar on a 0.74-point win with a zero in the lineup. Eliminated, unbothered, and now a professional spoiler.</p>
+        </div>
+        <div class="srow bad">
+          <div class="rk"><span class="n">10</span><span class="mv down">&#x25BC;1</span></div>
+          <div class="tm"><div class="nm">Human Psentipede</div><div class="mg">Michaeopteryx</div></div>
+          <div class="rc">3-8<span class="stk l">L4</span></div>
+          <div class="nums"><span><i>PF</i><b class="lo">1,277.48</b></span><span><i>PA</i><b>1,548.88</b></span><span><i>Week 11</i><b>101.40</b></span><span><i>PF Rank</i><b>10th</b></span></div>
+          <p class="tag2">Four straight losses, last in points, last in the table, and Kirk Cousins is the starting quarterback. The basement has a new tenant.</p>
+        </div>
+      </div>
+    </div>
+    <p class="skey">Straight head-to-head &middot; Top six make the playoffs &middot; &#x25B2;&#x25BC; spots moved since Week 10 &middot; gold is the league's best, red its worst</p>
+    <div class="keystat"><b>The turnaround:</b> Through 11 weeks of 2025, Al's team had been scored on 1,695.52 times, the third-most at this point in league history. Through 11 weeks of 2026, his 1,266.52 is the fewest in the league. Same manager, 429.00 fewer points against.</div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Black Hat Odds</div>
+      <h2>&#x1F3B2; Playoff Odds After Week 11</h2>
+      <p class="intro">Black Hat ran the last three weeks again. Six teams are at 94% or better, four are at 5% or worse, and the only real drama is seeding. TJ is the lowest of the six and the only one of them whose odds went down.</p>
+    </div>
+    <div class="oddswrap">
+      <div class="odds good"><div class="on"><span class="nm">CadillacKulpDeville</span><span class="mg">Brian Kulp</span></div><div class="ob"><div class="bar" style="width:100%"></div></div><div class="ov">100%</div><div class="om"><span><i>Proj record</i>10.0-4.0</span><span><i>Win range</i>9-11</span><span><i>Proj seed</i>1.8</span></div><p class="tag2">Clinched for real, so the 100% is a formality now. A 1.8 projected seed says the top spot is his to lose.</p></div>
+      <div class="odds good"><div class="on"><span class="nm">Greatest_of_AL_time</span><span class="mg">Al</span></div><div class="ob"><div class="bar" style="width:100%"></div></div><div class="ov">100%</div><div class="om"><span><i>Proj record</i>9.5-4.5</span><span><i>Win range</i>8-11</span><span><i>Proj seed</i>2.1</span></div><p class="tag2">Clinched. Last year the model would have needed a microscope to find Al. This year it has him with a chance at 11 wins.</p></div>
+      <div class="odds good"><div class="on"><span class="nm">Medina Sod</span><span class="mg">Justin Haefner</span></div><div class="ob"><div class="bar" style="width:100%"></div></div><div class="ov">100%</div><div class="om"><span><i>Proj record</i>8.9-5.1</span><span><i>Win range</i>8-10</span><span><i>Proj seed</i>2.6</span></div><p class="tag2">Up from 98%. Not clinched on Yahoo's page, but the simulator stopped finding seasons where he misses.</p></div>
+      <div class="odds good"><div class="on"><span class="nm">BlueGreen</span><span class="mg">Kevin</span></div><div class="ob"><div class="bar" style="width:99%"></div></div><div class="ov">99%</div><div class="om"><span><i>Proj record</i>8.0-6.0</span><span><i>Win range</i>7-9</span><span><i>Proj seed</i>4.6</span></div><p class="tag2">Scored the week's lowest and gained a point. Kevin's schedule is doing the work his receivers won't.</p></div>
+      <div class="odds good"><div class="on"><span class="nm">Van Tine</span><span class="mg">Ryan</span></div><div class="ob"><div class="bar" style="width:98%"></div></div><div class="ov">98%</div><div class="om"><span><i>Proj record</i>7.5-6.5</span><span><i>Win range</i>6-9</span><span><i>Proj seed</i>4.9</span></div><p class="tag2">Lost by 0.74 and went up a point. The model believes in Ryan, and it believes even more in everybody behind him losing.</p></div>
+      <div class="odds good"><div class="on"><span class="nm">Bijan Claude Van Damme</span><span class="mg">TJ</span></div><div class="ob"><div class="bar" style="width:94%"></div></div><div class="ov">94%</div><div class="om"><span><i>Proj record</i>7.5-6.5</span><span><i>Win range</i>6-9</span><span><i>Proj seed</i>5.1</span></div><p class="tag2">Down from 96%, the only playoff-line team that dropped. Same projected record as Ryan, worse seed, and Brian is next. Comfortable is not the word.</p></div>
+      <div class="odds bad"><div class="on"><span class="nm">WhoseHungry?</span><span class="mg">Mike</span></div><div class="ob"><div class="bar" style="width:5%"></div></div><div class="ov">5%</div><div class="om"><span><i>Proj record</i>5.1-8.9</span><span><i>Win range</i>4-6</span><span><i>Proj seed</i>7.9</span></div><p class="tag2">Up from 3%. The defending champ's path to the playoffs: win out, then hope. Mostly hope.</p></div>
+      <div class="odds bad"><div class="on"><span class="nm">OJ no Kulp</span><span class="mg">pat kulp</span></div><div class="ob"><div class="bar" style="width:4%"></div></div><div class="ov">4%</div><div class="om"><span><i>Proj record</i>5.3-8.7</span><span><i>Win range</i>4-6</span><span><i>Proj seed</i>7.4</span></div><p class="tag2">Cut in half from 8%. Better projected record than Mike and worse odds. Even the simulator thinks pat's luck is personal.</p></div>
+      <div class="odds bad"><div class="on"><span class="nm">Human Psentipede</span><span class="mg">Michaeopteryx</span></div><div class="ob"><div class="bar" style="width:1%"></div></div><div class="ov">1%</div><div class="om"><span><i>Proj record</i>4.1-9.9</span><span><i>Win range</i>3-5</span><span><i>Proj seed</i>9.4</span></div><p class="tag2">Down from 2%. Four straight losses, and the 1% is mostly the model being polite.</p></div>
+      <div class="odds bad"><div class="on"><span class="nm">GooNads</span><span class="mg">Natalie Fullerton</span></div><div class="ob"><div class="bar" style="width:0%"></div></div><div class="ov">0%</div><div class="om"><span><i>Proj record</i>4.2-9.8</span><span><i>Win range</i>3-5</span><span><i>Proj seed</i>9.1</span></div><p class="tag2">Won and stayed at zero. Unlike a certain trophy, a playoff spot can't be hidden somewhere and found later.</p></div>
+    </div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Season Leaders</div>
+      <h2>Eleven Weeks of Receipts</h2>
+      <p class="intro">Brian took the points lead back by 6.84. Al climbed to second on the bench board in one afternoon and didn't notice because he won by 41.</p>
+    </div>
+    <div class="leaders"><div class="lcard gold"><div class="lhead"><span class="lt">Points For</span><span class="ls">Season total &middot; per week</span></div><ol class="lrows"><li class="top"><span class="lr">1</span><span class="ln">CadillacKulpDeville<i>Brian</i></span><span class="lv">1,659.74<i>150.89/wk</i></span><span class="lbar"><b style="width:100%"></b></span></li><li class=""><span class="lr">2</span><span class="ln">Medina Sod<i>Justin</i></span><span class="lv">1,652.90<i>150.26/wk</i></span><span class="lbar"><b style="width:99%"></b></span></li><li class=""><span class="lr">3</span><span class="ln">Greatest_of_AL_time<i>Al</i></span><span class="lv">1,550.16<i>140.92/wk</i></span><span class="lbar"><b style="width:82%"></b></span></li><li class=""><span class="lr">4</span><span class="ln">Bijan Claude Van Damme<i>TJ</i></span><span class="lv">1,463.60<i>133.05/wk</i></span><span class="lbar"><b style="width:68%"></b></span></li><li class=""><span class="lr">5</span><span class="ln">OJ no Kulp<i>pat</i></span><span class="lv">1,442.22<i>131.11/wk</i></span><span class="lbar"><b style="width:64%"></b></span></li><li class="last"><span class="lr">10</span><span class="ln">Human Psentipede<i>Michaeopteryx</i></span><span class="lv">1,277.48<i>116.13/wk</i></span><span class="lbar"><b style="width:38%"></b></span></li></ol><p class="lq">pat is fifth in points and seventh in the standings. Kevin is sixth in points and fifth in the standings. Nobody ever said this league was fair.</p></div><div class="lcard good"><div class="lhead"><span class="lt">Lineup Efficiency</span><span class="ls">Actual points &divide; best possible lineup</span></div><ol class="lrows"><li class="top"><span class="lr">1</span><span class="ln">OJ no Kulp<i>pat</i></span><span class="lv">95.8%</span><span class="lbar"><b style="width:100%"></b></span></li><li class=""><span class="lr">2</span><span class="ln">Medina Sod<i>Justin</i></span><span class="lv">94.1%</span><span class="lbar"><b style="width:87%"></b></span></li><li class=""><span class="lr">3</span><span class="ln">Bijan Claude Van Damme<i>TJ</i></span><span class="lv">91.7%</span><span class="lbar"><b style="width:69%"></b></span></li><li class=""><span class="lr">4</span><span class="ln">WhoseHungry?<i>Mike</i></span><span class="lv">90.7%</span><span class="lbar"><b style="width:62%"></b></span></li><li class=""><span class="lr">5</span><span class="ln">Greatest_of_AL_time<i>Al</i></span><span class="lv">89.2%</span><span class="lbar"><b style="width:51%"></b></span></li><li class="last"><span class="lr">10</span><span class="ln">Human Psentipede<i>Michaeopteryx</i></span><span class="lv">87.4%</span><span class="lbar"><b style="width:38%"></b></span></li></ol><p class="lq">TJ went up by setting a perfect lineup in a 41-point loss. That's a stat, not a strategy.</p></div><div class="lcard bad"><div class="lhead"><span class="lt">Points Left on the Bench</span><span class="ls">Season total vs. best possible lineup</span></div><ol class="lrows"><li class="top"><span class="lr">1</span><span class="ln">CadillacKulpDeville<i>Brian</i></span><span class="lv">226.30</span><span class="lbar"><b style="width:100%"></b></span></li><li class=""><span class="lr">2</span><span class="ln">Greatest_of_AL_time<i>Al</i></span><span class="lv">187.22</span><span class="lbar"><b style="width:48%"></b></span></li><li class=""><span class="lr">3</span><span class="ln">GooNads<i>Natalie</i></span><span class="lv">185.26</span><span class="lbar"><b style="width:45%"></b></span></li><li class=""><span class="lr">4</span><span class="ln">Human Psentipede<i>Michaeopteryx</i></span><span class="lv">183.80</span><span class="lbar"><b style="width:43%"></b></span></li><li class=""><span class="lr">5</span><span class="ln">BlueGreen<i>Kevin</i></span><span class="lv">179.66</span><span class="lbar"><b style="width:37%"></b></span></li></ol><p class="lq">The top two on this board are the two teams that have clinched. Leaving points on the bench is easy when your bench is better than everyone else's lineup.</p></div></div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Week 12 Storylines</div>
+      <h2>What to Watch Next</h2>
+      <p class="intro">Yahoo's and Black Hat's lines as of Tuesday morning. Both systems like the same five favorites. It's Thanksgiving week and there are games on five different days, so set your lineup before Thursday. Every matchup is a Week 3 rematch.</p>
+    </div>
+    <div class="checkup">
+      <div class="rec check">
+        <span class="k">Bijan Claude Van Damme vs. CadillacKulpDeville &middot; Yahoo 145.44&ndash;151.43 &middot; Black Hat 145.76&ndash;152.23</span>
+        <span class="q">Clinched vs. Clinging</span>
+        <p class="s">TJ handed Brian one of his three losses in Week 3, 136.12&ndash;130.98, and leads the series 16-10. Brian has won five straight and has nothing to play for but seeding. TJ is at 94% and would love not to find out what 6-6 feels like. Bijan is back from his bye. Yahoo has Brian by 5.99 and Black Hat has him by 6.47, so nobody is giving TJ the benefit of the doubt.</p>
+      </div>
+      <div class="rec check">
+        <span class="k">BlueGreen vs. WhoseHungry? &middot; Yahoo 121.81&ndash;125.98 &middot; Black Hat 119.99&ndash;134.62</span>
+        <span class="q">The Champ's Last Stand</span>
+        <p class="s">Kevin won the Week 3 meeting 167.54&ndash;126.18, but Mike leads the series 13-8. Mike is at 5% and needs to win out. Kevin is at 99% after a 93.76. Yahoo likes Mike by 4.17. Black Hat likes him by 14.63, the biggest gap between the two systems this week. For the defending champ, that counts as a vote of confidence.</p>
+      </div>
+      <div class="rec check">
+        <span class="k">Greatest_of_AL_time vs. Medina Sod &middot; Yahoo 123.26&ndash;143.00 &middot; Black Hat 125.17&ndash;146.23</span>
+        <span class="q">The 0.42 Rematch</span>
+        <p class="s">Haefner won Week 3 by 0.42, 127.70&ndash;127.28, and leads the series 15-10. Al has won four straight and clinched. Haefner has Mahomes and the scoring title in sight. Yahoo has Haefner by 19.74 and Black Hat by 21.06, and if this one ends 0.42 apart again, somebody should check the commissioner's settings.</p>
+      </div>
+      <div class="rec check">
+        <span class="k">GooNads vs. OJ no Kulp &middot; Yahoo 112.92&ndash;126.69 &middot; Black Hat 113.85&ndash;127.81</span>
+        <span class="q">Twenty-Three to Nine</span>
+        <p class="s">pat leads this series 23-9 and won Week 3, 139.08&ndash;127.24. He's at 4% and has to win. Natalie is at 0% and just proved she can beat a playoff team with ten players. Yahoo has pat by 13.77 and Black Hat by 13.96. Both systems liked Ryan over her last week too. Spoiler season is open.</p>
+      </div>
+      <div class="rec check">
+        <span class="k">Human Psentipede vs. Van Tine &middot; Yahoo 117.97&ndash;128.52 &middot; Black Hat 115.74&ndash;130.57</span>
+        <span class="q">The Low-Score Grudge</span>
+        <p class="s">Michaeopteryx leads 9-4 and won Week 3, 94.24&ndash;90.36, the ugliest game of the season. Ryan holds sixth by two games and just lost to a 3-8 team. Michaeopteryx is a 3-8 team. Yahoo has Ryan by 10.55 and Black Hat by 14.83.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="act">
+    <div class="narrow">
+      <div class="kicker">Mohn's Closing Thought</div>
+      <blockquote class="pull">A receiver caught nothing and his team won. The league's most optimal lineup was the worst score of the week. And a man who went 0-14 a year ago clinched a playoff spot the same afternoon as the commissioner. Fantasy football will tell you it's a game of skill right up until Sunday, and then it'll do whatever it wants. Three weeks left. Set the lineup by Thursday and pray over the turkey.</blockquote>
+      <h3 class="listhead">Special Shoutouts</h3>
+      <ul class="shout">
+        <li><b>Al</b>, for 155.30, four straight wins and a clinched playoff spot. Last November people sent you condolences. This November they're sending scouting reports.</li>
+        <li><b>Brian Kulp</b>, for five straight wins, a clinch, and 17.70 on the bench, including a 27.90 from Jeanty. Even your bench would start for most of this league.</li>
+        <li><b>Natalie</b>, for winning with a zero in the lineup. Nobody's saying you hid the trophy. People are saying you hid Courtland Sutton's catches.</li>
+        <li><b>Ryan</b>, for losing by 0.74 after making every right call. The spreadsheet's on your side. The scoreboard isn't.</li>
+        <li><b>Mike</b>, for a 12:28 p.m. Sunday pickup who accounted for three touchdowns. Thirteen moves this season and that one finally paid. Still 5% alive, and the trophy's still officially yours, whatever closet it's in.</li>
+        <li><b>Kevin</b>, for a perfect lineup and 93.76. You did everything right except have healthy, non-bye, productive players.</li>
+        <li><b>Justin Haefner</b>, for another Chiefs stack and a 6.84-point chase for the scoring title. You've made Mahomes a weekly habit.</li>
+        <li><b>pat kulp</b>, for adding Aaron Rodgers on a Sunday and cutting him on Thursday for a defense that scored 1.00. The most efficient manager in the league just isn't efficient at winning.</li>
+        <li><b>Michaeopteryx</b>, for Kirk Cousins. That's it. That's the shoutout.</li>
+        <li><b>TJ</b>, for a perfect lineup in a 41-point loss and for a 12:28 Sunday tight end who caught three balls for 16 yards. Your three-game streak is over, your odds went down, and next week you play the best team in the league.</li>
+      </ul>
+      <p class="tagline">May your receivers catch at least one pass, your bench stay as quiet as your projections promise, and your trophy turn up before the playoffs. Natalie, we're still asking.</p>
+      <p class="sig">Mohn Jadden &mdash; Keeping it real since 2014</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>The Major League &middot; Week 11, 2026 &middot; Compiled by Mohn Jadden.</span>
+    <span><a href="/the-major-league/recap/">All recaps</a> &middot; <a href="/the-major-league/recap/week-10/">Week 10 recap</a> &middot; <a href="/the-major-league/draft-grades/">Draft grades</a></span>
+  </footer>
+</div>
+</body>
+</html>
